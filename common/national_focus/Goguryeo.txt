@@ -1320,7 +1320,7 @@ focus_tree = {
 		cost = 10
 
 		available = {
-			neutrality > 0.5
+			fascism > 0.5
 		}
 
 		bypass = {
@@ -1455,7 +1455,6 @@ focus_tree = {
 		}
 
 		available = {
-			has_completed_focus = SIL_nationalism_focus
 			OR = {
 				GER = { has_government = ROOT }
 				has_government = fascism
