@@ -1,0 +1,23 @@
+state={
+	id=717
+	name="고구려장성"
+	
+	state_category = pastoral
+
+	history={
+		owner = GGR
+		add_core_of = GGR
+
+		buildings = {
+			infrastructure = 3
+
+		}
+
+	}
+
+	provinces={
+		810 1571 3815 3843 4551 5427 6863 7569 9623 9798 10215 10463 10519 10521 12342 12443 12500 
+	}
+	manpower=5224174
+
+}

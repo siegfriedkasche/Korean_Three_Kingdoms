@@ -1,0 +1,8 @@
+leader_traits = {
+	absolute_monarch = {
+		army_attack_factor = 0.05
+		stability_factor = 0.10
+		conscription = 0.05
+		industrial_capacity_factory	= 0.05
+	}
+}

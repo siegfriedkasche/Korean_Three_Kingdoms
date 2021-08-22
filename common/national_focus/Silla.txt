@@ -1,0 +1,3737 @@
+focus_tree = {
+	id = Silla_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = SIL
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 50 y = 1100 }
+
+#	focus = {
+#		id = SIL_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		relative_position_id =
+#
+#		cost = 10
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		available = {
+#
+#		}
+#		
+#		bypass = {
+#
+#		}
+#
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#
+#		complete_tooltip = {
+#
+#		}
+#
+#		completion_reward = {
+#
+#		}
+#	}
+
+
+	###################################
+	######## INDUSTRIAL LEGACY ########
+	###################################
+
+	###################################
+	######## INDUSTRIAL LEGACY ########
+	###################################
+
+	focus = {
+		id = SIL_industrial_legacy
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 3
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = CZE_industrial_legacy_idea
+		}
+	}
+
+	focus = {
+		id = SIL_favor_czechs_1
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = SIL_industrial_legacy }
+		x = -2
+		y = 1
+		relative_position_id = SIL_industrial_legacy
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 40
+			modifier = {
+				factor = 2
+				has_completed_focus = SIL_go_right
+			}
+		}
+
+		available = {
+			SIL = { controls_state = 809 }
+			SIL = { controls_state = 810 }
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			809 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			810 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_favor_czechs_2
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = SIL_favor_czechs_1 }
+		x = 0
+		y = 1
+		relative_position_id = SIL_favor_czechs_1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+			SIL = { controls_state = 809 }
+			SIL = { controls_state = 810 }
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			809 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			810 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_favor_czechs_3
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = SIL_favor_czechs_2 }
+		x = 0
+		y = 2
+		relative_position_id = SIL_favor_czechs_1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+			SIL = { controls_state = 809 }
+			SIL = { controls_state = 810 }
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			809 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			810 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_balanced_1
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = SIL_industrial_legacy }
+		x = 0
+		y = 1
+		relative_position_id = SIL_industrial_legacy
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+			modifier = {
+				factor = 0.5
+				has_completed_focus = SIL_go_right
+			}
+		}
+
+		available = {
+			SIL = { controls_state = 809 }
+			SIL = { controls_state = 810 }
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			809 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			810 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_balanced_2
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = SIL_balanced_1 }
+		x = 0
+		y = 1
+		relative_position_id = SIL_balanced_1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+			SIL = { controls_state = 809 }
+			SIL = { controls_state = 810 }
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			809 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			810 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_balanced_3
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = SIL_balanced_2 }
+		x = 0
+		y = 2
+		relative_position_id = SIL_balanced_1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+			SIL = { controls_state = 809 }
+			SIL = { controls_state = 810 }
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			810 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			809 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_bonus_research_slot_2
+		icon = GFX_focus_research
+		prerequisite = { focus = SIL_balanced_3 }
+		prerequisite = { focus = SIL_arms_exports_3 }
+		prerequisite = { focus = SIL_favor_czechs_3 }
+		x = 0
+		y = 3
+		relative_position_id = SIL_balanced_1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			num_of_factories > 34
+			amount_research_slots < 5
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+			custom_effect_tooltip = SIL_war_college_effect_tt
+		}
+	}
+
+	focus = {
+		id = SIL_arms_exports_1
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = SIL_industrial_legacy }
+		x = 2
+		y = 1
+		relative_position_id = SIL_industrial_legacy
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+			modifier = {
+				factor = 2
+				has_completed_focus = SIL_go_right
+			}
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = CZE_export_focus1
+		}
+	}
+
+	focus = {
+		id = SIL_arms_exports_2
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = SIL_arms_exports_1 }
+		x = 0
+		y = 1
+		relative_position_id = SIL_arms_exports_1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+			modifier = {
+				factor = 2
+				has_completed_focus = SIL_go_right
+			}
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			swap_ideas = { remove_idea = CZE_export_focus1 add_idea = CZE_export_focus2  }
+		}
+	}
+
+	focus = {
+		id = SIL_arms_exports_3
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = SIL_arms_exports_2 }
+		x = 0
+		y = 2
+		relative_position_id = SIL_arms_exports_1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+			modifier = {
+				factor = 2
+				has_completed_focus = SIL_go_right
+			}
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			swap_ideas = { remove_idea = CZE_export_focus2 add_idea = CZE_export_focus3 }
+		}
+	}
+	focus = {
+		id = SIL_palned_economy
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = SIL_bonus_research_slot_2 }
+		mutually_exclusive = { focus = SIL_market_economy }
+		x = -1
+		y = 1
+		relative_position_id = SIL_bonus_research_slot_2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+			modifier = {
+				factor = 2
+				has_completed_focus = SIL_go_right
+			}
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = SIL_market_economy
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = SIL_bonus_research_slot_2 }
+		x = 1
+		y = 1
+		mutually_exclusive = { focus = SIL_palned_economy }
+		relative_position_id = SIL_bonus_research_slot_2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+			modifier = {
+				factor = 2
+				has_completed_focus = SIL_go_right
+			}
+		}
+
+		available = {
+			OR = {
+				has_idea = civilian_economy 
+				has_idea = low_economic_mobilisation 
+			}
+		}
+
+		bypass = {
+
+		} 
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = SIL_Industrial_Development_Committee #산업개발위원회
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = SIL_palned_economy }
+		x = -1
+		y = 1
+		relative_position_id = SIL_palned_economy
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = Industrial_Development_Committee_ideas
+		}
+	}
+	focus = {
+		id = SIL_private_enterprise_investment
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = SIL_palned_economy focus = SIL_market_economy }
+		x = -1
+		y = 1
+		relative_position_id = SIL_market_economy
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+			modifier = {
+				factor = 2
+				has_completed_focus = SIL_go_right
+			}
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = SIL_free_market
+		icon = GFX_goal_generic_trade
+		prerequisite = { focus = SIL_market_economy }
+		x = 1
+		y = 1
+		relative_position_id = SIL_market_economy
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+			modifier = {
+				factor = 2
+				has_completed_focus = SIL_go_right
+			}
+		}
+
+		available = {
+			has_idea = free_trade
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = market_economy
+		}
+	}
+	focus = {
+		id = SIL_new_slot_2 #연구위원회
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = SIL_private_enterprise_investment }
+		prerequisite = { focus = SIL_free_market }
+		prerequisite = { focus = SIL_Industrial_Development_Committee }
+		x = 0
+		y = 1
+		relative_position_id = SIL_private_enterprise_investment
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			num_of_factories > 69
+			amount_research_slots < 5
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+			custom_effect_tooltip = SIL_war_college_effect_tt
+		}
+	}
+
+	##################################
+	######## POLITICAL DIRECTION #####
+	##################################
+
+	focus = {
+		id = SIL_political_direction
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 8
+		y = 0
+		relative_position_id = SIL_industrial_legacy
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 90
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = SIL_go_left
+		icon = GFX_focus_generic_soviet_politics
+		prerequisite = { focus = SIL_political_direction }
+		mutually_exclusive = { focus = SIL_democratic_bastion focus = SIL_go_right }
+		x = -2
+		y = 1
+		relative_position_id = SIL_political_direction
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+			modifier = {
+				factor = 0
+				has_completed_focus = SIL_go_right
+			}
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_political_power = 120
+			#allow communist reformer
+			# relations changes
+			}
+		}
+
+	focus = {
+		id = SIL_communism_with_a_human_face
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = SIL_communist_support }
+		x = 9
+		y = 3
+		relative_position_id = SIL_czech_socialism
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = CZE_communism_with_a_human_face
+		}
+	}
+
+	focus = {
+		id = SIL_communist_support
+		icon = GFX_focus_generic_soviet_politics
+		prerequisite = { focus = SIL_go_left }
+		x = 0
+		y = 1
+		relative_position_id = SIL_go_left
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+			communism > 0.2
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = communist_influence
+		}
+	}
+
+	focus = {
+		id = SIL_join_comintern
+		icon = GFX_focus_generic_join_comintern
+		prerequisite = { focus = SIL_communist_support }
+		available = {
+			has_government = communism
+		}
+		x = -2
+		y = 2
+		relative_position_id = SIL_go_left
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			communism > 0.3
+			SOV = {
+				has_government = communism 
+			}
+			is_in_faction = no
+			NOT = {
+				any_other_country = {
+					is_in_faction_with = SOV
+					has_war_with = GGR
+				}
+			}
+		}
+
+		bypass = {
+			AND = { 
+				is_in_faction_with = SOV
+				SOV = {
+					is_faction_leader = yes
+					has_government = communism
+				}
+			} 
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			SOV = { country_event = { hours = 1 id = czech.1 } }
+		}
+	}
+
+	focus = {
+		id = SIL_democratic_bastion
+		icon = GFX_focus_generic_the_giant_wakes
+		prerequisite = { focus = SIL_political_direction }
+		mutually_exclusive = { focus = SIL_go_right focus = SIL_go_left }
+		x = 4
+		y = 1
+		relative_position_id = SIL_political_direction
+
+		cost = 10
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_political_power = 200
+			add_ideas = CZE_democratic_bastion
+		}
+	}
+
+	focus = {
+		id = SIL_beacon_of_liberty
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = SIL_democratic_bastion }
+		x = 0
+		y = 1
+		relative_position_id = SIL_democratic_bastion
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		available = {
+			democratic > 0.7
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			swap_ideas = { remove_idea = CZE_democratic_bastion add_idea = CZE_beacon_of_liberty }
+		}
+	}
+	focus = {
+		id = SIL_free
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = SIL_beacon_of_liberty }
+		x = 1
+		y = 1
+		relative_position_id = SIL_beacon_of_liberty
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		available = {
+			democratic > 0.7
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = 
+		}
+	}
+
+	focus = {
+		id = SIL_defensive_preparations
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = SIL_beacon_of_liberty }
+		x = -1
+		y = 2
+		relative_position_id = SIL_democratic_bastion
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			threat > 0.1
+		}
+
+		bypass = {
+			OR = {
+				has_idea = extensive_conscription
+				has_idea = service_by_requirement
+				has_idea = all_adults_serve
+				has_idea = scraping_the_barrel
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = extensive_conscription
+		}
+	}
+	focus = {
+		id = SIL_three_alliance
+		icon = GFX_focus_usa_union_representation_act
+		prerequisite = { focus = SIL_defensive_preparations }
+		mutually_exclusive = { focus = SIL_contact_with_the_UK }
+		x = 0
+		y = 1
+		relative_position_id = SIL_defensive_preparations
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			BKJ = {
+				exists = yes
+				has_government = ROOT
+				has_opinion = {
+    				target = SIL
+    				value > 49
+				}
+			}
+			GGR = {
+				exists = yes
+				has_government = ROOT
+				has_opinion = {
+    				target = SIL
+    				value > 49
+				}
+			}
+		}
+
+		bypass = {
+			OR = {
+				BKJ = {
+					exists = no
+					has_war_with = SIL
+				}
+				GGR = {
+					exists = no
+					has_war_with = SIL
+				}
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			create_faction = "반도조약"
+			SIL = { 
+				remove_ideas = no_faction
+				add_to_faction = GGR
+				add_to_faction = BKJ
+			}
+			GGR = {
+				remove_ideas = no_faction
+			}
+			BKJ = {
+				remove_ideas = no_faction
+			}
+		}
+	}
+	focus = {
+		id = SIL_contact_with_the_UK
+		icon = GFX_focus_chi_british_cooperation
+		prerequisite = { focus = SIL_defensive_preparations }
+		mutually_exclusive = { focus = SIL_three_alliance focus = SIL_contact_with_the_GER }
+		x = 2
+		y = 1
+		relative_position_id = SIL_defensive_preparations
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			OR = {
+				has_government = neutrality
+				ENG = { has_government = ROOT }
+				has_government = democratic
+				ENG_will_support = yes
+			}
+			not = {
+				has_war_with = ENG
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			ENG = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = CHI_british_cooperation
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = protect
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = support
+					id = ROOT
+					value = 100
+				}
+			}
+		}
+	}
+	focus = {
+		id = SIL_contact_with_the_GER
+		icon = GFX_focus_chi_mission_to_germany
+		x = 2
+		y = 0
+		relative_position_id = SIL_contact_with_the_UK
+		mutually_exclusive = { focus = SIL_contact_with_the_UK }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			has_completed_focus = SIL_nationalism_focus
+			OR = {
+				GER = { has_government = ROOT }
+				has_government = fascism
+				GER_will_support = yes
+			}
+			not = {
+				has_war_with = GER
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			GER = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = CHI_mission_to_germany
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = protect
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = support
+					id = ROOT
+					value = 100
+				}
+			}
+		}
+	}
+	focus = {
+		id = SIL_contact_with_the_US
+		icon = GFX_focus_chi_mission_to_the_us
+		prerequisite = { focus = SIL_three_alliance focus = SIL_contact_with_the_UK }
+		x = -1
+		y = 1
+		relative_position_id = SIL_three_alliance
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			and = {
+				not = {
+					has_completed_focus = SIL_contact_with_the_GER
+				}
+				OR = {
+					USA_will_support = yes
+					has_government = neutrality
+					has_government = democratic
+					USA = { has_government = ROOT }
+				}
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			USA = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = CHI_mission_to_the_us
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = protect
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = support
+					id = ROOT
+					value = 100
+				}
+			}
+		}
+	}
+	focus = {
+		id = SIL_Fighter_Support
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = SIL_contact_with_the_US }
+		x = 0
+		y = 1
+		relative_position_id = SIL_contact_with_the_US
+		
+		cost = 10
+
+		ai_will_do = {
+		factor = 1
+			modifier = {
+				factor = 4
+				tag = SIL
+			}
+		}
+
+		available = {
+			NOT = { has_tech = fighter3 }
+		}
+
+		bypass = {
+			has_tech = fighter3
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = CHI_the_chu_x_po
+				ahead_reduction = 1
+				technology = fighter3				
+			}
+		}
+	}
+	focus = {
+		id = SIL_tank_Support
+		icon = GFX_focus_generic_license_production
+		prerequisite = { focus = SIL_contact_with_the_GER }
+		x = -1
+		y = 1
+		relative_position_id = SIL_contact_with_the_GER
+		
+		cost = 10
+
+		ai_will_do = {
+		factor = 1
+			modifier = {
+				factor = 4
+				tag = SIL
+			}
+		}
+
+		available = {
+			NOT = { has_tech = basic_medium_tank }
+		}
+
+		bypass = {
+			has_tech = basic_medium_tank
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = SIL_GER_cooperation
+				ahead_reduction = 1
+				technology = basic_medium_tank
+			}
+		}
+	}
+	focus = {
+		id = SIL_tank
+		icon = GFX_focus_focus_fra_maquis
+		x = 1
+		y = 1
+		relative_position_id = SIL_contact_with_the_GER
+		prerequisite = { focus = SIL_contact_with_the_GER }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			has_completed_focus = SIL_nationalism_focus
+			OR = {
+				GER = { has_government = ROOT }
+				has_government = fascism
+				GER_will_support = yes
+			}
+			not = {
+				has_war_with = GER
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		custom_effect_tooltip = CHI_purchase_tanks_tt
+		hidden_effect = {
+			if = {
+				limit = {
+					not = {
+						has_tech = gwtank
+					}
+				}
+				set_technology = { gwtank = 1 }
+			}
+			if = {
+				limit = {
+					has_completed_focus = CHI_closer_ties_with_germany
+				}
+				add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 100 producer = GER }
+			}
+			if = {
+				limit = {
+					has_completed_focus = CHI_rapprochement_with_soviet_union
+				}
+				add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 100 producer = SOV }
+			}
+		}
+	}
+	}
+	focus = {
+		id = SIL_experimental_mechanised_unit
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = SIL_tank_Support }
+		x = 1
+		y = 1
+		relative_position_id = SIL_tank_Support
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 4
+				tag = PRC
+			}
+			modifier = {
+				factor = 4
+				tag = CHI
+			}
+		}
+
+		available = {
+			capital_scope = { is_fully_controlled_by = ROOT }
+			has_tech = motorised_infantry
+			OR = {
+				GER_will_support = yes
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = CHI_experimental_mechanised_unit_effect
+			hidden_effect = {
+				if = {
+					limit = {
+						tag = SIL
+					}
+					division_template = {
+						name = "Experimental Mechanised Division"
+						priority = 2
+						regiments = {
+							light_armor = { x = 0 y = 0 }
+							light_armor = { x = 0 y = 1 }
+			
+							motorized = { x = 1 y = 0 }
+							motorized = { x = 1 y = 1 }
+							motorized = { x = 1 y = 2 }
+							motorized = { x = 1 y = 3 }
+						}
+						support = {
+						
+						}
+					}
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"200. Mechanised Division\" division_template = \"Experimental Mechanised Division\" start_experience_factor = 1.0" 
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = SIL_fighter_factory
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = SIL_contact_with_the_US focus = SIL_contact_with_the_UK focus = SIL_contact_with_the_GER }
+		x = 2
+		y = 1
+		relative_position_id = SIL_contact_with_the_US
+		
+		cost = 10
+
+		ai_will_do = {
+		factor = 1
+			modifier = {
+				factor = 4
+				tag = SIL
+			}
+		}
+
+		available = {
+			controls_state = 809
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = complete_national_focus_US_AND_UK
+			if = {
+				limit = {
+					NOT = {
+						has_completed_focus = SIL_contact_with_the_UK
+						has_completed_focus = SIL_contact_with_the_GER
+						has_completed_focus = SIL_contact_with_the_US
+					}
+				}
+				809 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = SIL_contact_with_the_UK
+					NOT = {
+						has_completed_focus = SIL_contact_with_the_US
+						has_completed_focus = SIL_contact_with_the_GER
+					}
+				}
+				809 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				add_relation_modifier = {
+    				target = ENG
+    				modifier = HUN_dynastic_ties_license
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = SIL_contact_with_the_GER
+					NOT = {
+						has_completed_focus = SIL_contact_with_the_UK
+						has_completed_focus = SIL_contact_with_the_US
+					}
+				}
+				809 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				add_relation_modifier = {
+    				target = GER
+    				modifier = HUN_dynastic_ties_license
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = SIL_contact_with_the_US
+					NOT = {
+						has_completed_focus = SIL_contact_with_the_UK
+						has_completed_focus = SIL_contact_with_the_GER
+					}
+				}
+				809 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				add_relation_modifier = {
+    				target = USA
+    				modifier = HUN_dynastic_ties_license
+				}
+			}
+			else_if = {
+				limit = {
+					AND = {
+						has_completed_focus = SIL_contact_with_the_US
+						has_completed_focus = SIL_contact_with_the_UK
+					}
+				}
+				809 = {
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}
+				}
+				add_relation_modifier = {
+    				target = USA
+    				modifier = HUN_dynastic_ties_license
+				}
+				add_relation_modifier = {
+    				target = ENG
+    				modifier = HUN_dynastic_ties_license
+				}
+			}
+		}
+	}
+	focus = {
+		id = SIL_ideological_fanaticism
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = SIL_communism_with_a_human_face focus = SIL_aggressive_wars }
+		x = -5
+		y = 3
+		relative_position_id = SIL_democratic_bastion
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = ideological_fanaticism_focus
+			set_rule = {
+				can_create_factions = yes
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_baekje_war_goal
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = SIL_communism_with_a_human_face focus = SIL_aggressive_wars }
+		will_lead_to_war_with = BKJ
+
+		cancel = {
+			NOT = { country_exists = BKJ }
+		}
+		x = -1
+		y = 1
+		relative_position_id = SIL_communism_with_a_human_face
+		cost = 10
+		historical_ai = {
+			NOT = {
+				any_home_area_neighbor_country = {
+					has_war_with = ROOT					
+				}		
+			}
+		}
+		bypass = {
+			has_war_with = BKJ
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					has_army_manpower = { size < 1199999 }
+					any_home_area_neighbor_country = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = { 
+					any_home_area_neighbor_country = {
+						tag = BKJ
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1938.1.1
+			}
+		}	
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = BKJ
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_goguryeo_war_goal
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = SIL_communism_with_a_human_face focus = SIL_aggressive_wars }
+		will_lead_to_war_with = GGR
+
+		cancel = {
+			NOT = { country_exists = GGR }
+		}
+		x = 1
+		y = 1
+		relative_position_id = SIL_aggressive_wars
+		cost = 10
+		historical_ai = {
+			NOT = {
+				any_home_area_neighbor_country = {
+					has_war_with = ROOT					
+				}		
+			}
+		}
+		bypass = {
+			has_war_with = GGR
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					has_army_manpower = { size < 1199999 }
+					any_home_area_neighbor_country = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = { 
+					any_home_area_neighbor_country = {
+						tag = GGR
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1938.1.1
+			}
+		}	
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = GGR
+			}
+		}
+	}
+	focus = {
+		id = SIL_Three_Kingdoms_Unification
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = SIL_goguryeo_war_goal }
+		prerequisite = { focus = SIL_baekje_war_goal  }
+
+		x = -1
+		y = 2
+		relative_position_id = SIL_aggressive_wars
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			SIL = {
+				exists = no
+			}
+			BKJ = {
+				exists = no
+			}
+		}
+		modifier = {
+			factor = 0
+			is_historical_focus_on = yes
+			date < 1938.1.1
+		}
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			remove_ideas = no_faction
+			every_state = {
+				limit = {
+					is_core_of = BKJ
+				}
+				add_core_of = ROOT
+			}
+			every_state = {
+				limit = {
+					is_core_of = SIL
+				}
+				add_core_of = ROOT
+			}
+		}
+	}
+	focus = {
+		id = SIL_Three_Kingdoms_Unification2
+		icon = GFX_focus_generic_self_management
+		prerequisite = { focus = SIL_democratic_bastion }
+
+		x = -2
+		y = 1
+		relative_position_id = SIL_democratic_bastion
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			controls_state = 525
+			controls_state = 808
+			controls_state = 810
+			controls_state = 527
+			controls_state = 809
+		}
+		modifier = {
+			factor = 0
+			is_historical_focus_on = yes
+			date < 1938.1.1
+		}
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_core_of = BKJ
+				}
+				add_core_of = ROOT
+			}
+			every_state = {
+				limit = {
+					is_core_of = SIL
+				}
+				add_core_of = ROOT
+			}
+		}
+	}
+	focus = {
+		id = SIL_tianla_attack_2
+		icon = GFX_focus_hol_prepare_the_inundation_lines
+		prerequisite = { focus = SIL_baekje_war_goal }
+		x = 0
+		y = 1
+		relative_position_id = SIL_baekje_war_goal
+		rwill_lead_to_war_with = TAM
+
+		cancel = {
+			NOT = { country_exists = TAM }
+		}
+		cost = 10
+		historical_ai = {
+			NOT = {
+				any_home_area_neighbor_country = {
+					has_war_with = ROOT					
+				}		
+			}
+		}
+		bypass = {
+			has_war_with = TAM
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					has_army_manpower = { size < 1199999 }
+					any_home_area_neighbor_country = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = { 
+					any_home_area_neighbor_country = {
+						tag = TAM
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1938.1.1
+			}
+		}	
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = TAM
+			}
+		}
+	}
+	focus = {
+		id = SIL_Mongolia_request
+		icon = GFX_goal_generic_dangerous_deal
+		prerequisite = { focus = SIL_join_comintern }
+		mutually_exclusive = { focus = SIL_attack_Mongolia }
+		x = -3
+		y = 2
+		relative_position_id = SIL_Three_Kingdoms_Unification
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = { is_in_faction_with = MON }
+		}
+
+		bypass = {
+			NOT = { country_exists = MON }
+			MON = { is_subject_of = ROOT }
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			MON = { country_event = wtt_china.10 }
+		}
+	}
+	focus = {
+		id = SIL_attack_soviet
+		icon = GFX_focus_attack_soviet
+		prerequisite = { focus = SIL_attack_Mongolia }
+		x = 0
+		y = 1
+		relative_position_id = SIL_attack_Mongolia
+		cost = 10
+		relative_position_id = SIL_attack_Mongolia
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				any_country = {
+					is_major = yes
+					is_in_faction_with = SOV
+				}
+				factor = 0
+			}
+		}
+
+		available = {
+			not = {
+				is_in_faction_with = SOV
+			}
+		}
+
+		bypass = {
+			OR = {
+				NOT = { country_exists = SOV }
+					has_war_with = SOV
+				has_wargoal_against = SOV
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = SOV
+				expire = 0
+			}
+		}
+	}
+	focus = {
+		id = SIL_attack_Mongolia
+		icon = GFX_goal_generic_war_with_comintern
+		prerequisite = { focus = SIL_continental_expansion }
+		mutually_exclusive = { focus = SIL_Mongolia_request }
+		x = -1
+		y = 1
+		cost = 10.10
+		relative_position_id = SIL_continental_expansion
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				any_country = {
+					is_major = yes
+					is_in_faction_with = MON
+				}
+				factor = 0
+			}
+		}
+
+		available = {
+			not = {
+				is_in_faction_with = MON
+			}
+		}
+
+		bypass = {
+			OR = {
+				NOT = { country_exists = MON }
+					has_war_with = MON
+				has_wargoal_against = MON
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					330 = { is_owned_and_controlled_by = MON }
+				}
+				ROOT = {
+					create_wargoal = {
+						type = take_state_focus
+						target = MON
+						expire = 0
+						generator = { 330 }
+					}
+				}
+			}
+			else = {
+				create_wargoal = {
+					type = annex_everything
+					target = MON				
+					expire = 0
+				}
+			}
+		}
+	}
+	focus = {
+		id = SIL_continental_expansion
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = SIL_Three_Kingdoms_Unification }
+		x = 0
+		y = 1
+		relative_position_id = SIL_Three_Kingdoms_Unification
+		cancel = {
+			
+		}
+		cost = 10
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = SIL_japan_war_goal
+		icon = GFX_focus_jap_cast_the_die
+		prerequisite = { focus = SIL_attack_manchuria }
+		will_lead_to_war_with = JAP
+
+		cancel = {
+			NOT = { country_exists = JAP }
+		}
+		x = 0
+		y = 1
+		relative_position_id = SIL_attack_manchuria
+		cost = 10
+		historical_ai = {
+			NOT = {
+				any_home_area_neighbor_country = {
+					has_war_with = ROOT					
+				}		
+			}
+		}
+		bypass = {
+			has_war_with = JAP
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					has_army_manpower = { size < 1199999 }
+					any_home_area_neighbor_country = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = { 
+					any_home_area_neighbor_country = {
+						tag = JAP
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1938.1.1
+			}
+		}	
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = JAP
+			}
+		}
+	}
+	
+	focus = {
+		id = SIL_attack_manchuria
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = SIL_continental_expansion }
+		x = 3
+		y = 1
+		relative_position_id = SIL_continental_expansion
+
+		cost = 10
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+	}
+	focus = {
+		id = SIL_Shandong_attack
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = SIL_continental_expansion }
+		x = 1
+		y = 1
+		relative_position_id = SIL_continental_expansion
+
+		cost = 10
+
+		available = {
+			CHI = {
+				exists = yes
+			}
+		}
+
+		bypass = {
+			CHI = {
+				exists = no
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = {
+    			type = puppet_wargoal_focus
+    			target = CHI
+			}
+		}
+	}
+	focus = {
+	id = SIL_china_war_goal
+	icon = GFX_focus_chi_one_china_policy
+	prerequisite = { focus = SIL_Shandong_attack }
+	x = 1
+	y = 2
+	relative_position_id = SIL_continental_expansion
+
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			num_of_factories < 50
+			factor = 0
+		}
+	}
+
+	available = {
+
+	}
+
+	bypass = {
+		if = {
+			limit = { NOT = { original_tag = CHI } }
+			CHI = {
+				OR = {
+					exists = no
+					has_war_with = ROOT
+					is_subject_of = ROOT
+					ROOT = { has_wargoal_against = PREV }
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { original_tag = PRC } }
+			PRC = {
+				OR = {
+					exists = no
+					has_war_with = ROOT
+					is_subject_of = ROOT
+					ROOT = { has_wargoal_against = PREV }
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { original_tag = GXC } }
+			GXC = {
+				OR = {
+					exists = no
+					has_war_with = ROOT
+					is_subject_of = ROOT
+					ROOT = { has_wargoal_against = PREV }
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { original_tag = YUN } }
+			YUN = {
+				OR = {
+					exists = no
+					has_war_with = ROOT
+					is_subject_of = ROOT
+					ROOT = { has_wargoal_against = PREV }
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { original_tag = SHX } }
+			SHX = {
+				OR = {
+					exists = no
+					has_war_with = ROOT
+					is_subject_of = ROOT
+					ROOT = { has_wargoal_against = PREV }
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { original_tag = XSM } }
+			XSM = {
+				OR = {
+					exists = no
+					has_war_with = ROOT
+					is_subject_of = ROOT
+					ROOT = { has_wargoal_against = PREV }
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { original_tag = SIK } }
+			SIK = {
+				OR = {
+					exists = no
+					has_war_with = ROOT
+					is_subject_of = ROOT
+					ROOT = { has_wargoal_against = PREV }
+				}
+			}
+		}
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	complete_tooltip = {
+
+	}
+
+	completion_reward = {
+		if = {
+			limit = {
+				any_other_country = {
+					is_literally_china = yes
+					is_in_faction_with = ROOT
+				} 
+			} 
+			remove_from_faction = ROOT
+		}
+		hidden_effect = {
+			news_event = { id = wtt_news.46 days = 3 }
+		}
+		every_other_country = {
+			limit = {
+				is_literally_china = yes
+				NOT = { has_war_with = ROOT }
+				NOT = { is_subject_of = ROOT }
+				NOT = { ROOT = { has_wargoal_against = PREV } }
+				NOT = { tag = ROOT }
+			}
+			ROOT = {
+				create_wargoal = {
+					type = annex_everything
+					target = PREV
+				}
+			}
+		}
+	}
+}
+
+	focus = {
+		id = SIL_go_right
+		icon = GFX_focus_generic_strike_at_democracy1
+		prerequisite = { focus = SIL_political_direction }
+		mutually_exclusive = { focus = SIL_democratic_bastion focus = SIL_go_left }
+		x = 0
+		y = 1
+		relative_position_id = SIL_political_direction
+
+		cost = 10
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+	}
+
+	focus = {
+		id = SIL_nationalism_focus
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SIL_go_right }
+		x = 0
+		y = 1
+		relative_position_id = SIL_go_right
+
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 2
+				any_neighbor_country = {
+					is_major = yes
+					has_government = fascism
+				}
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					is_historical_focus_on = yes
+					NOT = { has_government = fascism }
+				}
+			}
+		}
+		completion_reward = {
+			add_ideas = fascist_influence
+		}
+	}
+
+	focus = {
+		id = SIL_aggressive_wars
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SIL_nationalism_focus }
+		x = 0
+		y = 2
+		relative_position_id = SIL_go_right
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 90
+		}
+
+		available = {
+			fascism > 0.5
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = FRA_army_of_aggression_focus
+		}
+	}
+
+	#######################################
+	##### MILITARY RESEARCH INSTITUTE #####	
+	#######################################
+
+	focus = {
+		id = SIL_military_research_institute
+		icon = GFX_focus_CZE_military_research_institute
+		x = 11
+		y = 0
+		relative_position_id = SIL_political_direction
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			army_experience = 10
+		}
+	}
+
+	focus = {
+		id = SIL_mountain_bonus
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = SIL_military_research_institute }
+		x = -3
+		y = 1
+		relative_position_id = SIL_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = cze_mountain_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = mountaineers_tech
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_inf_and_artillery_advancement
+		icon = GFX_goal_rhineland
+		prerequisite = { focus = SIL_military_research_institute }
+		x = -1
+		y = 1
+		relative_position_id = SIL_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = SIL_inf_and_artillery_advancement
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_support_bonus
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = SIL_mountain_bonus }
+		x = -3
+		y = 2
+		relative_position_id = SIL_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 60
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = SIL_support_bonus #@#
+				bonus = 0.5
+				uses = 2
+				#category = hospital_tech
+				#category = logistics_tech
+				#category = signal_company_tech
+				#category = maintenance_company_tech
+				#category = engineers_tech
+				#category = recon_tech
+				#category = military_police_tech
+				category = support_tech	
+			}
+		add_tech_bonus = {
+			name = SIL_support_bonus #@#
+			bonus = 0.5
+			uses = 1
+			technology = support_weapons2
+			technology = support_weapons3
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_inf_and_artillery_advancement_2
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = SIL_inf_and_artillery_advancement }
+		x = -1
+		y = 2
+		relative_position_id = SIL_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = SIL_inf_and_artillery_advancement_2 #@#
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_doctrine_bonus
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = SIL_support_bonus }
+		prerequisite = { focus = SIL_inf_and_artillery_advancement_2 }
+		x = -2
+		y = 3
+		relative_position_id = SIL_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_motorization_scheme
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = SIL_military_research_institute }
+		x = 1
+		y = 1
+		relative_position_id = SIL_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 60
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.75
+				technology = motorised_infantry
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_armour_bonus_1
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = SIL_military_research_institute }
+		x = 3
+		y = 1
+		relative_position_id = SIL_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_mechanization
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = SIL_motorization_scheme }
+		x = 1
+		y = 2
+		relative_position_id = SIL_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = SIL_mechanization #@#
+				bonus = 0.5
+				uses = 1
+				category = cat_mechanized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_armour_bonus_ii
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = SIL_armour_bonus_1 }
+		x = 3
+		y = 2
+		relative_position_id = SIL_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 60
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_doctrine_bonus_2
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = SIL_mechanization }
+		prerequisite = { focus = SIL_armour_bonus_ii }
+		x = 2
+		y = 3
+		relative_position_id = SIL_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_war_college
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = SIL_doctrine_bonus }
+		prerequisite = { focus = SIL_doctrine_bonus_2 }
+		x = 0
+		y = 4
+		relative_position_id = SIL_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 90
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = CZE_war_college_idea
+			if = {
+				limit = {
+					NOT = { amount_research_slots > 4 }
+				}
+				add_research_slot = 1
+				custom_effect_tooltip = SIL_war_college_effect_tt
+			}
+		}
+	}
+
+	#######################################
+	####### AERONAUTICAL INSTITUTE ########	
+	#######################################
+
+	focus = {
+		id = SIL_military_aeronautical_institute
+		icon = GFX_focus_CZE_military_aeronautical_institute
+		x = 8
+		y = 0
+		relative_position_id = SIL_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 90
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			air_experience = 10
+		}
+	}
+
+	focus = {
+		id = SIL_import_foreign_fighters
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = SIL_military_aeronautical_institute }
+		x = -2
+		y = 1
+		relative_position_id = SIL_military_aeronautical_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = SIL_import_foreign_fighters #@#
+				bonus = 0.5
+				uses = 1
+				category = light_fighter
+				category = cat_heavy_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_light_fighter_focus
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = SIL_import_foreign_fighters }
+		mutually_exclusive = { focus = SIL_heavy_fighter_focus }
+		x = -1
+		y = 1
+		relative_position_id = SIL_import_foreign_fighters
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = SIL_light_fighter_focus #@#
+				bonus = 0.5
+				uses = 1
+				category = light_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_heavy_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = SIL_import_foreign_fighters }
+		mutually_exclusive = { focus = SIL_light_fighter_focus }
+		x = 1
+		y = 1
+		relative_position_id = SIL_import_foreign_fighters
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = SIL_heavy_fighter_focus #@#
+				bonus = 0.5
+				uses = 1
+				category = cat_heavy_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_air_is_our_sea
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = SIL_military_aeronautical_institute }
+		x = 0
+		y = 1
+		relative_position_id = SIL_military_aeronautical_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = CZE_air_focus
+		}
+	}
+
+	focus = {
+		id = SIL_rule_the_air
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = SIL_air_is_our_sea }
+		prerequisite = { focus = SIL_light_fighter_focus focus = SIL_heavy_fighter_focus }
+		prerequisite = { focus = SIL_tac_focus focus = SIL_cas_focus }
+		x = 0
+		y = 3
+		relative_position_id = SIL_military_aeronautical_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 3
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_import_foreign_bombers
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = SIL_military_aeronautical_institute }
+		x = 2
+		y = 1
+		relative_position_id = SIL_military_aeronautical_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = SIL_import_foreign_bombers #@#
+				bonus = 0.5
+				uses = 1
+				category = cas_bomber
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_cas_focus
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = SIL_import_foreign_bombers }
+		mutually_exclusive = { focus = SIL_tac_focus }
+		x = -1
+		y = 1
+		relative_position_id = SIL_import_foreign_bombers
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = SIL_cas_focus #@#
+				bonus = 0.5
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = SIL_tac_focus
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = SIL_import_foreign_bombers }
+		mutually_exclusive = { focus = SIL_cas_focus }
+		x = 1
+		y = 1
+		relative_position_id = SIL_import_foreign_bombers
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = SIL_tac_focus #@#
+				bonus = 0.5
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+	############################
+	####### NAVY SECTION #######
+	############################
+
+
+	focus = {
+		id = SIL_develop_polish_ship_building
+		icon = GFX_goal_generic_construct_naval_dockyard
+		
+		x = 7
+		y = 0
+		cost = 10
+		relative_position_id = SIL_military_aeronautical_institute
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			random_state = {
+				limit = { has_state_flag = SIL_develop_polish_ship_building_1 }
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 85 }
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+				set_state_flag = SIL_develop_polish_ship_building_1
+			}
+			#Add 3 Dockyards at Gdansk			
+		}
+	}
+
+	focus = {
+		id = SIL_study_foreign_built_ships
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = SIL_develop_polish_ship_building }
+		
+		x = 1
+		y = 1
+		relative_position_id = SIL_develop_polish_ship_building
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = SIL_study_foreign_built_ships
+				bonus = 0.5
+				uses = 1
+				category = dd_tech
+			}
+			#1x 50% research bonus for Destroyers
+		}
+	}
+
+	focus = {
+		id = SIL_a_cruiser_navy
+		icon = GFX_goal_generic_navy_anti_submarine
+		prerequisite = { focus = SIL_study_foreign_built_ships }
+		
+		x = 1
+		y = 1
+		relative_position_id = SIL_study_foreign_built_ships
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = SIL_a_cruiser_navy
+				bonus = 0.5
+				uses = 1
+				category = cl_tech
+			}
+			#1x50% research bonus to Light Cruisers
+		}
+	}
+
+	focus = {
+		id = SIL_import_submarine_technology
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = SIL_develop_polish_ship_building }
+		
+		x = -1
+		y = 1
+		relative_position_id = SIL_develop_polish_ship_building
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = SIL_import_submarine_technology
+				bonus = 0.5
+				uses = 1
+				category = ss_tech
+			}
+			#1 x50% research bonus for Submarines
+		}
+	}
+
+	focus = {
+		id = SIL_commerce_attack
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = SIL_import_submarine_technology }
+		x = -1
+		y = 1
+		relative_position_id = SIL_import_submarine_technology
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = SIL_commerce_attack
+				bonus = 0.5
+				uses = 1
+				category = submarine_doctrine
+			}
+			#1x50% research bonus to Submarine Doctrine
+		}
+	}
+
+	focus = {
+		id = SIL_the_twin_threats
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = SIL_import_submarine_technology focus = SIL_study_foreign_built_ships }
+		
+		x = 1
+		y = 1
+		relative_position_id = SIL_import_submarine_technology
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = SIL_the_twin_threats
+				bonus = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+			#1x50% bonus to Naval Doctrine Research
+		}
+	}
+
+	focus = {
+		id = SIL_coastal_defense
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = SIL_the_twin_threats }
+		mutually_exclusive = { focus = SIL_strike_force }
+		x = 1
+		y = 1
+		relative_position_id = SIL_the_twin_threats
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = SIL_coastal_defense
+				bonus = 0.5
+				uses = 1
+				category = ss_tech
+			}
+			add_tech_bonus = {
+				name = SIL_coastal_defense
+				bonus = 0.5
+				uses = 1
+				category = dd_tech
+			}
+			#1x50% research bonus to destroyers & 1 x50% bonus to Submarines
+		}
+	}
+	
+	focus = {
+		id = SIL_strike_force
+		icon = GFX_goal_generic_occupy_states_coastal
+		prerequisite = { focus = SIL_the_twin_threats }
+		mutually_exclusive = { focus = SIL_coastal_defense }
+		x = -1
+		y = 1
+		relative_position_id = SIL_the_twin_threats
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = SIL_strike_force
+				bonus = 0.5
+				uses = 1
+				category = cl_tech
+			}
+			add_tech_bonus = {
+				name = SIL_strike_force
+				bonus = 0.5
+				uses = 1
+				category = ca_tech
+			}
+			#1x50% research bonus to Light Cruisers & 1x50% bonus to Heavy Cruisers
+		}
+	}
+
+	focus = {
+		id = SIL_baltic_navy
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = SIL_strike_force focus = SIL_coastal_defense }
+		
+		x = 1
+		y = 1
+		relative_position_id = SIL_strike_force
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = SIL_baltic_navy
+				bonus = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+			#1x50% bonus to Naval Doctrine research
+		}
+	}
+}

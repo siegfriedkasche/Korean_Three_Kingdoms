@@ -1,0 +1,28 @@
+
+state={
+	id=328
+	name="국내성"
+	resources={
+		aluminium=7.000
+	}
+
+	history={
+		owner = GGR
+		buildings = {
+			infrastructure = 4
+
+		}
+		victory_points = {
+			9803 20 
+		}
+		add_core_of = GGR
+
+	}
+
+	provinces={
+		783 800 861 887 927 944 945 946 973 1567 3791 3888 3913 3929 3932 3944 3947 3949 4503 4572 4642 6806 6811 6868 6905 6947 6964 7523 7591 7663 9759 9766 9782 9803 9841 9848 9866 9883 9897 9913 9928 10376 10503 11744 11781 11823 11850 11862 11864 11893 11906 12482 
+	}
+	manpower=7936261
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

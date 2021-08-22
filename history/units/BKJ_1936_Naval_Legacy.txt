@@ -1,0 +1,80 @@
+﻿units = {
+	fleet = {
+		name = "왕립 해군 최고사령부"			
+		naval_base = 7125
+		task_force = {
+			name = "청룡 함대"
+			location = 7125
+			ship = { name = "IKN 근초고왕" definition = carrier equipment = { carrier_1 = {amount = 1 owner = BKJ} } 				
+				air_wings = { 
+					cv_fighter_equipment_0 =  { owner = "BKJ" amount = 9 } 	# historical 12
+					cv_nav_bomber_equipment_1 =  { owner = "BKJ" amount = 24 } 	# historical 36
+				}
+			}
+        	
+			ship = { name = "IKN 근초고왕" definition = battleship equipment = { battleship_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 정조" definition = battleship equipment = { battleship_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 이순신" definition = battleship equipment = { battleship_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 류성룡" definition = battleship equipment = { battleship_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 곽재우" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 신립" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 장보고" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 권율" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 한성" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 부산" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 평양" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 수원" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 인천" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 독도" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 여주" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 파주" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 광주" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 부평" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 장단" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 양금" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 화성" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 청해-001" definition = submarine equipment = { submarine_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 청해-002" definition = submarine equipment = { submarine_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 청해-003" definition = submarine equipment = { submarine_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 청해-004" definition = submarine equipment = { submarine_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 청해-005" definition = submarine equipment = { submarine_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 청해-006" definition = submarine equipment = { submarine_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 청해-007" definition = submarine equipment = { submarine_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 청해-008" definition = submarine equipment = { submarine_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 청해-009" definition = submarine equipment = { submarine_1 = { amount = 1 owner = BKJ} } }
+			ship = { name = "IKN 청해-010" definition = submarine equipment = { submarine_1 = { amount = 1 owner = BKJ} } }
+		}
+	    
+	}
+}
+
+### 시작 조선소 제작품
+instant_effect = {
+	add_equipment_production = { 		
+		equipment = {
+			type = light_cruiser_2
+			creator = "BKJ" 
+		}
+		requested_factories = 1
+		progress = 0.33
+		amount = 1
+	}
+	add_equipment_production = { 		
+		equipment = {
+			type = destroyer_2
+			creator = "BKJ" 
+		}
+		requested_factories = 1
+		progress = 0.33
+		amount = 1
+	}
+	add_equipment_production = { 		
+		equipment = {
+			type = submarine_2
+			creator = "BKJ" 
+		}
+		requested_factories = 1
+		progress = 0.33
+		amount = 1
+	}
+}

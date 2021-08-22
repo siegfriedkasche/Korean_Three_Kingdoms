@@ -1,0 +1,39 @@
+﻿division_template = {
+	name = "보병 사단"				
+	division_names_group = KOR_INF_02
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+}
+
+### OOB ###
+units = {
+	division = { # "1 보병 사단"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 1177
+		division_template = "보병 사단"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.9
+	}
+}
+
+### STARTING PRODUCTION ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "TAM"
+		}
+		requested_factories = 1
+		progress = 0.79
+		efficiency = 50
+	}
+}

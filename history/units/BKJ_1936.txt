@@ -1,0 +1,152 @@
+﻿division_template = {
+	name = "보병 사단"				
+	division_names_group = KOR_INF_02
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+}
+division_template = {
+	name = "기병 사단" 			# Cavalry Division - 2 Cavalry Division regiments (3k men); 1 mounted artillery regiment
+	division_names_group = KOR_CAV_01
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+	}
+}
+division_template = {
+	name = "차량화 사단"
+	
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+}
+
+### OOB ###
+units = {
+	division = { # "1 보병 사단"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7125
+		division_template = "보병 사단"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.9
+	}
+	division = { # "2 보병 사단"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7125
+		division_template = "보병 사단"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.9
+	}
+	division = { # "3 보병 사단"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7125
+		division_template = "보병 사단"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.9
+	}
+	division = { # "4 보병 사단"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7125
+		division_template = "보병 사단"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.9
+	}
+	division = { # "5 보병 사단"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7175
+		division_template = "보병 사단"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.9
+	}
+	division = { # "6 보병 사단"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7175
+		division_template = "보병 사단"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.9
+	}
+	division = { # "7 보병 사단"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7175
+		division_template = "보병 사단"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.9
+	}
+	division = { # "1 기병 사단"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7175
+		division_template = "기병 사단"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.9
+	}
+	division = { # "2 기병 사단"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7175
+		division_template = "기병 사단"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.9
+	}
+	division = { # "3 기병 사단"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7175
+		division_template = "기병 사단"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.9
+	}
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "BKJ"
+		}
+		requested_factories = 1
+		progress = 0.79
+		efficiency = 50
+	}
+}

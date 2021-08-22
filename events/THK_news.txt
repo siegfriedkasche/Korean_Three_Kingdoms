@@ -1,0 +1,45 @@
+add_namespace = THK_wor
+
+
+news_event = {
+	id = THK_wor.1
+	title = THK_wor.1.t
+	desc = THK_wor.1.d
+	picture = GFX_event_paris_commune
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = THK_wor.1.a
+	}
+}
+news_event = {
+	id = THK_wor.2
+	title = THK_wor.2.t
+	desc = THK_wor.2.d
+	picture = GFX_news_event_018
+	is_triggered_only = yes
+	
+	option = {
+        name = THK_wor.2.a
+        ai_chance = {
+            factor = 80
+        }
+	}
+}
+news_event = {
+	id = THK_wor.0
+	title = THK_wor.0.t
+	desc = THK_wor.0.d
+	picture = GFX_news_event_banovina_croatia
+	is_triggered_only = yes
+	
+	option = {
+        name = THK_wor.0.a
+        ai_chance = {
+            factor = 80
+        }
+	}
+}

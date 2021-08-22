@@ -1,0 +1,4 @@
+GGR = "countries/Goguryeo.txt"
+BKJ = "countries/Baekje.txt"
+SIL = "countries/Silla.txt"
+TAM = "countries/Tamna.txt"

@@ -1,0 +1,453 @@
+china_Policy_decisions_THK = {
+
+	na_jea_alliance = {
+		icon = GFX_decision_generic_intelligence_operation
+		available = {
+			original_tag = BKJ
+			GGR = {
+				has_completed_focus = GGR_Namjin_Proclamation
+			}
+		}
+		allowed = { tag = BKJ }
+		fire_only_once = yes
+		visible = {
+			GGR = {
+				has_completed_focus = GGR_Namjin_Proclamation
+			}
+		} 
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		
+		cost = 0
+		days_remove = 0
+		remove_effect = {
+			SIL = {
+				country_event = {
+					id =  THK.2
+					days = 1
+				}
+			}
+		}
+	}
+ 	China_Army_training = {
+		icon = generic_prepare_civil_war
+		available = {
+			hidden_trigger = {
+				not = {
+					has_war = yes
+					has_civil_war = yes
+					has_decision = China_Army_training
+					has_decision = china_Military_plant
+					has_decision = china_Construction_plant
+					has_decision = china_Land_Corporation
+					has_decision = china_army_add_money
+					has_decision = china_army_down_money
+					has_decision = china_Construction_investment
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		
+		cost = 25
+		days_remove = 30
+		modifier = {
+			training_time_factor = -0.1
+		}
+		remove_effect = {
+			army_experience = 25
+		}
+	}
+ 	china_Military_plant = {
+		icon = GFX_decision_generic_operation
+		available = {
+			hidden_trigger = {
+				not = {
+					has_decision = China_Army_training
+					has_decision = china_Military_plant
+					has_decision = china_Construction_plant
+					has_decision = china_Land_Corporation
+					has_decision = china_army_add_money
+					has_decision = china_army_down_money
+					has_decision = china_Construction_investment
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+
+		
+		cost = 60
+		days_remove = 60
+		modifier = {
+			training_time_factor = 0.1
+		}
+
+		remove_effect = {
+            random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+									    building = arms_factory
+									    size > 0
+								    	include_locked = yes
+								    }
+								    is_in_home_area = yes
+								}
+							}
+					    }
+				    }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+        }
+	}
+	china_Construction_plant = {
+		icon = GFX_decision_generic_operation
+		available = {
+			hidden_trigger = {
+				not = {
+					has_war = yes
+					has_civil_war = yes
+					has_decision = China_Army_training
+					has_decision = china_Military_plant
+					has_decision = china_Construction_plant
+					has_decision = china_Land_Corporation
+					has_decision = china_army_add_money
+					has_decision = china_army_down_money
+					has_decision = china_Construction_investment
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+
+		
+		cost = 60
+		days_remove = 60
+		modifier = {
+			training_time_factor = 0.1
+		}
+
+		remove_effect = {
+            random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+									    building = industrial_complex
+									    size > 0
+								    	include_locked = yes
+								    }
+								    is_in_home_area = yes
+								}
+							}
+					    }
+				    }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+        }
+	}
+	china_Land_Corporation = {
+		icon = GFX_decision_generic_operation
+		available = {
+			hidden_trigger = {
+				not = {
+					has_war = yes
+					has_civil_war = yes
+					has_decision = China_Army_training
+					has_decision = china_Military_plant
+					has_decision = china_Construction_plant
+					has_decision = china_Land_Corporation
+					has_decision = china_army_add_money
+					has_decision = china_army_down_money
+					has_decision = china_Construction_investment
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+
+		
+		cost = 60
+		days_remove = 60
+		modifier = {
+			consumer_goods_factor = 0.08
+		}
+
+		remove_effect = {
+
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 3
+			}
+			
+		}
+	}
+	china_army_add_money = {
+		icon = GFX_decision_generic_operation
+		available = {
+			hidden_trigger = {
+				not = {
+					has_decision = China_Army_training
+					has_decision = china_Military_plant
+					has_decision = china_Construction_plant
+					has_decision = china_Land_Corporation
+					has_decision = china_army_add_money
+					has_decision = china_army_down_money
+					has_decision = china_Construction_investment
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+
+		
+		cost = 25
+		days_remove = 60
+		modifier = {
+			consumer_goods_factor = 0.03
+			army_defence_factor = 0.1
+			army_attack_factor = 0.1
+		}
+
+	}
+	china_army_down_money = {
+		icon = GFX_decision_generic_operation
+		available = {
+			hidden_trigger = {
+				not = {
+					has_war = yes
+					has_civil_war = yes
+					has_decision = China_Army_training
+					has_decision = china_Military_plant
+					has_decision = china_Construction_plant
+					has_decision = china_Land_Corporation
+					has_decision = china_army_add_money
+					has_decision = china_army_down_money
+					has_decision = china_Construction_investment
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+
+		
+		cost = 25
+		days_remove = 60
+		modifier = {
+			consumer_goods_factor = -0.05
+			industrial_capacity_factory = 0.1 
+			army_defence_factor = -0.1
+			army_attack_factor = -0.15
+		}
+
+	}
+	china_Construction_investment = {
+		icon = GFX_decision_generic_construction
+		available = {
+			hidden_trigger = {
+				not = {
+					has_war = yes
+					has_civil_war = yes
+					has_decision = China_Army_training
+					has_decision = china_Military_plant
+					has_decision = china_Construction_plant
+					has_decision = china_Land_Corporation
+					has_decision = china_army_add_money
+					has_decision = china_army_down_money
+					has_decision = china_Construction_investment
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+
+		
+		cost = 25
+		days_remove = 60
+		modifier = {
+			consumer_goods_factor = 0.03
+			industrial_capacity_factory = -0.1 
+			production_speed_arms_factory_factor = 0.15
+			production_speed_industrial_complex_factor = 0.15
+		}
+
+	}
+
+	china_research_investment = {
+		icon = GFX_decision_generic_research
+		available = {
+			hidden_trigger = {
+				not = {
+					has_war = yes
+					has_civil_war = yes
+					has_decision = China_Army_training
+					has_decision = china_Military_plant
+					has_decision = china_Construction_plant
+					has_decision = china_Land_Corporation
+					has_decision = china_army_add_money
+					has_decision = china_army_down_money
+					has_decision = china_Construction_investment
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+
+		
+		cost = 25
+		days_remove = 60
+		modifier = {
+			consumer_goods_factor = 0.05
+			industrial_capacity_factory = -0.1 
+			research_speed_factor = 0.15
+		}
+	}
+}
+change_capital_decisions_THK  = {
+	seoul_change_capital_decisions_THK = {
+		icon = GFX_decision_generic_decision
+		available = {
+			controls_state = 525
+			ROOT = {
+				525 = {
+					is_capital = no
+				}
+			}
+			NOT = {
+				is_ai = yes
+			}
+		}
+		visible = {
+			controls_state = 525
+		} 
+		
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = no
+		
+		remove_effect = {
+			set_capital = 525
+		}
+	}	
+	busan_change_capital_decisions_THK = {
+		icon = GFX_decision_generic_decision
+		available = {
+			controls_state = 809
+			ROOT = {
+				809 = {
+					is_capital = no
+				}
+			}
+			NOT = {
+				is_ai = yes
+			}
+		}
+		visible = {
+			controls_state = 809
+		} 
+		
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = no
+		
+		remove_effect = {
+			set_capital = 809
+		}
+	}
+	pyeongyang_change_capital_decisions_THK = {
+		icon = GFX_decision_generic_decision
+		available = {
+			controls_state = 527
+			ROOT = {
+				527 = {
+					is_capital = no
+				}
+			}
+			NOT = {
+				is_ai = yes
+			}
+		}
+		visible = {
+			controls_state = 527
+		} 
+		
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = no
+		
+		remove_effect = {
+			set_capital = 527
+		}
+	}
+	guonea_change_capital_decisions_THK = {
+		icon = GFX_decision_generic_decision
+		available = {
+			controls_state = 328
+			ROOT = {
+				328 = {
+					is_capital = no
+				}
+				NOT = {
+					is_ai = yes
+				}
+			}
+		}
+		visible = {
+			controls_state = 328
+		} 
+		
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = no
+		
+		remove_effect = {
+			set_capital = 328
+		}
+	}
+}

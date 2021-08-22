@@ -1,0 +1,81 @@
+﻿units = {
+	fleet = {
+		name = "백제 왕립 함대"			
+		naval_base = 4052
+		task_force = {
+			name = "이화 전투전단"
+			location = 7125
+			
+
+        	ship = { name = "IKN 광무대제" definition = battleship equipment = { ship_hull_heavy_1 = { amount = 1 owner = BKJ version_name = "근초고급" } } }
+        	ship = { name = "IKN 이순신" definition = battleship equipment = { ship_hull_heavy_1 = { amount = 1 owner = BKJ version_name = "계백급" } } }
+        	ship = { name = "IKN 정조" definition = battleship equipment = { ship_hull_heavy_1 = { amount = 1 owner = BKJ version_name = "계백급" } } }
+			ship = { name = "IKN 계백" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = BKJ version_name = "계백급" } } }
+			ship = { name = "IKN " definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = BKJ version_name = "계백급" } } }
+			ship = { name = "IKN 한성" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = BKJ version_name = "충상급" } } }
+			ship = { name = "IKN 공주" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = BKJ version_name = "충상급" } } }
+			ship = { name = "IKN 제주" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = BKJ version_name = "달사급" } } }
+			ship = { name = "IKN 부여" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = BKJ version_name = "달사급" } } }
+		}	
+		task_force = {
+			name = "이화 잠수전단"
+			location = 7125
+			ship = { name = "IKN 해누리-003" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = BKJ version_name = "부여성급" } } }
+			ship = { name = "IKN 해누리-004" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = BKJ version_name = "부여성급" } } }
+			ship = { name = "IKN 해누리-005" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = BKJ version_name = "부여성급" } } }
+			ship = { name = "IKN 해누리-006" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = BKJ version_name = "부여성급" } } }
+			ship = { name = "IKN 해누리-007" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = BKJ version_name = "부여성급" } } }
+			ship = { name = "IKN 해누리-008" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = BKJ version_name = "부여성급" } } }
+			ship = { name = "IKN 해누리-009" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = BKJ version_name = "부여성급" } } }
+			ship = { name = "IKN 해누리-010" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = BKJ version_name = "부여성급" } } }
+		}
+	}
+		
+	fleet = {
+		name = "백제 청룡 함대"			
+		naval_base = 7125	
+		task_force = {
+			name = "청룡 잠수전단"
+			location = 7125
+		    ship = { name = "IKN 해누리-011" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = BKJ version_name = "해누리급" } } }
+		    ship = { name = "IKN 해누리-013" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = BKJ version_name = "해누리급" } } }
+		    ship = { name = "IKN 해누리-014" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = BKJ version_name = "해누리급" } } }
+		    ship = { name = "IKN 해누리-015" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = BKJ version_name = "해누리급" } } }
+		    ship = { name = "IKN 해누리-016" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = BKJ version_name = "해누리급" } } }
+	    }
+	}
+	
+	fleet = {
+		name = "백제 귀수산 함대"			
+		naval_base = 7125
+	    task_force = {
+		    name = "해태 전투전단"			
+		    location = 7125
+		    ship = { name = "IKN 다루왕" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = BKJ version_name = "막고해급" } } }
+		    ship = { name = "IKN 팔공" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = BKJ version_name = "공주급" } } }
+		    ship = { name = "IKN 무장" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = BKJ version_name = "서귀포급" } } }
+		    ship = { name = "IKN 구례" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = BKJ version_name = "서귀포급" } } }
+		    ship = { name = "IKN 명예" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = BKJ version_name = "서귀포급" } } }
+		    ship = { name = "IKN 조국" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = BKJ version_name = "서귀포급" } } }
+		}	
+	}
+}
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+instant_effect = 
+{
+
+		# 
+		add_equipment_production = {				
+			equipment = {
+				type = ship_hull_submarine_1
+				creator = "BKJ" 
+				version_name = "해누리급"
+			}
+			requested_factories = 5
+			progress = 0.7
+			amount = 5
+		}
+}

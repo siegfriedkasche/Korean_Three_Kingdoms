@@ -1,0 +1,164 @@
+ideas = {
+	country = {
+	
+		neutrality_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+
+			removal_cost = -1
+
+			picture = generic_intel_bonus
+
+			
+			modifier = {
+				neutrality_drift = 0.1
+				drift_defence_factor = 0.5
+				stability_factor = 0.05
+			}
+		}
+	}
+	ountry = {
+	
+		no_faction = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+			rule = {
+				can_join_opposite_factions = no
+				can_create_factions = no
+			}
+			removal_cost = -1
+
+			picture = FRA_matignon_agreements
+
+			
+			modifier = {
+			}
+		}
+	}
+	country = {
+	
+		jin_heungwang = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+
+			}
+			removal_cost = -1
+
+			picture = jin_heungwang
+
+			
+			modifier = {
+				stability_factor = 0.15
+				industrial_capacity_factory = 0.1
+			}
+		}
+	}
+	country = {
+	
+		revol_communist = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+
+			removal_cost = -1
+
+			picture = home_of_revolution
+
+			
+			modifier = {
+				communism_drift = 0.05
+				stability_factor = -0.15
+				war_support_factor = -0.15
+			}
+		}
+	}
+	country = {
+	
+		iron_fist_rule = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+
+			removal_cost = -1
+
+			picture = generic_intel_bonus
+
+			
+			modifier = {
+				fascism_drift = 0.1
+				drift_defence_factor = 0.2
+				stability_factor = -0.05
+				war_support_factor = 0.05
+			}
+		}
+	}
+	country = {
+	
+		market_economy = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+
+			removal_cost = -1
+
+			picture = generic_flexible_foreign_policy2
+
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.1
+			}
+		}
+	}
+	country = {
+	
+		Industrial_Development_Committee_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+
+			removal_cost = -1
+
+			picture = generic_morale_bonus
+
+			
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.1
+			}
+		}
+	}
