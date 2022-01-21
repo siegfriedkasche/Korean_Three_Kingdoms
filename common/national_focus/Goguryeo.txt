@@ -1323,7 +1323,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GGR_meet_chinese_communist_party
-		icon = GFX_focus_chi_cooperation_with_the_communists
+		icon = GFX_GGR_meet_chinese_communist_party
 		prerequisite = { 
 			focus = GGR_one_party_system
 		}

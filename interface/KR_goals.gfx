@@ -83,4 +83,12 @@ spriteTypes = {
 		name = "GFX_GGR_Pyongyang_Infrastructure_Development" 
 		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_Pyongyang_Infrastructure_Development.png"
 	}
+	SpriteType = {
+		name = "GFX_GGR_Pyongyang_Infrastructure_Development" 
+		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_Pyongyang_Infrastructure_Development.png"
+	}
+	SpriteType = {
+		name = "GFX_GGR_meet_chinese_communist_party" 
+		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_meet_chinese_communist_party.png"
+	}
 }
