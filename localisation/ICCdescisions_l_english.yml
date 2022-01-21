@@ -1,0 +1,16 @@
+﻿l_english:
+ VGE_ICC_management_categories:0 "국제도시 관리"
+ VGE_ICC_management_categories_desc:0 "\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+ VGE_local_defense_force_1:0 "중앙위원회의 지도를 통해 조직시켜야 한다."
+ VGE_local_defense_force_2:0 "노동자들을 자발적으로 조직시켜야 한다."
+ VGE_local_shape_problem_1:0 "지역평의회(소비에트)가 가장 민주적이다."
+ VGE_local_shape_problem_2:0 "지역노동조합은 단결을 강화시킨다."
+
+ local_defense_force_1_idea:0 "중앙의 통치"
+ local_defense_force_2_idea:0 "노동자 민병대"
+
+ union_soviet_system:0 "\n§Y지역노동조합§!의 힘이 강화될 것입니다."
+ Soviet_council_system:0 "\n§Y지역평의회(소비에트)§!의 힘이 강화될 것입니다."
+
+ union_system_maintenance:0 "§Y지역노동조합§!의 힘이 강회되고, §Y인민군§! 또는 §Y노동자 민병대§!(을)를 조직해 §Y중앙위원회§!보다 §Y노동조합§!의 힘이 강화된 상태이다."
+ Soviet_system_maintenance:0 "§Y지역평의회(소비에트)§!의 힘이 강회되고, §Y인민군§! 또는 §Y노동자 민병대§!(을)를 조직해 §Y노동조합§!보다 §Y중앙위원회§!의 힘이 강화된 상태이다."

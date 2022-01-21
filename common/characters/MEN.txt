@@ -1,0 +1,483 @@
+characters={
+	MEN_prince_demchugdongrub={
+		name="Prince Demchugdongrub"
+		portraits={
+			civilian={
+				large="GFX_portrait_men_demchugdongrub"
+			}
+			army={
+				large = "gfx/leaders/ANA/Portrait_MON_Demchugdongrub_Army.png"
+				small="MEN_demchugdongrub"
+			}
+		}
+		country_leader={
+			ideology=rexism
+			traits={ spirit_of_genghis }
+			expire="1965.1.1.1"
+			id=-1
+		}
+		field_marshal = {
+			traits = { old_guard cavalry_leader brilliant_strategist cavalry_officer }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		advisor={
+
+			slot = army
+			idea_token = MEN_prince_demchugdongrub
+			allowed = {
+					original_tag = MEN
+				}
+				traits = {
+					army_infantry_2  
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+	MEN_Li_Shouxin={
+		name="Li Shouxin"
+		portraits={
+			civilian={
+				large="gfx/leaders/Asia/Portrait_Asia_Generic_2.dds"
+			}
+			army={
+				small="gfx/interface/ideas/Portrait_MON_Li_Shouxin_general.png"
+				large="gfx/leaders/ANA/Portrait_MON_Li_Shouxin_general.png"
+			}
+		}
+		corps_commander = {
+			traits = { old_guard brilliant_strategist }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		advisor={
+
+			slot = army_chief
+			idea_token = MEN_Sonin_Xiangying
+			allowed = {
+					original_tag = MEN
+				}
+				traits = {
+					army_chief_defensive_3 
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+	MEN_sonin_xiangying={
+		name="Sonin Xiangying"
+		portraits={
+			civilian={
+				large="gfx/leaders/Asia/Portrait_Asia_Generic_2.dds"
+			}
+			army={
+				small="gfx_Portrait_Asia_Generic_2"
+				large="gfx/leaders/Asia/Portrait_Asia_Generic_2.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			expire="1953.1.1.12"
+			id=-1
+		}
+		
+	}
+	MEN_Urzhin_Garmaev={
+		name="Urzhin Garmaev"
+		portraits={
+			civilian={
+				large="gfx/leaders/ANA/Portrait_MON_Urzhin_Garmaev.png"
+			}
+			army={
+				small="gfx/interface/ideas/Portrait_MON_Urzhin_Garmaev.png"
+				large="gfx/leaders/ANA/Portrait_MON_Urzhin_Garmaev.png"
+			}
+		}
+		corps_commander = {
+			traits = {  }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		advisor={
+
+			slot = army_chief
+			idea_token = MEN_Urzhin_Garmaev
+			allowed = {
+					original_tag = MEN
+				}
+				traits = {
+					army_chief_drill_1
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+	MEN_zhao_zhanshan={
+		name="Zhao Zhanshan"
+		portraits={
+			civilian={
+				large="gfx/leaders/Asia/Portrait_Asia_Generic_1.dds"
+			}
+		}
+		country_leader={
+			ideology=anarchist_communism
+			traits={ captain_of_industry }
+			expire="1946.1.1.12"
+			id=-1
+		}
+	}
+	MEN_Yondonwangchug={
+		name="Yondonwangchug"
+		portraits={
+			civilian={
+				large="gfx/leaders/ANA/Yondonwangchug.png"
+			}
+		}
+		country_leader={
+			ideology=centrism
+			traits={ armaments_organizer tenacious_negotiator }
+			expire="1938.3.24"
+			id=-1
+		}
+	}
+	MEN_Altanochir ={
+		name="Altanochir"
+		portraits={
+			civilian={
+				large="gfx/leaders/ANA/Portrait_MON_Altanochir.png"
+			}
+			army={
+				small="gfx/interface/ideas/Portrait_MON_Altanochir.png"
+				large="gfx/leaders/ANA/Portrait_MON_Altanochir.png"
+			}
+		}
+		corps_commander = {
+			traits = {  }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		advisor={
+
+			slot = theorist
+			idea_token = MEN_Altanochir
+			allowed = {
+					original_tag = MEN
+				}
+				traits = {
+					military_theorist
+				}
+				cost = 75
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+	MEN_Wu_Heling ={
+		name="Wu Heling"
+		portraits={
+			army={
+				small="gfx/interface/ideas/Portrait_MON_Wu_Heling.png"
+			}
+			civilian={
+				small="gfx/interface/ideas/Portrait_MON_Wu_Heling.png"
+			}
+		}
+		advisor={
+
+			slot = political_advisor
+			idea_token = MEN_Wu_Heling
+			allowed = {
+					original_tag = MEN
+				}
+				traits = {
+					popular_figurehead
+				}
+				cost = 75
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+	MEN_hajime_sugiyama ={
+		name=JAP_hajime_sugiyama
+		portraits={
+			army={
+				small="GFX_idea_hajime_sugiyama"
+			}
+		}
+	}
+	MEN_Sadamu_Shimomura ={
+		name=MEN_Sadamu_Shimomura
+		portraits={
+			army={
+				small="gfx/interface/ideas/MEN_Sadamu_Shimomura.png"
+			}
+		}
+	}
+	MEN_Jodbajab ={
+		name="Jodbajab"
+		portraits={
+			army={
+				large="gfx/leaders/ANA/Portrait_MON_Jodbajab.png"
+			}
+		}
+		corps_commander = {
+			traits = {  }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	MEN_hesehn_tiemei={
+		advisor={
+			
+			
+			slot = high_command
+			idea_token = MEN_hesehn_tiemei
+			ledger = army
+				allowed = {
+					original_tag = MEN
+				}
+				traits = {
+					army_logistics_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Hesehn Tiemei"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_asia_1"
+			}
+		}
+	}
+	MEN_guan_xingde={
+		advisor={
+			
+			
+			slot = army_chief
+			idea_token = MEN_guan_xingde
+			allowed = {
+					original_tag = MEN
+				}
+				traits = {
+					army_chief_offensive_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Guan Xingde"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_asia_4"
+			}
+		}
+	}
+	MEN_kyoiji_tomonaga={
+		advisor={
+			
+			
+			slot = high_command
+			idea_token = MEN_kyoiji_tomonaga
+			ledger = army
+				allowed = {
+					original_tag = MEN
+				}
+				traits = {
+					army_infantry_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Kyoiji Tomonaga"
+		portraits={
+			army={
+				small="GFX_idea_generic_air_asia_2"
+			}
+		}
+	}
+	MEN_deng_linge={
+		advisor={
+			cost = 100
+			
+			slot = theorist
+			idea_token = MEN_deng_linge
+			ledger = air
+				allowed = {
+					original_tag = MEN
+				}
+				
+				traits = {
+					air_warfare_theorist
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Deng Linge"
+		portraits={
+			army={
+				small="GFX_idea_generic_air_asia_2"
+			}
+		}
+	}
+	MEN_hung_zhehuang={
+		advisor={
+			cost = 100
+			
+			slot = theorist
+			idea_token = MEN_hung_zhehuang
+			ledger = army
+				allowed = {
+					original_tag = MEN
+				}
+				
+				traits = {
+					military_theorist
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Hung Zhehuang"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_asia_1"
+			}
+		}
+	}
+	MEN_nakajima_kesago={
+		advisor={
+			
+			
+			slot = air_chief
+			idea_token = MEN_nakajima_kesago
+			allowed = {
+					original_tag = MEN
+				}
+				traits = {
+					air_chief_ground_support_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Nakajima Kesago"
+		portraits={
+			army={
+				small="GFX_idea_generic_air_asia_3"
+			}
+		}
+	}
+	MEN_yonimitsu_kasahara={
+		advisor={
+			
+			
+			slot = high_command
+			idea_token = MEN_yonimitsu_kasahara
+			ledger = army
+				allowed = {
+					original_tag = MEN
+				}
+				traits = {
+					army_regrouping_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Yonimitsu Kasahara"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_asia_3"
+			}
+		}
+	}
+	MEN_nalan_kang_an={
+		advisor={
+			slot = political_advisor
+			idea_token = MEN_nalan_kang_an
+			allowed  = {
+					original_tag  = MEN
+				}
+				traits  = {
+					fortification_engineer 
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Nalan Kang'an"
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_asia_3"
+			}
+		}
+	}
+	MEN_songgotu_zhanshan={
+		advisor={
+			slot = political_advisor
+			idea_token = MEN_songgotu_zhanshan
+			allowed  = {
+					original_tag  = MEN
+				}
+				traits  = {
+					captain_of_industry 
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Songgotu Zhanshan"
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_asia_1"
+			}
+		}
+	}
+	MEN_megata_toshiro={
+		advisor={
+			slot = political_advisor
+			idea_token = MEN_megata_toshiro
+			allowed  = {
+					original_tag  = MEN
+				}
+				traits  = {
+					armaments_organizer 
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Megata Toshiro"
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_asia_2"
+			}
+		}
+	}
+}

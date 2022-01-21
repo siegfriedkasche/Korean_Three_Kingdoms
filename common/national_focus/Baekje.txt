@@ -107,7 +107,7 @@ focus_tree = {
 
 		available = {
 			BKJ = { controls_state = 525 }
-			BKJ = { controls_state = 808 }
+			BKJ = { controls_state = 836 }
 		}
 
 		bypass = {
@@ -131,7 +131,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			808 = {
+			836 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
@@ -158,7 +158,7 @@ focus_tree = {
 
 		available = {
 			BKJ = { controls_state = 525 }
-			BKJ = { controls_state = 808 }
+			BKJ = { controls_state = 836 }
 		}
 
 		bypass = {
@@ -182,7 +182,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			808 = {
+			836 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
@@ -209,7 +209,7 @@ focus_tree = {
 
 		available = {
 			BKJ = { controls_state = 525 }
-			BKJ = { controls_state = 808 }
+			BKJ = { controls_state = 836 }
 		}
 
 		bypass = {
@@ -233,7 +233,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			808 = {
+			836 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
@@ -264,7 +264,7 @@ focus_tree = {
 
 		available = {
 			BKJ = { controls_state = 525 }
-			BKJ = { controls_state = 808 }
+			BKJ = { controls_state = 836 }
 		}
 
 		bypass = {
@@ -288,7 +288,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			808 = {
+			836 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -320,7 +320,7 @@ focus_tree = {
 
 		available = {
 			BKJ = { controls_state = 525 }
-			BKJ = { controls_state = 808 }
+			BKJ = { controls_state = 836 }
 		}
 
 		bypass = {
@@ -344,7 +344,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			808 = {
+			836 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -376,7 +376,7 @@ focus_tree = {
 
 		available = {
 			BKJ = { controls_state = 525 }
-			BKJ = { controls_state = 808 }
+			BKJ = { controls_state = 836 }
 		}
 
 		bypass = {
@@ -400,7 +400,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			808 = {
+			836 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -1171,13 +1171,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = BKJ_silla_war_goal
+		id = BKJ_SIRla_war_goal
 		icon = GFX_goal_generic_propaganda
 		prerequisite = { focus = BKJ_communism_with_a_human_face focus = BKJ_aggressive_wars }
-		will_lead_to_war_with = SIL
+		will_lead_to_war_with = SIR
 
 		cancel = {
-			NOT = { country_exists = SIL }
+			NOT = { country_exists = SIR }
 		}
 		x = 0
 		y = 1
@@ -1191,7 +1191,7 @@ focus_tree = {
 			}
 		}
 		bypass = {
-			has_war_with = SIL
+			has_war_with = SIR
 		}
 		ai_will_do = {
 			factor = 10
@@ -1208,7 +1208,7 @@ focus_tree = {
 				factor = 0
 				NOT = { 
 					any_home_area_neighbor_country = {
-						tag = SIL
+						tag = SIR
 					}
 				}
 			}
@@ -1221,7 +1221,7 @@ focus_tree = {
 		completion_reward = {
 			create_wargoal = {
 				type = annex_everything
-				target = SIL
+				target = SIR
 			}
 		}
 	}
@@ -1285,7 +1285,7 @@ focus_tree = {
 		id = BKJ_Three_Kingdoms_Unification
 		icon = GFX_focus_generic_treaty
 		prerequisite = { focus = BKJ_goguryeo_war_goal }
-		prerequisite = { focus = BKJ_silla_war_goal  }
+		prerequisite = { focus = BKJ_SIRla_war_goal  }
 
 		x = 0
 		y = 1
@@ -1301,7 +1301,7 @@ focus_tree = {
 			GGR = {
 				exists = no
 			}
-			SIL = {
+			SIR = {
 				exists = no
 			}
 		}
@@ -1326,7 +1326,7 @@ focus_tree = {
 			remove_ideas = no_faction
 			every_state = {
 				limit = {
-					is_core_of = SIL
+					is_core_of = SIR
 				}
 				add_core_of = ROOT
 			}

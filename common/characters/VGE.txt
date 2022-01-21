@@ -1,0 +1,340 @@
+characters = {
+	VGE_heinrich_luft = {
+		name = "Heinrich Lüft" 
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			expire = "1938.1.1.1"
+			id = -1
+		}
+	}
+	VGE_aleksander_heck = {
+		name = "Alexander Heckman" 
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/Europe/Portrait_Europe_Generic_1.dds"
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			expire = "1950.1.1.1"
+			id = -1
+		}
+	}
+
+	VGE_Konrad_Hoffmann={
+		name=VGE_Konrad_Hoffmann
+		portraits={
+			army={
+				small="GFX_idea_advisor_Konrad_Hoffmann"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = VGE_Konrad_Hoffmann
+			allowed = {
+				original_tag = VGE
+			}
+			available = {
+				has_completed_focus = VGE_new_politic
+				hidden_trigger = {
+					NOT = {
+						has_idea = VGE_anarchy_ideas
+					}
+				}
+			}
+			traits = {
+				patriotic_socialist 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	VGE_Wladimir_Propp={
+		name=VGE_Wladimir_Propp
+		portraits={
+			army={
+				small="GFX_idea_advisor_Wladimir_Propp"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = VGE_Wladimir_Propp
+			allowed = {
+				original_tag = VGE
+			}
+			available = {
+				has_completed_focus = VGE_volga_german_people
+				hidden_trigger = {
+					NOT = {
+						has_idea = VGE_anarchy_ideas
+					}
+				}
+			}
+			traits = {
+				socialist_novelist 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	VGE_August_Lonsinger={
+		name=VGE_August_Lonsinger
+		portraits={
+			army={
+				small="GFX_idea_advisor_unknown_minister"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = VGE_August_Lonsinger
+			allowed = {
+				original_tag = VGE
+			}
+			available = {
+				has_completed_focus = VGE_communism
+				hidden_trigger = {
+					NOT = {
+						has_idea = VGE_anarchy_ideas
+					}
+				}
+			}
+			traits = {
+				education_reformer 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	VGE_Boris_Rauschenbach={
+		name=VGE_Boris_Rauschenbach
+		portraits={
+			army={
+				small="GFX_idea_advisor_Boris_Rauschenbach"
+			}
+		}
+		advisor={
+			ledger = air
+			slot = theorist
+			idea_token = VGE_Boris_Rauschenbach
+			allowed = {
+				original_tag = VGE
+			}
+			available = {
+				has_completed_focus = VGE_volga_german_people
+			}
+			research_bonus = {
+				rocketry = 0.150
+			}
+			traits = {
+				rocket_scientist 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	VGE_Alexander_Heckmann={
+		name="알랙산더 헤크만"
+		portraits={
+			army={
+				small="GFX_idea_MEX_gilberto_r_limon"
+			}
+		}
+		advisor={
+
+			slot = political_advisor
+			idea_token = VGE_Alexander_Heckmann
+			allowed = {
+				original_tag = VGE
+			}
+			available = {
+				has_completed_focus = VGE_communism
+			}
+			traits = {
+				peoples_commissar_of_finance  
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	VGE_Josef_Alois_Kessler={
+		name="조셉 알로이스 케슬러"
+		portraits={
+			army={
+				small="GFX_idea_VGE_Josef_Alois_Kessler"
+			}
+		}
+		advisor={
+
+			slot = political_advisor
+			idea_token = VGE_Josef_Alois_Kessler
+			allowed = {
+				original_tag = VGE
+			}
+			available = {
+				OR = {
+					has_completed_focus = VGE_peace_of_religion
+					hidden_trigger = {
+						has_completed_focus = VGE_army_uprising
+					}
+				}
+			}
+			traits = {
+				patriarch_of_moscow_and_all_russia   
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	VGE_Dominik_Hollmann={
+		name="도미니크 홀만"
+		portraits={
+			army={
+				small="GFX_idea_VGE_Dominik_Hollmann"
+			}
+		}
+		advisor={
+
+			slot = political_advisor
+			idea_token = VGE_Dominik_Hollmann
+			allowed = {
+				original_tag = VGE
+			}
+			available = {
+				has_completed_focus = VGE_economic_development_plan
+				hidden_trigger = {
+					NOT = {
+						has_idea = VGE_anarchy_ideas
+					}
+				}
+			}
+			traits = {
+				economy_reformer    
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	#######################################################################################################################
+	#######################################################################################################################
+	#######################################################################################################################
+
+	VGE_Hans_Kaufmann={ #가상인물 / 실존인물중 스위스 국민의원이 있네?
+		name="한스 카우프만"
+		portraits={
+			army={
+				small="GFX_idea_SOV_anastasy_vonsyatsky"
+			}
+		}
+		advisor={
+
+			slot = political_advisor
+			idea_token = VGE_Hans_Kaufmann
+			allowed = {
+				original_tag = VGE
+			}
+			available = {
+				has_completed_focus = VGE_communism
+			}
+			traits = {
+				left_trade_unionist    
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+   	#######################################################################################################################
+	#######################################################################################################################
+	#######################################################################################################################
+	VGE_Peter_Krasnov={ #독일로 망명했던 코자크 귀족
+		name="페트로 크라스노프"
+		portraits={
+			army={
+				small="GFX_idea_Peter_Krasnov_idea"
+				large = "gfx/leaders/ANA/Peter_Krasnov.png"
+			}
+		}
+
+		corps_commander = {
+			traits = { old_guard cavalry_leader brilliant_strategist cavalry_officer winter_specialist }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+
+		advisor={
+			slot = political_advisor
+			idea_token = VGE_Peter_Krasnov
+			allowed = {
+				original_tag = VGE
+			}
+			available = {
+				has_completed_focus = VGE_army_uprising
+			}
+			traits = {
+				nazi_sympathizer
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	VGE_Pavlo_Skoropadsky={ #독일로 망명했던 코자크 귀족
+		name="파블로 스코로파드스키"
+		portraits={
+			army={
+				small="GFX_idea_VGE_Pavlo_Skoropadsky"
+				large = "gfx/leaders/ANA/Portrait_Ukraine_Pavlo_Skoropadsky.png"
+			}
+			civilian = {
+				large = "gfx/leaders/ANA/Portrait_Ukraine_Pavlo_Skoropadsky.png"
+			}
+		}
+		country_leader = {
+			ideology = nazism
+			traits = {  }
+			expire = 1960.01.01
+			desc = ""
+		}
+		field_marshal = {
+			traits = { old_guard cavalry_leader brilliant_strategist cavalry_officer }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+		}
+		advisor={
+
+			slot = political_advisor
+			idea_token = VGE_Pavlo_Skoropadsky
+			allowed = {
+				original_tag = VGE
+			}
+			available = {
+				has_completed_focus = VGE_army_uprising
+			}
+			traits = {
+				royal_legitimist    
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+}
+	

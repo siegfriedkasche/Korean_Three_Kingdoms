@@ -1,0 +1,208 @@
+ideas = {
+    country = {
+        MEN_Establishment_of_the_Mongolian_Army_General_Headquarters_ideas = {
+
+			picture = generic_war_preparation
+
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+            allowed_civil_war = {
+				tag = VGE
+			}
+
+			cancel = {
+
+            }
+			modifier = {
+                army_leader_start_level = 1
+                army_leader_start_attack_level = 1
+                conscription =0.025
+			}
+        }
+        Mengjiang_United_ideas = {
+
+			picture = warrior_traditions_idea
+
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+            allowed_civil_war = {
+				tag = VGE
+			}
+
+			cancel = {
+
+            }
+            targeted_modifier = {
+				tag = JAP
+				cic_to_target_factor = 0.15
+				mic_to_target_factor = 0.15
+			}
+			modifier = {
+                army_leader_start_level = 1
+                army_leader_start_attack_level = 1
+                conscription =0.025
+				cavalry_attack_factor = 0.10
+			}
+		}
+		Mengjiang_United_ideas2 = {
+
+			picture = generic_war_preparation
+
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+            allowed_civil_war = {
+				tag = VGE
+			}
+
+			cancel = {
+				NOT = {
+					has_goverment = fascism
+				}
+            }
+			modifier = {
+				cavalry_attack_factor = 0.15
+                army_leader_start_level = 1
+                army_leader_start_attack_level = 1
+                conscription =0.025
+			}
+		}
+        MEN_kwantung_veto = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				original_tag = MEN
+			}
+			
+			removal_cost = -1
+
+			picture = generic_secret_police
+			
+			modifier = {
+				political_advisor_cost_factor = -0.15
+				trade_laws_cost_factor = -0.25
+                army_attack_factor = 0.05
+                army_defence_factor = 0.05
+			}
+		}
+		MEN_air_payment = {
+			
+			picture = generic_fighter_production_diverted
+
+			allowed = {
+				original_tag = YUG
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.01
+			}
+		}
+        MEN_kwantung_VS_Chinese_army_ideas = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				original_tag = MEN
+			}
+			
+			removal_cost = -1
+
+			picture = hol_expand_the_colonial_army
+			
+			modifier = {
+				political_power_factor = -0.15
+				production_factory_max_efficiency_factor = -0.10
+                production_speed_buildings_factor = -0.10
+                industrial_capacity_factory = -0.10
+			}
+		}
+        Japanese_language_education = {
+
+			picture = received_attache
+
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+            allowed_civil_war = {
+				tag = VGE
+			}
+
+			cancel = {
+
+            }
+            targeted_modifier = {
+				tag = JAP
+                opinion_gain_monthly = 5
+			}
+			modifier = {
+                production_factory_efficiency_gain_factor = 0.03
+                research_speed_factor = 0.05
+			}
+		}
+		MEN_attack_monggolia_ideas = {
+
+			picture = chi_war_of_resistance
+
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+            allowed_civil_war = {
+				tag = VGE
+			}
+
+			cancel = {
+
+            }
+            targeted_modifier = {
+				tag = MON
+				army_attack_factor = 0.15
+				army_defence_factor = 0.15
+			}
+		}
+		Mengjiang_Bank = {
+
+			picture = SPR_seize_the_gold_reserves
+
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+            allowed_civil_war = {
+				tag = VGE
+			}
+
+			cancel = {
+
+            }
+            modifier = {
+				consumer_goods_factor = -0.05
+
+			}
+		}
+    }
+}

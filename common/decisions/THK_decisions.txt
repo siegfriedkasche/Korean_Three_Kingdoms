@@ -444,10 +444,172 @@ change_capital_decisions_THK  = {
 		ai_will_do = {
 			factor = 100
 		}
-		fire_only_once = no
+		fire_only_once = yes
 		
 		remove_effect = {
 			set_capital = 328
+		}
+	}
+}
+decisions_CHI_Five_Races_Under_One_Union = {
+	SHX_Five_Races_Under_One_Union = {
+		icon = GFX_decision_generic_decision
+		available = {
+			SHX = {
+				exists = yes
+				NOT = {
+					is_in_faction_with = CHI
+				}
+			}
+		}
+		visible = {
+			SHX = {
+				exists = yes
+				NOT = {
+					is_in_faction_with = CHI
+				}
+			}
+		} 
+		
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		
+		remove_effect = {
+			SHX = {
+				country_event = {
+					id =  REV.3
+				}
+			}
+		}
+	}
+	GXC_Five_Races_Under_One_Union = {
+		icon = GFX_decision_generic_decision
+		available = {
+			GXC = {
+				exists = yes
+				NOT = {
+					is_in_faction_with = CHI
+				}
+			}
+		}
+		visible = {
+			GXC = {
+				exists = yes
+				NOT = {
+					is_in_faction_with = CHI
+				}
+			}
+		} 
+		
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		
+		remove_effect = {
+			GXC = {
+				country_event = {
+					id =  REV.3
+				}
+			}
+		}
+	}
+	YUN_Five_Races_Under_One_Union = {
+		icon = GFX_decision_generic_decision
+		available = {
+			YUN = {
+				exists = yes
+				NOT = {
+					is_in_faction_with = CHI
+				}
+			}
+		}
+		visible = {
+			YUN = {
+				exists = yes
+				NOT = {
+					is_in_faction_with = CHI
+				}
+			}
+		} 
+		
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		
+		remove_effect = {
+			YUN = {
+				country_event = {
+					id =  REV.3
+				}
+			}
+		}
+	}
+	SIK_Five_Races_Under_One_Union = {
+		icon = GFX_decision_generic_decision
+		available = {
+			SIK = {
+				exists = yes
+				NOT = {
+					is_in_faction_with = CHI
+				}
+			}
+		}
+		visible = {
+			SIK = {
+				exists = yes
+				NOT = {
+					is_in_faction_with = CHI
+				}
+			}
+		} 
+		
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		
+		remove_effect = {
+			SIK = {
+				country_event = {
+					id =  REV.3
+				}
+			}
+		}
+	}
+	XSM_Five_Races_Under_One_Union = {
+		icon = GFX_decision_generic_decision
+		available = {
+			XSM = {
+				exists = yes
+				NOT = {
+					is_in_faction_with = CHI
+				}
+			}
+		}
+		visible = {
+			XSM = {
+				exists = yes
+				NOT = {
+					is_in_faction_with = CHI
+				}
+			}
+		} 
+		
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		
+		remove_effect = {
+			XSM = {
+				country_event = {
+					id =  REV.3
+				}
+			}
 		}
 	}
 }

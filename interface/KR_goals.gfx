@@ -1,0 +1,86 @@
+spriteTypes = {
+	SpriteType = {
+		name = "GFX_Defendant_Kim_Jong_il"
+		texturefile = "gfx/interface/goals/K_asche/Defendant_Kim_Jong_il.png"
+	}
+	SpriteType = {
+		name = "GFX_GGR_JUCHE_ideology"
+		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_JUCHE_ideology.png"
+	}
+	SpriteType = {
+		name = "GFX_GGR_communist_support"
+		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_communist_support.png"
+	}
+	SpriteType = {
+		name = "GFX_KOR_MTU_traditional_democratic_trade_unions"
+		texturefile = "gfx/interface/goals/K_asche/GFX_KOR_MTU_traditional_democratic_trade_unions.png"
+	}
+	SpriteType = {
+		name = "GFX_GGR_Long_live_General_Kim_Il_sung"
+		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_Long_live_General_Kim_Il_sung.png"
+	}
+	SpriteType = {
+		name = "GFX_GGR_Long_live_the_working_masses"
+		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_Long_live_the_working_masses.png"
+	}
+	SpriteType = {
+		name = "GFX_GGR_Long_live_the_Goryeo_Labor_Party"
+		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_Long_live_the_Goryeo_Labor_Party.png"
+	}
+	SpriteType = {
+		name = "GFX_GGR_chunrima"
+		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_chunrima.png"
+	}
+	SpriteType = {
+		name = "GFX_GGR_military_first_politics"
+		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_military_first_politics.png"
+	}
+	SpriteType = {
+		name = "GFX_GGR_Kim_Il_sung_Socialist_Youth_League"
+		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_Kim_Il_sung_Socialist_Youth_League.png"
+	}
+	SpriteType = {
+		name = "GFX_GGR_attack_USA" 
+		texturefile = "gfx/interface/goals/K_asche/GGR_attack_USA.png"
+	}
+	SpriteType = {
+		name = "GFX_GGR_nationale_Vereinigung" 
+		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_nationale_Vereinigung.png"
+	}
+	SpriteType = {
+		name = "GFX_GGR_agricultural_collectivization" 
+		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_agricultural_collectivization.png"
+	}
+	SpriteType = {
+		name = "GFX_GGR_thought_education" 
+		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_thought_education.png"
+	}
+	SpriteType = {
+		name = "GFX_GGR_technological_revolution" 
+		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_technological_revolution.png"
+	}
+	SpriteType = {
+		name = "GFX_GGR_Construction_of_a_strong_and_prosperous_country" 
+		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_Construction_of_a_strong_and_prosperous_country.png"
+	}
+	SpriteType = {
+		name = "GFX_GGR_Central_Committee" 
+		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_Central_Committee.png"
+	}
+	SpriteType = {
+		name = "GFX_GGR_culture_revolution" 
+		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_culture_revolution.png"
+	}
+	SpriteType = {
+		name = "GFX_GGR_dedication_to_the_party" 
+		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_dedication_to_the_party.png"
+	}
+	SpriteType = {
+		name = "GFX_GGR_tank_plant" 
+		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_tank_plant.png"
+	}
+	SpriteType = {
+		name = "GFX_GGR_Pyongyang_Infrastructure_Development" 
+		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_Pyongyang_Infrastructure_Development.png"
+	}
+}

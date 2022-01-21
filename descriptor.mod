@@ -8,5 +8,5 @@ tags={
 }
 picture="thumbnail.png"
 name="삼국시대 모드 Korean Three Kingdoms"
-supported_version="1.10.8"
+supported_version="1.11.4"
 remote_file_id="2573911322"

@@ -1,0 +1,117 @@
+add_namespace = MON
+
+country_event = {
+	id = MON.0
+	title = MON.0.t
+	desc = MON.0.d
+	picture = GFX_report_event_romania_poland_visit
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+        name = MON.0.a
+		trigger = {
+			original_tag = MON
+		}
+        ai_chance = {
+            factor = 80
+        }
+		transfer_state = 746
+		transfer_state = 621
+		add_stability = 0.05
+    }
+	option = {
+        name = MON.0.c
+		trigger = {
+			original_tag = SHX
+		}
+        ai_chance = {
+            factor = 80
+        }
+		add_stability = -0.1
+    }
+}
+country_event = {
+	id = MON.1
+	title = MON.1.t
+	desc = MON.1.d
+	picture = GFX_report_event_romania_poland_visit
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+        name = MON.1.a
+		trigger = {
+			original_tag = MON
+		}
+        ai_chance = {
+            factor = 80
+        }
+		add_stability = -0.05
+		add_manpower = -850
+    }
+	option = {
+        name = MON.1.c
+		trigger = {
+			original_tag = SHX
+		}
+        ai_chance = {
+            factor = 80
+        }
+		add_war_support = 0.1
+    }
+}
+
+
+country_event = {
+	id = MON.14
+	title = MON.14.t
+	desc = soviet.14.d
+	picture = GFX_report_event_stalin_01
+	
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = soviet.14.a
+		ai_chance = { factor = 100 }
+		MON = {
+			country_event = { id = MON.16 }
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+	}
+	option = { # Refuse
+		name = soviet.14.b
+		MON = {
+			country_event = { id = MON.15 }
+		}
+	}
+}
+
+# Tannu Tuva declines the offer
+country_event = {
+	id = MON.15
+	title = soviet.15.t
+	desc = soviet.15.d
+	picture = GFX_report_event_stalin_02
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.15.a
+	}
+}
+
+# Tannu Tuva accepts the offer
+country_event = {
+	id = MON.16
+	title = soviet.16.t
+	desc = MON.16.d
+	picture = GFX_report_event_stalin_propaganda
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.16.a
+		annex_country = { target = TAN }
+	}
+}

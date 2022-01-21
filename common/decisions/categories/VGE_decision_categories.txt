@@ -1,0 +1,15 @@
+VGE_ICC_management_categories = {
+	picture = GFX_decision_vgssr_Maps_pic
+
+	icon = GFX_decision_category_SOV_civil_puppet_interaction
+
+	priority = 200
+	visible = {
+		hidden_trigger = {
+			has_country_flag = ICC_VGE_Autonomy_expansion_flag
+		}
+	}
+	allowed = {
+		tag = VGE
+	}
+}

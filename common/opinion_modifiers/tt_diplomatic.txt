@@ -1,0 +1,9 @@
+opinion_modifiers = {
+	
+	Diplomat_visited = {
+		value = 15
+	}
+	Molotov_Reuter = {
+		value = 25
+	}
+}

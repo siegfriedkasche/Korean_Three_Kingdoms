@@ -1,12 +1,12 @@
 focus_tree = {
-	id = Silla_focus
+	id = SIRla_focus
 	
 	country = {
 		factor = 0
 		
 		modifier = {
 			add = 10
-			tag = SIL
+			tag = SIR
 		}
 	}
 	
@@ -15,7 +15,7 @@ focus_tree = {
 	continuous_focus_position = { x = 50 y = 1100 }
 
 #	focus = {
-#		id = SIL_
+#		id = SIR_
 #		icon = GFX_
 #		prerequisite = { focus = }
 #		mutually_exclusive = { focus =  }
@@ -60,7 +60,7 @@ focus_tree = {
 	###################################
 
 	focus = {
-		id = SIL_industrial_legacy
+		id = SIR_industrial_legacy
 		icon = GFX_goal_generic_construct_civ_factory
 		x = 3
 		y = 0
@@ -93,12 +93,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_favor_czechs_1
+		id = SIR_favor_czechs_1
 		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = SIL_industrial_legacy }
+		prerequisite = { focus = SIR_industrial_legacy }
 		x = -2
 		y = 1
-		relative_position_id = SIL_industrial_legacy
+		relative_position_id = SIR_industrial_legacy
 
 		cost = 10
 
@@ -106,13 +106,13 @@ focus_tree = {
 			factor = 40
 			modifier = {
 				factor = 2
-				has_completed_focus = SIL_go_right
+				has_completed_focus = SIR_go_right
 			}
 		}
 
 		available = {
-			SIL = { controls_state = 809 }
-			SIL = { controls_state = 810 }
+			SIR = { controls_state = 838 }
+			SIR = { controls_state = 837 }
 		}
 
 		bypass = {
@@ -128,7 +128,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			809 = {
+			838 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
@@ -136,7 +136,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			810 = {
+			837 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
@@ -148,12 +148,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_favor_czechs_2
+		id = SIR_favor_czechs_2
 		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = SIL_favor_czechs_1 }
+		prerequisite = { focus = SIR_favor_czechs_1 }
 		x = 0
 		y = 1
-		relative_position_id = SIL_favor_czechs_1
+		relative_position_id = SIR_favor_czechs_1
 
 		cost = 10
 
@@ -162,8 +162,8 @@ focus_tree = {
 		}
 
 		available = {
-			SIL = { controls_state = 809 }
-			SIL = { controls_state = 810 }
+			SIR = { controls_state = 838 }
+			SIR = { controls_state = 837 }
 		}
 
 		bypass = {
@@ -179,7 +179,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			809 = {
+			838 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
@@ -187,7 +187,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			810 = {
+			837 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
@@ -199,12 +199,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_favor_czechs_3
+		id = SIR_favor_czechs_3
 		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = SIL_favor_czechs_2 }
+		prerequisite = { focus = SIR_favor_czechs_2 }
 		x = 0
 		y = 2
-		relative_position_id = SIL_favor_czechs_1
+		relative_position_id = SIR_favor_czechs_1
 
 		cost = 10
 
@@ -213,8 +213,8 @@ focus_tree = {
 		}
 
 		available = {
-			SIL = { controls_state = 809 }
-			SIL = { controls_state = 810 }
+			SIR = { controls_state = 838 }
+			SIR = { controls_state = 837 }
 		}
 
 		bypass = {
@@ -230,7 +230,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			809 = {
+			838 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
@@ -238,7 +238,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			810 = {
+			837 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
@@ -250,12 +250,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_balanced_1
+		id = SIR_balanced_1
 		icon = GFX_goal_generic_construction
-		prerequisite = { focus = SIL_industrial_legacy }
+		prerequisite = { focus = SIR_industrial_legacy }
 		x = 0
 		y = 1
-		relative_position_id = SIL_industrial_legacy
+		relative_position_id = SIR_industrial_legacy
 
 		cost = 10
 
@@ -263,13 +263,13 @@ focus_tree = {
 			factor = 70
 			modifier = {
 				factor = 0.5
-				has_completed_focus = SIL_go_right
+				has_completed_focus = SIR_go_right
 			}
 		}
 
 		available = {
-			SIL = { controls_state = 809 }
-			SIL = { controls_state = 810 }
+			SIR = { controls_state = 838 }
+			SIR = { controls_state = 837 }
 		}
 
 		bypass = {
@@ -285,7 +285,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			809 = {
+			838 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -293,7 +293,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			810 = {
+			837 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -310,12 +310,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_balanced_2
+		id = SIR_balanced_2
 		icon = GFX_goal_generic_construction
-		prerequisite = { focus = SIL_balanced_1 }
+		prerequisite = { focus = SIR_balanced_1 }
 		x = 0
 		y = 1
-		relative_position_id = SIL_balanced_1
+		relative_position_id = SIR_balanced_1
 
 		cost = 10
 
@@ -324,8 +324,8 @@ focus_tree = {
 		}
 
 		available = {
-			SIL = { controls_state = 809 }
-			SIL = { controls_state = 810 }
+			SIR = { controls_state = 838 }
+			SIR = { controls_state = 837 }
 		}
 
 		bypass = {
@@ -341,7 +341,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			809 = {
+			838 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -349,7 +349,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			810 = {
+			837 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -366,12 +366,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_balanced_3
+		id = SIR_balanced_3
 		icon = GFX_goal_generic_construction
-		prerequisite = { focus = SIL_balanced_2 }
+		prerequisite = { focus = SIR_balanced_2 }
 		x = 0
 		y = 2
-		relative_position_id = SIL_balanced_1
+		relative_position_id = SIR_balanced_1
 
 		cost = 10
 
@@ -380,8 +380,8 @@ focus_tree = {
 		}
 
 		available = {
-			SIL = { controls_state = 809 }
-			SIL = { controls_state = 810 }
+			SIR = { controls_state = 838 }
+			SIR = { controls_state = 837 }
 		}
 
 		bypass = {
@@ -397,7 +397,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			810 = {
+			837 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -405,7 +405,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			809 = {
+			838 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -422,14 +422,14 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_bonus_research_slot_2
+		id = SIR_bonus_research_slot_2
 		icon = GFX_focus_research
-		prerequisite = { focus = SIL_balanced_3 }
-		prerequisite = { focus = SIL_arms_exports_3 }
-		prerequisite = { focus = SIL_favor_czechs_3 }
+		prerequisite = { focus = SIR_balanced_3 }
+		prerequisite = { focus = SIR_arms_exports_3 }
+		prerequisite = { focus = SIR_favor_czechs_3 }
 		x = 0
 		y = 3
-		relative_position_id = SIL_balanced_1
+		relative_position_id = SIR_balanced_1
 
 		cost = 10
 
@@ -456,17 +456,17 @@ focus_tree = {
 
 		completion_reward = {
 			add_research_slot = 1
-			custom_effect_tooltip = SIL_war_college_effect_tt
+			custom_effect_tooltip = SIR_war_college_effect_tt
 		}
 	}
 
 	focus = {
-		id = SIL_arms_exports_1
+		id = SIR_arms_exports_1
 		icon = GFX_goal_generic_production
-		prerequisite = { focus = SIL_industrial_legacy }
+		prerequisite = { focus = SIR_industrial_legacy }
 		x = 2
 		y = 1
-		relative_position_id = SIL_industrial_legacy
+		relative_position_id = SIR_industrial_legacy
 
 		cost = 10
 
@@ -474,7 +474,7 @@ focus_tree = {
 			factor = 80
 			modifier = {
 				factor = 2
-				has_completed_focus = SIL_go_right
+				has_completed_focus = SIR_go_right
 			}
 		}
 
@@ -500,12 +500,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_arms_exports_2
+		id = SIR_arms_exports_2
 		icon = GFX_goal_generic_production
-		prerequisite = { focus = SIL_arms_exports_1 }
+		prerequisite = { focus = SIR_arms_exports_1 }
 		x = 0
 		y = 1
-		relative_position_id = SIL_arms_exports_1
+		relative_position_id = SIR_arms_exports_1
 
 		cost = 10
 
@@ -513,7 +513,7 @@ focus_tree = {
 			factor = 70
 			modifier = {
 				factor = 2
-				has_completed_focus = SIL_go_right
+				has_completed_focus = SIR_go_right
 			}
 		}
 
@@ -539,12 +539,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_arms_exports_3
+		id = SIR_arms_exports_3
 		icon = GFX_goal_generic_production
-		prerequisite = { focus = SIL_arms_exports_2 }
+		prerequisite = { focus = SIR_arms_exports_2 }
 		x = 0
 		y = 2
-		relative_position_id = SIL_arms_exports_1
+		relative_position_id = SIR_arms_exports_1
 
 		cost = 10
 
@@ -552,7 +552,7 @@ focus_tree = {
 			factor = 70
 			modifier = {
 				factor = 2
-				has_completed_focus = SIL_go_right
+				has_completed_focus = SIR_go_right
 			}
 		}
 
@@ -577,13 +577,13 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SIL_palned_economy
+		id = SIR_palned_economy
 		icon = GFX_goal_generic_position_armies
-		prerequisite = { focus = SIL_bonus_research_slot_2 }
-		mutually_exclusive = { focus = SIL_market_economy }
+		prerequisite = { focus = SIR_bonus_research_slot_2 }
+		mutually_exclusive = { focus = SIR_market_economy }
 		x = -1
 		y = 1
-		relative_position_id = SIL_bonus_research_slot_2
+		relative_position_id = SIR_bonus_research_slot_2
 
 		cost = 10
 
@@ -591,7 +591,7 @@ focus_tree = {
 			factor = 70
 			modifier = {
 				factor = 2
-				has_completed_focus = SIL_go_right
+				has_completed_focus = SIR_go_right
 			}
 		}
 
@@ -631,13 +631,13 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SIL_market_economy
+		id = SIR_market_economy
 		icon = GFX_goal_generic_consumer_goods
-		prerequisite = { focus = SIL_bonus_research_slot_2 }
+		prerequisite = { focus = SIR_bonus_research_slot_2 }
 		x = 1
 		y = 1
-		mutually_exclusive = { focus = SIL_palned_economy }
-		relative_position_id = SIL_bonus_research_slot_2
+		mutually_exclusive = { focus = SIR_palned_economy }
+		relative_position_id = SIR_bonus_research_slot_2
 
 		cost = 10
 
@@ -645,7 +645,7 @@ focus_tree = {
 			factor = 70
 			modifier = {
 				factor = 2
-				has_completed_focus = SIL_go_right
+				has_completed_focus = SIR_go_right
 			}
 		}
 
@@ -680,12 +680,12 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SIL_Industrial_Development_Committee #산업개발위원회
+		id = SIR_Industrial_Development_Committee #산업개발위원회
 		icon = GFX_goal_generic_production2
-		prerequisite = { focus = SIL_palned_economy }
+		prerequisite = { focus = SIR_palned_economy }
 		x = -1
 		y = 1
-		relative_position_id = SIL_palned_economy
+		relative_position_id = SIR_palned_economy
 
 		cost = 10
 
@@ -715,12 +715,12 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SIL_private_enterprise_investment
+		id = SIR_private_enterprise_investment
 		icon = GFX_goal_generic_national_unity
-		prerequisite = { focus = SIL_palned_economy focus = SIL_market_economy }
+		prerequisite = { focus = SIR_palned_economy focus = SIR_market_economy }
 		x = -1
 		y = 1
-		relative_position_id = SIL_market_economy
+		relative_position_id = SIR_market_economy
 
 		cost = 10
 
@@ -728,7 +728,7 @@ focus_tree = {
 			factor = 70
 			modifier = {
 				factor = 2
-				has_completed_focus = SIL_go_right
+				has_completed_focus = SIR_go_right
 			}
 		}
 
@@ -768,12 +768,12 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SIL_free_market
+		id = SIR_free_market
 		icon = GFX_goal_generic_trade
-		prerequisite = { focus = SIL_market_economy }
+		prerequisite = { focus = SIR_market_economy }
 		x = 1
 		y = 1
-		relative_position_id = SIL_market_economy
+		relative_position_id = SIR_market_economy
 
 		cost = 10
 
@@ -781,7 +781,7 @@ focus_tree = {
 			factor = 70
 			modifier = {
 				factor = 2
-				has_completed_focus = SIL_go_right
+				has_completed_focus = SIR_go_right
 			}
 		}
 
@@ -806,14 +806,14 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SIL_new_slot_2 #연구위원회
+		id = SIR_new_slot_2 #연구위원회
 		icon = GFX_goal_generic_scientific_exchange
-		prerequisite = { focus = SIL_private_enterprise_investment }
-		prerequisite = { focus = SIL_free_market }
-		prerequisite = { focus = SIL_Industrial_Development_Committee }
+		prerequisite = { focus = SIR_private_enterprise_investment }
+		prerequisite = { focus = SIR_free_market }
+		prerequisite = { focus = SIR_Industrial_Development_Committee }
 		x = 0
 		y = 1
-		relative_position_id = SIL_private_enterprise_investment
+		relative_position_id = SIR_private_enterprise_investment
 
 		cost = 10
 
@@ -840,7 +840,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_research_slot = 1
-			custom_effect_tooltip = SIL_war_college_effect_tt
+			custom_effect_tooltip = SIR_war_college_effect_tt
 		}
 	}
 
@@ -849,11 +849,11 @@ focus_tree = {
 	##################################
 
 	focus = {
-		id = SIL_political_direction
+		id = SIR_political_direction
 		icon = GFX_goal_generic_intelligence_exchange
 		x = 8
 		y = 0
-		relative_position_id = SIL_industrial_legacy
+		relative_position_id = SIR_industrial_legacy
 
 		cost = 10
 
@@ -883,13 +883,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_go_left
+		id = SIR_go_left
 		icon = GFX_focus_generic_soviet_politics
-		prerequisite = { focus = SIL_political_direction }
-		mutually_exclusive = { focus = SIL_democratic_bastion focus = SIL_go_right }
+		prerequisite = { focus = SIR_political_direction }
+		mutually_exclusive = { focus = SIR_democratic_bastion focus = SIR_go_right }
 		x = -2
 		y = 1
-		relative_position_id = SIL_political_direction
+		relative_position_id = SIR_political_direction
 
 		cost = 10
 
@@ -897,7 +897,7 @@ focus_tree = {
 			factor = 50
 			modifier = {
 				factor = 0
-				has_completed_focus = SIL_go_right
+				has_completed_focus = SIR_go_right
 			}
 		}
 
@@ -925,12 +925,12 @@ focus_tree = {
 		}
 
 	focus = {
-		id = SIL_communism_with_a_human_face
+		id = SIR_communism_with_a_human_face
 		icon = GFX_goal_support_communism
-		prerequisite = { focus = SIL_communist_support }
+		prerequisite = { focus = SIR_communist_support }
 		x = 9
 		y = 3
-		relative_position_id = SIL_czech_socialism
+		relative_position_id = SIR_czech_socialism
 
 		cost = 10
 
@@ -960,12 +960,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_communist_support
+		id = SIR_communist_support
 		icon = GFX_focus_generic_soviet_politics
-		prerequisite = { focus = SIL_go_left }
+		prerequisite = { focus = SIR_go_left }
 		x = 0
 		y = 1
-		relative_position_id = SIL_go_left
+		relative_position_id = SIR_go_left
 
 		cost = 10
 
@@ -995,15 +995,15 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_join_comintern
+		id = SIR_join_comintern
 		icon = GFX_focus_generic_join_comintern
-		prerequisite = { focus = SIL_communist_support }
+		prerequisite = { focus = SIR_communist_support }
 		available = {
 			has_government = communism
 		}
 		x = -2
 		y = 2
-		relative_position_id = SIL_go_left
+		relative_position_id = SIR_go_left
 
 		cost = 10
 
@@ -1049,13 +1049,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_democratic_bastion
+		id = SIR_democratic_bastion
 		icon = GFX_focus_generic_the_giant_wakes
-		prerequisite = { focus = SIL_political_direction }
-		mutually_exclusive = { focus = SIL_go_right focus = SIL_go_left }
+		prerequisite = { focus = SIR_political_direction }
+		mutually_exclusive = { focus = SIR_go_right focus = SIR_go_left }
 		x = 4
 		y = 1
-		relative_position_id = SIL_political_direction
+		relative_position_id = SIR_political_direction
 
 		cost = 10
 
@@ -1082,12 +1082,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_beacon_of_liberty
+		id = SIR_beacon_of_liberty
 		icon = GFX_goal_support_democracy
-		prerequisite = { focus = SIL_democratic_bastion }
+		prerequisite = { focus = SIR_democratic_bastion }
 		x = 0
 		y = 1
-		relative_position_id = SIL_democratic_bastion
+		relative_position_id = SIR_democratic_bastion
 
 		cost = 2
 
@@ -1096,7 +1096,7 @@ focus_tree = {
 		}
 
 		available = {
-			democratic > 0.7
+			democratic > 0.3
 		}
 
 		bypass = {
@@ -1116,12 +1116,12 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SIL_free
+		id = SIR_free
 		icon = GFX_goal_generic_propaganda
-		prerequisite = { focus = SIL_beacon_of_liberty }
+		prerequisite = { focus = SIR_beacon_of_liberty }
 		x = 1
 		y = 1
-		relative_position_id = SIL_beacon_of_liberty
+		relative_position_id = SIR_beacon_of_liberty
 
 		cost = 2
 
@@ -1130,7 +1130,7 @@ focus_tree = {
 		}
 
 		available = {
-			democratic > 0.7
+			democratic > 0.5
 		}
 
 		bypass = {
@@ -1146,17 +1146,17 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_ideas = 
+			
 		}
 	}
 
 	focus = {
-		id = SIL_defensive_preparations
+		id = SIR_defensive_preparations
 		icon = GFX_goal_generic_small_arms
-		prerequisite = { focus = SIL_beacon_of_liberty }
+		prerequisite = { focus = SIR_beacon_of_liberty }
 		x = -1
 		y = 2
-		relative_position_id = SIL_democratic_bastion
+		relative_position_id = SIR_democratic_bastion
 
 		cost = 10
 
@@ -1190,13 +1190,13 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SIL_three_alliance
+		id = SIR_three_alliance
 		icon = GFX_focus_usa_union_representation_act
-		prerequisite = { focus = SIL_defensive_preparations }
-		mutually_exclusive = { focus = SIL_contact_with_the_UK }
+		prerequisite = { focus = SIR_defensive_preparations }
+		mutually_exclusive = { focus = SIR_contact_with_the_UK }
 		x = 0
 		y = 1
-		relative_position_id = SIL_defensive_preparations
+		relative_position_id = SIR_defensive_preparations
 
 		cost = 10
 
@@ -1209,7 +1209,7 @@ focus_tree = {
 				exists = yes
 				has_government = ROOT
 				has_opinion = {
-    				target = SIL
+    				target = SIR
     				value > 49
 				}
 			}
@@ -1217,7 +1217,7 @@ focus_tree = {
 				exists = yes
 				has_government = ROOT
 				has_opinion = {
-    				target = SIL
+    				target = SIR
     				value > 49
 				}
 			}
@@ -1227,11 +1227,11 @@ focus_tree = {
 			OR = {
 				BKJ = {
 					exists = no
-					has_war_with = SIL
+					has_war_with = SIR
 				}
 				GGR = {
 					exists = no
-					has_war_with = SIL
+					has_war_with = SIR
 				}
 			}
 		}
@@ -1246,7 +1246,7 @@ focus_tree = {
 
 		completion_reward = {
 			create_faction = "반도조약"
-			SIL = { 
+			SIR = { 
 				remove_ideas = no_faction
 				add_to_faction = GGR
 				add_to_faction = BKJ
@@ -1260,13 +1260,13 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SIL_contact_with_the_UK
+		id = SIR_contact_with_the_UK
 		icon = GFX_focus_chi_british_cooperation
-		prerequisite = { focus = SIL_defensive_preparations }
-		mutually_exclusive = { focus = SIL_three_alliance focus = SIL_contact_with_the_GER }
+		prerequisite = { focus = SIR_defensive_preparations }
+		mutually_exclusive = { focus = SIR_three_alliance focus = SIR_contact_with_the_GER }
 		x = 2
 		y = 1
-		relative_position_id = SIL_defensive_preparations
+		relative_position_id = SIR_defensive_preparations
 
 		cost = 10
 
@@ -1324,12 +1324,12 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SIL_contact_with_the_GER
+		id = SIR_contact_with_the_GER
 		icon = GFX_focus_chi_mission_to_germany
 		x = 2
 		y = 0
-		relative_position_id = SIL_contact_with_the_UK
-		mutually_exclusive = { focus = SIL_contact_with_the_UK }
+		relative_position_id = SIR_contact_with_the_UK
+		mutually_exclusive = { focus = SIR_contact_with_the_UK }
 
 		cost = 10
 
@@ -1338,7 +1338,7 @@ focus_tree = {
 		}
 
 		available = {
-			has_completed_focus = SIL_nationalism_focus
+			has_completed_focus = SIR_nationalism_focus
 			OR = {
 				GER = { has_government = ROOT }
 				has_government = fascism
@@ -1387,12 +1387,12 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SIL_contact_with_the_US
+		id = SIR_contact_with_the_US
 		icon = GFX_focus_chi_mission_to_the_us
-		prerequisite = { focus = SIL_three_alliance focus = SIL_contact_with_the_UK }
+		prerequisite = { focus = SIR_three_alliance focus = SIR_contact_with_the_UK }
 		x = -1
 		y = 1
-		relative_position_id = SIL_three_alliance
+		relative_position_id = SIR_three_alliance
 
 		cost = 10
 
@@ -1403,7 +1403,7 @@ focus_tree = {
 		available = {
 			and = {
 				not = {
-					has_completed_focus = SIL_contact_with_the_GER
+					has_completed_focus = SIR_contact_with_the_GER
 				}
 				OR = {
 					USA_will_support = yes
@@ -1452,12 +1452,12 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SIL_Fighter_Support
+		id = SIR_Fighter_Support
 		icon = GFX_goal_generic_air_fighter
-		prerequisite = { focus = SIL_contact_with_the_US }
+		prerequisite = { focus = SIR_contact_with_the_US }
 		x = 0
 		y = 1
-		relative_position_id = SIL_contact_with_the_US
+		relative_position_id = SIR_contact_with_the_US
 		
 		cost = 10
 
@@ -1465,7 +1465,7 @@ focus_tree = {
 		factor = 1
 			modifier = {
 				factor = 4
-				tag = SIL
+				tag = SIR
 			}
 		}
 
@@ -1490,12 +1490,12 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SIL_tank_Support
+		id = SIR_tank_Support
 		icon = GFX_focus_generic_license_production
-		prerequisite = { focus = SIL_contact_with_the_GER }
+		prerequisite = { focus = SIR_contact_with_the_GER }
 		x = -1
 		y = 1
-		relative_position_id = SIL_contact_with_the_GER
+		relative_position_id = SIR_contact_with_the_GER
 		
 		cost = 10
 
@@ -1503,7 +1503,7 @@ focus_tree = {
 		factor = 1
 			modifier = {
 				factor = 4
-				tag = SIL
+				tag = SIR
 			}
 		}
 
@@ -1521,19 +1521,19 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = SIL_GER_cooperation
+				name = SIR_GER_cooperation
 				ahead_reduction = 1
 				technology = basic_medium_tank
 			}
 		}
 	}
 	focus = {
-		id = SIL_tank
+		id = SIR_tank
 		icon = GFX_focus_focus_fra_maquis
 		x = 1
 		y = 1
-		relative_position_id = SIL_contact_with_the_GER
-		prerequisite = { focus = SIL_contact_with_the_GER }
+		relative_position_id = SIR_contact_with_the_GER
+		prerequisite = { focus = SIR_contact_with_the_GER }
 
 		cost = 10
 
@@ -1542,7 +1542,7 @@ focus_tree = {
 		}
 
 		available = {
-			has_completed_focus = SIL_nationalism_focus
+			has_completed_focus = SIR_nationalism_focus
 			OR = {
 				GER = { has_government = ROOT }
 				has_government = fascism
@@ -1588,12 +1588,12 @@ focus_tree = {
 	}
 	}
 	focus = {
-		id = SIL_experimental_mechanised_unit
+		id = SIR_experimental_mechanised_unit
 		icon = GFX_focus_generic_treaty
-		prerequisite = { focus = SIL_tank_Support }
+		prerequisite = { focus = SIR_tank_Support }
 		x = 1
 		y = 1
-		relative_position_id = SIL_tank_Support
+		relative_position_id = SIR_tank_Support
 
 		cost = 10
 
@@ -1630,7 +1630,7 @@ focus_tree = {
 			hidden_effect = {
 				if = {
 					limit = {
-						tag = SIL
+						tag = SIR
 					}
 					division_template = {
 						name = "Experimental Mechanised Division"
@@ -1659,12 +1659,12 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SIL_fighter_factory
+		id = SIR_fighter_factory
 		icon = GFX_focus_generic_industry_3
-		prerequisite = { focus = SIL_contact_with_the_US focus = SIL_contact_with_the_UK focus = SIL_contact_with_the_GER }
+		prerequisite = { focus = SIR_contact_with_the_US focus = SIR_contact_with_the_UK focus = SIR_contact_with_the_GER }
 		x = 2
 		y = 1
-		relative_position_id = SIL_contact_with_the_US
+		relative_position_id = SIR_contact_with_the_US
 		
 		cost = 10
 
@@ -1672,12 +1672,12 @@ focus_tree = {
 		factor = 1
 			modifier = {
 				factor = 4
-				tag = SIL
+				tag = SIR
 			}
 		}
 
 		available = {
-			controls_state = 809
+			controls_state = 838
 		}
 
 		cancel_if_invalid = yes
@@ -1689,12 +1689,12 @@ focus_tree = {
 			if = {
 				limit = {
 					NOT = {
-						has_completed_focus = SIL_contact_with_the_UK
-						has_completed_focus = SIL_contact_with_the_GER
-						has_completed_focus = SIL_contact_with_the_US
+						has_completed_focus = SIR_contact_with_the_UK
+						has_completed_focus = SIR_contact_with_the_GER
+						has_completed_focus = SIR_contact_with_the_US
 					}
 				}
-				809 = {
+				838 = {
 					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = arms_factory
@@ -1705,13 +1705,13 @@ focus_tree = {
 			}
 			else_if = {
 				limit = {
-					has_completed_focus = SIL_contact_with_the_UK
+					has_completed_focus = SIR_contact_with_the_UK
 					NOT = {
-						has_completed_focus = SIL_contact_with_the_US
-						has_completed_focus = SIL_contact_with_the_GER
+						has_completed_focus = SIR_contact_with_the_US
+						has_completed_focus = SIR_contact_with_the_GER
 					}
 				}
-				809 = {
+				838 = {
 					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = arms_factory
@@ -1726,13 +1726,13 @@ focus_tree = {
 			}
 			else_if = {
 				limit = {
-					has_completed_focus = SIL_contact_with_the_GER
+					has_completed_focus = SIR_contact_with_the_GER
 					NOT = {
-						has_completed_focus = SIL_contact_with_the_UK
-						has_completed_focus = SIL_contact_with_the_US
+						has_completed_focus = SIR_contact_with_the_UK
+						has_completed_focus = SIR_contact_with_the_US
 					}
 				}
-				809 = {
+				838 = {
 					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = arms_factory
@@ -1747,13 +1747,13 @@ focus_tree = {
 			}
 			else_if = {
 				limit = {
-					has_completed_focus = SIL_contact_with_the_US
+					has_completed_focus = SIR_contact_with_the_US
 					NOT = {
-						has_completed_focus = SIL_contact_with_the_UK
-						has_completed_focus = SIL_contact_with_the_GER
+						has_completed_focus = SIR_contact_with_the_UK
+						has_completed_focus = SIR_contact_with_the_GER
 					}
 				}
-				809 = {
+				838 = {
 					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = arms_factory
@@ -1769,11 +1769,11 @@ focus_tree = {
 			else_if = {
 				limit = {
 					AND = {
-						has_completed_focus = SIL_contact_with_the_US
-						has_completed_focus = SIL_contact_with_the_UK
+						has_completed_focus = SIR_contact_with_the_US
+						has_completed_focus = SIR_contact_with_the_UK
 					}
 				}
-				809 = {
+				838 = {
 					add_extra_state_shared_building_slots = 3
 					add_building_construction = {
 						type = arms_factory
@@ -1793,12 +1793,12 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SIL_ideological_fanaticism
+		id = SIR_ideological_fanaticism
 		icon = GFX_goal_generic_demand_territory
-		prerequisite = { focus = SIL_communism_with_a_human_face focus = SIL_aggressive_wars }
+		prerequisite = { focus = SIR_communism_with_a_human_face focus = SIR_aggressive_wars }
 		x = -5
 		y = 3
-		relative_position_id = SIL_democratic_bastion
+		relative_position_id = SIR_democratic_bastion
 
 		cost = 10
 
@@ -1813,9 +1813,9 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_baekje_war_goal
+		id = SIR_baekje_war_goal
 		icon = GFX_goal_generic_propaganda
-		prerequisite = { focus = SIL_communism_with_a_human_face focus = SIL_aggressive_wars }
+		prerequisite = { focus = SIR_communism_with_a_human_face focus = SIR_aggressive_wars }
 		will_lead_to_war_with = BKJ
 
 		cancel = {
@@ -1823,7 +1823,7 @@ focus_tree = {
 		}
 		x = -1
 		y = 1
-		relative_position_id = SIL_communism_with_a_human_face
+		relative_position_id = SIR_communism_with_a_human_face
 		cost = 10
 		historical_ai = {
 			NOT = {
@@ -1869,9 +1869,9 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_goguryeo_war_goal
+		id = SIR_goguryeo_war_goal
 		icon = GFX_goal_generic_propaganda
-		prerequisite = { focus = SIL_communism_with_a_human_face focus = SIL_aggressive_wars }
+		prerequisite = { focus = SIR_communism_with_a_human_face focus = SIR_aggressive_wars }
 		will_lead_to_war_with = GGR
 
 		cancel = {
@@ -1879,7 +1879,7 @@ focus_tree = {
 		}
 		x = 1
 		y = 1
-		relative_position_id = SIL_aggressive_wars
+		relative_position_id = SIR_aggressive_wars
 		cost = 10
 		historical_ai = {
 			NOT = {
@@ -1924,14 +1924,14 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SIL_Three_Kingdoms_Unification
+		id = SIR_Three_Kingdoms_Unification
 		icon = GFX_focus_generic_treaty
-		prerequisite = { focus = SIL_goguryeo_war_goal }
-		prerequisite = { focus = SIL_baekje_war_goal  }
+		prerequisite = { focus = SIR_goguryeo_war_goal }
+		prerequisite = { focus = SIR_baekje_war_goal  }
 
 		x = -1
 		y = 2
-		relative_position_id = SIL_aggressive_wars
+		relative_position_id = SIR_aggressive_wars
 
 		cost = 10
 
@@ -1940,7 +1940,7 @@ focus_tree = {
 		}
 
 		available = {
-			SIL = {
+			GGR = {
 				exists = no
 			}
 			BKJ = {
@@ -1974,20 +1974,20 @@ focus_tree = {
 			}
 			every_state = {
 				limit = {
-					is_core_of = SIL
+					is_core_of = GGR
 				}
 				add_core_of = ROOT
 			}
 		}
 	}
 	focus = {
-		id = SIL_Three_Kingdoms_Unification2
+		id = SIR_Three_Kingdoms_Unification2
 		icon = GFX_focus_generic_self_management
-		prerequisite = { focus = SIL_democratic_bastion }
+		prerequisite = { focus = SIR_democratic_bastion }
 
 		x = -2
 		y = 1
-		relative_position_id = SIL_democratic_bastion
+		relative_position_id = SIR_democratic_bastion
 
 		cost = 10
 
@@ -1996,11 +1996,12 @@ focus_tree = {
 		}
 
 		available = {
-			controls_state = 525
-			controls_state = 808
-			controls_state = 810
-			controls_state = 527
-			controls_state = 809
+			controls_state = 527  
+			controls_state = 716 
+			controls_state = 745  
+			controls_state = 328  
+			controls_state = 839 
+			controls_state = 717  
 		}
 		modifier = {
 			factor = 0
@@ -2028,19 +2029,19 @@ focus_tree = {
 			}
 			every_state = {
 				limit = {
-					is_core_of = SIL
+					is_core_of = SIR
 				}
 				add_core_of = ROOT
 			}
 		}
 	}
 	focus = {
-		id = SIL_tianla_attack_2
+		id = SIR_tianla_attack_2
 		icon = GFX_focus_hol_prepare_the_inundation_lines
-		prerequisite = { focus = SIL_baekje_war_goal }
+		prerequisite = { focus = SIR_baekje_war_goal }
 		x = 0
 		y = 1
-		relative_position_id = SIL_baekje_war_goal
+		relative_position_id = SIR_baekje_war_goal
 		rwill_lead_to_war_with = TAM
 
 		cancel = {
@@ -2090,13 +2091,13 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SIL_Mongolia_request
+		id = SIR_Mongolia_request
 		icon = GFX_goal_generic_dangerous_deal
-		prerequisite = { focus = SIL_join_comintern }
-		mutually_exclusive = { focus = SIL_attack_Mongolia }
+		prerequisite = { focus = SIR_join_comintern }
+		mutually_exclusive = { focus = SIR_attack_Mongolia }
 		x = -3
 		y = 2
-		relative_position_id = SIL_Three_Kingdoms_Unification
+		relative_position_id = SIR_Three_Kingdoms_Unification
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -2120,14 +2121,14 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SIL_attack_soviet
+		id = SIR_attack_soviet
 		icon = GFX_focus_attack_soviet
-		prerequisite = { focus = SIL_attack_Mongolia }
+		prerequisite = { focus = SIR_attack_Mongolia }
 		x = 0
 		y = 1
-		relative_position_id = SIL_attack_Mongolia
+		relative_position_id = SIR_attack_Mongolia
 		cost = 10
-		relative_position_id = SIL_attack_Mongolia
+		relative_position_id = SIR_attack_Mongolia
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -2166,14 +2167,14 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SIL_attack_Mongolia
+		id = SIR_attack_Mongolia
 		icon = GFX_goal_generic_war_with_comintern
-		prerequisite = { focus = SIL_continental_expansion }
-		mutually_exclusive = { focus = SIL_Mongolia_request }
+		prerequisite = { focus = SIR_continental_expansion }
+		mutually_exclusive = { focus = SIR_Mongolia_request }
 		x = -1
 		y = 1
 		cost = 10.10
-		relative_position_id = SIL_continental_expansion
+		relative_position_id = SIR_continental_expansion
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -2227,12 +2228,12 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SIL_continental_expansion
+		id = SIR_continental_expansion
 		icon = GFX_goal_generic_occupy_states_ongoing_war
-		prerequisite = { focus = SIL_Three_Kingdoms_Unification }
+		prerequisite = { focus = SIR_Three_Kingdoms_Unification }
 		x = 0
 		y = 1
-		relative_position_id = SIL_Three_Kingdoms_Unification
+		relative_position_id = SIR_Three_Kingdoms_Unification
 		cancel = {
 			
 		}
@@ -2253,9 +2254,9 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_japan_war_goal
+		id = SIR_japan_war_goal
 		icon = GFX_focus_jap_cast_the_die
-		prerequisite = { focus = SIL_attack_manchuria }
+		prerequisite = { focus = SIR_attack_manchuria }
 		will_lead_to_war_with = JAP
 
 		cancel = {
@@ -2263,7 +2264,7 @@ focus_tree = {
 		}
 		x = 0
 		y = 1
-		relative_position_id = SIL_attack_manchuria
+		relative_position_id = SIR_attack_manchuria
 		cost = 10
 		historical_ai = {
 			NOT = {
@@ -2309,12 +2310,12 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = SIL_attack_manchuria
+		id = SIR_attack_manchuria
 		icon = GFX_goal_generic_major_war
-		prerequisite = { focus = SIL_continental_expansion }
+		prerequisite = { focus = SIR_continental_expansion }
 		x = 3
 		y = 1
-		relative_position_id = SIL_continental_expansion
+		relative_position_id = SIR_continental_expansion
 
 		cost = 10
 
@@ -2331,12 +2332,12 @@ focus_tree = {
 		available_if_capitulated = yes
 	}
 	focus = {
-		id = SIL_Shandong_attack
+		id = SIR_Shandong_attack
 		icon = GFX_goal_generic_more_territorial_claims
-		prerequisite = { focus = SIL_continental_expansion }
+		prerequisite = { focus = SIR_continental_expansion }
 		x = 1
 		y = 1
-		relative_position_id = SIL_continental_expansion
+		relative_position_id = SIR_continental_expansion
 
 		cost = 10
 
@@ -2364,12 +2365,12 @@ focus_tree = {
 		}
 	}
 	focus = {
-	id = SIL_china_war_goal
+	id = SIR_china_war_goal
 	icon = GFX_focus_chi_one_china_policy
-	prerequisite = { focus = SIL_Shandong_attack }
+	prerequisite = { focus = SIR_Shandong_attack }
 	x = 1
 	y = 2
-	relative_position_id = SIL_continental_expansion
+	relative_position_id = SIR_continental_expansion
 
 	cost = 10
 
@@ -2505,13 +2506,13 @@ focus_tree = {
 }
 
 	focus = {
-		id = SIL_go_right
+		id = SIR_go_right
 		icon = GFX_focus_generic_strike_at_democracy1
-		prerequisite = { focus = SIL_political_direction }
-		mutually_exclusive = { focus = SIL_democratic_bastion focus = SIL_go_left }
+		prerequisite = { focus = SIR_political_direction }
+		mutually_exclusive = { focus = SIR_democratic_bastion focus = SIR_go_left }
 		x = 0
 		y = 1
-		relative_position_id = SIL_political_direction
+		relative_position_id = SIR_political_direction
 
 		cost = 10
 
@@ -2529,12 +2530,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_nationalism_focus
+		id = SIR_nationalism_focus
 		icon = GFX_goal_support_fascism
-		prerequisite = { focus = SIL_go_right }
+		prerequisite = { focus = SIR_go_right }
 		x = 0
 		y = 1
-		relative_position_id = SIL_go_right
+		relative_position_id = SIR_go_right
 
 		cost = 10
 
@@ -2564,12 +2565,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_aggressive_wars
+		id = SIR_aggressive_wars
 		icon = GFX_goal_support_fascism
-		prerequisite = { focus = SIL_nationalism_focus }
+		prerequisite = { focus = SIR_nationalism_focus }
 		x = 0
 		y = 2
-		relative_position_id = SIL_go_right
+		relative_position_id = SIR_go_right
 
 		cost = 10
 
@@ -2603,11 +2604,11 @@ focus_tree = {
 	#######################################
 
 	focus = {
-		id = SIL_military_research_institute
+		id = SIR_military_research_institute
 		icon = GFX_focus_CZE_military_research_institute
 		x = 11
 		y = 0
-		relative_position_id = SIL_political_direction
+		relative_position_id = SIR_political_direction
 
 		cost = 10
 
@@ -2637,12 +2638,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_mountain_bonus
+		id = SIR_mountain_bonus
 		icon = GFX_goal_generic_special_forces
-		prerequisite = { focus = SIL_military_research_institute }
+		prerequisite = { focus = SIR_military_research_institute }
 		x = -3
 		y = 1
-		relative_position_id = SIL_military_research_institute
+		relative_position_id = SIR_military_research_institute
 
 		cost = 10
 
@@ -2678,12 +2679,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_inf_and_artillery_advancement
+		id = SIR_inf_and_artillery_advancement
 		icon = GFX_goal_rhineland
-		prerequisite = { focus = SIL_military_research_institute }
+		prerequisite = { focus = SIR_military_research_institute }
 		x = -1
 		y = 1
-		relative_position_id = SIL_military_research_institute
+		relative_position_id = SIR_military_research_institute
 
 		cost = 10
 
@@ -2709,7 +2710,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = SIL_inf_and_artillery_advancement
+				name = SIR_inf_and_artillery_advancement
 				bonus = 0.5
 				ahead_reduction = 1
 				uses = 1
@@ -2719,12 +2720,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_support_bonus
+		id = SIR_support_bonus
 		icon = GFX_goal_generic_army_artillery
-		prerequisite = { focus = SIL_mountain_bonus }
+		prerequisite = { focus = SIR_mountain_bonus }
 		x = -3
 		y = 2
-		relative_position_id = SIL_military_research_institute
+		relative_position_id = SIR_military_research_institute
 
 		cost = 10
 
@@ -2750,7 +2751,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = SIL_support_bonus #@#
+				name = SIR_support_bonus #@#
 				bonus = 0.5
 				uses = 2
 				#category = hospital_tech
@@ -2763,7 +2764,7 @@ focus_tree = {
 				category = support_tech	
 			}
 		add_tech_bonus = {
-			name = SIL_support_bonus #@#
+			name = SIR_support_bonus #@#
 			bonus = 0.5
 			uses = 1
 			technology = support_weapons2
@@ -2773,12 +2774,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_inf_and_artillery_advancement_2
+		id = SIR_inf_and_artillery_advancement_2
 		icon = GFX_goal_generic_army_artillery2
-		prerequisite = { focus = SIL_inf_and_artillery_advancement }
+		prerequisite = { focus = SIR_inf_and_artillery_advancement }
 		x = -1
 		y = 2
-		relative_position_id = SIL_military_research_institute
+		relative_position_id = SIR_military_research_institute
 
 		cost = 10
 
@@ -2804,7 +2805,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = SIL_inf_and_artillery_advancement_2 #@#
+				name = SIR_inf_and_artillery_advancement_2 #@#
 				bonus = 0.5
 				ahead_reduction = 1
 				uses = 1
@@ -2814,13 +2815,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_doctrine_bonus
+		id = SIR_doctrine_bonus
 		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = SIL_support_bonus }
-		prerequisite = { focus = SIL_inf_and_artillery_advancement_2 }
+		prerequisite = { focus = SIR_support_bonus }
+		prerequisite = { focus = SIR_inf_and_artillery_advancement_2 }
 		x = -2
 		y = 3
-		relative_position_id = SIL_military_research_institute
+		relative_position_id = SIR_military_research_institute
 
 		cost = 10
 
@@ -2855,12 +2856,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_motorization_scheme
+		id = SIR_motorization_scheme
 		icon = GFX_goal_generic_army_motorized
-		prerequisite = { focus = SIL_military_research_institute }
+		prerequisite = { focus = SIR_military_research_institute }
 		x = 1
 		y = 1
-		relative_position_id = SIL_military_research_institute
+		relative_position_id = SIR_military_research_institute
 
 		cost = 10
 
@@ -2894,12 +2895,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_armour_bonus_1
+		id = SIR_armour_bonus_1
 		icon = GFX_goal_generic_army_tanks
-		prerequisite = { focus = SIL_military_research_institute }
+		prerequisite = { focus = SIR_military_research_institute }
 		x = 3
 		y = 1
-		relative_position_id = SIL_military_research_institute
+		relative_position_id = SIR_military_research_institute
 
 		cost = 10
 
@@ -2933,12 +2934,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_mechanization
+		id = SIR_mechanization
 		icon = GFX_goal_generic_production2
-		prerequisite = { focus = SIL_motorization_scheme }
+		prerequisite = { focus = SIR_motorization_scheme }
 		x = 1
 		y = 2
-		relative_position_id = SIL_military_research_institute
+		relative_position_id = SIR_military_research_institute
 
 		cost = 10
 
@@ -2964,7 +2965,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = SIL_mechanization #@#
+				name = SIR_mechanization #@#
 				bonus = 0.5
 				uses = 1
 				category = cat_mechanized_equipment
@@ -2973,12 +2974,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_armour_bonus_ii
+		id = SIR_armour_bonus_ii
 		icon = GFX_goal_generic_army_tanks
-		prerequisite = { focus = SIL_armour_bonus_1 }
+		prerequisite = { focus = SIR_armour_bonus_1 }
 		x = 3
 		y = 2
-		relative_position_id = SIL_military_research_institute
+		relative_position_id = SIR_military_research_institute
 
 		cost = 10
 
@@ -3013,13 +3014,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_doctrine_bonus_2
+		id = SIR_doctrine_bonus_2
 		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = SIL_mechanization }
-		prerequisite = { focus = SIL_armour_bonus_ii }
+		prerequisite = { focus = SIR_mechanization }
+		prerequisite = { focus = SIR_armour_bonus_ii }
 		x = 2
 		y = 3
-		relative_position_id = SIL_military_research_institute
+		relative_position_id = SIR_military_research_institute
 
 		cost = 10
 
@@ -3054,13 +3055,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_war_college
+		id = SIR_war_college
 		icon = GFX_goal_generic_build_tank
-		prerequisite = { focus = SIL_doctrine_bonus }
-		prerequisite = { focus = SIL_doctrine_bonus_2 }
+		prerequisite = { focus = SIR_doctrine_bonus }
+		prerequisite = { focus = SIR_doctrine_bonus_2 }
 		x = 0
 		y = 4
-		relative_position_id = SIL_military_research_institute
+		relative_position_id = SIR_military_research_institute
 
 		cost = 10
 
@@ -3091,7 +3092,7 @@ focus_tree = {
 					NOT = { amount_research_slots > 4 }
 				}
 				add_research_slot = 1
-				custom_effect_tooltip = SIL_war_college_effect_tt
+				custom_effect_tooltip = SIR_war_college_effect_tt
 			}
 		}
 	}
@@ -3101,11 +3102,11 @@ focus_tree = {
 	#######################################
 
 	focus = {
-		id = SIL_military_aeronautical_institute
+		id = SIR_military_aeronautical_institute
 		icon = GFX_focus_CZE_military_aeronautical_institute
 		x = 8
 		y = 0
-		relative_position_id = SIL_military_research_institute
+		relative_position_id = SIR_military_research_institute
 
 		cost = 10
 
@@ -3135,12 +3136,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_import_foreign_fighters
+		id = SIR_import_foreign_fighters
 		icon = GFX_goal_generic_air_fighter
-		prerequisite = { focus = SIL_military_aeronautical_institute }
+		prerequisite = { focus = SIR_military_aeronautical_institute }
 		x = -2
 		y = 1
-		relative_position_id = SIL_military_aeronautical_institute
+		relative_position_id = SIR_military_aeronautical_institute
 
 		cost = 10
 
@@ -3166,7 +3167,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = SIL_import_foreign_fighters #@#
+				name = SIR_import_foreign_fighters #@#
 				bonus = 0.5
 				uses = 1
 				category = light_fighter
@@ -3176,13 +3177,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_light_fighter_focus
+		id = SIR_light_fighter_focus
 		icon = GFX_goal_generic_air_fighter2
-		prerequisite = { focus = SIL_import_foreign_fighters }
-		mutually_exclusive = { focus = SIL_heavy_fighter_focus }
+		prerequisite = { focus = SIR_import_foreign_fighters }
+		mutually_exclusive = { focus = SIR_heavy_fighter_focus }
 		x = -1
 		y = 1
-		relative_position_id = SIL_import_foreign_fighters
+		relative_position_id = SIR_import_foreign_fighters
 
 		cost = 10
 
@@ -3208,7 +3209,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = SIL_light_fighter_focus #@#
+				name = SIR_light_fighter_focus #@#
 				bonus = 0.5
 				uses = 1
 				category = light_fighter
@@ -3217,13 +3218,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_heavy_fighter_focus
+		id = SIR_heavy_fighter_focus
 		icon = GFX_goal_generic_air_fighter
-		prerequisite = { focus = SIL_import_foreign_fighters }
-		mutually_exclusive = { focus = SIL_light_fighter_focus }
+		prerequisite = { focus = SIR_import_foreign_fighters }
+		mutually_exclusive = { focus = SIR_light_fighter_focus }
 		x = 1
 		y = 1
-		relative_position_id = SIL_import_foreign_fighters
+		relative_position_id = SIR_import_foreign_fighters
 
 		cost = 10
 
@@ -3249,7 +3250,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = SIL_heavy_fighter_focus #@#
+				name = SIR_heavy_fighter_focus #@#
 				bonus = 0.5
 				uses = 1
 				category = cat_heavy_fighter
@@ -3258,12 +3259,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_air_is_our_sea
+		id = SIR_air_is_our_sea
 		icon = GFX_goal_generic_build_airforce
-		prerequisite = { focus = SIL_military_aeronautical_institute }
+		prerequisite = { focus = SIR_military_aeronautical_institute }
 		x = 0
 		y = 1
-		relative_position_id = SIL_military_aeronautical_institute
+		relative_position_id = SIR_military_aeronautical_institute
 
 		cost = 10
 
@@ -3293,14 +3294,14 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_rule_the_air
+		id = SIR_rule_the_air
 		icon = GFX_goal_generic_air_doctrine
-		prerequisite = { focus = SIL_air_is_our_sea }
-		prerequisite = { focus = SIL_light_fighter_focus focus = SIL_heavy_fighter_focus }
-		prerequisite = { focus = SIL_tac_focus focus = SIL_cas_focus }
+		prerequisite = { focus = SIR_air_is_our_sea }
+		prerequisite = { focus = SIR_light_fighter_focus focus = SIR_heavy_fighter_focus }
+		prerequisite = { focus = SIR_tac_focus focus = SIR_cas_focus }
 		x = 0
 		y = 3
-		relative_position_id = SIL_military_aeronautical_institute
+		relative_position_id = SIR_military_aeronautical_institute
 
 		cost = 10
 
@@ -3335,12 +3336,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_import_foreign_bombers
+		id = SIR_import_foreign_bombers
 		icon = GFX_goal_generic_air_bomber
-		prerequisite = { focus = SIL_military_aeronautical_institute }
+		prerequisite = { focus = SIR_military_aeronautical_institute }
 		x = 2
 		y = 1
-		relative_position_id = SIL_military_aeronautical_institute
+		relative_position_id = SIR_military_aeronautical_institute
 
 		cost = 10
 
@@ -3366,7 +3367,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = SIL_import_foreign_bombers #@#
+				name = SIR_import_foreign_bombers #@#
 				bonus = 0.5
 				uses = 1
 				category = cas_bomber
@@ -3376,13 +3377,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_cas_focus
+		id = SIR_cas_focus
 		icon = GFX_goal_generic_CAS
-		prerequisite = { focus = SIL_import_foreign_bombers }
-		mutually_exclusive = { focus = SIL_tac_focus }
+		prerequisite = { focus = SIR_import_foreign_bombers }
+		mutually_exclusive = { focus = SIR_tac_focus }
 		x = -1
 		y = 1
-		relative_position_id = SIL_import_foreign_bombers
+		relative_position_id = SIR_import_foreign_bombers
 
 		cost = 10
 
@@ -3408,7 +3409,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = SIL_cas_focus #@#
+				name = SIR_cas_focus #@#
 				bonus = 0.5
 				uses = 1
 				category = cas_bomber
@@ -3417,13 +3418,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_tac_focus
+		id = SIR_tac_focus
 		icon = GFX_goal_generic_air_bomber
-		prerequisite = { focus = SIL_import_foreign_bombers }
-		mutually_exclusive = { focus = SIL_cas_focus }
+		prerequisite = { focus = SIR_import_foreign_bombers }
+		mutually_exclusive = { focus = SIR_cas_focus }
 		x = 1
 		y = 1
-		relative_position_id = SIL_import_foreign_bombers
+		relative_position_id = SIR_import_foreign_bombers
 
 		cost = 10
 
@@ -3449,7 +3450,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = SIL_tac_focus #@#
+				name = SIR_tac_focus #@#
 				bonus = 0.5
 				uses = 1
 				category = tactical_bomber
@@ -3462,13 +3463,13 @@ focus_tree = {
 
 
 	focus = {
-		id = SIL_develop_polish_ship_building
+		id = SIR_develop_polish_ship_building
 		icon = GFX_goal_generic_construct_naval_dockyard
 		
 		x = 7
 		y = 0
 		cost = 10
-		relative_position_id = SIL_military_aeronautical_institute
+		relative_position_id = SIR_military_aeronautical_institute
 
 		ai_will_do = {
 			factor = 2
@@ -3478,7 +3479,7 @@ focus_tree = {
 		
 		complete_tooltip = {
 			random_state = {
-				limit = { has_state_flag = SIL_develop_polish_ship_building_1 }
+				limit = { has_state_flag = SIR_develop_polish_ship_building_1 }
 				add_building_construction = {
 					type = dockyard
 					level = 3
@@ -3502,20 +3503,20 @@ focus_tree = {
 					level = 3
 					instant_build = yes
 				}
-				set_state_flag = SIL_develop_polish_ship_building_1
+				set_state_flag = SIR_develop_polish_ship_building_1
 			}
 			#Add 3 Dockyards at Gdansk			
 		}
 	}
 
 	focus = {
-		id = SIL_study_foreign_built_ships
+		id = SIR_study_foreign_built_ships
 		icon = GFX_goal_generic_production
-		prerequisite = { focus = SIL_develop_polish_ship_building }
+		prerequisite = { focus = SIR_develop_polish_ship_building }
 		
 		x = 1
 		y = 1
-		relative_position_id = SIL_develop_polish_ship_building
+		relative_position_id = SIR_develop_polish_ship_building
 		cost = 10
 
 		ai_will_do = {
@@ -3526,7 +3527,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = SIL_study_foreign_built_ships
+				name = SIR_study_foreign_built_ships
 				bonus = 0.5
 				uses = 1
 				category = dd_tech
@@ -3536,13 +3537,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_a_cruiser_navy
+		id = SIR_a_cruiser_navy
 		icon = GFX_goal_generic_navy_anti_submarine
-		prerequisite = { focus = SIL_study_foreign_built_ships }
+		prerequisite = { focus = SIR_study_foreign_built_ships }
 		
 		x = 1
 		y = 1
-		relative_position_id = SIL_study_foreign_built_ships
+		relative_position_id = SIR_study_foreign_built_ships
 		cost = 10
 
 		ai_will_do = {
@@ -3553,7 +3554,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = SIL_a_cruiser_navy
+				name = SIR_a_cruiser_navy
 				bonus = 0.5
 				uses = 1
 				category = cl_tech
@@ -3563,13 +3564,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_import_submarine_technology
+		id = SIR_import_submarine_technology
 		icon = GFX_goal_generic_production2
-		prerequisite = { focus = SIL_develop_polish_ship_building }
+		prerequisite = { focus = SIR_develop_polish_ship_building }
 		
 		x = -1
 		y = 1
-		relative_position_id = SIL_develop_polish_ship_building
+		relative_position_id = SIR_develop_polish_ship_building
 		cost = 10
 
 		ai_will_do = {
@@ -3580,7 +3581,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = SIL_import_submarine_technology
+				name = SIR_import_submarine_technology
 				bonus = 0.5
 				uses = 1
 				category = ss_tech
@@ -3590,12 +3591,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_commerce_attack
+		id = SIR_commerce_attack
 		icon = GFX_goal_generic_navy_submarine
-		prerequisite = { focus = SIL_import_submarine_technology }
+		prerequisite = { focus = SIR_import_submarine_technology }
 		x = -1
 		y = 1
-		relative_position_id = SIL_import_submarine_technology
+		relative_position_id = SIR_import_submarine_technology
 		cost = 10
 
 		ai_will_do = {
@@ -3606,7 +3607,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = SIL_commerce_attack
+				name = SIR_commerce_attack
 				bonus = 0.5
 				uses = 1
 				category = submarine_doctrine
@@ -3616,13 +3617,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_the_twin_threats
+		id = SIR_the_twin_threats
 		icon = GFX_goal_generic_navy_doctrines_tactics
-		prerequisite = { focus = SIL_import_submarine_technology focus = SIL_study_foreign_built_ships }
+		prerequisite = { focus = SIR_import_submarine_technology focus = SIR_study_foreign_built_ships }
 		
 		x = 1
 		y = 1
-		relative_position_id = SIL_import_submarine_technology
+		relative_position_id = SIR_import_submarine_technology
 		cost = 10
 
 		ai_will_do = {
@@ -3633,7 +3634,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = SIL_the_twin_threats
+				name = SIR_the_twin_threats
 				bonus = 0.5
 				uses = 1
 				category = naval_doctrine
@@ -3643,13 +3644,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_coastal_defense
+		id = SIR_coastal_defense
 		icon = GFX_goal_generic_navy_cruiser
-		prerequisite = { focus = SIL_the_twin_threats }
-		mutually_exclusive = { focus = SIL_strike_force }
+		prerequisite = { focus = SIR_the_twin_threats }
+		mutually_exclusive = { focus = SIR_strike_force }
 		x = 1
 		y = 1
-		relative_position_id = SIL_the_twin_threats
+		relative_position_id = SIR_the_twin_threats
 		cost = 10
 
 		ai_will_do = {
@@ -3660,13 +3661,13 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = SIL_coastal_defense
+				name = SIR_coastal_defense
 				bonus = 0.5
 				uses = 1
 				category = ss_tech
 			}
 			add_tech_bonus = {
-				name = SIL_coastal_defense
+				name = SIR_coastal_defense
 				bonus = 0.5
 				uses = 1
 				category = dd_tech
@@ -3676,13 +3677,13 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = SIL_strike_force
+		id = SIR_strike_force
 		icon = GFX_goal_generic_occupy_states_coastal
-		prerequisite = { focus = SIL_the_twin_threats }
-		mutually_exclusive = { focus = SIL_coastal_defense }
+		prerequisite = { focus = SIR_the_twin_threats }
+		mutually_exclusive = { focus = SIR_coastal_defense }
 		x = -1
 		y = 1
-		relative_position_id = SIL_the_twin_threats
+		relative_position_id = SIR_the_twin_threats
 		cost = 10
 
 		ai_will_do = {
@@ -3693,13 +3694,13 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = SIL_strike_force
+				name = SIR_strike_force
 				bonus = 0.5
 				uses = 1
 				category = cl_tech
 			}
 			add_tech_bonus = {
-				name = SIL_strike_force
+				name = SIR_strike_force
 				bonus = 0.5
 				uses = 1
 				category = ca_tech
@@ -3709,13 +3710,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SIL_baltic_navy
+		id = SIR_baltic_navy
 		icon = GFX_goal_generic_navy_battleship
-		prerequisite = { focus = SIL_strike_force focus = SIL_coastal_defense }
+		prerequisite = { focus = SIR_strike_force focus = SIR_coastal_defense }
 		
 		x = 1
 		y = 1
-		relative_position_id = SIL_strike_force
+		relative_position_id = SIR_strike_force
 		cost = 10
 
 		ai_will_do = {
@@ -3726,7 +3727,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = SIL_baltic_navy
+				name = SIR_baltic_navy
 				bonus = 0.5
 				uses = 1
 				category = naval_doctrine

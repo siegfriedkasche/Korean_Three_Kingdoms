@@ -1,0 +1,29 @@
+state={
+	id=835
+	name="탐라"
+	manpower = 1274200
+	state_category = town
+	resources={
+		steel= 6
+		aluminium= 2
+	}
+
+	history={
+		owner = TAM
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+		}
+		
+		victory_points = {
+			1177 2
+		}	
+
+		add_core_of = TAM
+	}
+
+	provinces={
+		1177
+	}
+}

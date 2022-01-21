@@ -1,0 +1,10 @@
+VGE_Russian_empire_form_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_russian_empire_form_decision
+	
+	allowed = {
+		original_tag = VGE
+	}
+}

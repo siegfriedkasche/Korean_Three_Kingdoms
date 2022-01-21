@@ -1,0 +1,227 @@
+ideas = {
+
+	country = {
+	
+		soviet_Influence = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+
+			removal_cost = -1
+
+			picture = home_of_revolution
+
+			
+			modifier = {
+				communism_drift = 0.01
+				
+			}
+			targeted_modifier = {
+				tag = SOV
+				cic_to_target_factor = 0.1
+				mic_to_target_factor = 0.1
+			}
+		}
+	}
+	country = {
+	
+		soviet_Influence_2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+
+			removal_cost = -1
+
+			picture = home_of_revolution
+
+			
+			modifier = {
+				communism_drift = 0.01
+				min_export = -0.2
+			}
+			targeted_modifier = {
+				tag = SOV
+				cic_to_target_factor = 0.1
+				mic_to_target_factor = 0.1
+			}
+		}
+	}
+	country = {
+	
+		export_to_mongolia = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+
+			removal_cost = -1
+
+			picture = generic_agrarian_reform
+
+			
+			modifier = {
+
+			}
+			targeted_modifier = {
+				tag = MON
+				trade_cost_for_target_factor = -0.3
+			}
+		}
+	}
+	country = {
+	
+		remnants_of_driftwood = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+
+			removal_cost = -1
+
+			picture = cammell_laird
+
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+				industrial_capacity_factory = -0.2
+				global_building_slots_factor = -0.15
+				weekly_manpower = -10
+			}
+		}
+	}
+	country = {
+	
+		Assassination_Threat = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+
+			removal_cost = -1
+
+			picture = generic_purge
+
+			
+			modifier = {
+				stability_factor = -0.4
+			}
+		}
+	}
+	country = {
+	
+		agricultural_collectivization = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			removal_cost = -1
+
+			picture = generic_agrarian_reform
+
+			
+			modifier = {
+				consumer_goods_factor = -0.04
+				global_building_slots_factor = 0.15
+				
+				#weekly_manpower = 100
+			}
+		}
+	}
+	country = {
+	
+		SOV_financial_aid = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+
+			removal_cost = -1
+
+			picture = SPR_relocate_the_gold_reserves
+
+			
+			modifier = {
+				consumer_goods_factor = -0.03
+				industrial_capacity_factory = 0.1
+			}
+		}
+	}
+	country = {
+	
+		MON_Request_for_financial_assistance_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+
+			removal_cost = -1
+
+			picture = ast_all_in
+
+			
+			modifier = {
+				consumer_goods_factor = -0.01
+				production_speed_buildings_factor = 0.1
+			}
+		}
+	}
+	country = {
+	
+		national_unity = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+
+			removal_cost = -1
+
+			picture = generic_infantry_bonus
+
+			
+			modifier = {
+				conscription = 0.03
+				cavalry_attack_factor = 0.05
+				cavalry_defence_factor = 0.05
+			}
+		}
+	}
+}

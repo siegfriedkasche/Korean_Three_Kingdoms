@@ -1,0 +1,19 @@
+leader_traits = {
+
+	choose_people = {
+		stability_factor = 0.15
+		war_support_factor = -0.1
+		communism_drift	= 0.03
+		conscription = 0.02
+		industrial_capacity_factory	= 0.15
+		political_power_factor = -0.03
+	}
+	Declaring_descendants_of_Genghis_Khan = {
+		war_support_factor = 0.1
+		conscription = 0.02
+		political_power_factor = 0.03
+		cavalry_attack_factor = 0.10
+		cavalry_defence_factor = 0.10
+	}
+
+}

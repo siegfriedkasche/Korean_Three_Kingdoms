@@ -1,0 +1,758 @@
+add_namespace = VGE_VS_RUS
+
+	
+country_event = {
+	id = VGE_VS_RUS.0
+	title = VGE_VS_RUS.0.t
+	desc = VGE_VS_RUS.0.d
+	picture = GFX_report_event_french_resistance_01
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+        name = VGE_VS_RUS.0.a
+		trigger = {
+			original_tag = VGE
+		}
+        ai_chance = {
+            factor = 80
+        }
+		hidden_effect = {
+		218 = {
+			create_unit = {
+				division = "name = \"militsiya\" division_template = \"militsiya\" start_experience_factor =0.2"
+				owner = VGE
+			}
+			create_unit = {
+				division = "name = \"militsiya\" division_template = \"militsiya\" start_experience_factor =0.2"
+				owner = VGE
+			}
+			create_unit = {
+				division = "name = \"militsiya\" division_template = \"militsiya\" start_experience_factor =0.2"
+				owner = VGE
+			}
+			create_unit = {
+				division = "name = \"militsiya\" division_template = \"militsiya\" start_experience_factor =0.2"
+				owner = VGE
+			}
+		}
+		238 = {
+			create_unit = {
+				division = "name = \"militsiya\" division_template = \"militsiya\" start_experience_factor =0.2"
+				owner = VGE
+			}
+			create_unit = {
+				division = "name = \"militsiya\" division_template = \"militsiya\" start_experience_factor =0.2"
+				owner = VGE
+			}
+			create_unit = {
+				division = "name = \"militsiya\" division_template = \"militsiya\" start_experience_factor =0.2"
+				owner = VGE
+			}
+			create_unit = {
+				division = "name = \"militsiya\" division_template = \"militsiya\" start_experience_factor =0.2"
+				owner = VGE
+			}
+		}
+		217 = {
+			create_unit = {
+				division = "name = \"militsiya\" division_template = \"militsiya\" start_experience_factor =0.2"
+				owner = VGE
+			}
+			create_unit = {
+				division = "name = \"militsiya\" division_template = \"militsiya\" start_experience_factor =0.2"
+				owner = VGE
+			}
+			create_unit = {
+				division = "name = \"militsiya\" division_template = \"militsiya\" start_experience_factor =0.2"
+				owner = VGE
+			}
+			create_unit = {
+				division = "name = \"militsiya\" division_template = \"militsiya\" start_experience_factor =0.2"
+				owner = VGE
+			}
+		}
+		245 = {
+			create_unit = {
+				division = "name = \"militsiya\" division_template = \"militsiya\" start_experience_factor =0.2"
+				owner = VGE
+			}
+			create_unit = {
+				division = "name = \"militsiya\" division_template = \"militsiya\" start_experience_factor =0.2"
+				owner = VGE
+			}
+			create_unit = {
+				division = "name = \"militsiya\" division_template = \"militsiya\" start_experience_factor =0.2"
+				owner = VGE
+			}
+			create_unit = {
+				division = "name = \"militsiya\" division_template = \"militsiya\" start_experience_factor =0.2"
+				owner = VGE
+			}
+		}
+		265 = {
+			create_unit = {
+				division = "name = \"militsiya\" division_template = \"militsiya\" start_experience_factor =0.2"
+				owner = VGE
+			}
+			create_unit = {
+				division = "name = \"militsiya\" division_template = \"militsiya\" start_experience_factor =0.2"
+				owner = VGE
+			}
+			create_unit = {
+				division = "name = \"militsiya\" division_template = \"militsiya\" start_experience_factor =0.2"
+				owner = VGE
+			}
+			create_unit = {
+				division = "name = \"militsiya\" division_template = \"militsiya\" start_experience_factor =0.2"
+				owner = VGE
+			}
+		}
+		}
+    }
+}
+country_event = {
+	id = VGE_VS_RUS.1
+	title = VGE_VS_RUS.1.t
+	desc = VGE_VS_RUS.1.d
+	picture = GFX_report_event_czech_soldiers_01
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+        name = VGE_VS_RUS.1.a
+		trigger = {
+			original_tag = VGE
+		}
+        ai_chance = {
+            factor = 80
+        }
+		hidden_effect = {
+				DAG = {
+					division_template = {
+				  	 	name = "Resistance Fighters"
+						is_locked = yes
+						priority = 1
+						template_counter = 3
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+						}
+						is_locked = yes 
+					}
+					every_owned_state = {
+						limit = { is_core_of = DAG }
+						create_unit = { 
+							division = "name = \"Resistance Fighters\" division_template = \"Resistance Fighters\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
+							owner = DAG count = 2
+						}
+					}
+					random_owned_state = {
+						limit = { 
+							is_core_of = DAG 
+							is_capital = yes
+						}
+						create_unit = { 
+							division = "name = \"Resistance Fighters\" division_template = \"Resistance Fighters\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
+							owner = DAG count = 2
+						}
+					}
+					IF = {
+						limit = {
+							NOT = {
+								country_exists = SOS
+							}
+							SOV = {
+								has_government = communism
+							}
+						}
+						declare_war_on = {
+							target = SOV
+							type = independence_wargoal
+						}
+					}
+					else_if = {
+						limit = {
+							SOV = {
+								NOT = {
+									has_government = communism
+								}
+							}
+							SOS = {
+								exists = yes
+							}
+						}
+						declare_war_on = {
+							target = SOS
+							type = independence_wargoal
+						}
+					}
+				}
+				ARM = {
+					division_template = {
+				  	 	name = "Resistance Fighters"
+						is_locked = yes
+						priority = 1
+						template_counter = 3
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+						}
+						is_locked = yes 
+					}
+					every_owned_state = {
+						limit = { is_core_of = ARM }
+						create_unit = { 
+							division = "name = \"Resistance Fighters\" division_template = \"Resistance Fighters\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
+							owner = ARM count = 2
+						}
+					}
+					IF = {
+						limit = {
+							NOT = {
+								country_exists = SOS
+							}
+							SOV = {
+								has_government = communism
+							}
+						}
+						declare_war_on = {
+							target = SOV
+							type = independence_wargoal
+						}
+					}
+					else_if = {
+						limit = {
+							SOV = {
+								NOT = {
+									has_government = communism
+								}
+							}
+							SOS = {
+								exists = yes
+							}
+						}
+						declare_war_on = {
+							target = SOS
+							type = independence_wargoal
+						}
+					}
+					random_owned_state = {
+						limit = { 
+							is_core_of = ARM 
+							is_capital = yes
+						}
+						create_unit = { 
+							division = "name = \"Resistance Fighters\" division_template = \"Resistance Fighters\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
+							owner = ARM count = 2
+						}
+					}
+				}
+				NOA = {
+					division_template = {
+				  	 	name = "Resistance Fighters"
+						is_locked = yes
+						priority = 1
+						template_counter = 3
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+						}
+						is_locked = yes 
+					}
+					every_owned_state = {
+						limit = { is_core_of = NOA }
+						create_unit = { 
+							division = "name = \"Resistance Fighters\" division_template = \"Resistance Fighters\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
+							owner = NOA count = 2
+						}
+					}
+					IF = {
+						limit = {
+							NOT = {
+								country_exists = SOS
+							}
+							SOV = {
+								has_government = communism
+							}
+						}
+						declare_war_on = {
+							target = SOV
+							type = independence_wargoal
+						}
+					}
+					else_if = {
+						limit = {
+							SOV = {
+								NOT = {
+									has_government = communism
+								}
+							}
+							SOS = {
+								exists = yes
+							}
+						}
+						declare_war_on = {
+							target = SOS
+							type = independence_wargoal
+						}
+					}
+					random_owned_state = {
+						limit = { 
+							is_core_of = NOA 
+							is_capital = yes
+						}
+						create_unit = { 
+							division = "name = \"Resistance Fighters\" division_template = \"Resistance Fighters\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
+							owner = NOA count = 2
+						}
+					}
+				}
+				GEO = {
+					division_template = {
+				  	 	name = "Resistance Fighters"
+						is_locked = yes
+						priority = 1
+						template_counter = 3
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+						}
+						is_locked = yes 
+					}
+					every_owned_state = {
+						limit = { is_core_of = GEO }
+						create_unit = { 
+							division = "name = \"Resistance Fighters\" division_template = \"Resistance Fighters\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
+							owner = GEO count = 2
+						}
+					}
+					IF = {
+						limit = {
+							NOT = {
+								country_exists = SOS
+							}
+							SOV = {
+								has_government = communism
+							}
+						}
+						declare_war_on = {
+							target = SOV
+							type = independence_wargoal
+						}
+					}
+					else_if = {
+						limit = {
+							SOV = {
+								NOT = {
+									has_government = communism
+								}
+							}
+							SOS = {
+								exists = yes
+							}
+						}
+						declare_war_on = {
+							target = SOS
+							type = independence_wargoal
+						}
+					}
+					random_owned_state = {
+						limit = { 
+							is_core_of = GEO 
+							is_capital = yes
+						}
+						create_unit = { 
+							division = "name = \"Resistance Fighters\" division_template = \"Resistance Fighters\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
+							owner = GEO count = 2
+						}
+					}
+				}
+				CIN = {
+					division_template = {
+				  	 	name = "Resistance Fighters"
+						is_locked = yes
+						priority = 1
+						template_counter = 3
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+						}
+						is_locked = yes 
+					}
+					every_owned_state = {
+						limit = { is_core_of = CIN }
+						create_unit = { 
+							division = "name = \"Resistance Fighters\" division_template = \"Resistance Fighters\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
+							owner = CIN count = 2
+						}
+					}
+					IF = {
+						limit = {
+							NOT = {
+								country_exists = SOS
+							}
+							SOV = {
+								has_government = communism
+							}
+						}
+						declare_war_on = {
+							target = SOV
+							type = independence_wargoal
+						}
+					}
+					else_if = {
+						limit = {
+							SOV = {
+								NOT = {
+									has_government = communism
+								}
+							}
+							SOS = {
+								exists = yes
+							}
+						}
+						declare_war_on = {
+							target = SOS
+							type = independence_wargoal
+						}
+					}
+					random_owned_state = {
+						limit = { 
+							is_core_of = CIN 
+							is_capital = yes
+						}
+						create_unit = { 
+							division = "name = \"Resistance Fighters\" division_template = \"Resistance Fighters\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
+							owner = CIN count = 2
+						}
+					}
+				}
+				KAL = {
+					division_template = {
+				  	 	name = "Resistance Fighters"
+						is_locked = yes
+						priority = 1
+						template_counter = 3
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+						}
+						is_locked = yes 
+					}
+					IF = {
+						limit = {
+							NOT = {
+								country_exists = SOS
+							}
+							SOV = {
+								has_government = communism
+							}
+						}
+						declare_war_on = {
+							target = SOV
+							type = independence_wargoal
+						}
+					}
+					else_if = {
+						limit = {
+							SOV = {
+								NOT = {
+									has_government = communism
+								}
+							}
+							SOS = {
+								exists = yes
+							}
+						}
+						declare_war_on = {
+							target = SOS
+							type = independence_wargoal
+						}
+					}
+					every_owned_state = {
+						limit = { is_core_of = KAL }
+						create_unit = { 
+							division = "name = \"Resistance Fighters\" division_template = \"Resistance Fighters\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
+							owner = KAL count = 2
+						}
+					}
+					random_owned_state = {
+						limit = { 
+							is_core_of = KAL 
+							is_capital = yes
+						}
+						create_unit = { 
+							division = "name = \"Resistance Fighters\" division_template = \"Resistance Fighters\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
+							owner = KAL count = 2
+						}
+					}
+				}
+				KBK = {
+					division_template = {
+				  	 	name = "Resistance Fighters"
+						is_locked = yes
+						priority = 1
+						template_counter = 3
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+						}
+						is_locked = yes 
+					}
+					every_owned_state = {
+						limit = { is_core_of = KBK }
+						create_unit = { 
+							division = "name = \"Resistance Fighters\" division_template = \"Resistance Fighters\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
+							owner = KBK count = 2
+						}
+					}
+					IF = {
+						limit = {
+							NOT = {
+								country_exists = SOS
+							}
+							SOV = {
+								has_government = communism
+							}
+						}
+						declare_war_on = {
+							target = SOV
+							type = independence_wargoal
+						}
+					}
+					else_if = {
+						limit = {
+							SOV = {
+								NOT = {
+									has_government = communism
+								}
+							}
+							SOS = {
+								exists = yes
+							}
+						}
+						declare_war_on = {
+							target = SOS
+							type = independence_wargoal
+						}
+					}
+					random_owned_state = {
+						limit = { 
+							is_core_of = KBK 
+							is_capital = yes
+						}
+						create_unit = { 
+							division = "name = \"Resistance Fighters\" division_template = \"Resistance Fighters\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
+							owner = KBK count = 2
+						}
+					}
+				}
+				AZR = {
+					division_template = {
+				  	 	name = "Resistance Fighters"
+						is_locked = yes
+						priority = 1
+						template_counter = 3
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+						}
+						is_locked = yes 
+					}
+					every_owned_state = {
+						limit = { is_core_of = AZR }
+						create_unit = { 
+							division = "name = \"Resistance Fighters\" division_template = \"Resistance Fighters\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
+							owner = AZR count = 2
+						}
+					}
+					IF = {
+						limit = {
+							NOT = {
+								country_exists = SOS
+							}
+							SOV = {
+								has_government = communism
+							}
+						}
+						declare_war_on = {
+							target = SOV
+							type = independence_wargoal
+						}
+					}
+					else_if = {
+						limit = {
+							SOV = {
+								NOT = {
+									has_government = communism
+								}
+							}
+							SOS = {
+								exists = yes
+							}
+						}
+						declare_war_on = {
+							target = SOS
+							type = independence_wargoal
+						}
+					}
+					random_owned_state = {
+						limit = { 
+							is_core_of = AZR 
+							is_capital = yes
+						}
+						create_unit = { 
+							division = "name = \"Resistance Fighters\" division_template = \"Resistance Fighters\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
+							owner = AZR count = 2
+						}
+					}
+				}
+			}
+		}
+    }
+country_event = {
+	id = VGE_VS_RUS.2
+	title = VGE_VS_RUS.2.t
+	desc = VGE_VS_RUS.2.d
+	picture = GFX_report_event_czech_soldiers_02
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+        name = VGE_VS_RUS.2.a
+        ai_chance = {
+            factor = 20
+        }
+		VGE = {
+			add_state_core = 265
+			add_state_core = 245
+			add_state_core = 217
+			add_state_core = 238
+			add_state_core = 218
+			country_event = {
+				id = VGE_VS_RUS.2
+			}
+		}
+
+	}
+	option = {
+        name = VGE_VS_RUS.2.b
+        ai_chance = {
+            factor = 100
+        }
+		VGE = {
+			add_state_core = 265
+			add_state_core = 245
+			add_state_core = 217
+			add_state_core = 238
+			add_state_core = 218
+
+			transfer_state = 265
+			transfer_state = 245
+			transfer_state = 217
+			transfer_state = 238
+			transfer_state = 218
+			country_event = {
+				id = VGE_VS_RUS.4
+			}
+		}
+	}
+}
+country_event = {
+	id = VGE_VS_RUS.3
+	title = VGE_VS_RUS.3.t
+	desc = VGE_VS_RUS.3.d
+	picture = GFX_report_event_stalin_01
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+        name = VGE_VS_RUS.3.a
+        ai_chance = {
+            factor = 100
+        }
+		create_wargoal = {
+    		type = take_claimed_state 
+    		target = ROOT
+		}
+	}
+}
+country_event = {
+	id = VGE_VS_RUS.4
+	title = VGE_VS_RUS.4.t
+	desc = VGE_VS_RUS.4.d
+	picture = GFX_report_event_stalin_01
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+        name = VGE_VS_RUS.4.a
+        ai_chance = {
+            factor = 100
+        }
+	}
+}
+country_event = {
+	id = VGE_VS_RUS.5
+	title = VGE_VS_RUS.5.t
+	desc = VGE_VS_RUS.5.d
+	picture = GFX_report_event_generic_factory
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+        name = VGE_VS_RUS.5.a
+        ai_chance = {
+            factor = 100
+        }
+		hidden_effect = {
+			set_variable = { VGE_fyp_factory_requirement_tier_1 = 100 }
+			set_variable = { VGE_fyp_factory_requirement_tier_2 = 120 }
+			set_variable = { VGE_fyp_factory_requirement_tier_3 = 130 }
+			set_variable = { VGE_fyp_factory_requirement_tier_4 = 150 }
+			set_variable = { VGE_fyp_factory_requirement_tier_5 = 200 }
+
+			#THIRD FIVE YEAR PLAN NATIONAL SPIRIT VARS
+			set_variable = { VGE_fyp_production_factory_efficiency_gain_factor = -0.15 }
+			set_variable = { VGE_fyp_production_factory_max_efficiency_factor = 0.05 }
+			set_variable = { VGE_fyp_consumer_goods_factor = 0.05 }
+			set_variable = { VGE_fyp_production_speed_industrial_complex_factor = 0.05 }
+
+			set_variable = { VGE_fyp_industrial_concern_cost_factor = -0.15 } #-> Third Five Year Plan
+			set_variable = { VGE_fyp_local_resources_factor = 0 } #-> Increase State Reserves
+			set_variable = { VGE_fyp_line_change_production_efficiency_factor = 0 } #-> Industrial Modernization
+			set_variable = { VGE_fyp_production_speed_arms_factory_factor = 0.1 } #-> Shift to Armaments Production
+			set_variable = { VGE_fyp_production_factory_start_efficiency_factor = 0 } #-> Optimize Production Lines
+			set_variable = { VGE_fyp_industrial_capacity_factory = 0 } #-> Steel Casting Industry
+			set_variable = { VGE_fyp_industrial_capacity_dockyard = 0 } #-> Steel Casting Industry
+			set_variable = { VGE_fyp_fuel_gain_factor_from_states = 0 } #-> Oil Production
+			set_variable = { VGE_fyp_production_oil_factor = 0 } #-> Oil Production
+			set_variable = { VGE_fyp_industry_repair_factor = 0.1 } #-> Fourth Five Year Plan
+
+			add_dynamic_modifier = { modifier = VGE_second_five_year_plan_dynamic_modifier }
+		}
+	}
+}

@@ -1,0 +1,2104 @@
+focus_tree = {
+	id = new_MEN_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = MEN
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 20 y = 1000 }
+	shared_focus = CHI_invite_foreign_investors
+
+	focus = {
+		id = MEN_new_politic
+		icon = GFX_focus_spr_crush_the_revolution
+		cost = 15.00
+		x = 20
+		y = 2
+		prerequisite = {
+			focus = MEN_Establishment_of_the_Mongolian_Army_General_Headquarters
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_political_power = 10
+			country_event = {#원래는 1936년 7월이다
+				id = MEN.0
+				days = 5
+			}
+		}
+		cancelable = no
+		select_effect = {
+			country_event = {
+				id = MEN.1
+				days = 10
+			}
+		}
+	}
+	focus = {
+		id = MEN_Establishment_of_the_Mongolian_Army_General_Headquarters
+		icon = GFX_focus_generic_little_entente
+		cost = 5.00
+		x = 20
+		y = 1
+		prerequisite = {
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_manpower = 2500
+			country_event = {
+				id = MEN.2
+				days = 3
+			}
+		}
+	}
+	
+	focus = {
+		id = MEN_Cooperation_with_the_Kwantung_Army
+		icon = GFX_focus_chi_collaboration_with_the_japanese
+		cost = 5.00
+		x = 20
+		y = 3
+		prerequisite = {
+			focus = MEN_new_politic
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_political_power = 10
+			add_war_support = 0.05
+			JAP = {
+				set_autonomy = {
+					target = MEN
+					autonomous_state = autonomy_wtt_imperial_protectorate
+				}
+			}
+			hidden_effect = {
+				MEN = {
+					set_politics = {
+						ruling_party = neutrality
+						elections_allowed = no
+						last_election = "1935.12.17"
+						election_frequency = 48
+					}
+				}
+				country_event = {
+					id = MEN.3
+					days = 10
+				}
+			}
+		}
+	}
+	focus = {
+		id = MEN_Unwang_release
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		cost = 5.00
+		x = 21
+		y = 4
+		prerequisite = {
+			focus = MEN_Cooperation_with_the_Kwantung_Army
+		}
+		available = {
+			not = {
+				has_country_leader = {
+					name = "Yondonwangchug"
+					ruling_only = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.25
+			}
+			MEN_Yondonwangchug = {
+				promote_character = yes
+				promote_character = centrism
+			}
+		}
+	}
+	focus = {
+		id = MEN_monggol_council
+		icon = GFX_focus_POL_complete_april_constitution
+		cost = 5.00
+		x = 19
+		y = 4
+		available = {
+			date > 1937.10.00
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = {
+			focus = MEN_Cooperation_with_the_Kwantung_Army
+		}
+		completion_reward = {
+			621 = {
+				add_core_of = MEN
+			}
+			746 = {
+				add_core_of = MEN
+			}
+			add_war_support = 0.05
+		}
+	}
+	focus = {
+		id = MEN_Mengjiang_United
+		icon = GFX_focus_jap_manchurian_project
+		cost = 5.00
+		x = 20
+		y = 5
+		prerequisite = {
+			focus = MEN_Unwang_release
+		}
+		prerequisite = {
+			focus = MEN_monggol_council
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+				last_election = "1935.12.17"
+				election_frequency = 48
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.25
+			}
+			swap_ideas = {
+				add_idea = Mengjiang_United_ideas
+				remove_idea = MEN_Establishment_of_the_Mongolian_Army_General_Headquarters_ideas
+			}
+		}
+	}
+	focus = {
+		id = MEN_Japanese_language_education
+		icon = GFX_focus_generic_military_academy
+		cost = 5.00
+		x = 18
+		y = 6
+		prerequisite = {
+			focus = MEN_Mengjiang_United
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = Japanese_language_education
+		}
+	}
+	focus = {
+		id = MEN_Support_from_the_Kwantung_Army
+		icon = GFX_focus_chi_collaboration_with_the_japanese
+		cost = 5.00
+		x = 20
+		y = 6
+		available = {
+			MEN = {
+				is_puppet_of = JAP
+			}
+		}
+		prerequisite = {
+			focus = MEN_Mengjiang_United
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = MEN_kwantung_veto
+			add_advisor_role = {
+				Character = MEN_hajime_sugiyama
+				advisor = {
+					slot = army_chief
+					cost = 200
+					idea_token = NEN_hajime_sugiyama
+					traits = {
+						army_chief_drill_3 
+					}
+					allowed = {
+						always = yes
+					}
+				}
+
+			}
+			add_advisor_role = {
+				Character = MEN_Sadamu_Shimomura
+				advisor = {
+					slot = army_chief
+					cost = 150
+					idea_token = NEN_hajime_sugiyama
+					traits = {
+						army_chief_maneuver_2
+					}
+					allowed = {
+						always = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = MEN_japanese_investor
+		icon = GFX_goal_generic_improve_relations
+		cost = 10.00
+		x = 20
+		y = 8
+		available = {
+
+		}
+		prerequisite = {
+			focus = MEN_obedience
+			focus = MEN_Autonomy_demand
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = MEN
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = MEN
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = {
+		id = MEN_Chahar_Railway
+		icon = GFX_focus_SOV_south_manchuria_railway
+		cost = 10.00
+		x = 20
+		y = 10
+		available = {
+			is_puppet_of = JAP
+			JAP = {
+				exist = yes
+			}
+		}
+		prerequisite = {
+			focus = MEN_japanese_investor
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					owns_state = 612
+				}
+				build_railway = {
+  					level = 3
+  					path = { 1608 7648 12554 11752 }
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = MEN_obedience
+		icon = GFX_focus_CZE_german_puppet
+		cost = 10.00
+		x = 22
+		y = 7
+		available = {
+			MEN = {
+				is_puppet_of = JAP
+			}
+		}
+		mutually_exclusive = {
+			focus = MEN_Autonomy_demand
+		}
+		prerequisite = {
+			focus = MEN_Support_from_the_Kwantung_Army
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = MEN_autonomous_state
+		icon = GFX_goal_continuous_restrict_freedom
+		cost = 10.00
+		x = 22
+		y = 8
+		available = {
+			MEN = {
+				is_puppet_of = JAP
+			}
+		}
+		prerequisite = {
+			focus = MEN_obedience
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_stability = 0.05
+			set_cosmetic_tag = MEN_aut
+			JAP = {
+				set_autonomy = {
+					target = MEN
+					autonomy_state = autonomy_wtt_imperial_subject
+				}
+			}	
+		}
+	}
+	focus = {
+		id = MEN_buy_a_fighter
+		icon = GFX_focus_generic_aircraft_production
+		cost = 10.00
+		x = 21
+		y = 9
+		available = {
+			JAP = {
+				has_tech = fighter1
+			}
+		}
+		prerequisite = {
+			focus = MEN_japanese_investor
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			JAP = {
+				add_timed_idea = {
+					idea = MEN_air_payment
+					days = 62
+				}
+				if = {
+					limit = {
+						has_tech = fighter1
+						has_dlc = "Death or Dishonor" 
+					}
+					create_production_license = {
+						target = MEN
+						equipment = {
+							type = fighter_equipment_1
+						}
+						cost_factor = 0
+					}
+				}
+				ROOT = {
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_1
+						amount = 120
+						producer = JAP
+					} 
+				}
+			}
+		}
+	}
+	focus = {
+		id = MEN_Wang_Jingwei_government_elected
+		icon = GFX_focus_generic_china1
+		cost = 10.00
+		x = 25
+		y = 9
+		available = {
+			CHI = {
+				is_puppet_of = JAP
+			}
+		}
+		prerequisite = {
+			focus = MEN_autonomous_state
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		completion_reward = {
+			CHI = {
+				annex_country = {
+					target = MEN
+					transfer_troops = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = MEN_free_menjiang
+		icon = GFX_goal_continuous_restrict_freedom
+		cost = 10.00
+		x = 18
+		y = 8
+		available = {
+			MEN = {
+				is_puppet_of = JAP
+			}
+			
+		}
+		prerequisite = {
+			focus = MEN_Autonomy_demand
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_stability = 0.05
+			MEN = {
+				end_puppet = JAP
+			}
+			swap_ideas = {
+				add_idea = Mengjiang_United_ideas2
+				remove_idea = Mengjiang_United_ideas
+			}
+		}
+	}
+	focus = {
+		id = MEN_Monggang_Bank
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		cost = 10.00
+		x = 19
+		y = 9
+		available = {
+			is_puppet_of = JAP
+			JAP = {
+				exist = yes
+			}
+		}
+		prerequisite = {
+			focus = MEN_japanese_investor
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = Mengjiang_Bank
+		}
+	}
+	focus = {
+		id = MEN_attack_monggolia
+		icon = GFX_goal_demand_sudetenland
+		cost = 10.00
+		x = 17
+		y = 9
+		available = {
+			MEN = {
+				is_puppet = no
+			}
+		}
+		prerequisite = {
+			focus = MEN_free_menjiang
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			start_border_war = {
+				change_state_after_war = no
+				attacker = {
+					state = 612
+					num_provinces = 2
+					on_win = MEN.4
+					on_lose = MEN.5
+					on_cancel = MEN.6
+				}
+							
+				defender = {
+					state = 819
+					num_provinces = 1
+					on_win = MEN.7
+					on_lose = MEN.7
+					on_cancel = MEN.7
+				}
+			}
+		}
+	}
+	focus = {
+		id = MEN_attack_monggolia3
+		icon = GFX_focus_generic_little_entente
+		cost = 10.00
+		x = 15
+		y = 9
+		available = {
+
+		}
+		prerequisite = {
+			focus = MEN_free_menjiang
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			division_template = {
+				name = "morin tsereg"
+				is_locked = yes
+				priority = 2
+				regiments = {
+					cavalry = { x = 0 y = 0 }
+					cavalry = { x = 0 y = 1 }
+					cavalry = { x = 0 y = 2 }
+					cavalry = { x = 0 y = 3 }
+					cavalry = { x = 0 y = 4 }
+				}
+			}
+			611 = {
+				create_unit = {
+					division = "name = \"morin tsereg\" division_template = \"morin tsereg\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = MEN
+					count = 3
+				}
+			}
+		}
+	}
+	focus = {
+		id = MEN_attack_monggolia2
+		icon = GFX_focus_generic_attack_mongolia
+		cost = 10.00
+		x = 16
+		y = 10
+		prerequisite = {
+			focus = MEN_attack_monggolia
+		}
+		prerequisite = {
+			focus = MEN_attack_monggolia3
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_war_support = 0.05
+			declare_war_on = {
+				target = MON
+				type = annex_everything
+			}
+			MON = {
+				leave_faction = yes
+			}
+			hidden_effect = {
+				MON = {
+					set_rule = {
+						can_create_factions = NO
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = MEN_Declaring_descendants_of_Genghis_Khan
+		icon = GFX_focus_generic_strike_at_democracy2
+		cost = 10.00
+		x = 16
+		y = 11
+		prerequisite = {
+			focus = MEN_attack_monggolia2
+		}
+		available = {
+			MEN_prince_demchugdongrub = { 
+				is_country_leader = yes 
+			}
+			owns_state = 330
+		}
+		cancel = {
+			OR = {
+				NOT = {
+					MEN_prince_demchugdongrub = { 
+						is_country_leader = yes 
+					}
+					owns_state = 330
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			MEN_prince_demchugdongrub = {
+				add_country_leader_trait = Declaring_descendants_of_Genghis_Khan 
+			}
+			
+			set_capital = {state = 330}
+			564 = {
+				add_core_of = MEN
+			}
+			329 = {
+				add_core_of = MEN
+			}
+			761 = {
+				add_core_of = MEN
+			}
+			654 = {
+				add_core_of = MEN
+			}
+			40 = {
+				add_core_of = MEN
+			}
+		}
+	}
+	focus = {
+		id = MEN_pan-monggolism
+		icon = GFX_focus_jap_strike_south
+		cost = 10.00
+		x = 16
+		y = 12
+		prerequisite = {
+			focus = MEN_Declaring_descendants_of_Genghis_Khan
+		}
+		available = {
+			MEN_prince_demchugdongrub = { 
+				is_country_leader = yes 
+			}
+		}
+		cancel = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = CHI
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = TAN
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = SOV
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = MAN
+			}
+		}
+	}
+	focus = {
+		id = MEN_Autonomy_demand
+		icon = GFX_goal_generic_demand_territory
+		cost = 10.00
+		x = 18
+		y = 7
+		available = {
+			MEN = {
+				is_puppet_of = JAP
+			}
+			hidden_trigger = {
+				is_ai = NO
+			}
+		}
+		mutually_exclusive = {
+			focus = MEN_obedience
+		}
+		prerequisite = {
+			focus = MEN_Support_from_the_Kwantung_Army
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		completion_reward = {
+			MEN = {
+				add_autonomy_score = {
+					value = 250
+					localization = MEN_break_with_Japan
+				}
+			}
+			add_war_support = 0.05
+		}
+	}
+	focus = {
+		id = MEN_secert_meet_qiang
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		cost = 10.00
+		x = 18
+		y = 10
+		available = {
+			JAP = {
+				has_war_with = CHI
+			}
+			has_war_with = CHI
+			is_puppet = no
+		}
+
+		prerequisite = {
+			focus = MEN_free_menjiang
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_war_with = CHI
+				}
+				white_peace = CHI
+			}
+			if = {
+				MEN = {
+					add_opinion_modifier = {
+						target = CHI
+						modifier = Diplomat_visited 
+					}
+					add_ai_strategy = {
+						type = alliance
+						id = CHI
+						value = 100
+					}
+					add_ai_strategy = {
+						type = protect
+						id = CHI
+						value = 100
+					}
+					add_ai_strategy = {
+						type = send_volunteers_desire
+						id = CHI
+						value = 100
+					}
+					add_ai_strategy = {
+						type = support
+						id = CHI
+						value = 100
+					}
+				}
+				CHI = {
+					add_opinion_modifier = {
+						target = MEN
+						modifier = Diplomat_visited 
+					}
+					add_ai_strategy = {
+						type = alliance
+						id = MEN
+						value = 100
+					}
+					add_ai_strategy = {
+						type = protect
+						id = MEN
+						value = 100
+					}
+					add_ai_strategy = {
+						type = send_volunteers_desire
+						id = MEN
+						value = 100
+					}
+					add_ai_strategy = {
+						type = support
+						id = MEN
+						value = 100
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = MEN_Mongolian_Academy
+		icon = GFX_focus_research
+		cost = 5.00
+		x = 16
+		y = 4
+		prerequisite = {
+			focus = MEN_Cooperation_with_the_Kwantung_Army
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = MEN_Han_Chinese_residence
+		icon = GFX_focus_chi_whampoa_military_academy
+		cost = 5.00
+		x = 15
+		y = 5
+		prerequisite = {
+			focus = MEN_Mongolian_Academy
+		}
+		available = {
+			owns_state = 612
+			owns_state = 611
+		}
+		cancel = {
+			NOT = {
+				owns_state = 612
+				owns_state = 611
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			611 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			612 = {
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	focus = {
+		id = MEN_Mongolian_Institute_of_Technology
+		icon = GFX_focus_research
+		cost = 10.00
+		x = 16
+		y = 6
+		prerequisite = {
+			focus = MEN_iron_mine
+			focus = MEN_Han_Chinese_residence
+		}
+		available = {
+			OR = {
+				num_of_factories > 50
+				all_state = {
+					OR = {
+						NOT = { is_core_of = CHI }
+						NOT = { is_core_of = PRC }
+						OR = {
+							is_controlled_by = ROOT
+							CONTROLLER = { is_in_faction_with = ROOT }
+							CONTROLLER = { is_subject_of = ROOT }
+						}
+					}
+				}
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = MEN_iron_mine
+		icon = GFX_focus_generic_steel
+		cost = 5.00
+		x = 17
+		y = 5
+		available = {
+			owns_state = 611
+		}
+		cancel = {
+			NOT = {
+				owns_state = 611
+			}
+		}
+		prerequisite = {
+			focus = MEN_Mongolian_Academy
+		}
+		completion_reward = {
+			add_resource = {
+				type = steel
+				amount = 25
+				state = 611
+			}
+		}
+	}
+	focus = {
+		id = MEN_Expansion_of_military_industry
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 5.00
+		x = 24
+		y = 6
+		prerequisite = {
+			focus = MEN_Mengjiang_United
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = MEN
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	focus = {
+		id = MEN_Chinese_army_sweep
+		icon = GFX_focus_attack_china
+		cost = 5.00
+		x = 22
+		y = 6
+		prerequisite = {
+			focus = MEN_Mengjiang_United
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			remove_ideas = MEN_kwantung_VS_Chinese_army_ideas
+		}
+	}
+	#######################################
+	##### MILITARY RESEARCH INSTITUTE #####	
+	#######################################
+
+	focus = {
+		id = MEN_military_research_institute
+		icon = GFX_focus_CZE_military_research_institute
+		x = -6
+		y = 12
+		relative_position_id = MEN_Establishment_of_the_Mongolian_Army_General_Headquarters
+
+		cost = 10
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			army_experience = 10
+		}
+	}
+
+	focus = {
+		id = MEN_mountain_bonus
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = MEN_military_research_institute }
+		x = -3
+		y = 1
+		relative_position_id = MEN_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = cze_mountain_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = mountaineers_tech
+			}
+		}
+	}
+
+	focus = {
+		id = MEN_inf_and_artillery_advancement
+		icon = GFX_goal_rhineland
+		prerequisite = { focus = MEN_military_research_institute }
+		x = -1
+		y = 1
+		relative_position_id = MEN_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEN_inf_and_artillery_advancement
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = MEN_support_bonus
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = MEN_mountain_bonus }
+		x = -3
+		y = 2
+		relative_position_id = MEN_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEN_support_bonus #@#
+				bonus = 0.5
+				uses = 2
+				#category = hospital_tech
+				#category = logistics_tech
+				#category = signal_company_tech
+				#category = maintenance_company_tech
+				#category = engineers_tech
+				#category = recon_tech
+				#category = military_police_tech
+				category = support_tech	
+			}
+		add_tech_bonus = {
+			name = MEN_support_bonus #@#
+			bonus = 0.5
+			uses = 1
+			technology = support_weapons2
+			technology = support_weapons3
+			}
+		}
+	}
+
+	focus = {
+		id = MEN_inf_and_artillery_advancement_2
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = MEN_inf_and_artillery_advancement }
+		x = -1
+		y = 2
+		relative_position_id = MEN_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEN_inf_and_artillery_advancement_2 #@#
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = MEN_doctrine_bonus
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = MEN_support_bonus }
+		prerequisite = { focus = MEN_inf_and_artillery_advancement_2 }
+		x = -2
+		y = 3
+		relative_position_id = MEN_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = MEN_motorization_scheme
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = MEN_military_research_institute }
+		x = 1
+		y = 1
+		relative_position_id = MEN_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.75
+				technology = motorised_infantry
+			}
+		}
+	}
+
+	focus = {
+		id = MEN_armour_bonus_1
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = MEN_military_research_institute }
+		x = 3
+		y = 1
+		relative_position_id = MEN_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = MEN_mechanization
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = MEN_motorization_scheme }
+		x = 1
+		y = 2
+		relative_position_id = MEN_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEN_mechanization #@#
+				bonus = 0.5
+				uses = 1
+				category = cat_mechanized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = MEN_armour_bonus_ii
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = MEN_armour_bonus_1 }
+		x = 3
+		y = 2
+		relative_position_id = MEN_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = MEN_doctrine_bonus_2
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = MEN_mechanization }
+		prerequisite = { focus = MEN_armour_bonus_ii }
+		x = 2
+		y = 3
+		relative_position_id = MEN_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = MEN_war_college
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = MEN_doctrine_bonus }
+		prerequisite = { focus = MEN_doctrine_bonus_2 }
+		x = 0
+		y = 4
+		relative_position_id = MEN_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 90
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = CZE_war_college_idea
+			if = {
+				limit = {
+					NOT = { amount_research_slots > 4 }
+				}
+				add_research_slot = 1
+				custom_effect_tooltip = MEN_war_college_effect_tt
+			}
+		}
+	}
+
+	#######################################
+	####### AERONAUTICAL INSTITUTE ########	
+	#######################################
+
+	focus = {
+		id = MEN_military_aeronautical_institute
+		icon = GFX_focus_CZE_military_aeronautical_institute
+		x = 8
+		y = 0
+		relative_position_id = MEN_military_research_institute
+
+		cost = 10
+
+
+		available = {
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			air_experience = 10
+		}
+	}
+
+	focus = {
+		id = MEN_import_foreign_fighters
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = MEN_military_aeronautical_institute }
+		x = -2
+		y = 1
+		relative_position_id = MEN_military_aeronautical_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEN_import_foreign_fighters #@#
+				bonus = 0.5
+				uses = 1
+				category = light_fighter
+				category = cat_heavy_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = MEN_light_fighter_focus
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = MEN_import_foreign_fighters }
+		mutually_exclusive = { focus = MEN_heavy_fighter_focus }
+		x = -1
+		y = 1
+		relative_position_id = MEN_import_foreign_fighters
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEN_light_fighter_focus #@#
+				bonus = 0.5
+				uses = 1
+				category = light_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = MEN_heavy_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = MEN_import_foreign_fighters }
+		mutually_exclusive = { focus = MEN_light_fighter_focus }
+		x = 1
+		y = 1
+		relative_position_id = MEN_import_foreign_fighters
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEN_heavy_fighter_focus #@#
+				bonus = 0.5
+				uses = 1
+				category = cat_heavy_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = MEN_air_is_our_sea
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = MEN_military_aeronautical_institute }
+		x = 0
+		y = 1
+		relative_position_id = MEN_military_aeronautical_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = CZE_air_focus
+		}
+	}
+
+	focus = {
+		id = MEN_rule_the_air
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = MEN_air_is_our_sea }
+		prerequisite = { focus = MEN_light_fighter_focus focus = MEN_heavy_fighter_focus }
+		prerequisite = { focus = MEN_tac_focus focus = MEN_cas_focus }
+		x = 0
+		y = 3
+		relative_position_id = MEN_military_aeronautical_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 3
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = MEN_import_foreign_bombers
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = MEN_military_aeronautical_institute }
+		x = 2
+		y = 1
+		relative_position_id = MEN_military_aeronautical_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEN_import_foreign_bombers #@#
+				bonus = 0.5
+				uses = 1
+				category = cas_bomber
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = MEN_cas_focus
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = MEN_import_foreign_bombers }
+		mutually_exclusive = { focus = MEN_tac_focus }
+		x = -1
+		y = 1
+		relative_position_id = MEN_import_foreign_bombers
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEN_cas_focus #@#
+				bonus = 0.5
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = MEN_tac_focus
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = MEN_import_foreign_bombers }
+		mutually_exclusive = { focus = MEN_cas_focus }
+		x = 1
+		y = 1
+		relative_position_id = MEN_import_foreign_bombers
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEN_tac_focus #@#
+				bonus = 0.5
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+	############################
+	####### NAVY SECTION #######
+	############################
+
+
+	focus = {
+		id = MEN_develop_polish_ship_building
+		icon = GFX_goal_generic_construct_naval_dockyard
+		
+		x = 7
+		y = 0
+		cost = 10
+		relative_position_id = MEN_military_aeronautical_institute
+
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			random_state = {
+				limit = { has_state_flag = MEN_develop_polish_ship_building_1 }
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 85 }
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+				set_state_flag = MEN_develop_polish_ship_building_1
+			}
+			#Add 3 Dockyards at Gdansk			
+		}
+	}
+
+	focus = {
+		id = MEN_study_foreign_built_ships
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = MEN_develop_polish_ship_building }
+		
+		x = 1
+		y = 1
+		relative_position_id = MEN_develop_polish_ship_building
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEN_study_foreign_built_ships
+				bonus = 0.5
+				uses = 1
+				category = dd_tech
+			}
+			#1x 50% research bonus for Destroyers
+		}
+	}
+
+	focus = {
+		id = MEN_a_cruiser_navy
+		icon = GFX_goal_generic_navy_anti_submarine
+		prerequisite = { focus = MEN_study_foreign_built_ships }
+		
+		x = 1
+		y = 1
+		relative_position_id = MEN_study_foreign_built_ships
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEN_a_cruiser_navy
+				bonus = 0.5
+				uses = 1
+				category = cl_tech
+			}
+			#1x50% research bonus to Light Cruisers
+		}
+	}
+
+	focus = {
+		id = MEN_import_submarine_technology
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = MEN_develop_polish_ship_building }
+		
+		x = -1
+		y = 1
+		relative_position_id = MEN_develop_polish_ship_building
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEN_import_submarine_technology
+				bonus = 0.5
+				uses = 1
+				category = ss_tech
+			}
+			#1 x50% research bonus for Submarines
+		}
+	}
+
+	focus = {
+		id = MEN_commerce_attack
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = MEN_import_submarine_technology }
+		x = -1
+		y = 1
+		relative_position_id = MEN_import_submarine_technology
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEN_commerce_attack
+				bonus = 0.5
+				uses = 1
+				category = submarine_doctrine
+			}
+			#1x50% research bonus to Submarine Doctrine
+		}
+	}
+
+	focus = {
+		id = MEN_the_twin_threats
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = MEN_import_submarine_technology focus = MEN_study_foreign_built_ships }
+		
+		x = 1
+		y = 1
+		relative_position_id = MEN_import_submarine_technology
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEN_the_twin_threats
+				bonus = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+			#1x50% bonus to Naval Doctrine Research
+		}
+	}
+
+	focus = {
+		id = MEN_coastal_defense
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = MEN_the_twin_threats }
+		mutually_exclusive = { focus = MEN_strike_force }
+		x = 1
+		y = 1
+		relative_position_id = MEN_the_twin_threats
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEN_coastal_defense
+				bonus = 0.5
+				uses = 1
+				category = ss_tech
+			}
+			add_tech_bonus = {
+				name = MEN_coastal_defense
+				bonus = 0.5
+				uses = 1
+				category = dd_tech
+			}
+			#1x50% research bonus to destroyers & 1 x50% bonus to Submarines
+		}
+	}
+	
+	focus = {
+		id = MEN_strike_force
+		icon = GFX_goal_generic_occupy_states_coastal
+		prerequisite = { focus = MEN_the_twin_threats }
+		mutually_exclusive = { focus = MEN_coastal_defense }
+		x = -1
+		y = 1
+		relative_position_id = MEN_the_twin_threats
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEN_strike_force
+				bonus = 0.5
+				uses = 1
+				category = cl_tech
+			}
+			add_tech_bonus = {
+				name = MEN_strike_force
+				bonus = 0.5
+				uses = 1
+				category = ca_tech
+			}
+			#1x50% research bonus to Light Cruisers & 1x50% bonus to Heavy Cruisers
+		}
+	}
+
+	focus = {
+		id = MEN_baltic_navy
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = MEN_strike_force focus = MEN_coastal_defense }
+		
+		x = 1
+		y = 1
+		relative_position_id = MEN_strike_force
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MEN_baltic_navy
+				bonus = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+			#1x50% bonus to Naval Doctrine research
+		}
+	}
+}

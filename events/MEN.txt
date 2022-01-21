@@ -1,0 +1,160 @@
+add_namespace = MEN
+
+	
+country_event = {
+	id = MEN.0
+	title = MEN.0.t
+	desc = MEN.0.d
+	picture = GFX_report_event_fascist_gathering
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+        name = MEN.0.a
+        ai_chance = {
+            factor = 80
+        }
+		create_country_leader = {
+			name = "몽골군사정부"
+			desc = ""
+			picture = "gfx/leaders/ANA/menjiang_army_room.png"
+			expire = "1965.1.1"
+			ideology = centrism
+			traits = {
+				cabinet_crisis 
+			}
+		}
+    }
+}
+country_event = {
+	id = MEN.1
+	title = MEN.1.t
+	desc = MEN.1.d
+	picture = GFX_report_event_fascist_gathering
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+        name = MEN.1.a
+        ai_chance = {
+            factor = 80
+        }
+		add_stability = -0.1
+    }
+}
+country_event = {
+	id = MEN.2
+	title = MEN.2.t
+	desc = MEN.2.d
+	picture = GFX_report_event_lithuania_army
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+        name = MEN.2.a
+        ai_chance = {
+            factor = 80
+        }
+		add_ideas = MEN_Establishment_of_the_Mongolian_Army_General_Headquarters_ideas
+		if = {
+			limit = {
+				is_puppet_of = JAP
+			}
+			MEN = {
+				end_puppet = JAP
+			}
+		}
+		if = {
+			limit = {
+				is_puppet_of = CHI
+			}
+			MEN = {
+				end_puppet = CHI
+			}
+		}
+		hidden_effect = {
+			give_military_access = CHI
+			set_cosmetic_tag = MEN_MIL
+		}
+    }
+}
+country_event = {
+	id = MEN.3
+	title = MEN.3.t
+	desc = MEN.3.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+        name = MEN.3.a
+        ai_chance = {
+            factor = 80
+        }
+		add_ideas = MEN_kwantung_VS_Chinese_army_ideas
+    }
+}
+
+
+country_event = {
+	id = MEN.4
+	title = MEN.4.t
+	desc = MEN.4.d
+	picture = GFX_report_event_spr_spanish_civil_war
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+        name = MEN.4.a
+        ai_chance = {
+            factor = 80
+        }
+		every_state = {
+			limit = {
+				is_core_of = MON
+			}
+			add_core_of = MEN
+		}
+		add_war_support =0.05
+		add_ideas = MEN_attack_monggolia_ideas
+    }
+}
+country_event = {
+	id = MEN.5
+	title = MEN.5.t
+	desc = MEN.5.d
+	picture = GFX_report_event_spr_spanish_civil_war
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+        name = MEN.5.a
+        ai_chance = {
+            factor = 80
+        }
+		every_state = {
+			limit = {
+				is_core_of = MON
+			}
+			add_core_of = MEN
+		}
+		add_political_power = -100
+		add_stability = -0.1
+		add_war_support = -0.1
+    }
+}
+country_event = {
+	id = MEN.7
+	title = MEN.7.t
+	desc = MEN.7.d
+	picture = GFX_report_event_spr_spanish_civil_war
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+        name = MEN.7.a
+        ai_chance = {
+            factor = 80
+        }
+    }
+}

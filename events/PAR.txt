@@ -1,0 +1,32 @@
+add_namespace = PAR
+
+country_event = {
+	id = PAR.0
+	title = PAR.0.t
+	desc = PAR.0.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+        name = PAR.0.a
+        ai_chance = {
+            factor = 100
+        }
+		set_politics = {
+			ruling_party = communism
+			last_election = "1936.1.1"
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.25
+		}
+		every_country = {
+			news_event = {
+				id = THK_wor.6
+			}
+		}
+    }
+}

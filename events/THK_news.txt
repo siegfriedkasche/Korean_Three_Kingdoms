@@ -1,6 +1,19 @@
 add_namespace = THK_wor
 
-
+news_event = {
+	id = THK_wor.0
+	title = THK_wor.0.t
+	desc = THK_wor.0.d
+	picture = GFX_news_event_banovina_croatia
+	is_triggered_only = yes
+	
+	option = {
+        name = THK_wor.0.a
+        ai_chance = {
+            factor = 80
+        }
+	}
+}
 news_event = {
 	id = THK_wor.1
 	title = THK_wor.1.t
@@ -13,6 +26,9 @@ news_event = {
 	
 	option = {
 		name = THK_wor.1.a
+		ai_chance = {
+            factor = 80
+        }
 	}
 }
 news_event = {
@@ -30,14 +46,70 @@ news_event = {
 	}
 }
 news_event = {
-	id = THK_wor.0
-	title = THK_wor.0.t
-	desc = THK_wor.0.d
+	id = THK_wor.3
+	title = THK_wor.3.t
+	desc = THK_wor.3.d
 	picture = GFX_news_event_banovina_croatia
 	is_triggered_only = yes
 	
 	option = {
-        name = THK_wor.0.a
+        name = THK_wor.3.a
+        ai_chance = {
+            factor = 80
+        }
+	}
+}
+news_event = {
+	id = THK_wor.4
+	title = THK_wor.4.t
+	desc = THK_wor.4.d
+	picture = GFX_news_event_generic_sign_treaty1
+	is_triggered_only = yes
+	
+	option = {
+        name = THK_wor.4.a
+        ai_chance = {
+            factor = 80
+        }
+	}
+}
+news_event = {
+	id = THK_wor.5
+	title = THK_wor.5.t
+	desc = THK_wor.5.d
+	picture = GFX_news_event_bulgarian_partisans
+	is_triggered_only = yes
+	
+	option = {
+        name = THK_wor.5.a
+        ai_chance = {
+            factor = 80
+        }
+	}
+}
+news_event = {
+	id = THK_wor.6
+	title = THK_wor.6.t
+	desc = THK_wor.6.d
+	picture = GFX_news_event_generic_army
+	is_triggered_only = yes
+	
+	option = {
+        name = THK_wor.6.a
+        ai_chance = {
+            factor = 80
+        }
+	}
+}
+news_event = {
+	id = THK_wor.7
+	title = THK_wor.7.t
+	desc = THK_wor.7.d
+	picture = GFX_news_event_001
+	is_triggered_only = yes
+	
+	option = {
+        name = THK_wor.7.a
         ai_chance = {
             factor = 80
         }

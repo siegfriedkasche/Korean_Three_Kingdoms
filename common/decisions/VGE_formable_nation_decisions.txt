@@ -1,0 +1,102 @@
+VGE_Russian_empire_form_category = {
+	
+	VGE_Russian_empire_form = {
+
+		icon = generic_form_nation
+
+		allowed = {
+			original_tag = VGE
+		}
+
+		available = {
+			is_subject = no
+			#VGE = {
+			#	every_state = {
+			#		limit = {
+			#			is_core_of = SOV
+			#		}
+			#		is_owned_or_controlled_by = VGE
+			#	}
+			#}
+			NOT = {
+				country_exists = SOV
+			}
+			#if = {
+			#	limit = {
+			#		SOS = {
+			#			exists = yes
+			#		}
+			#	}
+			#	NOT = {
+			#		country_exists = SOS
+			#	}
+			#}
+		}
+
+		visible = {
+			AND = {
+				has_completed_focus = VGE_communist_blow
+				original_tag = VGE
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			set_cosmetic_tag = VGE_russian_empire
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_core_of = SOV
+					}
+					add_core_of = VGE
+				}
+				clr_country_flag = form_Russian_empire_flag
+			}
+		}
+
+		ai_will_do = {
+			factor = 200
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	}
+	VGE_Russian_empire_capital = {
+
+		icon = generic_form_nation
+
+		allowed = {
+			original_tag = VGE
+		}
+
+		available = {
+			owns_state = 219
+			owns_state = 195
+		}
+
+		visible = {
+			hidden_trigger = {
+				has_cosmetic_tag = VGE_russian_empire
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			country_event = {
+				id = NSB_soviet_civil_war_common.002
+				days = 3
+			}
+			country_event = {
+				id = NSB_soviet_civil_war_common.010
+				days = 6
+			}
+		}
+
+		ai_will_do = {
+			factor = 200
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	}
+}

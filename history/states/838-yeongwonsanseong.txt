@@ -1,0 +1,30 @@
+state={
+	id=838
+	name="영원산성"
+	manpower = 10774200
+	state_category = town
+	resources={
+		aluminium = 10
+		steel= 8
+		tungsten= 5
+	}
+
+	history={
+		owner = SIR
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			arms_factory = 1
+		}
+		
+		victory_points = {
+			11958 10
+		}	
+
+		add_core_of = SIR
+	}
+
+	provinces={
+		848 1148 4004 7021 9936 11958
+	}
+}

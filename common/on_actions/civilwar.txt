@@ -1,0 +1,17 @@
+on_actions = {
+    on_startup = {
+        effect = {
+            IF = {
+                limit = {
+                    date < 1936.03.01
+                }
+                PAR = {
+                    country_event = {
+                        id = PAR.0
+                        days = 50
+                    }
+                }
+            }
+        }
+    }
+}

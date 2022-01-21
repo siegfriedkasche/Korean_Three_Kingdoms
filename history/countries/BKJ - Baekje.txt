@@ -98,7 +98,7 @@ set_politics = {
 create_country_leader = {
 	name = "근초고왕"
 	desc = ""
-	picture = ""
+	picture = "gfx/leaders/BKJ/근초고왕.png"
 	expire = "1965.1.1"
 	ideology = conservatism
 	traits = {
@@ -109,7 +109,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "근초고왕"
 	desc = ""
-	picture = "근초고왕.png"
+	picture = "gfx/leaders/BKJ/근초고왕.png"
 	expire = "1965.1.1"
 	ideology = despotism
 	traits = {
@@ -120,7 +120,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "근초고왕"
 	desc = ""
-	picture = "근초고왕.png"
+	picture = "gfx/leaders/BKJ/근초고왕.png"
 	expire = "1965.1.1"
 	ideology = stalinism
 	traits = {
@@ -131,7 +131,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "근초고왕"
 	desc = ""
-	picture = "근초고왕.png"
+	picture = "gfx/leaders/BKJ/근초고왕.png"
 	expire = "1965.1.1"
 	ideology = fascism_ideology
 	traits = {
@@ -140,7 +140,7 @@ create_country_leader = {
 }
 create_corps_commander = {
 	name = "계백"
-		picture = "계백.png"
+		picture = "gfx/leaders/BKJ/계백.png"
 	traits = {
 		trickster trait_engineer brilliant_strategist politically_connected
 	}
@@ -152,7 +152,7 @@ create_corps_commander = {
 }
 create_corps_commander = {
 	name = "흑지상지"
-		picture = "흑지상지.png"
+		picture = "gfx/leaders/BKJ/흑지상지.png"
 	traits = {
 		trickster trait_engineer brilliant_strategist politically_connected
 	}

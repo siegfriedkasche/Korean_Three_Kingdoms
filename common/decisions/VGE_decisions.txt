@@ -1,0 +1,213 @@
+VGE_ICC_management_categories = {
+ 	VGE_ICC_management_t = {
+		icon = generic_prepare_civil_war
+		visible = {
+			hidden_trigger = {
+				has_country_flag = ICC_VGE_Autonomy_expansion_flag
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		fire_only_once = yes
+		cost = 25
+		days_remove = 30
+		modifier = {
+			training_time_factor = -0.1
+		}
+		remove_effect = {
+			army_experience = 25
+		}
+	}	
+	VGE_local_defense_force_1 = {
+		icon = GFX_decision_generic_military
+		visible = {
+			hidden_trigger = {
+				has_country_flag = VGE_local_defense_force_flag
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		fire_only_once = yes
+		cost = 25
+		days_remove = 30
+		remove_effect = {
+			add_timed_idea = {
+				idea = local_defense_force_1_idea
+				days = 90
+			}
+			hidden_effect = {
+				set_country_flag = council_army
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = VGE_local_defense_force_flag
+			}
+			division_template = {
+    			name = "Mittelkomitee Volksarmee"
+    			is_locked = yes
+    			division_names_group = 
+    			priority = 0
+    			template_counter = 60
+    			regiments = {
+    			    infantry = { x = 0 y = 0 }
+    			    infantry = { x = 0 y = 1 }
+    			    infantry = { x = 1 y = 0 }
+    			    infantry = { x = 1 y = 1 }
+					infantry = { x = 2 y = 0 }
+    			    infantry = { x = 2 y = 1 }
+    			}
+    			support = { 
+    			    military_police = { x = 0 y = 0 }
+    			} 
+			}
+			829 = {
+				province = 11523
+				create_unit = {
+					division = "name = \"Mittelkomitee Volksarmee\" division_template = \"Mittelkomitee Volksarmee\" start_experience_factor =0.8"
+					owner = VGE
+				}
+			}
+			829 = {
+				province = 9432 
+				create_unit = {
+					division = "name = \"Mittelkomitee Volksarmee\" division_template = \"Mittelkomitee Volksarmee\" start_experience_factor =0.8"
+					owner = VGE
+				}
+			}
+		}
+	}
+	VGE_local_defense_force_2 = {
+		icon = GFX_decision_generic_military
+		visible = {
+			hidden_trigger = {
+				has_country_flag = VGE_local_defense_force_flag
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		fire_only_once = yes
+		cost = 25
+		days_remove = 30
+		modifier = {
+		}
+		remove_effect = {
+			add_timed_idea = {
+				idea = local_defense_force_2_idea
+				days = 90
+			}
+			hidden_effect = {
+				set_country_flag = Union_army
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = VGE_local_defense_force_flag
+			}
+			division_template = {
+    			name = "Regionalkomiteewehr"
+    			is_locked = yes
+    			division_names_group = 
+    			priority = 0
+    			template_counter = 13
+    			regiments = {
+    			    infantry = { x = 0 y = 0 }
+    			    infantry = { x = 0 y = 1 }
+    			    infantry = { x = 1 y = 0 }
+    			    infantry = { x = 1 y = 1 }
+    			}
+    			support = { 
+
+    			} 
+			}
+			829 = {
+				province = 11523
+				create_unit = {
+					division = "name = \"Regionalkomiteewehr\" division_template = \"Regionalkomiteewehr\" start_experience_factor =0.2"
+					owner = VGE
+				}
+			}
+			829 = {
+				province = 9432 
+				create_unit = {
+					division = "name = \"Regionalkomiteewehr\" division_template = \"Regionalkomiteewehr\" start_experience_factor =0.2"
+					owner = VGE
+				}
+			}
+		}
+	}
+
+
+
+	
+	VGE_local_shape_problem_1 = {
+		icon = GFX_decision_SOV_place_hq
+		visible = {
+			hidden_trigger = {
+				has_country_flag = VGE_local_shape_problem_flag
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		fire_only_once = yes
+		days_remove = 30
+		modifier = {
+			political_power_gain = 0.05
+			industrial_capacity_factory = -0.1
+
+		}
+		remove_effect = {
+			custom_effect_tooltip = Soviet_council_system
+			hidden_effect ={
+				set_country_flag = Soviet_council_system
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = VGE_local_shape_problem_flag
+			}
+		}
+	}
+	VGE_local_shape_problem_2 = {
+		icon = GFX_decision_SOV_place_hq
+		visible = {
+			hidden_trigger = {
+				has_country_flag = VGE_local_shape_problem_flag
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		fire_only_once = yes
+		days_remove = 30
+		modifier = {
+			political_power_gain = -0.05
+			industrial_capacity_factory = 0.1
+		}
+		remove_effect = {
+			custom_effect_tooltip = union_soviet_system
+			hidden_effect ={
+				set_country_flag = union_soviet_system
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = VGE_local_shape_problem_flag
+			}
+		}
+	}
+}

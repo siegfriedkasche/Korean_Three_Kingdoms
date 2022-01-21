@@ -11,20 +11,20 @@ country_event = {
 	option = {
         name = THK.0.a
 		trigger = {
-			original_tag = SIL
+			original_tag = SIR
 		}
         ai_chance = {
             factor = 80
         }
 		every_state = {
 			limit = {
-				is_core_of = SIl
+				is_core_of = SIR
 			}
 			add_core_of = GGR
 		}
 		GGR = {
 			annex_country = {
-    			target = SIL
+    			target = SIR
     			transfer_troops = yes
 			}
 			country_event = {
@@ -96,7 +96,7 @@ country_event = {
 		hidden_effect = {
 			BKJ = {
 				create_faction = "나제 동맹"
-				add_to_faction = SIL
+				add_to_faction = SIR
 			}
 		}
     }
@@ -190,5 +190,59 @@ country_event = {
 			}
 		}
 		BKJ = { country_event = { id = wtt_germany.40 days = 1 } }
+	}
+}
+
+country_event = {
+	id = THK.5
+	title = THK.5.t
+	desc = THK.5.d
+	picture = GFX_event_generic_event_Defendant_Kim_Jong_il
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = THK.5.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			news_event  = {
+				id = THK_wor.7
+				hours = 2
+			}
+		}
+	}
+}
+country_event = {
+	id = THK.6
+	title = THK.6.t
+	desc = THK.6.d
+	picture = GFX_event_generic_event_Defendant_Kim_Jong_il
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = THK.6.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = THK.7
+	title = THK.7.t
+	desc = THK.7.d
+	picture = GFX_event_born_kim_jung_il
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = THK.7.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+		}
 	}
 }

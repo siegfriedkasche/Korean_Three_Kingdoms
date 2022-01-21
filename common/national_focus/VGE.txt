@@ -1,0 +1,4059 @@
+focus_tree = {
+	id = new_VGE_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = VGE
+		}
+	}
+	default = no
+
+	focus = {
+		id = VGE_new_politic
+		icon = GFX_focus_SOV_third_rome
+		cost = 5.00
+		x = 16
+		y = 0
+		allow_branch = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				NOT = {
+					OR = {
+						has_completed_focus = VGE_army_uprising
+					}
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = VGE_army_uprising
+		}
+		completion_reward = {
+			hidden_effect = {
+				load_focus_tree = {
+					tree = new_VGE_focus
+					keep_completed = yes
+				}
+				mark_focus_tree_layout_dirty = yes
+			}
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = VGE_army_uprising
+		icon = GFX_focus_SOV_restore_cossack_units
+		cost = 5.00
+		x = 40
+		y = 0
+		available = {
+			VGE_Pavlo_Skoropadsky = { is_leading_army_group = yes }
+			VGE_Peter_Krasnov = { is_leading_army = yes }
+		}
+		allow_branch = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				NOT = {
+					OR = {
+						has_completed_focus = VGE_new_politic
+					}
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = VGE_new_politic
+		}
+		completion_reward = {
+			add_stability = -0.15
+			remove_ideas = VGE_anarchy_ideas
+			hidden_effect = {
+				load_focus_tree = {
+					tree = new_VGE_focus
+					keep_completed = yes
+				}
+				mark_focus_tree_layout_dirty = yes
+				set_politics = {
+					ruling_party = fascism
+					last_election = "1934.12.19"
+					election_frequency = 60
+					elections_allowed = yes
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.30
+				}
+				set_party_name = {
+					ideology = communism
+					long_name = "볼가노동조합총연맹"
+					name = "볼가노동조합총연맹"
+				}
+				set_party_name = {
+					ideology = fascism
+					long_name = "카자크 군국주의자 동맹"
+					name = "카자크 군국주의자 동맹"
+				}
+				set_party_name = {
+					ideology = democratic
+					long_name = "볼가 독일 자유당"
+					name = "볼가 독일 자유당"
+				}
+			}
+		}
+	}
+	focus = {
+		id = VGE_great_purge
+		icon = GFX_focus_LAT_suspend_constitution_of_latvia
+		cost = 5.00
+		x = 39
+		y = 1
+		
+		prerequisite = {
+			focus = VGE_army_uprising
+		}
+		completion_reward = {
+			add_stability = -0.05
+			add_political_power = -50
+			custom_effect_tooltip = VGE_Konrad_Hoffmann_kill
+			custom_effect_tooltip = VGE_August_Lonsinger_kill
+			custom_effect_tooltip = VGE_Alexander_Heckmann_kill
+			custom_effect_tooltip = VGE_Wladimir_Propp_kill
+			custom_effect_tooltip = VGE_Hans_Kaufmann_kill
+			hidden_effect = {
+				retire_character = VGE_Konrad_Hoffmann
+				retire_character = VGE_Alexander_Heckmann
+				retire_character = VGE_August_Lonsinger
+				retire_character = VGE_Wladimir_Propp
+				retire_character = VGE_Hans_Kaufmann
+			}
+		}
+	}
+	focus = {
+		id = VGE_martial_law
+		icon = GFX_focus_generic_manpower
+		cost = 5.00
+		x = 41
+		y = 1
+		prerequisite = {
+			focus = VGE_army_uprising
+		}
+		completion_reward = {
+			add_ideas = war_economy
+			add_ideas = limited_conscription 
+			add_stability =0.05
+		}
+	}
+	focus = {
+		id = VGE_Cossacks_king
+		icon = GFX_focus_POL_cossack_king
+		cost = 5.00
+		x = 40
+		y = 2
+		available = {
+			has_country_leader = {
+    			name = "파블로 스코로파드스키"
+    			ruling_only = yes
+			}
+		}
+		prerequisite = {
+			focus = VGE_martial_law
+		}
+		prerequisite = {
+			focus = VGE_great_purge
+		}
+		completion_reward = {
+			add_stability = 0.10
+			add_war_support = 0.05
+			VGE_Pavlo_Skoropadsky = {
+				add_country_leader_trait = POL_cossack_king
+			}
+			hidden_effect = {
+				set_party_name = { 
+					ideology = fascism 
+					long_name = "코자크 왕족"
+					name = "코자크 왕족" 
+				}
+				set_country_leader_portrait = {
+					ideology = fascism
+					portrait = GFX_COSSACKS_Portrait_Ukraine_Pavlo_Skoropadsky
+				}
+				set_cosmetic_tag = COS_VGE
+			}
+		}
+	}
+	focus = {
+		id = VGE_Orthodox_Church
+		icon = GFX_focus_GRE_an_orthodox_state
+		cost = 10.00
+		x = 40
+		y = 4
+		prerequisite = {
+			focus = VGE_absolute_monarchy
+		}
+		prerequisite = {
+			focus = VGE_rank_system
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = Orthodox_Church_ideas
+				days = 365
+			}
+		}
+	}
+	focus = {
+		id = VGE_Volga_Cathedral
+		icon = GFX_focus_SOV_rebuild_the_savior_cathedral
+		cost = 10.00
+		x = 40
+		y = 6
+		available = {
+			controls_province = 9475
+		}
+		cancel = {
+			Not = {
+				controls_province = 9475
+			}
+		}
+		prerequisite = {
+			focus = VGE_Orthodox_Church
+		}
+		completion_reward = {
+			add_ideas = Krasnoarmeysk_Cathedral_ideas
+			hidden_effect = {
+				set_province_name = {
+    				id = 9475
+    				name = "사라토브스카야"
+				}
+				set_victory_points = {
+					province = 9475
+					value = 10
+				}
+			}
+		}
+	}
+	focus = {
+		id = VGE_rank_system
+		icon = GFX_goal_tfv_saf_support_ossebrandwag
+		cost = 10.00
+		x = 41
+		y = 3
+		available = {
+
+		}
+		prerequisite = {
+			focus = VGE_Cossacks_king
+		}
+		completion_reward = {
+			add_ideas = VGE_rank_system
+		}
+	}
+	focus = {
+		id = VGE_feudalism
+		icon = GFX_focus_generic_monarchy_2
+		cost = 10.00
+		x = 41
+		y = 5
+		available = {
+
+		}
+
+		prerequisite = {
+			focus = VGE_rank_system
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea = VGE_feudalism_idea
+				remove_idea = VGE_rank_system
+			}
+		}
+	}
+	focus = {
+		id = VGE_meet_ger
+		icon = GFX_focus_chi_mission_to_germany
+		cost = 10.00
+		x = 37
+		y = 3
+		available = {
+			OR = {
+				has_government = fascism
+				GER = { has_government = ROOT }
+				GER_will_support = yes
+			}
+			NOT = {
+				has_war_with = GER
+			}
+		}
+		prerequisite = {
+			focus = VGE_Cossacks_king
+		}
+		completion_reward = {
+			GER = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = CHI_mission_to_germany
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = protect
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = support
+					id = ROOT
+					value = 100
+				}
+			}
+		}
+	}
+	focus = {
+		id = VGE_meet_ita
+		icon = GFX_focus_befriend_italy
+		cost = 10.00
+		x = 37
+		y = 4
+		available = {
+			OR = {
+				has_government = fascism
+				ITA = { 
+					has_government = ROOT 
+					is_in_faction_with = GER
+				}
+				
+			}
+			NOT = {
+				has_war_with = ITA
+			}
+		}
+		prerequisite = {
+			focus = VGE_meet_ger
+		}
+		completion_reward = {
+			ITA = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = Diplomat_visited 
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = protect
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = support
+					id = ROOT
+					value = 100
+				}
+			}
+		}
+	}
+	focus = {
+		id = VGE_join_axis
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 10.00
+		x = 38
+		y = 6
+		available = {
+			OR = {
+				has_government = fascism
+				GER = { has_government = ROOT }
+				GER_will_support = yes
+			}
+			NOT = {
+				has_war_with = GER
+				is_in_faction_with = GER
+			}
+		}
+		prerequisite = {
+			focus = VGE_meet_ita
+		}
+		prerequisite = {
+			focus = VGE_military_youth
+		}
+		bypass = {
+			is_in_faction_with = GER
+			has_war_with = GER
+		}
+		completion_reward = {
+			GER = {
+				add_to_faction = VGE
+			}
+		}
+	}
+	focus = {
+		id = VGE_absolute_monarchy
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		cost = 10.00
+		x = 39
+		y = 3
+		available = {
+
+		}
+
+		prerequisite = {
+			focus = VGE_Cossacks_king
+		}
+		completion_reward = {
+			stability_factor = 0.03
+			add_ideas = VGE_absolute_monarchy_ideas
+		}
+	}
+	focus = {
+		id = VGE_military_youth
+		icon = GFX_focus_generic_little_entente
+		cost = 10.00
+		x = 39
+		y = 5
+		available = {
+
+		}
+
+		prerequisite = {
+			focus = VGE_absolute_monarchy
+		}
+		completion_reward = {
+			add_war_support = 0.05
+			add_ideas = paramilitarism_focus 
+		}
+	}
+	focus = {
+		id = VGE_DON_province_demade
+		icon = GFX_goal_demand_sudetenland
+		cost = 10.00
+		x = 42
+		y = 4
+		mutually_exclusive = {
+			focus = VGE_milita_in_DON
+		}
+		prerequisite = {
+			focus = VGE_rank_system
+		}
+		completion_reward = {
+			SOV = {
+				country_event = {
+					id = VGE_VS_RUS.2
+					days = 3
+				}
+			}
+		}
+	}
+	focus = {
+		id = VGE_communist_blow
+		icon = GFX_focus_ger_strike_at_the_source
+		cost = 10.00
+		x = 42
+		y = 6
+		prerequisite = {
+			focus = VGE_DON_province_demade
+			focus = VGE_Participation_in_war
+		}
+		available = {
+			is_subject = no
+			SOV = {
+				has_government = communism
+			}
+			NOT = { is_in_faction_with = SOV }
+			NOT = { is_in_faction_with = SOS }
+		}
+		bypass = {
+			OR = {
+				has_war_with = SOV
+				NOT = { country_exists = SOV }
+			}
+		}
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			create_wargoal = {
+				type = topple_government
+				target = SOV
+				expire = 0
+			}
+			if = {
+				limit = {
+					SOS = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					type = topple_government
+					target = SOS
+					expire = 0
+				}	
+			}
+			unlock_decision_tooltip = VGE_Russian_empire_form
+			hidden_effect = {
+				has_country_flag = form_Russian_empire_flag
+			}
+		}
+	}
+
+	
+	focus = {
+		id = VGE_russian_civil_war_join
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		cost = 5.00
+		x = 44
+		y = 2
+		available = {
+			has_global_flag = SOV_soviet_civil_war 
+		}
+		prerequisite = {
+			focus = VGE_martial_law
+		}
+		prerequisite = {
+			focus = VGE_great_purge
+		}
+		completion_reward = {
+			add_war_support = 0.05
+		}
+	}
+	focus = {
+		id = VGE_milita_in_DON
+		icon = GFX_focus_SOV_mobilization_plan
+		cost = 5.00
+		x = 44
+		y = 4
+		available = {
+			has_global_flag = SOV_soviet_civil_war 
+		}
+		mutually_exclusive = {
+			focus = VGE_DON_province_demade
+		}
+		prerequisite = {
+			focus = VGE_Claims_of_sovereignty_in_Don_Province
+		}
+		prerequisite = {
+			focus = VGE_Cossacks_cavalry
+		}
+		completion_reward = {
+			custom_effect_tooltip = don_mil
+			division_template = {
+    			name = "militsiya"
+    			is_locked = no
+    			priority = 0
+    			regiments = {
+    			    infantry = { x = 0 y = 0 }
+    			    infantry = { x = 0 y = 1 }
+     			   	infantry = { x = 1 y = 0 }
+    			    infantry = { x = 1 y = 1 }
+    			}
+			}
+			hidden_effect = {
+				218 = {
+					set_demilitarized_zone = yes
+				}
+				238 = {
+					set_demilitarized_zone = yes
+				}
+				217 = {
+					set_demilitarized_zone = yes
+				}
+				245 = {
+					set_demilitarized_zone = yes
+				}
+				265 = {
+					set_demilitarized_zone = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = VGE_Participation_in_war
+		icon = GFX_goal_generic_war_with_comintern
+		cost = 10.00
+		x = 44
+		y = 5
+		available = {
+			has_global_flag = SOV_soviet_civil_war 
+		}
+		prerequisite = {
+			focus = VGE_milita_in_DON
+		}
+		completion_reward = {
+			declare_war_on = {
+    			target = SOS
+				type = annex_everything
+			}
+			country_event = {
+				id = VGE_VS_RUS.0
+			}
+			hidden_effect = {
+				218 = {
+					set_demilitarized_zone = no
+				}
+				238 = {
+					set_demilitarized_zone = no
+				}
+				217 = {
+					set_demilitarized_zone = no
+				}
+				245 = {
+					set_demilitarized_zone = no
+				}
+				265 = {
+					set_demilitarized_zone = no
+				}
+				add_state_core = 265
+				add_state_core = 245
+				add_state_core = 217
+				add_state_core = 238
+				add_state_core = 218
+
+				transfer_state = 265
+				transfer_state = 245
+				transfer_state = 217
+				transfer_state = 238
+				transfer_state = 218
+			}
+		}
+	}
+	focus = {
+		id = VGE_VGE_never_be_defeated_again
+		icon = GFX_focus_SOV_panslavic_nationalism
+		cost = 10.00
+		x = 46
+		y = 6
+		available = {
+			AND = {
+				has_global_flag = SOV_soviet_civil_war 
+            	OR = {
+            	    has_war_with = SOV
+            	    has_war_with = SOS
+            	}
+			}
+    	}
+		prerequisite = {
+			focus = VGE_Participation_in_war
+		}
+		completion_reward = {
+			add_ideas = VGE_never_be_defeated_again_idea
+		}
+	}
+	focus = {
+		id = VGE_white_army
+		icon = GFX_focus_chi_army_reform
+		cost = 10.00
+		x = 41
+		y = 7
+		available = {
+		}
+		prerequisite = {
+			focus = VGE_feudalism
+		}
+		completion_reward = {
+			army_experience = 50
+			division_template = {
+			 	name = "königliche Wache"
+				priority = 1
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					artillery_brigade = { x = 2 y = 1 }
+					artillery_brigade = { x = 2 y = 2 }
+				}
+				is_locked = no
+				support = {
+					recon = { x = 0 y = 0 }
+				}
+			}
+			every_owned_state = {
+				limit = { 
+					is_owned_and_controlled_by = VGE
+					is_capital = yes  
+				}
+				create_unit = { 
+					division = "name = \"königliche Wache\" division_template = \"königliche Wache\" start_experience_factor = 1 start_equipment_factor = 1" 
+					owner = VGE count = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = VGE_Kaukasus_Unabhangigkeitswahn
+		icon = GFX_focus_SOV_transcaucasian_republic
+		cost = 10.00
+		x = 44
+		y = 6
+		available = {
+			has_global_flag = SOV_soviet_civil_war 
+		}
+		prerequisite = {
+			focus = VGE_Participation_in_war
+		}
+		select_effect = {
+			any_state = {
+				limit = {
+					is_core_of = AZR
+					is_core_of = KBK
+					is_core_of = KAL
+					is_core_of = GEO
+					is_core_of = ARM
+					is_core_of = DAG
+					is_core_of = CIN
+					is_core_of = NOA
+				}
+				set_demilitarized_zone = yes
+			}
+			hidden_effect = {
+				NOA = {
+					set_country_flag = fre_with_vge
+				}
+				CIN = {
+					set_country_flag = fre_with_vge
+				}
+				DAG = {
+					set_country_flag = fre_with_vge
+				}
+				ARM = {
+					set_country_flag = fre_with_vge
+				}
+				GEO = {
+					set_country_flag = fre_with_vge
+				}
+				KAL = {
+					set_country_flag = fre_with_vge
+				}
+				KBK = {
+					set_country_flag = fre_with_vge
+				}
+				ARZ = {
+					set_country_flag = fre_with_vge
+				}
+			}
+		}
+		completion_reward = {
+			
+			any_state = {
+				limit = {
+					is_core_of = AZR
+					is_core_of = KBK
+					is_core_of = KAL
+					is_core_of = GEO
+					is_core_of = ARM
+					is_core_of = DAG
+					is_core_of = CIN
+					is_core_of = NOA
+				}
+				set_demilitarized_zone = no
+			}
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = AZR
+							OR = {
+								is_controlled_by = SOV
+								is_controlled_by = SOS
+							}
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						original_tag = SOV
+					}
+					every_owned_state = {
+						limit = { is_core_of = AZR }
+						AZR = { transfer_state = PREV }
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = ARM
+							OR = {
+								is_controlled_by = SOV
+								is_controlled_by = SOS
+							}
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						original_tag = SOV
+					}
+					every_owned_state = {
+						limit = { is_core_of = ARM }
+						ARM = { transfer_state = PREV }
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = GEO
+							OR = {
+								is_controlled_by = SOV
+								is_controlled_by = SOS
+							}
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						original_tag = SOV
+					}
+					every_owned_state = {
+						limit = { is_core_of = GEO }
+						GEO = { transfer_state = PREV }
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = DAG
+							OR = {
+								is_controlled_by = SOV
+								is_controlled_by = SOS
+							}
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						original_tag = SOV
+					}
+					every_owned_state = {
+						limit = { is_core_of = DAG }
+						DAG = { transfer_state = PREV }
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = CIN
+							OR = {
+								is_controlled_by = SOV
+								is_controlled_by = SOS
+							}
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						original_tag = SOV
+					}
+					every_owned_state = {
+						limit = { is_core_of = CIN }
+						CIN = { transfer_state = PREV }
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = NOA
+							OR = {
+								is_controlled_by = SOV
+								is_controlled_by = SOS
+							}
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						original_tag = SOV
+					}
+					every_owned_state = {
+						limit = { is_core_of = NOA }
+						NOA = { transfer_state = PREV }
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = KBK
+							OR = {
+								is_controlled_by = SOV
+								is_controlled_by = SOS
+							}
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						original_tag = SOV
+					}
+					every_owned_state = {
+						limit = { is_core_of = KBK }
+						KBK = { transfer_state = PREV }
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = KAL
+							OR = {
+								is_controlled_by = SOV
+								is_controlled_by = SOS
+							}
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						original_tag = SOV
+					}
+					every_owned_state = {
+						limit = { is_core_of = KAL }
+						KAL = { transfer_state = PREV }
+					}
+				}
+			}
+			country_event = {
+				id = VGE_VS_RUS.1
+				days = 3
+			}
+		}
+	}
+	focus = {
+		id = VGE_Kaukasus_union
+		icon = GFX_goal_generic_alliance
+		cost = 5.00
+		x = 44
+		y = 7
+		available = {
+			AND = {
+				OR = {
+					has_war_with = SOS
+					has_war_with = SOV
+				}
+				OR = {
+					every_country = {
+						limit = {
+							has_country_flag = fre_with_vge
+						}
+						OR = {
+							has_war_with = SOS
+							has_war_with = SOV
+						}
+					}
+				}
+			}
+		}
+		prerequisite = {
+			focus = VGE_Kaukasus_Unabhangigkeitswahn
+		}
+		
+		completion_reward = {
+			create_faction = "캅카스 독립전선"
+			every_country = {
+					limit = {
+						has_country_flag = fre_with_vge
+					}
+					VGE = { add_to_faction = PREV }
+				}
+			hidden_effect = {
+				set_rule = {
+    				can_create_factions = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = VGE_Cossacks_cavalry
+		icon = GFX_goal_generic_cavalry
+		cost = 5.00
+		x = 43
+		y = 3
+		available = {
+			has_global_flag = SOV_soviet_civil_war 
+		}
+		prerequisite = {
+			focus = VGE_russian_civil_war_join
+		}
+		completion_reward = {
+			division_template = {
+    			name = "zemlya Voyska Donskogo"
+    			is_locked = no
+    			priority = 1
+    			regiments = {
+    			    cavalry = { x = 0 y = 0 }
+    			    cavalry = { x = 0 y = 1 }
+     			   	cavalry = { x = 0 y = 2 }
+    			    cavalry = { x = 1 y = 0 }
+    			    cavalry = { x = 1 y = 1 }
+					cavalry = { x = 1 y = 2 }
+    			}
+    			support = { 
+    			    recore = { x = 0 y = 0 }
+    			} 
+			}
+			829 = {
+				province = 11523
+				create_unit = {
+					division = "name = \"zemlya Voyska Donskogo.1\" division_template = \"zemlya Voyska Donskogo\" start_experience_factor =0.8"
+					owner = VGE
+					count = 4
+				}
+			}
+		}
+	}
+	focus = {
+		id = VGE_Claims_of_sovereignty_in_Don_Province
+		icon = GFX_goal_generic_more_territorial_claims
+		cost = 5.00
+		x = 45
+		y = 3
+		available = {
+			has_global_flag = SOV_soviet_civil_war 
+		}
+		prerequisite = {
+			focus = VGE_russian_civil_war_join
+		}
+		completion_reward = {
+			VGE = {
+				add_state_claim = 218
+				add_state_claim = 238
+				add_state_claim = 217
+				add_state_claim = 245
+				add_state_claim = 265
+			}
+		}
+	}
+	focus = {
+		id = VGE_new_army
+		icon = GFX_goal_generic_army_doctrines
+		cost = 5.00
+		x = 26
+		y = 1
+		prerequisite = {
+			focus = VGE_army_uprising
+			focus = VGE_new_politic
+		}
+		available = {
+			hidden_trigger = {
+				is_ai = no
+			}
+		}
+		completion_reward = {
+			army_experience = 50
+			country_lock_all_division_template = no
+		}
+	}
+	focus = {
+		id = VGE_Militarakademie_Engels
+		icon = GFX_focus_SOV_penal_battalions
+		cost = 5.00
+		x = 26
+		y = 2
+		prerequisite = {
+			focus = VGE_new_army
+		}
+		completion_reward = {
+			add_manpower = 1000
+			add_ideas = Militarakademie_Engels
+		}
+	}
+	focus = {
+		id = VGE_army_go
+		icon = GFX_focus_SOV_builder_of_the_red_army
+		cost = 5.00
+		x = 26
+		y = 3
+		prerequisite = {
+			focus = VGE_Militarakademie_Engels
+		}
+		available ={
+			has_idea = war_economy
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_idea = service_by_requirement 
+					}
+				}
+				add_ideas = service_by_requirement 
+				add_stability = -0.15
+				add_manpower = 10000
+			}
+			else_if = {
+				limit = {
+					has_idea = service_by_requirement 
+				}
+				add_manpower = 10000
+				add = -0.05
+			}
+		}
+	}
+	focus = {
+		id = VGE_fortification_plan
+		icon = GFX_goal_generic_construction2
+		cost = 5.00
+		x = 32
+		y = 2
+		available = {
+			has_full_control_of_state = 829
+		}
+		bypass = {
+			NOT = {
+				has_full_control_of_state = 829
+			}
+		}
+		prerequisite = { 
+			focus = VGE_new_army
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = VGE_fortification_plan
+				days = 730
+			}
+		}
+	}
+	focus = {
+		id = VGE_flak_canon
+		icon = GFX_goal_generic_air_doctrine
+		cost = 5.00
+		x = 32
+		y = 4
+		prerequisite = {
+			focus = VGE_fortification_plan
+		}
+		available = {
+			AND = {
+				has_tech = interwar_antiair
+				has_full_control_of_state = 829
+				has_idea = VGE_fortification_plan
+			}
+		}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					has_full_control_of_state = 829
+				}
+				829 = {
+					add_building_construction = {
+						type = anti_air_building
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = VGE_fortification_plan2
+		icon = GFX_goal_generic_fortify_city
+		cost = 5.00
+		x = 33
+		y = 3
+		available = {
+			AND = {
+				has_idea = VGE_fortification_plan
+				has_full_control_of_state = 829
+			}
+		}
+		bypass = {
+			NOT = {
+				AND = {
+					has_idea = VGE_fortification_plan
+					has_full_control_of_state = 829
+				}
+			}	
+		}
+		prerequisite = {
+			focus = VGE_fortification_plan
+		}
+		completion_reward = {
+			829 = {
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = {
+						id = 6575
+                	    id = 3517
+                	    id = 6479
+                	    id = 11460
+						id = 6601
+						limit_to_border = yes
+    				}
+				}
+			}
+		}
+	}
+	focus = {
+		id = VGE_fortification_plan3
+		icon = GFX_goal_generic_fortify_city
+		cost = 5.00
+		x = 31
+		y = 3
+		available = {
+			AND = {
+				has_idea = VGE_fortification_plan
+				has_full_control_of_state = 829
+			}
+		}
+		bypass = {
+			NOT = {
+				AND = {
+					has_idea = VGE_fortification_plan
+					has_full_control_of_state = 829
+				}
+			}	
+		}
+		prerequisite = {
+			focus = VGE_fortification_plan
+		}
+		completion_reward = {
+			829 = {
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = {
+						id = 9432
+                	    id = 11523
+                	    id = 6539
+                	    id = 3518
+						id = 6506
+						limit_to_border = yes
+    				}
+				}
+			}
+		}
+	}
+	focus = {
+		id = VGE_Established_firearms_company
+		icon = GFX_focus_secret_rearmament
+		cost = 5.00
+		x = 28
+		y = 3
+		
+		prerequisite = {
+			focus = VGE_Militarakademie_Engels
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+	focus = {
+		id = VGE_support_eq
+		icon = GFX_goal_generic_position_armies
+		cost = 5.00
+		x = 29
+		y = 4
+		prerequisite = {
+			focus = VGE_Established_firearms_company
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = support_tech
+			}
+		}
+	}
+	focus = {
+		id = VGE_before_the_delay
+		icon = GFX_goal_generic_military_sphere
+		cost = 5.00
+		x = 27
+		y = 4
+		available = {
+			has_war = yes
+		}
+		prerequisite = {
+			focus = VGE_Established_firearms_company
+		}
+		completion_reward = {
+			add_ideas = VGE_before_the_delay_ideas
+			add_stability = -0.1
+			add_war_support = 0.1
+		}
+	}
+	focus = {
+		id = VGE_tank_development
+		icon = GFX_goal_generic_army_tanks
+		cost = 5.00
+		x = 24
+		y = 5
+		prerequisite = {
+			focus = VGE_vehicle_development
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+	focus = {
+		id = VGE_vehicle_development
+		icon = GFX_goal_generic_army_motorized
+		cost = 5.00
+		x = 25
+		y = 4
+		prerequisite = {
+			focus = VGE_doctrinal_study
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+	focus = {
+		id = VGE_mechanized_infantry
+		icon = GFX_goal_generic_build_tank
+		cost = 5.00
+		x = 26
+		y = 5
+		prerequisite = {
+			focus = VGE_vehicle_development
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+	focus = {
+		id = VGE_artillery_development
+		icon = GFX_goal_generic_army_artillery
+		cost = 5.00
+		x = 23
+		y = 4
+		prerequisite = {
+			focus = VGE_doctrinal_study
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+	focus = {
+		id = VGE_anti_tank_gun
+		icon = GFX_goal_generic_army_artillery2
+		cost = 5.00
+		x = 23
+		y = 6
+		prerequisite = {
+			focus = VGE_artillery_development
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_anti_tank
+			}
+			#1x 50% bonus for Anti-Tank guns
+		}
+	}
+	focus = {
+		id = VGE_doctrinal_study
+		icon = GFX_goal_generic_cavalry
+		cost = 5.00
+		x = 24
+		y = 3
+		prerequisite = {
+			focus = VGE_Militarakademie_Engels
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+	#focus = {
+	#	id = VGE_democratic_focus
+	#	icon = GFX_focus_POL_romania_bridgehead_strategy
+	#	cost = 5.00
+	#	x = 22
+	#	y = 1
+	#	mutually_exclusive = {
+	#		focus = VGE_communism
+	#	}
+	#	prerequisite = {
+	#		focus = VGE_new_politic
+	#	}
+	#	completion_reward = {
+	#		add_popularity = {
+	#			ideology = democratic
+	#			popularity = 0.30
+	#		}
+	#		add_political_power = 50
+	#		hidden_effect = {
+	#			set_party_name = {
+	#				ideology = democratic
+	#				long_name = "볼가 독일 자유당"
+	#				name = "볼가 독일 자유당"
+	#			}
+	#			set_party_name = {
+	#				ideology = communism
+	#				long_name = "볼가노동조합총연맹"
+	#				name = "볼가노동조합총연맹"
+	#			}
+	#		}
+	#	}
+	#}
+	focus = {
+		id = VGE_communism
+		icon = GFX_focus_generic_soviet_politics
+		cost = 5.00
+		x = 16
+		y = 1
+	#	mutually_exclusive = {
+	#		focus = VGE_democratic_focus
+	#	}
+		prerequisite = {
+			focus = VGE_new_politic
+		}
+
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.30
+			}
+			set_politics = {
+				ruling_party = communism
+				last_election = "1934.12.19"
+				election_frequency = 60
+				elections_allowed = yes
+			}
+			hidden_effect = {
+				set_party_name = {
+					ideology = communism
+					long_name = "볼가노동조합총연맹"
+					name = "볼가노동조합총연맹"
+				}
+				set_party_name = {
+					ideology = democratic
+					long_name = "볼가 독일 자유당"
+					name = "볼가 독일 자유당"
+				}
+				create_country_leader = {
+					name = "볼가노동조합총연맹 지역총회"
+					desc = ""
+					picture = "gfx/leaders/ANA/Military_Revolution.png"
+					expire = "1965.1.1"
+					ideology = anarchist_communism
+						traits = {
+
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = VGE_volga_bank
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		cost = 5.00
+		x = 20
+		y = 2
+		prerequisite = {
+			focus = VGE_communism
+		}
+		available = {
+			hidden_trigger = {
+				is_ai = no
+			}
+		}
+		completion_reward = {
+			add_ideas = volga_bank_ideas
+		}
+	}
+	focus = {
+		id = VGE_Sharing_means_of_production
+		icon = GFX_focus_por_workers_of_iberia
+		cost = 5.00
+		x = 16
+		y = 2
+		prerequisite = {
+			focus = VGE_communism
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = VGE
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = VGE
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	
+	focus = {
+		id = VGE_new_leader
+		icon = GFX_focus_SOV_the_path_of_marxism_leninism
+		cost = 5.00
+		x = 16
+		y = 3
+		prerequisite = {
+			focus = VGE_Sharing_means_of_production
+		}
+
+		completion_reward = {
+			create_country_leader = {
+				name = "Ernst Reuter"
+				desc = "Ernst_desc"
+				picture = "gfx/leaders/ANA/Ernst_Reuter.png"
+				expire = "1965.1.1"
+				ideology = leninism
+				traits = {
+					choose_people
+				}
+			}
+			remove_ideas = VGE_anarchy_ideas
+		}
+	}
+	focus = {
+		id = VGE_self_authority
+		icon = GFX_goal_generic_war_with_comintern
+		cost = 5.00
+		x = 15
+		y = 4
+		mutually_exclusive = {
+			focus = VGE_go_to_the_soviet
+		}
+		prerequisite = {
+			focus = VGE_new_leader
+		}
+		available = {
+			hidden_trigger = {
+				is_ai = no
+			}
+			exists = yes
+			is_puppet = no 
+			has_government = communism
+		}
+
+		completion_reward = {
+			set_cosmetic_tag = FRE_VGE
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = VGE_nationalism
+		icon = GFX_goal_support_communism
+		cost = 10.00
+		x = 15
+		y = 5
+		prerequisite = {
+			focus = VGE_self_authority
+		}
+		available = {
+			exists = yes
+			is_puppet = no 
+			has_government = communism
+		}
+		cancel = {
+			not = {
+				exists = yes
+				is_puppet = no 
+				has_government = communism
+			}
+		}
+
+		completion_reward = {
+			every_country = {
+				limit = {
+					has_government = communism
+				}
+				add_opinion_modifier = {
+    				target = VGE
+    				modifier = Diplomat_visited 
+				}
+			}
+			add_stability = 0.05
+			add_ideas = foreign_expeditions_focus
+		}
+	}
+	focus = {
+		id = VGE_volga_german_people
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		cost = 10.00
+		x = 15
+		y = 6
+		prerequisite = {
+			focus = VGE_nationalism
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = Volga_German_migration
+				days = 90
+			}
+		}
+	}
+	focus = {
+		id = VGE_peace_of_religion
+		icon = GFX_focus_SOV_zemsky_sobor
+		cost = 2.00
+		x = 15
+		y = 8
+		available = {
+			has_idea = Volga_German_migration
+		}
+		prerequisite = {
+			focus = VGE_volga_german_people
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = Volga_German_migration2
+				remove_idea = Volga_German_migration
+			}
+		}
+	}
+	focus = {
+		id = VGE_nonaggression_with_the_USSR #이벤트
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		cost = 10.00
+		x = 16
+		y = 7
+		prerequisite = {
+			focus = VGE_nationalism
+		}
+		available = {
+			exists = yes
+			is_puppet = no 
+			has_government = communism
+			SOV = {
+				exists = yes
+				is_puppet = no 
+				has_government = communism
+			}
+		}
+		bypass = {
+			NOT = {
+				OR = {
+					SOV = {
+						exists = yes
+						is_puppet = no 
+						has_government = communism
+					}
+				}
+			}
+		}
+		cancel = {
+			NOT = {
+				OR = {
+					SOV = {
+						exists = yes
+						is_puppet = no 
+						has_government = communism
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_war_support = 0.05
+			add_stability = 0.05
+			VGE = {
+				diplomatic_relation = { country = SOV relation = non_aggression_pact }
+				add_opinion_modifier = { target = SOV modifier = Molotov_Reuter }# pact
+			}
+			SOV = {
+				add_opinion_modifier = { target = VGE modifier = Molotov_Reuter }
+			}
+		}
+	}
+	focus = {
+		id = VGE_join_the_commintern #코민테른 가입
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 10.00
+		x = 18
+		y = 9
+		mutually_exclusive = {
+			focus = VGE_national_communist_city
+		}
+		prerequisite = {
+			focus = VGE_nonaggression_with_the_USSR
+		}
+		available = {
+			exists = yes
+			is_puppet = no 
+			SOV = {
+				exists = yes
+				is_puppet = no 
+				is_faction_leader = yes
+			}
+			NOT = {
+				has_completed_focus = VGE_national_communist_city
+			}
+		}
+		bypass = {
+			NOT = {
+				OR = {
+					SOV = {
+						exists = yes
+						is_puppet = no 
+						is_faction_leader = yes
+					}
+				}
+			}
+		}
+		cancel = {
+			NOT = {
+				OR = {
+					SOV = {
+						exists = yes
+						is_puppet = no 
+						is_faction_leader = yesd
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			random_list = {
+    			50 = {
+    				SOV = { add_to_faction = VGE }
+    			}
+    			50 = {
+        			add_political_power = -25
+    			}
+    		}
+		}
+	}
+	
+	focus = {
+		id = VGE_national_communist_city
+		icon = GFX_focus_SOV_the_supreme_soviet
+		cost = 10.00
+		x = 16
+		y = 9
+		mutually_exclusive = {
+			focus = VGE_join_the_commintern
+		}
+		prerequisite = {
+			focus = VGE_nonaggression_with_the_USSR
+		}
+		available = {
+			AND = {
+				owns_state = 829
+				OR = {
+					has_government = communism
+					NOT = {
+						has_completed_focus = VGE_join_the_commintern
+					}
+				}
+			}
+		}
+		bypass = {
+			AND = {
+				not = {
+					owns_state = 829
+				}
+				OR = {
+					NOT = {
+						has_government = communism
+					}
+					has_completed_focus = VGE_join_the_commintern
+				}
+			}
+		}
+		cancel = {
+			AND = {
+				not = {
+					owns_state = 829
+				}
+				OR = {
+					NOT = {
+						has_government = communism
+					}
+					has_completed_focus = VGE_join_the_commintern
+				}
+			}
+		}
+
+		completion_reward = {
+			add_manpower = 10000
+			add_popularity = {
+				ideology = communism
+				popularity = 0.30
+			}
+			add_ideas = VGE_national_communist_city_ideas
+		}
+	}
+	focus = {
+		id = VGE_Autonomy_expansion
+		icon = GFX_focus_generic_join_comintern
+		cost = 10.00
+		x = 15
+		y = 10
+		prerequisite = {
+			focus = VGE_national_communist_city
+		}
+		prerequisite = {
+			focus = VGE_secret_police
+		}
+		available = {
+			has_idea = VGE_national_communist_city_ideas
+		}
+		bypass = {
+			NOT = {
+				has_idea = VGE_national_communist_city_ideas
+			}
+		}
+		cancel = {
+			NOT = {
+				has_idea = VGE_national_communist_city_ideas
+			}
+		}
+
+		completion_reward = {
+			add_victory_points = {
+				province = 11523
+				value = 23
+			}
+			add_victory_points = {
+				province = 9432
+				value = 19
+			}
+			set_province_name = {
+    			id = 6575
+    			name = TRO_nam
+			}
+			add_victory_points = {
+				province = 6575
+				value = 10
+			}
+			set_province_name = {
+    			id = 3518
+    			name = ros_nam
+			}
+			add_victory_points = {
+				province = 3518
+				value = 20
+			}
+			set_province_name = {
+    			id = 6479
+    			name = mkh_nam
+			}
+			add_victory_points = {
+				province = 6479
+				value = 10
+			}
+			set_province_name = {
+    			id = 11395
+    			name = BKN_nam
+			}
+			add_victory_points = {
+				province = 11395
+				value = 18
+			}
+			set_province_name = {
+    			id = 3517
+    			name = bre_nam
+			}
+			add_victory_points = {
+				province = 3517
+				value = 5
+			}
+			unlock_decision_category_tooltip = VGE_ICC_management_categories
+			hidden_effect = {
+				set_country_flag = ICC_VGE_Autonomy_expansion_flag
+			}
+		}
+	}
+	
+	focus = {
+		id = VGE_local_defense_force
+		icon = GFX_focus_generic_women_in_military
+		cost = 10.00
+		x = 14
+		y = 11
+		prerequisite = {
+			focus = VGE_Autonomy_expansion
+		}
+		available = {
+			has_idea = VGE_national_communist_city_ideas
+		}
+		bypass = {
+			NOT = {
+				has_idea = VGE_national_communist_city_ideas
+			}
+		}
+		cancel = {
+			NOT = {
+				has_idea = VGE_national_communist_city_ideas
+			}
+		}
+
+		completion_reward = {
+			unlock_decision_tooltip = VGE_local_defense_force_1
+			unlock_decision_tooltip = VGE_local_defense_force_2
+			hidden_effect = {
+				set_country_flag = VGE_local_defense_force_flag
+			}
+		}
+	}
+	focus = {
+		id = VGE_local_shape_problem
+		icon = GFX_focus_generic_self_management
+		cost = 10.00
+		x = 16
+		y = 11
+		prerequisite = {
+			focus = VGE_Autonomy_expansion
+		}
+		available = {
+			has_idea = VGE_national_communist_city_ideas
+		}
+		bypass = {
+			NOT = {
+				has_idea = VGE_national_communist_city_ideas
+			}
+		}
+		cancel = {
+			NOT = {
+				has_idea = VGE_national_communist_city_ideas
+			}
+		}
+
+		completion_reward = {
+			unlock_decision_tooltip = VGE_local_shape_problem_1
+			unlock_decision_tooltip = VGE_local_shape_problem_2
+			hidden_effect = {
+				set_country_flag = VGE_local_shape_problem_flag
+			}
+		}
+	}
+	focus = {
+		id = VGE_union_maintenance
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 10.00
+		x = 13
+		y = 12
+		mutually_exclusive = {
+			focus = VGE_council_maintenance
+		}
+		prerequisite = {
+			focus = VGE_local_defense_force
+		}
+		prerequisite = {
+			focus = VGE_local_shape_problem
+		}
+		available = {
+			custom_trigger_tooltip = {
+    			tooltip = union_system_maintenance
+				OR = {
+					has_country_flag = council_army
+					has_country_flag = Union_army
+				}
+				has_country_flag = union_soviet_system
+			}
+		}
+		cancel = {
+			NOT = {
+				custom_trigger_tooltip = {
+    				tooltip = union_system_maintenance
+					OR = {
+						has_country_flag = council_army
+						has_country_flag = Union_army
+					}
+					has_country_flag = union_soviet_system
+				}
+			}
+		}
+
+		completion_reward = {
+			hidden_effect = {
+				clr_country_flag = union_soviet_system
+				clr_country_flag = Union_army
+				clr_country_flag = council_army
+			}
+		}
+	}
+	focus = {
+		id = VGE_council_maintenance
+		icon = GFX_focus_spr_masters_of_our_own_fate
+		cost = 10.00
+		x = 17
+		y = 12
+		prerequisite = {
+			focus = VGE_local_defense_force
+		}
+		prerequisite = {
+			focus = VGE_local_shape_problem
+		}
+		mutually_exclusive = {
+			focus = VGE_union_maintenance
+		}
+		available = {
+			custom_trigger_tooltip = {
+    			tooltip = Soviet_system_maintenance
+				has_country_flag = Soviet_council_system
+				OR = {
+					has_country_flag = council_army
+					has_country_flag = Union_army
+				}
+			}
+		}
+		cancel = {
+			NOT = {
+				custom_trigger_tooltip = {
+    				tooltip = Soviet_system_maintenance
+					has_country_flag = Soviet_council_system
+					OR = {
+						has_country_flag = council_army
+						has_country_flag = Union_army
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			hidden_effect = {
+				clr_country_flag = council_army
+				clr_country_flag = Union_army
+				clr_country_flag = Soviet_council_system
+			}
+		}
+	}
+	focus = {
+		id = VGE_secret_police
+		icon = GFX_focus_SOV_military_purge
+		cost = 10.00
+		x = 14
+		y = 9
+		prerequisite = {
+			focus = VGE_war_economy
+		}
+		available = {
+			has_government = communism
+		}
+		cancel = {
+			NOT = {
+				has_government = communism
+			}
+		}
+		bypass = {
+
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = VGE_Peter_Krasnov_kill
+			custom_effect_tooltip = VGE_Pavlo_Skoropadsky_kill
+			hidden_effect = {
+				retire_character = VGE_Pavlo_Skoropadsky
+				retire_character = VGE_Peter_Krasnov
+			}
+			add_ideas = VGE_secret_police_ideas
+		}
+	}
+	focus = {
+		id = VGE_war_economy
+		icon = GFX_goal_generic_trade
+		cost = 3.00
+		x = 14
+		y = 7
+		prerequisite = {
+			focus = VGE_nationalism
+		}
+		available = {
+			has_war_support > 0.2
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_idea = war_economy
+					}
+				}
+				add_ideas = war_economy
+			}
+			add_stability = -0.05
+			add_war_support = 0.1
+		}
+	}
+	focus = {
+		id = VGE_go_to_the_soviet
+		icon = GFX_focus_SOV_socialism_in_one_country
+		cost = 5.00
+		mutually_exclusive = {
+			focus = VGE_self_authority
+		}
+		x = 17
+		y = 4
+		available = {
+			OR = {
+				SOV = {
+					AND = {
+						OR = {
+							exists = yes
+							is_puppet = no 
+						}	
+						has_government = communism
+					}
+				}
+				OR = {
+					exists = yes
+					is_puppet = no 
+				}	
+				has_government = communism
+			}
+		}
+		cancel = {
+			NOT = {
+				OR = {
+					SOV = {
+						OR = {
+							exists = yes
+							is_puppet = no 
+						}	
+					}
+					or = {
+						exists = yes
+						is_puppet = no
+					}
+				}
+			}
+		}
+		bypass = {
+			NOT = {
+				OR = {
+					SOV = {
+						OR = {
+							exists = yes
+							is_puppet = no 
+						}	
+					}
+					or = {
+						exists = yes
+						is_puppet = no
+					}
+				}
+			}
+		}
+		prerequisite = {
+			focus = VGE_new_leader
+		}
+
+		completion_reward = {
+			add_stability = -0.1
+			SOV = {
+				puppet = VGE
+			}
+			set_cosmetic_tag = VGE_SOV
+			add_popularity = {
+				ideology = communism
+				popularity = 0.15
+			}
+			
+		}
+	}
+	focus = {
+		id = VGE_go_to_the_soviet2
+		icon = GFX_focus_SOV_stalins_cult_of_personality
+		cost = 5.00
+		x = 17
+		y = 5
+		available = {
+			OR = {
+			VGE = {
+				has_government = communism
+				is_puppet_of = SOV
+			}
+			SOV = {
+				OR = {
+					exists = yes
+					is_puppet = no 
+				}	
+				has_government = communism
+			}
+			}
+			date > 1941.08.01
+		}
+		cancel = {
+			OR = {
+			VGE = {
+				NOT = {
+					OR = {
+						has_government = communism
+						is_puppet_of = SOV
+					}
+				}
+			}
+			NOT = {
+				SOV = {
+					OR = {
+						exists = yes
+						is_puppet = no 
+						has_government = communism
+					}	
+				}
+			}
+			}
+		}
+		bypass = {
+			OR = {
+				SOV = {
+				    is_puppet = yes
+					exists = no
+				}
+				NOT = {
+					OR = {
+						has_government = communism
+						is_puppet_of = SOV
+					}
+				}
+			}
+		}
+		prerequisite = {
+			focus = VGE_go_to_the_soviet
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ENF_VGE_game
+			SOV = {
+				annex_country = {
+    				target = VGE
+    				transfer_troops = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = VGE_economic_development_plan
+		icon = GFX_focus_generic_industry_2
+		cost = 5.00
+		x = 11
+		y = 2
+		available = {
+			hidden_trigger = {
+				is_ai = no
+			}
+		}
+		prerequisite = {
+			focus = VGE_communism
+		}
+
+		completion_reward = {
+			add_ideas = economic_development_plan_ideas
+		}
+	}
+	focus = {
+        id = VGE_steel_casting_industry
+
+        icon = GFX_focus_generic_steel
+        prerequisite = { focus = VGE_industrial_factory focus = VGE_Rifle_factory }
+        x = 11
+        y = 6
+
+        cost = 10
+
+        available = {
+			any_owned_state = {
+				has_resources_amount = {
+					resource = steel
+					amount > 0
+				}
+				free_building_slots = {
+					building = industrial_complex
+					size > 1
+					include_locked = yes
+				}
+			}
+			SOV_third_five_year_plan_available = yes
+		}
+
+        completion_reward = {
+            random_owned_controlled_state = {
+                limit = {
+                    has_resources_amount = {
+                        resource = steel
+                        amount > 0
+                    }
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 0
+                        include_locked = yes
+                    }
+                }
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+                add_resource = {
+                    type = steel
+                    amount = 6
+                }
+            }
+        }
+    }
+	focus = {
+        id = VGE_tank_factory
+
+        icon = GFX_focus_generic_license_production
+        prerequisite = { focus = VGE_steel_casting_industry }
+        x = 11
+        y = 7
+
+        cost = 10
+
+        available = {
+			AND = {
+				num_of_factories > 15
+				#has_tech = basic_heavy_tank  
+				#has_tech = basic_light_tank  
+				#has_tech = basic_medium_tank
+				has_tech = mobile_warfare
+			}
+		}
+
+        completion_reward = {
+            add_ideas = VGE_tank_factory_ideas
+        }
+    }
+	focus = {
+        id = VGE_end_economic_development_plan
+        icon = GFX_focus_SOV_the_comecon
+        prerequisite = { focus = VGE_industrial_modernization focus = VGE_optimize_production_lines }
+        x = 11
+        y = 9
+
+        cost = 10
+
+        available = {
+			any_owned_state = {
+				has_resources_amount = {
+					resource = steel
+					amount > 0
+				}
+				free_building_slots = {
+					building = industrial_complex
+					size > 1
+					include_locked = yes
+				}
+			}
+			SOV_third_five_year_plan_available = yes
+		}
+
+        completion_reward = {
+			remove_ideas = Great_Famine_ideas 
+            random_owned_controlled_state = {
+                limit = {
+                    has_resources_amount = {
+                        resource = steel
+                        amount > 0
+                    }
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 0
+                        include_locked = yes
+                    }
+                }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+                add_resource = {
+                    type = steel
+                    amount = 3
+                }
+            }
+			random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 0
+                        include_locked = yes
+                    }
+                }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cat_production
+				category = industry
+			}
+			
+        }
+    }
+	focus = {
+		id = VGE_optimize_production_lines
+
+		icon = GFX_focus_generic_tank_production
+		prerequisite = { focus = VGE_Rifle_factory }
+		x = 13
+		y = 8
+		cost = 10
+
+		available = {
+			has_idea = economic_development_plan_ideas_3
+			SOV_third_five_year_plan_available = yes
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = economic_development_plan_ideas_4
+				remove_idea = economic_development_plan_ideas_3
+			}
+
+			add_tech_bonus = {
+				name = SOV_optimize_production_lines
+				bonus = 1
+				uses = 2
+				category = cat_production
+			}
+		}
+	}
+	focus = {
+		id = VGE_industrial_modernization
+		icon = GFX_goal_reichsautobahn
+		prerequisite = { focus = VGE_industrial_factory }
+		x = 9
+		y = 8
+		cost = 10
+		
+		available = {
+			has_idea = economic_development_plan_ideas_3
+			SOV_third_five_year_plan_available = yes
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = economic_development_plan_ideas_5
+				remove_idea = economic_development_plan_ideas_3
+			}
+
+			add_tech_bonus = {
+				name = SOV_industrial_modernization
+				ahead_reduction = 2
+				bonus = 1.0
+				uses = 1
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = VGE_industrialization
+		icon = GFX_focus_SOV_organize_wreckers
+		cost = 5.00
+		x = 10
+		y = 3
+		prerequisite = {
+			focus = VGE_economic_development_plan
+		}
+		available = {
+			has_idea = economic_development_plan_ideas
+		}
+		bypass = {
+			NOT = {
+				has_idea = economic_development_plan_ideas
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = industry
+			}
+			swap_ideas = {
+				add_idea = economic_development_plan_ideas_2
+				remove_idea = economic_development_plan_ideas
+			}
+		}
+	}
+	focus = {
+		id = VGE_agricultural_collectivization
+		icon = GFX_goal_generic_position_armies
+		cost = 5.00
+		x = 12
+		y = 3
+		available = {
+			OR = {
+				has_idea = economic_development_plan_ideas
+				has_idea = economic_development_plan_ideas_2
+			}
+		}
+		bypass = {
+			NOT = {
+				OR = {
+					has_idea = economic_development_plan_ideas
+					has_idea = economic_development_plan_ideas_2
+				}
+			}
+		}
+		prerequisite = {
+			focus = VGE_economic_development_plan
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = VGE
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	focus = {
+		id = VGE_industrial_site
+		icon = GFX_goal_generic_construction
+		cost = 5.00
+		x = 11
+		y = 4
+		available = {
+			has_idea = economic_development_plan_ideas_2
+		}
+		prerequisite = {
+			focus = VGE_agricultural_collectivization
+		}
+		prerequisite = {
+			focus = VGE_industrialization
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = economic_development_plan_ideas_3
+				remove_idea = economic_development_plan_ideas_2
+			}
+		}
+	}
+	focus = {
+		id = VGE_Rifle_factory
+		icon = GFX_focus_generic_combined_arms
+		cost = 5.00
+		x = 13
+		y = 5
+		available = {
+			has_idea = economic_development_plan_ideas_3
+			SOV_third_five_year_plan_available = yes
+		}
+		cancel = {
+			not = {
+				has_idea = economic_development_plan_ideas_3
+			}
+		}
+		mutually_exclusive = {
+			focus = VGE_industrial_factory
+		}
+		prerequisite = {
+			focus = VGE_industrial_site
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = VGE
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+	focus = {
+		id = VGE_industrial_factory
+		icon = GFX_goal_generic_production2
+		cost = 5.00
+		x = 9
+		y = 5
+		available = {
+			has_idea = economic_development_plan_ideas_3
+			SOV_third_five_year_plan_available = yes
+		}
+		cancel = {
+			not = {
+				has_idea = economic_development_plan_ideas_3
+			}
+		}
+		prerequisite = {
+			focus = VGE_industrial_site
+		}
+		mutually_exclusive = {
+			focus = VGE_Rifle_factory
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = VGE
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = industry
+				category = electronics
+			}
+		}
+	}
+	focus = {
+		id = VGE_transformation_of_nature
+		icon = GFX_goal_generic_soviet_construction
+		cost = 5.00
+		x = 7
+		y = 5
+		available = {
+			has_idea = economic_development_plan_ideas_3
+		}
+
+		prerequisite = {
+			focus = VGE_industrial_site
+		}
+
+		completion_reward = {
+			add_ideas = VGE_transformation_of_nature
+		}
+	}
+	focus = {
+		id = VGE_construction_factory
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 5.00
+		x = 20
+		y = 4
+		prerequisite = {
+			focus = VGE_volga_bank
+		}
+		prerequisite = {
+			focus = VGE_economic_development_plan
+		}
+		available = {
+			owns_state = 829
+		}
+		cancel = {
+			NOT = {
+				owns_state = 829
+			}
+		}
+		bypass = {
+			NOT = {
+				owns_state = 829
+			}
+		}
+
+		completion_reward = {
+			add_stability = -0.02
+			829 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	focus = {
+		id = VGE_railway
+		icon = GFX_focus_POL_warsaw_main_station 
+		cost = 10.00
+		x = 19
+		y = 5
+		prerequisite = {
+			focus = VGE_construction_factory
+		}
+		available = {
+			owns_state = 829
+		}
+		cancel = {
+			NOT = {
+				owns_state = 829
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					owns_state = 829
+				}
+				add_stability = -0.02
+				build_railway = {
+  					level = 3
+  					path = { 9432 11523 6539 3518 6506 6575 }
+  					start_state = 829
+  					target_state = 829
+				}
+				add_building_construction = {
+    				type = supply_node
+    				level = 1
+    				instant_build = yes
+    				province = 6575
+    			}
+			}
+		}
+	}
+	focus = {
+		id = VGE_railway_construction
+		icon = GFX_goal_generic_construct_infrastructure 
+		cost = 5.00
+		x = 35
+		y = 3
+		prerequisite = {
+			focus = VGE_Cossacks_king
+		}
+		available = {
+			owns_state = 829
+		}
+		cancel = {
+			NOT = {
+				owns_state = 829
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					owns_state = 829
+				}
+				add_stability = -0.02
+				build_railway = {
+  					level = 3
+  					path = { 9432 11523 6539 3518 6506 6575 }
+  					start_state = 829
+  					target_state = 829
+				}
+				add_building_construction = {
+    				type = supply_node
+    				level = 1
+    				instant_build = yes
+    				province = 6575
+    			}
+			}
+		}
+	}
+	focus = {
+		id = VGE_train2
+		icon = GFX_goal_generic_construct_infrastructure 
+		cost = 5.00
+		x = 35
+		y = 4
+		prerequisite = {
+			focus = VGE_railway_construction
+		}
+		available = {
+			has_equipment = { train_equipment < 101 }
+			has_tech = basic_train
+		}
+		cancel = {
+			NOT = {
+				has_tech = basic_train
+			}
+		}
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = train_equipment
+				amount = 35
+			}
+			add_stability = 0.05
+			add_political_power = -50
+		}
+	}
+	focus = {
+		id = VGE_urbanization_plan2
+		icon = GFX_goal_generic_construction 
+		cost = 5.00
+		x = 34
+		y = 5
+		prerequisite = {
+			focus = VGE_train2
+		}
+		available = {
+			owns_state = 829
+			controls_province = 11523
+		}
+		cancel = {
+			NOT = {
+				owns_state = 829
+				controls_province = 11523
+			}
+		}
+
+		completion_reward = {
+			829 = {
+				set_state_category = city
+			}
+			hidden_effect = {
+				add_victory_points = {
+					province = 11523
+					value = 23
+				}
+				add_victory_points = {
+					province = 9432
+					value = 19
+				}
+				set_province_name = {
+    				id = 6575
+    				name = TRO_nam
+				}
+				add_victory_points = {
+					province = 6575
+					value = 10
+				}
+			}
+		}
+	}
+	focus = {
+		id = VGE_Start_of_industrialization_plan
+		icon = GFX_focus_generic_industry_1
+		cost = 5.00
+		x = 36
+		y = 5
+		prerequisite = {
+			focus = VGE_train2
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = VGE
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = VGE
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+		
+	focus = {
+		id = VGE_third_five_year_plan
+
+		icon = GFX_focus_generic_industry_2
+		prerequisite = { focus = VGE_Start_of_industrialization_plan }
+		prerequisite = { focus = VGE_urbanization_plan2 }
+		x = -1
+		y = 1
+		relative_position_id = VGE_Start_of_industrialization_plan
+		cost = 10
+
+		available = {
+			VGE_third_five_year_plan_available = yes
+		}
+		select_effect = {
+			country_event = {
+				id = VGE_VS_RUS.5
+				days = 35
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				add_to_variable = { VGE_fyp_production_factory_efficiency_gain_factor = 0.05 }
+				add_to_variable = { VGE_fyp_consumer_goods_factor = 0.05 }
+			}
+			if = {
+				limit = {
+					has_government = communism
+				}
+				hidden_effect = {
+					#Swap dynamic modifier to change icon
+					remove_dynamic_modifier = { modifier = VGE_second_five_year_plan_dynamic_modifier }
+					add_dynamic_modifier = { modifier = VGE_third_five_year_plan_dynamic_modifier }
+				}
+				custom_effect_tooltip = VGE_third_five_year_plan_ns_tt
+
+				add_tech_bonus = {
+					name = VGE_third_five_year_plan_default
+					bonus = 0.75
+					uses = 2
+					category = construction_tech
+				}
+			}
+			else = {
+				custom_effect_tooltip = VGE_third_five_year_plan_ns_alt_tt
+				hidden_effect = {
+					#Swap dynamic modifier to change icon
+					remove_dynamic_modifier = { modifier = VGE_second_five_year_plan_dynamic_modifier }
+					add_dynamic_modifier = { modifier = VGE_third_five_year_plan_dynamic_modifier_alt }
+				}
+
+				add_tech_bonus = {
+					name = VGE_third_five_year_plan_alt
+					bonus = 0.75
+					uses = 2
+					category = construction_tech
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = VGE_reorganize_the_pc_of_heavy_industry
+
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = VGE_third_five_year_plan }
+		x = -1
+		y = 1
+		relative_position_id = VGE_third_five_year_plan
+		cost = 10
+
+		mutually_exclusive = { focus = VGE_shift_to_armaments_production }
+
+		available = {
+			VGE_third_five_year_plan_available = yes
+		}
+ 
+		completion_reward = {
+			hidden_effect = {
+				add_to_variable = { VGE_fyp_consumer_goods_factor = -0.02 }
+			}
+			custom_effect_tooltip = VGE_reorganize_the_pc_of_heavy_industry_ns_tt
+			if = {
+				limit = {
+					has_government = communism
+				}
+				hidden_effect = {
+					#Swap dynamic modifier to change icon
+					remove_dynamic_modifier = { modifier = VGE_third_five_year_plan_dynamic_modifier }
+					add_dynamic_modifier = { modifier = VGE_third_five_year_plan_civilian_dynamic_modifier }
+				}
+
+				add_tech_bonus = {
+					name = VGE_reorganize_the_pc_of_heavy_industry_name_default
+					bonus = 1.0
+					uses = 2
+					category = industry
+					category = electronics
+				}
+			}
+			else = {
+				hidden_effect = {
+					#Swap dynamic modifier to change icon
+					remove_dynamic_modifier = { modifier = VGE_third_five_year_plan_dynamic_modifier_alt}
+					add_dynamic_modifier = { modifier = VGE_third_five_year_plan_civilian_dynamic_modifier_alt }
+				}
+
+				add_tech_bonus = {
+					name = VGE_reorganize_the_pc_of_heavy_industry_name_alt
+					bonus = 1.0
+					uses = 2
+					category = industry
+					category = electronics
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = VGE_industrial_modernization_2
+
+		icon = GFX_goal_reichsautobahn
+		prerequisite = { focus = VGE_reorganize_the_pc_of_heavy_industry }
+		x = -1
+		y = 1
+		relative_position_id = VGE_reorganize_the_pc_of_heavy_industry
+		cost = 10
+
+		available = {
+			VGE_third_five_year_plan_available = yes
+ 
+		}
+ 
+		completion_reward = {
+			add_to_variable = { VGE_fyp_production_factory_max_efficiency_factor = 0.05 }
+			add_to_variable = { VGE_fyp_line_change_production_efficiency_factor = 0.1 }
+			custom_effect_tooltip = VGE_industrial_modernization_ns_tt
+
+			add_tech_bonus = {
+				name = VGE_industrial_modernization
+				ahead_reduction = 2
+				bonus = 1.0
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = VGE_shift_to_armaments_production
+
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = VGE_third_five_year_plan }
+		x = 1
+		y = 1
+		relative_position_id = VGE_third_five_year_plan
+		cost = 10
+
+		mutually_exclusive = { focus = VGE_reorganize_the_pc_of_heavy_industry}
+
+		available = {
+			VGE_third_five_year_plan_available = yes
+		}
+ 
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				set_variable = { VGE_fyp_production_speed_industrial_complex_factor = 0 } #Remove Civ constr speed
+			}
+			if = {
+				limit = {
+					has_government = communism
+				}
+				hidden_effect = {
+					#Swap dynamic modifier to change icon
+					remove_dynamic_modifier = { modifier = VGE_third_five_year_plan_dynamic_modifier }
+					add_dynamic_modifier = { modifier = VGE_third_five_year_plan_military_dynamic_modifier }
+				}
+			}
+			else = {
+				hidden_effect = {
+					#Swap dynamic modifier to change icon
+					remove_dynamic_modifier = { modifier = VGE_third_five_year_plan_dynamic_modifier_alt }
+					add_dynamic_modifier = { modifier = VGE_third_five_year_plan_military_dynamic_modifier_alt }
+				}
+			}
+			custom_effect_tooltip = VGE_shift_to_armaments_production_ns_tt
+
+			add_tech_bonus = {
+				name = VGE_shift_to_armaments_production
+				bonus = 1.0
+				uses = 2
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = VGE_optimize_production_lines_2
+
+		icon = GFX_focus_generic_tank_production
+		prerequisite = { focus = VGE_shift_to_armaments_production }
+		x = 1
+		y = 1
+		relative_position_id = VGE_shift_to_armaments_production
+		cost = 10
+
+		available = {
+			VGE_third_five_year_plan_available = yes
+		}
+ 
+		completion_reward = {
+			add_to_variable = { VGE_fyp_production_factory_efficiency_gain_factor = 0.05 } #Add efficiency gain
+			add_to_variable = { VGE_fyp_production_factory_start_efficiency_factor = 0.05 } #Add efficiency start
+			add_to_variable = { VGE_fyp_industrial_capacity_factory = 0.02 } #Add small output bonus
+			custom_effect_tooltip = VGE_optimize_production_lines_ns_tt
+
+			add_tech_bonus = {
+				name = VGE_optimize_production_lines
+				bonus = 1
+				uses = 2
+				category = cat_production
+			}
+		}
+	}
+
+	focus = {
+		id = VGE_steel_casting_industry_2
+
+		icon = GFX_focus_generic_steel
+		prerequisite = { focus = VGE_reorganize_the_pc_of_heavy_industry focus = VGE_shift_to_armaments_production }
+		x = 1
+		y = 1
+		relative_position_id = VGE_reorganize_the_pc_of_heavy_industry
+		cost = 10
+
+		available = {
+			any_owned_state = {
+				has_resources_amount = {
+					resource = steel
+					amount > 0
+				}
+				free_building_slots = {
+					building = industrial_complex
+					size > 1
+					include_locked = yes
+				}
+			}
+		}
+ 
+
+		completion_reward = {
+			set_variable = { VGE_fyp_industrial_capacity_factory = 0.05 }
+			set_variable = { VGE_fyp_industrial_capacity_dockyard = 0.05 }
+
+			custom_effect_tooltip = VGE_steel_casting_industry_ns_tt
+
+			random_owned_controlled_state = {
+				limit = {
+					has_resources_amount = {
+						resource = steel
+						amount > 0
+					}
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = steel
+					amount = 5
+				}
+				set_state_flag = VGE_steel_casting_industry_flag
+			}
+			if = {
+				limit = {
+					any_owned_state = {
+						has_resources_amount = {
+							resource = steel
+							amount > 0
+						}
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+						NOT = {	has_state_flag = VGE_steel_casting_industry_flag }
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						has_resources_amount = {
+							resource = steel
+							amount > 0
+						}
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+						NOT = {	has_state_flag = VGE_steel_casting_industry_flag }
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_resource = {
+						type = steel
+						amount = 5
+					}
+					set_state_flag = VGE_steel_casting_industry_flag
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = VGE_fourth_five_year_plan
+
+		
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = VGE_industrial_modernization_2 focus = VGE_optimize_production_lines_2 }
+		x = 2
+		y = 1
+		relative_position_id = VGE_industrial_modernization_2
+		cost = 5
+
+		cancel_if_invalid = no
+
+		available = {
+		}
+ 
+
+		completion_reward = {
+			remove_ideas = Great_Famine_ideas 
+            random_owned_controlled_state = {
+                limit = {
+                    has_resources_amount = {
+                        resource = steel
+                        amount > 0
+                    }
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 0
+                        include_locked = yes
+                    }
+                }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+                add_resource = {
+                    type = steel
+                    amount = 3
+                }
+            }
+			hidden_effect = {
+				add_to_variable = { VGE_fyp_consumer_goods_factor = -0.02 } #Bonus to CG
+				add_to_variable = { VGE_fyp_production_factory_max_efficiency_factor = 0.05 } #Bonus to max efficicency
+				if = {
+					limit = {
+						has_government = communism
+					}
+					#Swap dynamic modifier to change icon
+					if = {
+						limit = {
+							has_dynamic_modifier = { modifier = VGE_third_five_year_plan_civilian_dynamic_modifier }
+						}
+						remove_dynamic_modifier = { modifier = VGE_third_five_year_plan_civilian_dynamic_modifier }
+					}
+					else_if = {
+						limit = {
+							has_dynamic_modifier = { modifier = VGE_third_five_year_plan_military_dynamic_modifier }
+						}
+						remove_dynamic_modifier = { modifier = VGE_third_five_year_plan_military_dynamic_modifier }
+					}
+					else_if = {
+						limit = {
+							has_dynamic_modifier = { modifier = VGE_third_five_year_plan_dynamic_modifier }
+						}
+						remove_dynamic_modifier = { modifier = VGE_third_five_year_plan_dynamic_modifier }
+					}
+					add_dynamic_modifier = { modifier = VGE_fourth_five_year_plan_dynamic_modifier }
+				}
+				else = {
+					#Swap dynamic modifier to change icon
+					if = {
+						limit = {
+							has_dynamic_modifier = { modifier = VGE_third_five_year_plan_civilian_dynamic_modifier_alt }
+						}
+						remove_dynamic_modifier = { modifier = VGE_third_five_year_plan_civilian_dynamic_modifier_alt }
+					}
+					else_if = {
+						limit = {
+							has_dynamic_modifier = { modifier = VGE_third_five_year_plan_military_dynamic_modifier_alt }
+						}
+						remove_dynamic_modifier = { modifier = VGE_third_five_year_plan_military_dynamic_modifier_alt }
+					}
+					else_if = {
+						limit = {
+							has_dynamic_modifier = { modifier = VGE_third_five_year_plan_dynamic_modifier_alt }
+						}
+						remove_dynamic_modifier = { modifier = VGE_third_five_year_plan_dynamic_modifier_alt }
+					}
+					add_dynamic_modifier = { modifier = VGE_fourth_five_year_plan_dynamic_modifier_alt }
+				}
+			}
+			custom_effect_tooltip = VGE_fourth_five_year_plan_ns_tt
+		}
+	}
+	focus = {
+		id = VGE_urbanization_plan
+		icon = GFX_goal_generic_construction 
+		cost = 10.00
+		x = 20
+		y = 6
+		prerequisite = {
+			focus = VGE_railway
+		}
+		available = {
+			owns_state = 829
+			controls_province = 11523
+		}
+		cancel = {
+			NOT = {
+				owns_state = 829
+				controls_province = 11523
+			}
+		}
+
+		completion_reward = {
+			829 = {
+				set_state_category = city
+			}
+		}
+	}
+	focus = {
+		id = VGE_train
+		icon = GFX_goal_generic_construct_infrastructure 
+		cost = 10.00
+		x = 21
+		y = 5
+		prerequisite = {
+			focus = VGE_construction_factory
+		}
+		available = {
+			has_equipment = { train_equipment < 101 }
+			has_tech = basic_train
+		}
+		cancel = {
+			NOT = {
+				has_tech = basic_train
+			}
+		}
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = train_equipment
+				amount = 35
+			}
+			add_stability = 0.05
+			add_political_power = -50
+		}
+	}
+	######################################################################
+	######################################################################
+	focus = {
+		id = VGE_military_aeronautical_institute
+		icon = GFX_focus_CZE_military_aeronautical_institute
+		x = 23
+		y = 7
+		relative_position_id = VGE_military_research_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 90
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			air_experience = 10
+		}
+	}
+
+	focus = {
+		id = VGE_import_foreign_fighters
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = VGE_military_aeronautical_institute }
+		x = -2
+		y = 1
+		relative_position_id = VGE_military_aeronautical_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = VGE_import_foreign_fighters #@#
+				bonus = 0.5
+				uses = 1
+				category = light_fighter
+				category = cat_heavy_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = VGE_light_fighter_focus
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = VGE_import_foreign_fighters }
+		mutually_exclusive = { focus = VGE_heavy_fighter_focus }
+		x = -1
+		y = 1
+		relative_position_id = VGE_import_foreign_fighters
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = VGE_light_fighter_focus #@#
+				bonus = 0.5
+				uses = 1
+				category = light_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = VGE_heavy_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = VGE_import_foreign_fighters }
+		mutually_exclusive = { focus = VGE_light_fighter_focus }
+		x = 1
+		y = 1
+		relative_position_id = VGE_import_foreign_fighters
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = VGE_heavy_fighter_focus #@#
+				bonus = 0.5
+				uses = 1
+				category = cat_heavy_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = VGE_air_is_our_sea
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = VGE_military_aeronautical_institute }
+		x = 0
+		y = 1
+		relative_position_id = VGE_military_aeronautical_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = CZE_air_focus
+		}
+	}
+
+	focus = {
+		id = VGE_rule_the_air
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = VGE_air_is_our_sea }
+		prerequisite = { focus = VGE_light_fighter_focus focus = VGE_heavy_fighter_focus }
+		prerequisite = { focus = VGE_tac_focus focus = VGE_cas_focus }
+		x = 0
+		y = 3
+		relative_position_id = VGE_military_aeronautical_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 3
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = VGE_import_foreign_bombers
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = VGE_military_aeronautical_institute }
+		x = 2
+		y = 1
+		relative_position_id = VGE_military_aeronautical_institute
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = VGE_import_foreign_bombers #@#
+				bonus = 0.5
+				uses = 1
+				category = cas_bomber
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = VGE_cas_focus
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = VGE_import_foreign_bombers }
+		mutually_exclusive = { focus = VGE_tac_focus }
+		x = -1
+		y = 1
+		relative_position_id = VGE_import_foreign_bombers
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = VGE_cas_focus #@#
+				bonus = 0.5
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = VGE_tac_focus
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = VGE_import_foreign_bombers }
+		mutually_exclusive = { focus = VGE_cas_focus }
+		x = 1
+		y = 1
+		relative_position_id = VGE_import_foreign_bombers
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = VGE_tac_focus #@#
+				bonus = 0.5
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+	############################
+	####### NAVY SECTION #######
+	############################
+
+
+	focus = {
+		id = VGE_develop_polish_ship_building
+		icon = GFX_goal_generic_construct_naval_dockyard
+		
+		x = 7
+		y = 0
+		cost = 10
+		relative_position_id = VGE_military_aeronautical_institute
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available_if_capitulated = yes
+		
+		complete_tooltip = {
+			random_state = {
+				limit = { has_state_flag = VGE_develop_polish_ship_building_1 }
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 85 }
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+				set_state_flag = VGE_develop_polish_ship_building_1
+			}
+			#Add 3 Dockyards at Gdansk			
+		}
+	}
+
+	focus = {
+		id = VGE_study_foreign_built_ships
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = VGE_develop_polish_ship_building }
+		
+		x = 1
+		y = 1
+		relative_position_id = VGE_develop_polish_ship_building
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = VGE_study_foreign_built_ships
+				bonus = 0.5
+				uses = 1
+				category = dd_tech
+			}
+			#1x 50% research bonus for Destroyers
+		}
+	}
+
+	focus = {
+		id = VGE_a_cruiser_navy
+		icon = GFX_goal_generic_navy_anti_submarine
+		prerequisite = { focus = VGE_study_foreign_built_ships }
+		
+		x = 1
+		y = 1
+		relative_position_id = VGE_study_foreign_built_ships
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = VGE_a_cruiser_navy
+				bonus = 0.5
+				uses = 1
+				category = cl_tech
+			}
+			#1x50% research bonus to Light Cruisers
+		}
+	}
+
+	focus = {
+		id = VGE_import_submarine_technology
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = VGE_develop_polish_ship_building }
+		
+		x = -1
+		y = 1
+		relative_position_id = VGE_develop_polish_ship_building
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = VGE_import_submarine_technology
+				bonus = 0.5
+				uses = 1
+				category = ss_tech
+			}
+			#1 x50% research bonus for Submarines
+		}
+	}
+
+	focus = {
+		id = VGE_commerce_attack
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = VGE_import_submarine_technology }
+		x = -1
+		y = 1
+		relative_position_id = VGE_import_submarine_technology
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = VGE_commerce_attack
+				bonus = 0.5
+				uses = 1
+				category = submarine_doctrine
+			}
+			#1x50% research bonus to Submarine Doctrine
+		}
+	}
+
+	focus = {
+		id = VGE_the_twin_threats
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = VGE_import_submarine_technology focus = VGE_study_foreign_built_ships }
+		
+		x = 1
+		y = 1
+		relative_position_id = VGE_import_submarine_technology
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = VGE_the_twin_threats
+				bonus = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+			#1x50% bonus to Naval Doctrine Research
+		}
+	}
+
+	focus = {
+		id = VGE_coastal_defense
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = VGE_the_twin_threats }
+		mutually_exclusive = { focus = VGE_strike_force }
+		x = 1
+		y = 1
+		relative_position_id = VGE_the_twin_threats
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = VGE_coastal_defense
+				bonus = 0.5
+				uses = 1
+				category = ss_tech
+			}
+			add_tech_bonus = {
+				name = VGE_coastal_defense
+				bonus = 0.5
+				uses = 1
+				category = dd_tech
+			}
+			#1x50% research bonus to destroyers & 1 x50% bonus to Submarines
+		}
+	}
+	
+	focus = {
+		id = VGE_strike_force
+		icon = GFX_goal_generic_occupy_states_coastal
+		prerequisite = { focus = VGE_the_twin_threats }
+		mutually_exclusive = { focus = VGE_coastal_defense }
+		x = -1
+		y = 1
+		relative_position_id = VGE_the_twin_threats
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = VGE_strike_force
+				bonus = 0.5
+				uses = 1
+				category = cl_tech
+			}
+			add_tech_bonus = {
+				name = VGE_strike_force
+				bonus = 0.5
+				uses = 1
+				category = ca_tech
+			}
+			#1x50% research bonus to Light Cruisers & 1x50% bonus to Heavy Cruisers
+		}
+	}
+
+	focus = {
+		id = VGE_baltic_navy
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = VGE_strike_force focus = VGE_coastal_defense }
+		
+		x = 1
+		y = 1
+		relative_position_id = VGE_strike_force
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = VGE_baltic_navy
+				bonus = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+			#1x50% bonus to Naval Doctrine research
+		}
+	}
+}

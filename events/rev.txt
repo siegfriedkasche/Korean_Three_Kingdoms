@@ -1,0 +1,82 @@
+add_namespace = REV
+
+country_event = {
+	id = REV.0
+	title = REV.0.t
+	desc = REV.0.d
+	picture = GFX_report_event_dutch_soldiers_indonesia
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+        name = REV.0.a
+        ai_chance = {
+            factor = 80
+        }
+		
+    }
+}
+country_event = {
+	id = REV.1
+	title = REV.1.t
+	desc = REV.1.d
+	picture = GFX_report_event_ast_army
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+        name = REV.1.a
+        ai_chance = {
+            factor = 80
+        }
+		
+    }
+}
+country_event = {
+	id = REV.2
+	title = REV.2.t
+	desc = REV.2.d
+	picture = GFX_report_event_RCMP
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+        name = REV.2.a
+        ai_chance = {
+            factor = 80
+        }
+		create_country_leader = {
+			name = "Zhang Xueliang"
+			picture = "Zhang_Xueliang.png"
+			expire = "1965.1.1"
+			ideology = despotism
+			traits = {
+			
+			}
+			
+		}
+		news_event = {
+			id = THK_wor.5
+		}
+    }
+}
+country_event = {
+	id = REV.3
+	title = REV.3.t
+	desc = REV.3.d
+	picture = GFX_report_event_RCMP
+	is_triggered_only = yes
+	fire_only_once = no
+	
+	option = {
+        name = REV.3.a
+        ai_chance = {
+            factor = 80
+        }
+		CHI = {
+			country_event = {
+				id =  generic.2
+			}
+		}
+    }
+}

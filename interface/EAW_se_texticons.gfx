@@ -1,8 +1,12 @@
 spriteTypes = {	
 
 	spriteType = {
-		name = "GFX_idea_jin_heungwang"
-		texturefile = "gfx/interface/ideas/jin_heungwang.png"
+		name = "GFX_event_generic_event_Defendant_Kim_Jong_il"
+		texturefile = "gfx/event_pictures/generic_event_Defendant_Kim_Jong_il.png"
+	}
+	spriteType = {
+		name = "GFX_event_born_kim_jung_il"
+		texturefile = "gfx/event_pictures/GFX_event_born_kim_jung_il.png"
 	}
 }
 

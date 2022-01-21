@@ -1,0 +1,63 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_COSSACKS_Portrait_Ukraine_Pavlo_Skoropadsky"
+		texturefile = "gfx/leaders/ANA/COSSACKS_Portrait_Ukraine_Pavlo_Skoropadsky.png"
+	}
+
+
+
+	spriteType = {
+		name = "GFX_idea_NEP_Tribhuvan_of_Nepal_idea"
+		texturefile = "gfx/interface/ideas/NEP_Tribhuvan_of_Nepal.png"
+	}
+
+
+	spriteType = {
+		name = "GFX_idea_GGR_JUCHE_ideology_icon"
+		texturefile = "gfx/interface/ideas/GGR_JUCHE_ideology_icon.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GGR_chunrima_ideas"
+		texturefile = "gfx/interface/ideas/GFX_GGR_chunrima.png"
+	}
+
+
+
+	spriteType = {
+		name = "GFX_idea_ICC"
+		texturefile = "gfx/interface/ideas/ICC.png"
+	}
+	spriteType = {
+		name = "GFX_idea_advisor_Konrad_Hoffmann"
+		texturefile = "gfx/interface/ideas/Konrad_Hoffmann.png"
+	}
+	spriteType = {
+		name = "GFX_idea_advisor_Wladimir_Propp"
+		texturefile = "gfx/interface/ideas/Wladimir_Propp.png"
+	}
+	spriteType = {
+		name = "GFX_idea_advisor_unknown_minister"
+		texturefile = "gfx/interface/ideas/unknown_minister.png"
+	}
+	spriteType = {
+		name = "GFX_idea_advisor_Boris_Rauschenbach"
+		texturefile = "gfx/interface/ideas/Boris_Rauschenbach.png"
+	}
+	spriteType = {
+		name = "GFX_idea_VGE_Josef_Alois_Kessler"
+		texturefile = "gfx/interface/ideas/GFX_idea_VGE_Josef_Alois_Kessler.png"
+	}
+	spriteType = {
+		name = "GFX_idea_VGE_Dominik_Hollmann"
+		texturefile = "gfx/interface/ideas/GFX_idea_VGE_Dominik_Hollmann.png"
+	}
+	spriteType = {
+		name = "GFX_idea_VGE_Pavlo_Skoropadsky"
+		texturefile = "gfx/interface/ideas/Pavlo_Skoropadsky.png"
+	}
+	spriteType = {
+		name = "GFX_idea_Peter_Krasnov_idea"
+		texturefile = "gfx/interface/ideas/Peter_Krasnov_idea.png"
+	}
+	
+}
