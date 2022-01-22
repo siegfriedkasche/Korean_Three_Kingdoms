@@ -210,7 +210,7 @@ focus_tree = {
 
 		available = {
 			GGR = { controls_state = 716 }
-			GGR = { controls_state = 529 }
+			GGR = { controls_state = 527 }
 		}
 
 		bypass = {
@@ -234,7 +234,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			529 = {
+			527 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
@@ -937,7 +937,7 @@ focus_tree = {
 		}
 
 		available = {
-			communism > 0.45
+			communism > 0.35
 			is_in_faction = no
 		}
 
@@ -1006,7 +1006,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 50
+			factor = 100
 			modifier = {
 				factor = 0
 				has_completed_focus = GGR_go_right
@@ -1014,7 +1014,7 @@ focus_tree = {
 		}
 
 		bypass = {
-			ANF = {
+			AND = {
 				has_war_with = BKJ
 				has_war_with = SIR
 				has_war_with = TAM
@@ -1133,7 +1133,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 50
+			factor = 100
 			modifier = {
 				factor = 0
 				has_completed_focus = GGR_go_right
@@ -1171,7 +1171,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 50
+			factor = 100
 			modifier = {
 				factor = 0
 				has_completed_focus = GGR_go_right
@@ -1227,7 +1227,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 50
+			factor = 100
 			modifier = {
 				factor = 0
 				has_completed_focus = GGR_go_right
@@ -1269,7 +1269,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 50
+			factor = 100
 			modifier = {
 				factor = 0
 				has_completed_focus = GGR_go_right
@@ -1334,7 +1334,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 50
+			factor = 100
 			modifier = {
 				factor = 0
 				has_completed_focus = GGR_go_right
@@ -1410,7 +1410,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 50
+			factor = 100
 			modifier = {
 				factor = 0
 				has_completed_focus = GGR_go_right
@@ -1483,7 +1483,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 50
+			factor = 100
 			modifier = {
 				factor = 0
 				has_completed_focus = GGR_go_right
@@ -1567,7 +1567,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 50
+			factor = 100
 			modifier = {
 				factor = 0
 				has_completed_focus = GGR_go_right
@@ -1638,7 +1638,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 50
+			factor = 100
 			modifier = {
 				factor = 0
 				has_completed_focus = GGR_go_right
@@ -1675,7 +1675,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 50
+			factor = 100
 			modifier = {
 				factor = 0
 				has_completed_focus = GGR_go_right
@@ -1810,7 +1810,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 50
+			factor = 100
 			modifier = {
 				factor = 0
 				has_completed_focus = GGR_go_right
@@ -1979,7 +1979,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 50
+			factor = 100
 			modifier = {
 				factor = 0
 				has_completed_focus = GGR_go_right
@@ -2768,7 +2768,7 @@ focus_tree = {
 			controls_state = 838
 			controls_state = 837
 			controls_state = 525
-			controls_state = 826
+			controls_state = 836
 		}
 
 		bypass = {
@@ -2787,7 +2787,7 @@ focus_tree = {
 			838 = { add_core_of = ROOT }
 			837 = { add_core_of = ROOT }
 			525 = { add_core_of = ROOT }
-			826 = { add_core_of = ROOT }
+			836 = { add_core_of = ROOT }
 			add_stability = 0.1
 			hidden_effect = {
 				remove_ideas = no_faction

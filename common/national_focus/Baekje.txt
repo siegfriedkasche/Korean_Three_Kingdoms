@@ -846,7 +846,7 @@ focus_tree = {
 	focus = {
 		id = BKJ_political_direction
 		icon = GFX_goal_generic_intelligence_exchange
-		x = 8
+		x = 15
 		y = 0
 		relative_position_id = BKJ_industrial_legacy
 		cost = 10
@@ -881,7 +881,7 @@ focus_tree = {
 		icon = GFX_focus_generic_soviet_politics
 		prerequisite = { focus = BKJ_political_direction }
 		mutually_exclusive = { focus = BKJ_democratic_bastion focus = BKJ_go_right }
-		x = -2
+		x = -6
 		y = 1
 		relative_position_id = BKJ_political_direction
 
@@ -922,9 +922,9 @@ focus_tree = {
 		id = BKJ_communism_with_a_human_face
 		icon = GFX_goal_support_communism
 		prerequisite = { focus = BKJ_communist_support }
-		x = 9
-		y = 3
-		relative_position_id = BKJ_czech_socialism
+		x = 0
+		y = 1
+		relative_position_id = BKJ_communist_support
 
 		cost = 10
 
@@ -1047,7 +1047,7 @@ focus_tree = {
 		icon = GFX_focus_generic_the_giant_wakes
 		prerequisite = { focus = BKJ_political_direction }
 		mutually_exclusive = { focus = BKJ_go_right focus = BKJ_go_left }
-		x = 0
+		x = 10
 		y = 1
 		relative_position_id = BKJ_political_direction
 
@@ -1153,10 +1153,10 @@ focus_tree = {
 	focus = {
 		id = BKJ_ideological_fanaticism
 		icon = GFX_goal_generic_demand_territory
-		prerequisite = { focus = BKJ_communism_with_a_human_face focus = BKJ_aggressive_wars }
+		prerequisite = { focus = BKJ_da_joseon_guo }
 		x = 0
-		y = 3
-		relative_position_id = BKJ_democratic_bastion
+		y = 2
+		relative_position_id = BKJ_da_joseon_guo
 
 		cost = 10
 
@@ -1169,19 +1169,59 @@ focus_tree = {
 			}
 		}
 	}
+	focus = {
+		id = BKJ_da_joseon_guo
+		icon = GFX_focus_generic_strike_at_democracy2
+		prerequisite = { focus = BKJ_dissolution_of_parliament }
+		prerequisite = { focus = BKJ_youth_group }
+		prerequisite = { focus = BKJ_Dalian_claim }
+		x = 0
+		y = 3
+		relative_position_id = BKJ_go_right
+		available = {
+			fascism > 0.40
+		}
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			set_country_flag = da_joseon_guo
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+				last_election = "1935.12.17"
+				election_frequency = 48
+			}
+			hidden_effect = {
+				set_rule = {
+					can_join_factions = no
+				}
+			}
+			create_country_leader = {
+				name = "이범석"
+				desc = ""
+				picture = "gfx/leaders/GGR/Kim_il_sung.png"
+				expire = "1965.1.1"
+				ideology = nazism
+				traits = {
+				}
+			}
+		}
+	}
 
 	focus = {
 		id = BKJ_SIRla_war_goal
 		icon = GFX_goal_generic_propaganda
-		prerequisite = { focus = BKJ_communism_with_a_human_face focus = BKJ_aggressive_wars }
+		prerequisite = {focus = BKJ_aggressive_wars }
 		will_lead_to_war_with = SIR
 
 		cancel = {
 			NOT = { country_exists = SIR }
 		}
-		x = 0
+		x = -2
 		y = 1
-		relative_position_id = BKJ_communism_with_a_human_face
+		relative_position_id = BKJ_aggressive_wars
 		cost = 10
 		historical_ai = {
 			NOT = {
@@ -1229,13 +1269,13 @@ focus_tree = {
 	focus = {
 		id = BKJ_goguryeo_war_goal
 		icon = GFX_goal_generic_propaganda
-		prerequisite = { focus = BKJ_communism_with_a_human_face focus = BKJ_aggressive_wars }
+		prerequisite = { focus = BKJ_aggressive_wars }
 		will_lead_to_war_with = GGR
 
 		cancel = {
 			NOT = { country_exists = GGR }
 		}
-		x = 0
+		x = 2
 		y = 1
 		relative_position_id = BKJ_aggressive_wars
 		cost = 10
@@ -1288,7 +1328,7 @@ focus_tree = {
 		prerequisite = { focus = BKJ_SIRla_war_goal  }
 
 		x = 0
-		y = 1
+		y = 3
 		relative_position_id = BKJ_ideological_fanaticism
 
 		cost = 10
@@ -1343,7 +1383,7 @@ focus_tree = {
 		icon = GFX_goal_generic_dangerous_deal
 		prerequisite = { focus = BKJ_join_comintern }
 		mutually_exclusive = { focus = BKJ_attack_Mongolia }
-		x = -3
+		x = -8
 		y = 2
 		relative_position_id = BKJ_Three_Kingdoms_Unification
 		cost = 10
@@ -1432,7 +1472,6 @@ focus_tree = {
 		id = BKJ_continental_expansion
 		icon = GFX_goal_generic_occupy_states_ongoing_war
 		prerequisite = { focus = BKJ_Three_Kingdoms_Unification }
-		mutually_exclusive = { focus = BKJ_Mongolia_request }
 		x = 0
 		y = 1
 		relative_position_id = BKJ_Three_Kingdoms_Unification
@@ -1455,122 +1494,6 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = BKJ_japan_war_goal
-		icon = GFX_focus_attack_japan
-		prerequisite = { focus = BKJ_nationalism_focus }
-		will_lead_to_war_with = JAP
-		mutually_exclusive = { focus = BKJ_japan_friends }
-		cancel = {
-			NOT = { country_exists = JAP }
-		}
-		x = 2
-		y = 1
-		relative_position_id = BKJ_nationalism_focus
-		cost = 10
-		historical_ai = {
-			NOT = {
-				any_home_area_neighbor_country = {
-					has_war_with = ROOT					
-				}		
-			}
-		}
-		bypass = {
-			has_war_with = JAP
-		}
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 0
-				OR = {
-					has_army_manpower = { size < 1199999 }
-					any_home_area_neighbor_country = {
-						has_war_with = ROOT
-					}
-				}
-			}
-			modifier = {
-				factor = 0
-				NOT = { 
-					any_home_area_neighbor_country = {
-						tag = JAP
-					}
-				}
-			}
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-				date < 1938.1.1
-			}
-		}	
-		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = JAP
-			}
-		}
-	}
-	focus = {
-		id = BKJ_japan_friends
-		icon = GFX_focus_chi_collaboration_with_the_japanese
-		prerequisite = { focus = BKJ_nationalism_focus }
-		will_lead_to_war_with = JAP
-		mutually_exclusive = { focus = BKJ_japan_war_goal }
-		cancel = {
-			NOT = { country_exists = JAP }
-		}
-		x = 4
-		y = 1
-		relative_position_id = BKJ_nationalism_focus
-		cost = 10
-		historical_ai = {
-			NOT = {
-				any_home_area_neighbor_country = {
-					has_war_with = ROOT					
-				}		
-			}
-		}
-		bypass = {
-			has_war_with = JAP
-		}
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 0
-				OR = {
-					any_home_area_neighbor_country = {
-						has_war_with = ROOT
-					}
-				}
-			}
-			modifier = {
-				factor = 0
-				NOT = { 
-					any_home_area_neighbor_country = {
-						tag = JAP
-					}
-				}
-			}
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-				date < 1938.1.2
-			}
-		}	
-		completion_reward = {
-			add_opinion_modifier = {
-    			target = JAP
-    			modifier = BKJ_friends
-			}
-			JAP = {
-				add_opinion_modifier = {
-    				target = BKJ
-    				modifier = BKJ_friends
-				}
-			}
-		}
-	}
-	
 	focus = {
 		id = BKJ_attack_manchuria
 		icon = GFX_goal_generic_major_war
@@ -1664,152 +1587,152 @@ focus_tree = {
 		}
 	}
 	focus = {
-	id = BKJ_china_war_goal
-	icon = GFX_focus_chi_one_china_policy
-	prerequisite = { focus = BKJ_attack_manchuria focus = BKJ_Shandong_attack }
-	x = 2
-	y = 2
-	relative_position_id = BKJ_continental_expansion
+		id = BKJ_china_war_goal
+		icon = GFX_focus_chi_one_china_policy
+		prerequisite = { focus = BKJ_attack_manchuria focus = BKJ_Shandong_attack }
+		x = 2
+		y = 2
+		relative_position_id = BKJ_continental_expansion
 
-	cost = 10
+		cost = 10
 
-	ai_will_do = {
-		factor = 1
-		modifier = {
-			num_of_factories < 50
-			factor = 0
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				num_of_factories < 50
+				factor = 0
+			}
 		}
-	}
 
-	available = {
+		available = {
 
-	}
+		}
 
-	bypass = {
-		if = {
-			limit = { NOT = { original_tag = CHI } }
-			CHI = {
-				OR = {
-					exists = no
-					has_war_with = ROOT
-					is_subject_of = ROOT
-					ROOT = { has_wargoal_against = PREV }
+		bypass = {
+			if = {
+				limit = { NOT = { original_tag = CHI } }
+				CHI = {
+					OR = {
+						exists = no
+						has_war_with = ROOT
+						is_subject_of = ROOT
+						ROOT = { has_wargoal_against = PREV }
+					}
+				}
+			}
+			if = {
+				limit = { NOT = { original_tag = PRC } }
+				PRC = {
+					OR = {
+						exists = no
+						has_war_with = ROOT
+						is_subject_of = ROOT
+						ROOT = { has_wargoal_against = PREV }
+					}
+				}
+			}
+			if = {
+				limit = { NOT = { original_tag = GXC } }
+				GXC = {
+					OR = {
+						exists = no
+						has_war_with = ROOT
+						is_subject_of = ROOT
+						ROOT = { has_wargoal_against = PREV }
+					}
+				}
+			}
+			if = {
+				limit = { NOT = { original_tag = YUN } }
+				YUN = {
+					OR = {
+						exists = no
+						has_war_with = ROOT
+						is_subject_of = ROOT
+						ROOT = { has_wargoal_against = PREV }
+					}
+				}
+			}
+			if = {
+				limit = { NOT = { original_tag = SHX } }
+				SHX = {
+					OR = {
+						exists = no
+						has_war_with = ROOT
+						is_subject_of = ROOT
+						ROOT = { has_wargoal_against = PREV }
+					}
+				}
+			}
+			if = {
+				limit = { NOT = { original_tag = XSM } }
+				XSM = {
+					OR = {
+						exists = no
+						has_war_with = ROOT
+						is_subject_of = ROOT
+						ROOT = { has_wargoal_against = PREV }
+					}
+				}
+			}
+			if = {
+				limit = { NOT = { original_tag = SIK } }
+				SIK = {
+					OR = {
+						exists = no
+						has_war_with = ROOT
+						is_subject_of = ROOT
+						ROOT = { has_wargoal_against = PREV }
+					}
 				}
 			}
 		}
-		if = {
-			limit = { NOT = { original_tag = PRC } }
-			PRC = {
-				OR = {
-					exists = no
-					has_war_with = ROOT
-					is_subject_of = ROOT
-					ROOT = { has_wargoal_against = PREV }
-				}
-			}
-		}
-		if = {
-			limit = { NOT = { original_tag = GXC } }
-			GXC = {
-				OR = {
-					exists = no
-					has_war_with = ROOT
-					is_subject_of = ROOT
-					ROOT = { has_wargoal_against = PREV }
-				}
-			}
-		}
-		if = {
-			limit = { NOT = { original_tag = YUN } }
-			YUN = {
-				OR = {
-					exists = no
-					has_war_with = ROOT
-					is_subject_of = ROOT
-					ROOT = { has_wargoal_against = PREV }
-				}
-			}
-		}
-		if = {
-			limit = { NOT = { original_tag = SHX } }
-			SHX = {
-				OR = {
-					exists = no
-					has_war_with = ROOT
-					is_subject_of = ROOT
-					ROOT = { has_wargoal_against = PREV }
-				}
-			}
-		}
-		if = {
-			limit = { NOT = { original_tag = XSM } }
-			XSM = {
-				OR = {
-					exists = no
-					has_war_with = ROOT
-					is_subject_of = ROOT
-					ROOT = { has_wargoal_against = PREV }
-				}
-			}
-		}
-		if = {
-			limit = { NOT = { original_tag = SIK } }
-			SIK = {
-				OR = {
-					exists = no
-					has_war_with = ROOT
-					is_subject_of = ROOT
-					ROOT = { has_wargoal_against = PREV }
-				}
-			}
-		}
-	}
 
-	cancel_if_invalid = yes
-	continue_if_invalid = no
-	available_if_capitulated = no
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 
-	complete_tooltip = {
+		complete_tooltip = {
 
-	}
+		}
 
-	completion_reward = {
-		if = {
-			limit = {
-				any_other_country = {
-					is_literally_china = yes
-					is_in_faction_with = ROOT
+		completion_reward = {
+			if = {
+				limit = {
+					any_other_country = {
+						is_literally_china = yes
+						is_in_faction_with = ROOT
+					} 
 				} 
-			} 
-			remove_from_faction = ROOT
-		}
-		hidden_effect = {
-			news_event = { id = wtt_news.46 days = 3 }
-		}
-		every_other_country = {
-			limit = {
-				is_literally_china = yes
-				NOT = { has_war_with = ROOT }
-				NOT = { is_subject_of = ROOT }
-				NOT = { ROOT = { has_wargoal_against = PREV } }
-				NOT = { tag = ROOT }
+				remove_from_faction = ROOT
 			}
-			ROOT = {
-				create_wargoal = {
-					type = annex_everything
-					target = PREV
+			hidden_effect = {
+				news_event = { id = wtt_news.46 days = 3 }
+			}
+			every_other_country = {
+				limit = {
+					is_literally_china = yes
+					NOT = { has_war_with = ROOT }
+					NOT = { is_subject_of = ROOT }
+					NOT = { ROOT = { has_wargoal_against = PREV } }
+					NOT = { tag = ROOT }
+				}
+				ROOT = {
+					create_wargoal = {
+						type = annex_everything
+						target = PREV
+					}
 				}
 			}
 		}
 	}
-}
 
 	focus = {
 		id = BKJ_go_right
-		icon = GFX_focus_generic_strike_at_democracy1
+		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
 		prerequisite = { focus = BKJ_political_direction }
 		mutually_exclusive = { focus = BKJ_democratic_bastion focus = BKJ_go_left }
-		x = 2
+		x = 0
 		y = 1
 		relative_position_id = BKJ_political_direction
 
@@ -1826,50 +1749,175 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
+		completion_reward = {
+			add_stability = -0.15
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.15
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.15
+			}
+			add_ideas = fascist_influence
+		}
+	}
+	focus = {
+		id = BKJ_dissolution_of_parliament
+		icon = GFX_goal_tfv_saf_support_ossebrandwag
+		prerequisite = { focus = BKJ_go_right }
+		x = 0
+		y = 2
+		relative_position_id = BKJ_go_right
+
+		cost = 3
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		completion_reward = {
+			
+			add_ideas = dissolution_of_parliament_ideas
+		}
 	}
 
 	focus = {
 		id = BKJ_nationalism_focus
-		icon = GFX_goal_support_fascism
+		icon = GFX_focus_generic_navy_battleship2
 		prerequisite = { focus = BKJ_go_right }
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = BKJ_go_right
 
-		cost = 10
+		cost = 2
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = BKJ_Dalian_claim
+		icon = GFX_focus_SOV_reinforce_eastern_naval_bases
+		prerequisite = { focus = BKJ_nationalism_focus }
+		x = 1
+		y = 1
+		relative_position_id = BKJ_nationalism_focus
+
+		cost = 3
+
+		available_if_capitulated = yes
+		available = {
+			NOT = {
+				745 = {
+					is_owned_by = BKJ
+				}
+			}
+		}
+
+
+		ai_will_do = {
+			
+		}
+		completion_reward = {
+			745 = {
+				add_claim_by = BKJ
+			}
+		}
+	}
+	focus = {
+		id = BKJ_youth_group
+		icon = GFX_focus_SOV_womens_fascist_movement
+		prerequisite = { focus = BKJ_take_over_the_military_industry }
+		x = -1
+		y = 1
+		relative_position_id = BKJ_take_over_the_military_industry
+
+		cost = 3
+
+		available_if_capitulated = yes
+		available = {
+			fascism > 0.15
+		}
+
+
+		ai_will_do = {
+			
+		}
+		completion_reward = {
+			add_ideas = BKJ_youth_group
+		}
+	}
+	focus = {
+		id = BKJ_take_over_the_military_industry
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = BKJ_go_right }
+		x = -1
+		y = 1
+		relative_position_id = BKJ_go_right
+
+		cost = 2
 
 		available_if_capitulated = yes
 
 
 		ai_will_do = {
 			factor = 5
-			modifier = {
-				factor = 2
-				any_neighbor_country = {
-					is_major = yes
-					has_government = fascism
-				}
-			}
-			modifier = {
-				factor = 0
-				AND = {
-					is_historical_focus_on = yes
-					NOT = { has_government = fascism }
-				}
-			}
+			
 		}
 		completion_reward = {
-			add_ideas = fascist_influence
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = BKJ_aggressive_wars
 		icon = GFX_goal_support_fascism
-		prerequisite = { focus = BKJ_nationalism_focus }
+		prerequisite = { focus = BKJ_ideological_fanaticism }
 		x = 0
-		y = 2
-		relative_position_id = BKJ_go_right
+		y = 1
+		relative_position_id = BKJ_ideological_fanaticism
 
 		cost = 10
 
@@ -1906,7 +1954,7 @@ focus_tree = {
 	focus = {
 		id = BKJ_military_research_institute
 		icon = GFX_focus_CZE_military_research_institute
-		x = 10
+		x = 15
 		y = 0
 		relative_position_id = BKJ_political_direction
 
@@ -2357,7 +2405,7 @@ focus_tree = {
 		id = BKJ_tianla_attack_2
 		icon = GFX_focus_hol_prepare_the_inundation_lines
 		prerequisite = { focus = BKJ_political_direction }
-		x = -4
+		x = -8
 		y = 1
 		relative_position_id = BKJ_political_direction
 		rwill_lead_to_war_with = TAM
@@ -3092,197 +3140,4 @@ focus_tree = {
 	}
 
 	
-	#######################################
-	############ GO TO THE SEA ############
-	#######################################
-
-	focus = {
-		id = BKJ_GO_TO_THE_SEA
-		icon = GFX_goal_generic_navy_doctrines_tactics
-		x = 16
-		y = 5
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 90
-		}
-
-		available = {
-			OR = {
-				and = {
-					has_completed_focus = BKJ_japan_war_goal
-					JAP = { exists = no }
-				}
-				has_completed_focus = BKJ_japan_friends
-			}
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			navy_experience = 50
-		}
-	}
-	focus = {
-		id = BKJ_naval_budget_expansion
-		icon = GFX_goal_generic_construct_naval_dockyard
-		prerequisite = { focus = BKJ_GO_TO_THE_SEA }
-		
-		x = -1
-		y = 1
-		relative_position_id = BKJ_GO_TO_THE_SEA
-		cost = 10
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 3	
-				limit = {
-					free_building_slots = {
-						building = dockyard
-						size > 2
-						include_locked = yes
-					}
-				}
-				add_building_construction = {
-					type = dockyard
-					level = 3
-					instant_build = yes
-				}
-				
-				set_state_flag = BKJ_develop_polish_ship_building_1
-			}		
-		}
-	}
-	focus = {
-		id = BKJ_tsingtao_demand
-		icon = GFX_focus_usa_focus_on_asia
-		prerequisite = { focus = BKJ_GO_TO_THE_SEA }
-		available = {
-			is_puppet = no
-		}
-		x = 0
-		y = 2
-		relative_position_id = BKJ_GO_TO_THE_SEA
-		cost = 10
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_war_support = 0.05
-			ENG = {
-				add_opinion_modifier = {
-					target = ROOT
-					modifier = GER_our_place_in_the_sun
-				}
-			}
-			FRA = {
-				add_opinion_modifier = {
-					target = ROOT
-					modifier = GER_our_place_in_the_sun
-				}
-			}
-			add_named_threat = { threat = 5 name = GER_our_place_in_the_sun }
-			if = {
-				limit = {
-					743 = { is_controlled_by = event_target:WTT_current_china_leader }
-					NOT = {
-						has_war_with = event_target:WTT_current_china_leader
-					}
-				}
-				event_target:WTT_current_china_leader = { country_event = { id = THK.4 days = 1 } }
-			}
-			if = {
-				limit = {
-					743 = { is_controlled_by = JAP }
-					NOT = {
-						has_war_with = JAP
-					}
-				}
-				JAP = { country_event = { id = THK.3 days = 1 } }
-			}
-		}
-	}
-	focus = {
-		id = BKJ_Baekje_Royal_Navy
-		icon = GFX_goal_generic_navy_doctrines_tactics
-		prerequisite = { focus = BKJ_GO_TO_THE_SEA }
-		
-		x = 1
-		y = 1
-		relative_position_id = BKJ_GO_TO_THE_SEA
-		cost = 10
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = BKJ_baltic_navy
-				bonus = 1
-				uses = 1
-				category = naval_doctrine
-			}
-			#1x50% bonus to Naval Doctrine research
-		}
-	}
-	focus = {
-		id = BKJ_Join_Daedong_A
-		icon = GFX_goal_generic_alliance
-		prerequisite = { focus = BKJ_tsingtao_demand }
-		available = {
-			is_puppet = no
-			JAP = {
-				is_puppet = no
-				exists = yes
-				is_faction_leader = yes
-			}
-		}
-		bypass = {
-			has_war_with = JAP
-			JAP = {
-				exists = no
-				is_faction_leader = no
-			}
-		}
-		x = 0
-		y = 1
-		relative_position_id = BKJ_tsingtao_demand
-		cost = 10
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			JAP = {
-				add_to_faction = BKJ
-			}
-		}
-	}
 }

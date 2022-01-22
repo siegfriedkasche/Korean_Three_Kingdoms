@@ -281,7 +281,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = SPR_masters_of_our_own_fate
+			picture = generic_fascism_drift_2
 
 			
 			modifier = {
@@ -289,6 +289,56 @@ ideas = {
 				political_power_gain = 0.03
 				conscription = 0.05
 				consumer_goods_factor = -0.03
+			}
+		}
+	}
+	country = {
+	
+		BKJ_youth_group = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_fascism_drift_2
+
+			
+			modifier = {
+				industrial_capacity_factory = -0.05
+				political_power_gain = -0.03
+				conscription = 0.05
+				fascism_drift = 0.05
+			}
+		}
+	}
+	country = {
+	
+		dissolution_of_parliament_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = gre_venerate_the_ancient_hellenes
+
+			
+			modifier = {
+				political_power_gain = -0.25
+				stability_factor = -0.25
+				fascism_drift = 0.02
+				communism_drift = 0.02
 			}
 		}
 	}
