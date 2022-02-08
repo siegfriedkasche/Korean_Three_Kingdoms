@@ -1,0 +1,744 @@
+dalian_internaional_city = {
+
+	dalian_internaional_city_communism = {
+		icon = GFX_decision_category_generic_propaganda
+		available = {
+			BCH = {
+				is_subject = no
+			}
+			is_subject = no
+			hidden_trigger = {
+				NOT = {
+					has_decision = dalian_internaional_city_manpower_communism
+					has_decision = dalian_internaional_city_building_communism
+				}
+			}
+		}
+		
+		fire_only_once = no
+		visible = {
+			has_government = communism
+
+		} 
+		allowed = {
+			NOT = {
+				original_tag = BCH
+			}
+		}
+		ai_will_do = {
+			factor = 25
+		}
+
+		days_re_enable = 80
+		cost = 50
+		days_remove = 70
+		
+		modifier = {
+			political_power_gain = -0.5
+		}
+
+		remove_effect = {
+			BCH = {
+				add_political_power = 50
+				add_popularity = {
+					ideology = communism
+					popularity = 0.035
+				}
+			}
+		}
+	}
+	dalian_internaional_city_democratic = {
+		icon = GFX_decision_category_generic_propaganda
+		available = {
+			BCH = {
+				is_subject = no
+			}
+			is_subject = no	
+			hidden_trigger = {
+				NOT = {
+					has_decision = dalian_internaional_city_manpower_democratic
+					has_decision = dalian_internaional_city_building_democratic
+				}
+			}
+		}
+		allowed = {
+			NOT = {
+				original_tag = BCH
+			}
+		}
+		fire_only_once = no
+		visible = {
+			has_government = democratic
+		} 
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		days_re_enable = 80
+		cost = 50
+		days_remove = 70
+		remove_effect = {
+			BCH = {
+				add_political_power = 50
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.035
+				}
+			}
+		}
+		modifier = {
+			political_power_gain = -0.5
+		}
+	}
+	dalian_internaional_city_fascism = {
+		icon = GFX_decision_category_generic_propaganda
+		available = {
+			BCH = {
+				is_subject = no
+			}
+			is_subject = no	
+			hidden_trigger = {
+				NOT = {
+					has_decision = dalian_internaional_city_manpower_fascism
+					has_decision = dalian_internaional_city_building_fascism
+				}
+			}
+		}
+		allowed = {
+			NOT = {
+				original_tag = BCH
+			}
+		}
+		fire_only_once = no
+		visible = {
+			has_government = fascism 
+
+		} 
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		days_re_enable = 80
+		cost = 50
+		days_remove = 70
+		remove_effect = {
+			BCH = {
+				add_political_power = 50
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.035
+				}
+			}
+		}
+		modifier = {
+			political_power_gain = -0.5
+		}
+	}
+	dalian_internaional_city_manpower_communism = {
+		icon = GFX_decision_eng_blackshirt_march
+		available = {
+			BCH = {
+				is_subject = no
+			}
+			is_subject = no	
+			hidden_trigger = {
+				NOT = {
+					has_decision = dalian_internaional_city_communism
+					has_decision = dalian_internaional_city_building_communism
+				}
+			}	
+		}
+		allowed = {
+			NOT = {
+				original_tag = BCH
+			}
+		}
+		fire_only_once = no
+		visible = {
+			has_government = communism 
+
+		} 
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		days_re_enable = 80
+		cost = 50
+		days_remove = 100
+		remove_effect = {
+			BCH = {
+				add_manpower = 7000
+				add_popularity = {
+					ideology = communism
+					popularity = 0.05
+				}
+			}
+		}
+		modifier = {
+			weekly_manpower = -70
+		}
+	}
+	dalian_internaional_city_manpower_democratic = {
+		icon = GFX_decision_eng_blackshirt_march
+		available = {
+			BCH = {
+				is_subject = no
+			}
+			is_subject = no
+			hidden_trigger = {
+				NOT = {
+					has_decision = dalian_internaional_city_democratic
+					has_decision = dalian_internaional_city_building_democratic
+				}
+			}
+		}
+		allowed = {
+			NOT = {
+				original_tag = BCH
+			}
+		}
+		fire_only_once = no
+		visible = {
+			has_government = democratic 
+
+		} 
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		days_re_enable = 80
+		cost = 50
+		days_remove = 100
+		remove_effect = {
+			BCH = {
+				add_manpower = 7000
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.05
+				}
+			}
+		}
+		modifier = {
+			weekly_manpower = -70
+		}
+	}
+	dalian_internaional_city_manpower_fascism = {
+		icon = GFX_decision_eng_blackshirt_march
+		available = {
+			BCH = {
+				is_subject = no
+			}
+			is_subject = no
+			hidden_trigger = {
+				NOT = {
+					has_decision = dalian_internaional_city_fascism
+					has_decision = dalian_internaional_city_building_fascism
+				}
+			}
+		}
+		allowed = {
+			NOT = {
+				original_tag = BCH
+			}
+		}
+		fire_only_once = no
+		visible = {
+			has_government = fascism 
+
+		} 
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		days_re_enable = 80
+		cost = 50
+		days_remove = 100
+		remove_effect = {
+			BCH = {
+				add_manpower = 7000
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.05
+				}
+			}
+		}
+		modifier = {
+			weekly_manpower = -70
+		}
+	}
+	dalian_internaional_city_building_communism = {
+		icon = GFX_decision_generic_construction
+		available = {
+			BCH = {
+				is_subject = no
+			}
+			is_subject = no
+			hidden_trigger = {
+				NOT = {
+					has_decision = dalian_internaional_city_manpower_communism
+					has_decision = dalian_internaional_city_communism
+				}
+			}
+		}
+		allowed = {
+			NOT = {
+				original_tag = BCH
+			}
+		}
+		fire_only_once = no
+		visible = {
+			has_government = communism 
+
+		} 
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		days_re_enable = 80
+		cost = 50
+		days_remove = 160
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		remove_effect = {
+			BCH = {
+				random_list = {
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+								type = industrial_complex
+								level = 1
+								instant_build = yes
+							}
+						}
+					}
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+								type = arms_factory
+								level = 1
+								instant_build = yes
+							}
+						}
+					}
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.08
+				}
+			}
+		}
+	}
+	dalian_internaional_city_building_fascism = {
+		icon = GFX_decision_generic_construction
+		available = {
+			BCH = {
+				is_subject = no
+			}
+			is_subject = no	
+			hidden_trigger = {
+				NOT = {
+					has_decision = dalian_internaional_city_manpower_fascism
+					has_decision = dalian_internaional_city_fascism
+				}
+			}
+		}
+		allowed = {
+			NOT = {
+				original_tag = BCH
+			}
+		}
+		fire_only_once = no
+		visible = {
+			has_government = fascism 
+
+		} 
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		days_re_enable = 80
+		cost = 50
+		days_remove = 160
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		remove_effect = {
+			BCH = {
+				random_list = {
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+								type = industrial_complex
+								level = 1
+								instant_build = yes
+							}
+						}
+					}
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+								type = arms_factory
+								level = 1
+								instant_build = yes
+							}
+						}
+					}
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.08
+				}
+			}
+		}
+	}
+	dalian_internaional_city_building_democratic = {
+		icon = GFX_decision_generic_construction
+		available = {
+			BCH = {
+				is_subject = no
+			}
+			is_subject = no
+			hidden_trigger = {
+				NOT = {
+					has_decision = dalian_internaional_city_manpower_democratic
+					has_decision = dalian_internaional_city_democratic
+				}
+			}
+		}
+		allowed = {
+			NOT = {
+				original_tag = BCH
+			}
+		}
+		fire_only_once = no
+		visible = {
+			has_government = democratic 
+
+		} 
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		days_re_enable = 80
+		cost = 50
+		days_remove = 160
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		remove_effect = {
+			BCH = {
+				random_list = {
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+								type = industrial_complex
+								level = 1
+								instant_build = yes
+							}
+						}
+					}
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+								type = arms_factory
+								level = 1
+								instant_build = yes
+							}
+						}
+					}
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.08
+				}
+			}
+		}
+	}
+
+	dalian_internaional_city_Merger_democratic = {
+		icon = GFX_decision_category_SOV_soviet_academy_of_sciences
+		available = {
+			BCH = {
+				is_subject = no
+				democratic > 0.50
+			}
+			is_subject = no
+			hidden_trigger = {
+				any_other_country = {
+					not = {
+						OR = {
+							has_decision = dalian_internaional_city_Merger_communism
+							has_decision = dalian_internaional_city_Merger_democratic
+							has_decision = dalian_internaional_city_Merger_fascism
+						}
+					}
+				}
+			}
+		}
+		allowed = {
+			NOT = {
+				original_tag = BCH
+			}
+		}
+		visible = {
+			has_government = democratic
+		} 
+		ai_will_do = {
+			factor = 100
+		}
+
+		fire_only_once = yes
+		cost = 150
+
+
+		remove_effect = {
+			ROOT = {
+				release_autonomy = {
+					target = BCH
+					autonomy_state = autonomy_dominion
+					freedom_level = 0.5
+				}
+			}
+		}
+	}
+	dalian_internaional_city_Merger_communism = {
+		icon = GFX_decision_category_SOV_soviet_academy_of_sciences
+		available = {
+			BCH = {
+				is_subject = no
+				communism > 0.50
+			}
+			is_subject = no
+			hidden_trigger = {
+				any_other_country = {
+					not = {
+						OR = {
+							has_decision = dalian_internaional_city_Merger_communism
+							has_decision = dalian_internaional_city_Merger_democratic
+							has_decision = dalian_internaional_city_Merger_fascism
+						}
+					}
+				}
+			}
+		}
+		allowed = {
+			NOT = {
+				original_tag = BCH
+			}
+		}
+		visible = {
+			has_government = communism
+		} 
+		ai_will_do = {
+			factor = 100
+		}
+
+		fire_only_once = yes
+		cost = 150
+
+
+		remove_effect = {
+			ROOT = {
+				release_autonomy = {
+					target = BCH
+					autonomy_state = autonomy_dominion
+					freedom_level = 0.5
+				}
+			}
+		}
+	}
+	dalian_internaional_city_Merger_fascism = {
+		icon = GFX_decision_category_SOV_soviet_academy_of_sciences
+		available = {
+			BCH = {
+				is_subject = no
+				fascism > 0.50
+			}
+			is_subject = no
+			hidden_trigger = {
+				any_other_country = {
+					not = {
+						OR = {
+							has_decision = dalian_internaional_city_Merger_communism
+							has_decision = dalian_internaional_city_Merger_democratic
+							has_decision = dalian_internaional_city_Merger_fascism
+						}
+					}
+				}
+			}
+		}
+		allowed = {
+			NOT = {
+				original_tag = BCH
+			}
+		}
+		visible = {
+			has_government = fascism
+		} 
+		ai_will_do = {
+			factor = 100
+		}
+
+
+		fire_only_once = yes
+		cost = 150
+
+
+		remove_effect = {
+			ROOT = {
+				release_autonomy = {
+					target = BCH
+					autonomy_state = autonomy_dominion
+					freedom_level = 0.5
+				}
+			}
+		}
+	}
+	dalian_internaional_city_reject = {
+		icon = GFX_decision_category_saf_anti_colonialist_crusade
+		available = {
+			BCH = {
+				is_subject = no
+			}
+			is_subject = no	
+		}
+		
+		fire_only_once = no
+		visible = {
+			original_tag = BCH
+		} 
+		allowed = {
+			tag = BCH
+		}
+		ai_will_do = {
+			factor = 25
+		}
+
+		days_re_enable = 60
+		cost = 50
+		days_remove = 60
+		
+		modifier = {
+			political_power_gain = -0.5
+		}
+
+		remove_effect = {
+			BCH = {
+				add_political_power = 50
+				add_popularity = {
+					ideology = communism
+					popularity = -0.05
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = -0.05
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = -0.05
+				}
+			}
+		}
+	}
+	dalian_internaional_city_qingdao = {
+		icon = GFX_decision_infiltrate_state
+		available = {
+			743 = {
+				OR = {
+					is_owned_and_controlled_by = ENG
+					is_owned_and_controlled_by = JAP
+					is_owned_and_controlled_by = BKJ
+					is_owned_and_controlled_by = GER
+					is_owned_and_controlled_by = FRA
+					is_owned_and_controlled_by = JAP
+					is_owned_and_controlled_by = USA
+					is_owned_and_controlled_by = ITA
+				}
+			}
+		}
+		
+		fire_only_once = yes
+		visible = {
+			original_tag = BCH
+		} 
+		allowed = {
+			tag = BCH
+		}
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_re_enable = 60
+		cost = 25
+		days_remove = 60
+		
+		modifier = {
+			political_power_gain = -0.5
+		}
+
+		remove_effect = {
+			transfer_state = 743
+			743 = {
+				add_core_of = BCH
+			}
+		}
+	}
+	dalian_internaional_city_macao = {
+		icon = GFX_decision_infiltrate_state
+		available = {
+			729 = {
+				OR = {
+					is_owned_and_controlled_by = ENG
+					is_owned_and_controlled_by = JAP
+					is_owned_and_controlled_by = BKJ
+					is_owned_and_controlled_by = GER
+					is_owned_and_controlled_by = FRA
+					is_owned_and_controlled_by = JAP
+					is_owned_and_controlled_by = USA
+					is_owned_and_controlled_by = ITA
+				}
+			}
+		}
+		
+		fire_only_once = yes
+		visible = {
+			original_tag = BCH
+		} 
+		allowed = {
+			tag = BCH
+		}
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_re_enable = 60
+		cost = 25
+		days_remove = 60
+		
+		modifier = {
+			political_power_gain = -0.5
+		}
+
+		remove_effect = {
+			transfer_state = 729
+			729 = {
+				add_core_of = BCH
+			}
+		}
+	}
+}

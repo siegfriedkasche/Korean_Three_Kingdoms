@@ -4,6 +4,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/decisions/vgssr_Maps_pic.png"
 	}
 	spriteType = {
+		name = "GFX_decision_dalian_internaional_city"
+		texturefile = "gfx/interface/decisions/GFX_decision_dalian_internaional_city.png"
+	}
+	spriteType = {
 		name = "GFX_decision_russian_empire_form_decision"
 		texturefile = "gfx/interface/decisions/russian_empire_form_decision.png"
 	}

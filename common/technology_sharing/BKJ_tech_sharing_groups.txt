@@ -1,0 +1,14 @@
+technology_sharing_group = {
+
+	id = BKJ_International_Research
+	name = BKJ_International_Research
+	desc = BKJ_International_Research_desc
+	picture = GFX_idea_generic_research_bonus
+    
+	research_sharing_per_country_bonus = 0.25
+
+    available = {
+        is_in_faction_with = BKJ
+    }
+
+}

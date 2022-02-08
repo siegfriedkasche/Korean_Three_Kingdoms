@@ -19,7 +19,33 @@ state={
 		victory_points = {
 			4052 25
 		}	
-
+		victory_points = {
+			3912 5
+		}
+		victory_points = {
+			6922 5
+		}
+		victory_points = {
+			9790 5
+		}	
+		victory_points = {
+			7070 15
+		}
+		victory_points = {
+			1003 5
+		}	
+		victory_points = {
+			4107 5
+		}	
+		victory_points = {
+			10065 5
+		}	
+		victory_points = {
+			11828 5
+		}
+		victory_points = {
+			6928 5
+		}
 		add_core_of = GGR
 	}
 

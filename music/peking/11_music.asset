@@ -1,0 +1,9 @@
+
+# MAIN THEME
+music = {
+	name = "Tage_in_Peking"
+
+	file = "Tage_in_Peking.ogg"
+
+	volume = 0.5
+}

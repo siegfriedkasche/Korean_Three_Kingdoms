@@ -1,0 +1,9 @@
+
+music_station = "peking"
+
+# General
+
+music = {
+	song = "Tage_in_Peking"
+	
+}

@@ -246,3 +246,91 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = THK.8
+	title = THK.8.t
+	desc = THK.8.d
+	picture = GFX_report_event_spr_franco_victory
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = THK.8.a
+		ai_chance = {
+			factor = 100
+		}
+		add_ideas = dissolution_of_parliament_ideas
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.05
+		}
+		hidden_effect = {
+			set_country_flag = yes_uprising_army
+		}
+	}
+	option = {
+		name = THK.8.b
+		ai_chance = {
+			factor = 100
+		}
+		add_ideas = dissolution_of_parliament_ideas
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.05
+		}
+		country_event = {
+			id = THK.9
+			days = 3
+		}
+	}
+}
+country_event = {
+	id = THK.9
+	title = THK.9.t
+	desc = THK.9.d
+	picture = GFX_report_event_spr_nationalist_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = THK.9.a
+		ai_chance = {
+			factor = 100
+		}
+		remove_ideas = fascist_influence
+		hidden_effect = {
+			set_country_flag = no_uprising_army
+		}
+	}
+}
+country_event = {
+	id = THK.10
+	title = THK.10.t
+	desc = THK.10.d
+	picture = GFX_report_event_spr_nationalist_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = THK.10.a
+		ai_chance = {
+			factor = 100
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = no
+			last_election = "1935.12.17"
+			election_frequency = 48
+		}
+		create_country_leader = {
+			name = "서재필"
+			desc = ""
+			picture = "gfx/leaders/BKJ/서재필.png"
+			expire = "1965.1.1"
+			ideology = Conservatism
+			traits = {
+				liberal_democratic_paragon 
+			}
+		}
+	}
+}

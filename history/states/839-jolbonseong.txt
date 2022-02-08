@@ -1,7 +1,7 @@
 
 state={
 	id=839
-	name="졸본성"
+	name="부여성"
 	resources={
 		steel=14.000
 		tungsten=28.000

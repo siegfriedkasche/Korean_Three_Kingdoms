@@ -42,7 +42,7 @@ set_popularities = {
 	communism = 30
 }
 create_country_leader = {
-	name = "gfx/leaders/GGR/광개토대왕"
+	name = "광개토대왕"
 	desc = ""
 	picture = "gfx/leaders/GGR/광개토대왕.png"
 	expire = "1965.1.1"

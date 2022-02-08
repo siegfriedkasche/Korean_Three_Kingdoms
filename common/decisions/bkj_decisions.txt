@@ -1,0 +1,114 @@
+BKJ_pacific_guardian = {
+
+    BKJ_guardian_of_INS = {
+
+        icon = GFX_decision_generic_form_nation
+
+        available = {
+            HOL = {
+                #has_capitulated = yes
+            }
+            "INS" = {
+                is_puppet_of = HOL
+            }
+        }
+
+        fire_only_once = yes
+
+
+        modifier = {
+
+        }
+
+        days_remove = 0
+        days_re_enable = 0
+
+        cost = 25
+
+        ai_will_do = {
+            factor = 1
+        }
+
+        complete_effect = {
+            HOL = { country_event = { id = wtt_japan.1 } }
+        }
+    }
+
+    BKJ_guardian_of_MAL = {
+
+        icon = GFX_decision_generic_form_nation
+
+        available = {
+            ENG = {
+                #has_capitulated = yes
+            }
+            MAL = {
+                is_puppet_of = ENG
+            }
+        }
+
+        fire_only_once = yes
+
+
+        modifier = {
+
+        }
+
+        days_remove = 0
+        days_re_enable = 0
+
+        cost = 25
+
+        ai_will_do = {
+            factor = 1
+        }
+
+        complete_effect = {
+            ENG = { country_event = { id = wtt_japan.1 } }
+        }
+    }
+    BKJ_guardian_of_PHI = {
+
+        icon = GFX_decision_generic_form_nation
+
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = HPI_overlord		
+                PHI = {
+                    is_subject = yes
+                    OVERLORD = {
+                        has_government = ROOT
+                    }
+                }
+            }
+        }
+
+        fire_only_once = yes
+        visible = {
+            has_completed_focus = BKJ_full_sovereignty_for_the_philippines
+        }
+
+        days_remove = 0
+        days_re_enable = 0
+
+        cost = 25
+
+        ai_will_do = {
+            factor = 1
+        }
+
+        complete_effect = {
+            PHI = {
+                end_puppet = OVERLORD
+            }
+            ROOT = {
+                set_autonomy = {
+                    target = PHI
+                    autonomy_state = autonomy_dominion
+                    end_wars = no
+                    end_civil_wars = no
+                }
+            }
+		}
+    }
+}

@@ -15,6 +15,9 @@ state={
 		victory_points = {
 			9803 20 
 		}
+		victory_points = {
+			6806 15
+		}
 		add_core_of = GGR
 
 	}

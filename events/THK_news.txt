@@ -10,7 +10,7 @@ news_event = {
 	option = {
         name = THK_wor.0.a
         ai_chance = {
-            factor = 80
+            factor = 100
         }
 	}
 }
@@ -27,7 +27,7 @@ news_event = {
 	option = {
 		name = THK_wor.1.a
 		ai_chance = {
-            factor = 80
+            factor = 100
         }
 	}
 }
@@ -41,7 +41,7 @@ news_event = {
 	option = {
         name = THK_wor.2.a
         ai_chance = {
-            factor = 80
+            factor = 100
         }
 	}
 }
@@ -55,7 +55,7 @@ news_event = {
 	option = {
         name = THK_wor.3.a
         ai_chance = {
-            factor = 80
+            factor = 100
         }
 	}
 }
@@ -69,7 +69,7 @@ news_event = {
 	option = {
         name = THK_wor.4.a
         ai_chance = {
-            factor = 80
+            factor = 100
         }
 	}
 }
@@ -83,7 +83,7 @@ news_event = {
 	option = {
         name = THK_wor.5.a
         ai_chance = {
-            factor = 80
+            factor = 100
         }
 	}
 }
@@ -97,7 +97,7 @@ news_event = {
 	option = {
         name = THK_wor.6.a
         ai_chance = {
-            factor = 80
+            factor = 100
         }
 	}
 }
@@ -111,7 +111,35 @@ news_event = {
 	option = {
         name = THK_wor.7.a
         ai_chance = {
-            factor = 80
+            factor = 100
+        }
+	}
+}
+news_event = {
+	id = THK_wor.8
+	title = THK_wor.8.t
+	desc = THK_wor.8.d
+	picture = GFX_news_event_the_megali_idea_fails
+	is_triggered_only = yes
+	
+	option = {
+        name = THK_wor.8.a
+        ai_chance = {
+            factor = 100
+        }
+	}
+}
+news_event = {
+	id = THK_wor.9
+	title = THK_wor.9.t
+	desc = THK_wor.9.d
+	picture = GFX_news_event_040
+	is_triggered_only = yes
+	
+	option = {
+        name = THK_wor.9.a
+        ai_chance = {
+            factor = 100
         }
 	}
 }

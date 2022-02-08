@@ -184,8 +184,8 @@ ideas = {
 				communism_drift = 0.03
 				industrial_capacity_factory = 0.05
 				political_power_gain = -0.05
-				army_defence_factor = 0.15
-				army_attack_factor = 0.15
+				army_defence_factor = 0.05
+				army_attack_factor = 0.05
 				stability_factor = -0.18
 			}
 		}
@@ -319,6 +319,33 @@ ideas = {
 	}
 	country = {
 	
+		BKJ_youth_group_2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_fascism_drift_2
+
+			
+			modifier = {
+				industrial_capacity_factory = 0.1
+				political_power_gain = -0.05
+				conscription = 0.05
+				army_core_defence_factor = 0.05
+				army_core_attack_factor = 0.05
+				fascism_drift = 0.05
+			}
+		}
+	}
+	country = {
+	
 		dissolution_of_parliament_ideas = {
 			
 			allowed = {
@@ -339,6 +366,156 @@ ideas = {
 				stability_factor = -0.25
 				fascism_drift = 0.02
 				communism_drift = 0.02
+				democratic_drift = 0.02
+			}
+		}
+	}
+	country = {
+	
+		dissolution_of_parliament_ideas2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = gre_venerate_the_ancient_hellenes
+
+			
+			modifier = {
+				political_power_gain = 0.05
+				stability_factor = 0.05
+				democratic_drift = 0.05
+			}
+		}
+	}
+	country = {
+	
+		dissolution_of_parliament_ideas3 = {
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = MEX_politicised_army_2
+
+			
+			modifier = {
+				army_core_defence_factor = 0.1
+				army_core_attack_factor = 0.1
+				political_power_gain = -0.05
+				stability_factor = -0.15
+				war_support_factor = 0.1
+			}
+		}
+	}
+	country = {
+	
+		BKJ_puppet_king_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = HUN_hungarian_monarchy_fascism
+
+			
+			modifier = {
+				stability_factor = 0.10
+				political_power_gain = 0.05
+			}
+		}
+	}
+	country = {
+	
+		market_Opening_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				OR = {
+					NOT = {
+						has_government = democratic
+					}
+					has_war = yes
+				}
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = can_wartime_prices_and_trade_board
+
+			
+			modifier = {
+				trade_opinion_factor = 0.25
+				trade_laws_cost_factor = 1
+				economy_cost_factor = 1
+			}
+		}
+	}
+	country = {
+	
+		BKJ_puppet_king_ideas2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = HUN_hungarian_monarchy_democratic
+
+			
+			modifier = {
+				stability_factor = 0.10
+				political_power_gain = 0.05
 			}
 		}
 	}
@@ -423,6 +600,35 @@ ideas = {
 		}
 	}
 	country = {
+	
+		strong_and_prosperous_country2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = gre_political_instability_metaxism
+
+			
+			modifier = {
+				research_speed_factor = 0.05
+				consumer_goods_factor = -0.05
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.1
+				stability_factor = 0.1
+				war_support = 0.1
+				production_factory_max_efficiency_factor = 0.1
+				max_surrender_limit_offset = 0.15
+			}
+		}
+	}
+	country = {
 
 		chunrima = { #천리마운동
 
@@ -443,6 +649,296 @@ ideas = {
 				consumer_goods_factor = -0.03
 				production_factory_start_efficiency_factor = 0.15 #기본생산효율%
 				production_speed_buildings_factor = 0.15
+			}
+		}
+	}
+	country = {
+	
+		BKJ_currency_reform_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = SPR_relocate_the_gold_reserves
+
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.1
+			}
+		}
+	}
+	country = {
+	
+		BKJ_currency_reform_ideas2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = SPR_relocate_the_gold_reserves
+
+			
+			modifier = {
+				consumer_goods_factor = -0.02
+				industrial_capacity_factory = 0.05
+			}
+		}
+	}
+	country = {
+	
+		BKJ_government_bond_recovery_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = SPR_relocate_the_gold_reserves
+
+			
+			modifier = {
+				production_lack_of_resource_penalty_factor = -0.15
+				industrial_capacity_factory = 0.05
+				line_change_production_efficiency_factor = 0.05
+				global_building_slots_factor = 0.15
+			}
+		}
+	}
+	country = {
+	
+		BKJ_corps_of_volunteers_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = ast_volunteer_defence_corps
+
+			
+			modifier = {
+				send_volunteer_size = 24
+				send_volunteers_tension = -1
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+	country = {
+	
+		BKJ_central_bank_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = SPR_seize_the_gold_reserves
+
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+	}
+
+	country = {
+	
+		BKJ_inflation = {
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = chi_hyper_inflation
+
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = -0.05
+				research_speed_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+	}
+	country = {
+	
+		BKJ_inflation_1 = { #불안함
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = chi_hyper_inflation2
+
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+				industrial_capacity_factory = 0.1
+				production_speed_buildings_factor = -0.1
+				research_speed_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+	}
+	country = {
+	
+		BKJ_inflation_2 = { #위험함
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = chi_hyper_inflation4
+
+			
+			modifier = {
+				consumer_goods_factor = 0.15
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = -0.15
+				research_speed_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+	}
+	country = {
+	
+		BKJ_inflation_3 = { #절정
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = chi_hyper_inflation4
+
+			
+			modifier = {
+				consumer_goods_factor = 0.2
+				industrial_capacity_factory = -0.05
+				production_speed_buildings_factor = -0.2
+				research_speed_factor = -0.05
+				production_factory_efficiency_gain_factor = -0.05
+			}
+		}
+	}
+	country = {
+	
+		BKJ_deflation = { #디플
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = chi_hyper_inflation4
+
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = -0.05
+				production_speed_buildings_factor = 0.1
+				research_speed_factor = -0.05
+				production_factory_efficiency_gain_factor = -0.05
 			}
 		}
 	}

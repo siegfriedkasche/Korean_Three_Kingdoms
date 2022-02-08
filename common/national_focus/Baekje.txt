@@ -124,10 +124,10 @@ focus_tree = {
 
 		completion_reward = {
 			525 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -175,10 +175,10 @@ focus_tree = {
 
 		completion_reward = {
 			525 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -289,7 +289,7 @@ focus_tree = {
 				}
 			}
 			836 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -345,7 +345,7 @@ focus_tree = {
 				}
 			}
 			836 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -401,7 +401,7 @@ focus_tree = {
 				}
 			}
 			836 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -880,7 +880,7 @@ focus_tree = {
 		id = BKJ_go_left
 		icon = GFX_focus_generic_soviet_politics
 		prerequisite = { focus = BKJ_political_direction }
-		mutually_exclusive = { focus = BKJ_democratic_bastion focus = BKJ_go_right }
+		mutually_exclusive = { focus = BKJ_go_right }
 		x = -6
 		y = 1
 		relative_position_id = BKJ_political_direction
@@ -896,7 +896,9 @@ focus_tree = {
 		}
 
 		available = {
-
+			hidden_trigger = {
+				is_ai = no
+			}
 		}
 
 		bypass = {
@@ -1043,307 +1045,23 @@ focus_tree = {
 	}
 
 	focus = {
-		id = BKJ_democratic_bastion
-		icon = GFX_focus_generic_the_giant_wakes
-		prerequisite = { focus = BKJ_political_direction }
-		mutually_exclusive = { focus = BKJ_go_right focus = BKJ_go_left }
-		x = 10
-		y = 1
-		relative_position_id = BKJ_political_direction
-
-		cost = 10
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = yes
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			add_political_power = 200
-			add_ideas = CZE_democratic_bastion
-		}
-	}
-
-	focus = {
-		id = BKJ_beacon_of_liberty
-		icon = GFX_goal_support_democracy
-		prerequisite = { focus = BKJ_democratic_bastion }
-		x = 0
-		y = 1
-		relative_position_id = BKJ_democratic_bastion
-
-		cost = 2
-
-		ai_will_do = {
-			factor = 70
-		}
-
-		available = {
-			democratic > 0.7
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = yes
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			swap_ideas = { remove_idea = CZE_democratic_bastion add_idea = CZE_beacon_of_liberty }
-		}
-	}
-
-	focus = {
-		id = BKJ_defensive_preparations
-		icon = GFX_goal_generic_small_arms
-		prerequisite = { focus = BKJ_beacon_of_liberty }
-		x = 0
-		y = 2
-		relative_position_id = BKJ_democratic_bastion
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		available = {
-			threat > 0.1
-		}
-
-		bypass = {
-			OR = {
-				has_idea = extensive_conscription
-				has_idea = service_by_requirement
-				has_idea = all_adults_serve
-				has_idea = scraping_the_barrel
-			}
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			add_ideas = extensive_conscription
-		}
-	}
-
-	focus = {
 		id = BKJ_ideological_fanaticism
-		icon = GFX_goal_generic_demand_territory
+		icon = GFX_goal_generic_national_unity
 		prerequisite = { focus = BKJ_da_joseon_guo }
-		x = 0
-		y = 2
+		prerequisite = { focus = BKJ_unification_war }
+		x = -4
+		y = 1
 		relative_position_id = BKJ_da_joseon_guo
-
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_ideas = ideological_fanaticism_focus
-			set_rule = {
-				can_create_factions = yes
-			}
-		}
-	}
-	focus = {
-		id = BKJ_da_joseon_guo
-		icon = GFX_focus_generic_strike_at_democracy2
-		prerequisite = { focus = BKJ_dissolution_of_parliament }
-		prerequisite = { focus = BKJ_youth_group }
-		prerequisite = { focus = BKJ_Dalian_claim }
-		x = 0
-		y = 3
-		relative_position_id = BKJ_go_right
-		available = {
-			fascism > 0.40
+		mutually_exclusive = {
+			focus = BKJ_Democratic_movement
 		}
 		cost = 10
 
 		available_if_capitulated = yes
 
-		completion_reward = {
-			set_country_flag = da_joseon_guo
-			set_politics = {
-				ruling_party = fascism
-				elections_allowed = no
-				last_election = "1935.12.17"
-				election_frequency = 48
-			}
-			hidden_effect = {
-				set_rule = {
-					can_join_factions = no
-				}
-			}
-			create_country_leader = {
-				name = "이범석"
-				desc = ""
-				picture = "gfx/leaders/GGR/Kim_il_sung.png"
-				expire = "1965.1.1"
-				ideology = nazism
-				traits = {
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = BKJ_SIRla_war_goal
-		icon = GFX_goal_generic_propaganda
-		prerequisite = {focus = BKJ_aggressive_wars }
-		will_lead_to_war_with = SIR
-
-		cancel = {
-			NOT = { country_exists = SIR }
-		}
-		x = -2
-		y = 1
-		relative_position_id = BKJ_aggressive_wars
-		cost = 10
-		historical_ai = {
-			NOT = {
-				any_home_area_neighbor_country = {
-					has_war_with = ROOT					
-				}		
-			}
-		}
-		bypass = {
-			has_war_with = SIR
-		}
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 0
-				OR = {
-					has_army_manpower = { size < 1199999 }
-					any_home_area_neighbor_country = {
-						has_war_with = ROOT
-					}
-				}
-			}
-			modifier = {
-				factor = 0
-				NOT = { 
-					any_home_area_neighbor_country = {
-						tag = SIR
-					}
-				}
-			}
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-				date < 1938.1.1
-			}
-		}	
-		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = SIR
-			}
-		}
-	}
-
-	focus = {
-		id = BKJ_goguryeo_war_goal
-		icon = GFX_goal_generic_propaganda
-		prerequisite = { focus = BKJ_aggressive_wars }
-		will_lead_to_war_with = GGR
-
-		cancel = {
-			NOT = { country_exists = GGR }
-		}
-		x = 2
-		y = 1
-		relative_position_id = BKJ_aggressive_wars
-		cost = 10
-		historical_ai = {
-			NOT = {
-				any_home_area_neighbor_country = {
-					has_war_with = ROOT					
-				}		
-			}
-		}
-		bypass = {
-			has_war_with = GGR
-		}
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 0
-				OR = {
-					has_army_manpower = { size < 1199999 }
-					any_home_area_neighbor_country = {
-						has_war_with = ROOT
-					}
-				}
-			}
-			modifier = {
-				factor = 0
-				NOT = { 
-					any_home_area_neighbor_country = {
-						tag = GGR
-					}
-				}
-			}
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-				date < 1938.1.1
-			}
-		}	
-		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = GGR
-			}
-		}
-	}
-	focus = {
-		id = BKJ_Three_Kingdoms_Unification
-		icon = GFX_focus_generic_treaty
-		prerequisite = { focus = BKJ_goguryeo_war_goal }
-		prerequisite = { focus = BKJ_SIRla_war_goal  }
-
-		x = 0
-		y = 3
-		relative_position_id = BKJ_ideological_fanaticism
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
 		available = {
-			GGR = {
-				exists = no
-			}
-			SIR = {
-				exists = no
-			}
+			fascism > 0.35
+			has_country_flag = yes_uprising_army
 		}
 		modifier = {
 			factor = 0
@@ -1376,6 +1094,2512 @@ focus_tree = {
 				}
 				add_core_of = ROOT
 			}
+			
+		}
+	}
+	focus = {
+		id = BKJ_military_government
+		icon = GFX_focus_chi_army_reform
+		prerequisite = { focus = BKJ_ideological_fanaticism }
+		x = 0
+		y = 1
+		relative_position_id = BKJ_ideological_fanaticism
+		cost = 10
+
+		available_if_capitulated = yes
+
+		available = {
+		}
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = dissolution_of_parliament_ideas3
+				remove_idea = dissolution_of_parliament_ideas
+			}
+		}
+	}
+	focus = {
+		id = BKJ_new_local_name
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = BKJ_ideological_fanaticism focus = BKJ_Democratic_movement }
+		x = 0
+		y = 2
+		relative_position_id = BKJ_da_joseon_guo
+		cost = 2
+
+		available_if_capitulated = yes
+
+		available = {
+			525 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			set_province_name = {
+				id = 7125
+				name = "한성"
+			}
+			set_province_name = {
+				id = 4056
+				name = "부산포"
+			}
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = BKJ_da_joseon_guo
+		icon = GFX_focus_generic_strike_at_democracy2
+		prerequisite = { focus = BKJ_dissolution_of_parliament }
+		prerequisite = { focus = BKJ_youth_group }
+		prerequisite = { focus = BKJ_Dalian_claim }
+		x = 0
+		y = 3
+		relative_position_id = BKJ_go_right
+		available = {
+			#
+		}
+		cost = 4
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			set_cosmetic_tag = JOS_GUO
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+				last_election = "1935.12.17"
+				election_frequency = 48
+			}
+			hidden_effect = {
+				set_rule = {
+					can_join_factions = no
+				}
+				set_party_name = { 
+					ideology = fascism 
+					long_name = "조선혁명당"
+					name = "조선혁명당" 
+				}
+				remove_ideas = fascist_influence
+			}
+			create_country_leader = {
+				name = "이범석"
+				desc = ""
+				picture = "gfx/leaders/BKJ/lee_bum_suk.png"
+				expire = "1965.1.1"
+				ideology = nazism
+				traits = {
+					Nationalist_Symbol
+					Dictator
+				}
+			}
+			hidden_effect = {
+				every_country = {
+					news_event = {
+						id = THK_wor.8
+						hours = 3
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = BKJ_Democratic_movement
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = BKJ_da_joseon_guo }
+		x = 9
+		y = 1
+		relative_position_id = BKJ_da_joseon_guo
+		available = {
+			democratic > 0.35
+			has_country_flag = no_uprising_army
+		}
+		mutually_exclusive = {
+			focus = BKJ_ideological_fanaticism
+		}
+		
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			hidden_effect = {
+				837 = {
+					add_core_of = BKJ
+				}
+				838 = {
+					add_core_of = BKJ
+				}
+				527 = {
+					add_core_of = BKJ
+				}
+			}
+			country_event = {
+				id = THK.10
+				hours = 6
+			}
+		}
+	}
+	focus = {
+		id = BKJ_restored_council
+		icon = GFX_goal_continuous_boost_freedom
+		prerequisite = { focus = BKJ_Democratic_movement }
+		x = 0
+		y = 1
+		relative_position_id = BKJ_Democratic_movement
+		available = {
+			has_idea = dissolution_of_parliament_ideas
+		}
+		bypass = {
+			NOT = {
+				has_idea = dissolution_of_parliament_ideas
+			}
+		}
+		cost = 4
+		#allow_branch = {
+		#	if = {
+		#		has_completed_focus = BKJ_Democratic_movement
+		#	}
+		#}
+		available_if_capitulated = yes
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = dissolution_of_parliament_ideas2
+				remove_idea = dissolution_of_parliament_ideas
+			}
+		}
+	}
+	focus = {
+		id = BKJ_Founding_of_the_Liberal_Party
+		icon = GFX_focus_rom_parties_end
+		prerequisite = { focus = BKJ_restored_council }
+		x = -1
+		y = 1
+		relative_position_id = BKJ_restored_council
+		available = {
+		}
+		bypass = {
+		}
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 100
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.25
+			}
+			set_party_name = { 
+				ideology = democratic 
+				long_name = "조선 자유당"
+				name = "자유당" 
+			}
+		}
+	}
+	focus = {
+		id = BKJ_China_aid_bill
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = { focus = BKJ_Founding_of_the_Liberal_Party }
+		x = -3
+		y = 1
+		mutually_exclusive = {
+			focus = BKJ_meet_JAP
+		}
+		relative_position_id = BKJ_Founding_of_the_Liberal_Party
+		available = {
+			CHI = {
+				has_war_with = JAP
+			}
+			NOT = {
+				has_war_with = CHI
+				has_wargoal_against = CHI
+			}
+		}
+		bypass = {
+			CHI = {
+				exists = no
+			}
+		}
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = USA_lend_lease_act_dummy 
+			add_ai_strategy = {
+				type = alliance
+				id = CHI
+				value = 100
+			}
+			add_ai_strategy = {
+				type = protect
+				id = CHI
+				value = 100
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = CHI
+				value = 100
+			}
+		}
+	}
+	focus = {
+		id = BKJ_cooperation_with_the_US
+		icon = GFX_focus_chi_mission_to_the_us
+		prerequisite = { focus = BKJ_China_aid_bill }
+		x = 0
+		y = 1
+		relative_position_id = BKJ_China_aid_bill
+
+		cost = 10
+
+		available = {
+			OR = {
+				USA_will_support = yes
+				has_government = neutrality
+				USA = { has_government = ROOT }
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			USA = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = CHI_mission_to_the_us
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = protect
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = support
+					id = ROOT
+					value = 100
+				}
+			}
+		}
+	}
+	focus = {
+		id = BKJ_cooperation_with_the_british
+		icon = GFX_focus_chi_british_cooperation
+		prerequisite = { focus = BKJ_cooperation_with_the_US }
+		x = -2
+		y = 1
+		relative_position_id = BKJ_cooperation_with_the_US
+
+		cost = 10
+
+		available = {
+			OR = {
+				ENG_will_support = yes
+				has_government = neutrality
+				ENG = { has_government = ROOT }
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			ENG = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = CHI_british_cooperation
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = protect
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = support
+					id = ROOT
+					value = 100
+				}
+			}
+		}
+	}
+	focus = {
+		id = BKJ_Join_the_Allied_Powers
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = BKJ_cooperation_with_the_british }
+		x = 1
+		y = 1
+		relative_position_id = BKJ_cooperation_with_the_british
+		mutually_exclusive = {
+			focus = BKJ_alone_faction
+		}
+		mutually_exclusive = {
+			focus = BKJ_Join_the_axis_Powers
+		}
+		cost = 10
+
+		available = {
+			OR = {
+				ENG_will_support = yes
+				has_government = neutrality
+				ENG = { has_government = ROOT }
+			}
+			ENG = {
+				is_faction_leader = yes
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			set_rule = {
+				can_join_factions = yes
+			}
+			ENG = { add_to_faction = ROOT }
+		}
+	}
+	focus = {
+		id = BKJ_Join_the_axis_Powers
+		icon = GFX_goal_generic_dangerous_deal
+		prerequisite = { focus = BKJ_contact_with_the_GER }
+		x = -3
+		y = 1
+		relative_position_id = BKJ_cooperation_with_the_british
+		mutually_exclusive = {
+			focus = BKJ_alone_faction
+		}
+		mutually_exclusive = {
+			focus = BKJ_Join_the_Allied_Powers
+		}
+		cost = 10
+
+		available = {
+			OR = {
+				GER_will_support = yes
+				has_government = neutrality
+				GER = { has_government = ROOT }
+			}
+			GER = {
+				is_faction_leader = yes
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			set_rule = {
+				can_join_factions = yes
+			}
+			GER = { add_to_faction = ROOT }
+		}
+	}
+	focus = {
+		id = BKJ_alone_faction
+		icon = GFX_goal_anschluss
+		prerequisite = { focus = BKJ_cooperation_with_the_british }
+		x = -1
+		y = 1
+		relative_position_id = BKJ_cooperation_with_the_british
+		mutually_exclusive = {
+			focus = BKJ_Join_the_Allied_Powers
+		}
+		mutually_exclusive = {
+			focus = BKJ_Join_the_axis_Powers
+		}
+		cost = 10
+
+		available = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			hidden_effect = {
+				set_rule = {
+					can_join_factions = yes
+					can_create_factions = yes
+				}
+			}
+			create_faction = "동아시아 방위조약"
+		}
+	}
+	focus = {
+		id = BKJ_corps_of_volunteers
+		icon = GFX_goal_generic_axis_build_infantry
+		prerequisite = { focus = BKJ_alone_faction focus = BKJ_diplomatic_strategy }
+		x = -1
+		y = 1
+		relative_position_id = BKJ_alone_faction
+
+		cost = 10
+
+		available = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = BKJ_corps_of_volunteers_ideas
+			set_rule = {
+				can_send_volunteers = yes
+			}
+		}
+	}
+	focus = {
+		id = BKJ_Southeast_Asia_protect
+		icon = GFX_focus_jap_strike_south
+		prerequisite = { focus = BKJ_Join_the_Allied_Powers focus = BKJ_alone_faction }
+		x = 0
+		y = 2
+		relative_position_id = BKJ_cooperation_with_the_british
+		cost = 10
+
+		available = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			unlock_decision_category_tooltip = BKJ_pacific_guardian
+			unlock_decision_tooltip = BKJ_guardian_of_MAL
+			unlock_decision_tooltip = BKJ_guardian_of_INS
+		}
+	}
+	focus = {
+		id = BKJ_full_sovereignty_for_the_philippines
+		icon = GFX_goal_generic_defence
+		prerequisite = { focus = BKJ_Southeast_Asia_protect }
+		x = 1
+		y = 1
+		relative_position_id = BKJ_Southeast_Asia_protect
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+			"PHI" = {
+				is_subject = no
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		completion_reward = {
+			unlock_decision_tooltip = BKJ_guardian_of_PHI
+			PHI = { 
+                OVERLORD = {
+                    set_country_flag = PHI_overlord
+                } 
+            }
+		}
+	}
+	focus = {
+		id = BKJ_dalian_internaional_city
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = { focus = BKJ_Democratic_movement focus = BKJ_ideological_fanaticism }
+		x = 3
+		y = 2
+		relative_position_id = BKJ_da_joseon_guo
+
+
+		cost = 10
+ 
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			745 = {
+				is_owned_by = ROOT
+				compliance > 25
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		completion_reward = {
+			hidden_effect = {
+				play_song = "Tage_in_Peking"
+				set_global_flag = internaional_city
+				news_event = {
+					id = THK_wor.9
+					hours = 8
+				}
+			}
+			unlock_decision_category_tooltip = BCH_decision_categories
+			
+			ITA = {
+				give_guarantee = BCH 
+			}
+			BKJ = {
+				give_guarantee = BCH
+			}
+			USA = {
+				give_guarantee = BCH
+			}
+			ENG = {
+				give_guarantee = BCH
+			}
+			SOV = {
+				give_guarantee = BCH
+			}
+			FRA = {
+				give_guarantee = BCH
+			}
+			JAP = {
+				give_guarantee = BCH
+			}
+			GER = {
+				give_guarantee = BCH
+			}
+			if = {
+				limit = {
+					326 = {
+						OR = {
+							is_owned_and_controlled_by = ENG
+							is_owned_and_controlled_by = JAP
+							is_owned_and_controlled_by = BKJ
+							is_owned_and_controlled_by = GER
+							is_owned_and_controlled_by = FRA
+							is_owned_and_controlled_by = JAP
+							is_owned_and_controlled_by = USA
+							is_owned_and_controlled_by = ITA
+						}
+					}
+				}
+				BCH = {
+					transfer_state = 326
+				}
+				745 = {
+					add_core_of = BCH
+				}
+			}
+			if = {
+				limit = {
+					745 = {
+						OR = {
+							is_owned_and_controlled_by = ENG
+							is_owned_and_controlled_by = JAP
+							is_owned_and_controlled_by = BKJ
+							is_owned_and_controlled_by = GER
+							is_owned_and_controlled_by = FRA
+							is_owned_and_controlled_by = JAP
+							is_owned_and_controlled_by = USA
+							is_owned_and_controlled_by = ITA
+						}
+					}
+				}
+				BCH = {
+					transfer_state = 745
+				}
+				745 = {
+					add_core_of = BCH
+				}
+			}
+			if = {
+				limit = {
+					728 = {
+						OR = {
+							is_owned_and_controlled_by = ENG
+							is_owned_and_controlled_by = JAP
+							is_owned_and_controlled_by = BKJ
+							is_owned_and_controlled_by = GER
+							is_owned_and_controlled_by = FRA
+							is_owned_and_controlled_by = JAP
+							is_owned_and_controlled_by = USA
+							is_owned_and_controlled_by = ITA
+						}
+					}
+				}
+				BCH = {
+					transfer_state = 728
+				}
+				745 = {
+					add_core_of = BCH
+				}
+			}
+			if = {
+				limit = {
+					743 = {
+						OR = {
+							is_owned_and_controlled_by = ENG
+							is_owned_and_controlled_by = JAP
+							is_owned_and_controlled_by = BKJ
+							is_owned_and_controlled_by = GER
+							is_owned_and_controlled_by = FRA
+							is_owned_and_controlled_by = JAP
+							is_owned_and_controlled_by = USA
+							is_owned_and_controlled_by = ITA
+						}
+					}
+				}
+				745 = {
+					add_core_of = BCH
+				}
+				BCH = {
+					transfer_state = 743
+				}
+			}
+		}
+	}
+	focus = {
+		id = BKJ_Investor_Invitation
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = BKJ_cooperation_with_the_US }
+		prerequisite = { focus = BKJ_reform_and_opening_up }
+		x = 0
+		y = 1
+		relative_position_id = BKJ_cooperation_with_the_US
+
+		cost = 5
+
+		available = {
+			USA_will_support = yes
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = BKJ_International_Research_Cooperation_Organization
+		icon = GFX_goal_continuous_research
+		prerequisite = { focus = BKJ_Join_the_Allied_Powers }
+		x = 1
+		y = 1
+		relative_position_id = BKJ_Join_the_Allied_Powers
+
+		cost = 10
+
+		available = {
+			is_in_faction = yes
+			OR = {
+				num_of_factories > 50
+				any_other_country = {
+					is_in_faction_with = ROOT
+					num_of_factories > 50
+				}
+			}
+			hidden_trigger = { has_dlc = "Together for Victory" }
+		}	
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+			add_to_tech_sharing_group = BKJ_International_Research
+			every_other_country = {
+				limit = {
+					OR = {
+						is_in_faction_with = BKJ
+						original_tag = USA
+					}
+				}
+				add_to_tech_sharing_group = BKJ_International_Research
+			}
+		}
+	}
+	
+	focus = {
+		id = BKJ_meet_JAP
+		icon = GFX_focus_chi_collaboration_with_the_japanese
+		prerequisite = { focus = BKJ_diplomatic_strategy }
+		x = 1
+		y = 1
+		mutually_exclusive = {
+			focus = BKJ_China_aid_bill
+		}
+		relative_position_id = BKJ_diplomatic_strategy
+		available = {
+			OR = {
+				JAP = { has_government = ROOT }
+				JAP_will_support = yes
+			}
+			NOT = { has_wargoal_against = JAP }
+			NOT = { has_war_with = JAP }
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+
+		completion_reward = {
+			JAP = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = CHI_collaboration_with_the_japanese
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = protect
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = support
+					id = ROOT
+					value = 100
+				}
+			}
+		}
+	}
+	focus = {
+		id = BKJ_contact_with_the_GER
+		icon = GFX_focus_chi_mission_to_germany
+		x = -1
+		y = 1
+		relative_position_id = BKJ_diplomatic_strategy
+		prerequisite = {
+			focus = BKJ_diplomatic_strategy
+		}
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			OR = {
+				GER = { has_government = ROOT }
+				has_government = fascism
+				GER_will_support = yes
+			}
+			not = {
+				has_war_with = GER
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			GER = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = CHI_mission_to_germany
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = protect
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = support
+					id = ROOT
+					value = 100
+				}
+			}
+		}
+	}
+	focus = {
+		id = BKJ_Navy_Investment_Request
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = BKJ_meet_JAP }
+		x = 0
+		y = 1
+
+		available = {
+			any_state = {
+				is_controlled_by = ROOT
+				is_coastal = yes
+			}
+			OR = {
+				JAP_will_support = yes
+			}
+		}
+		relative_position_id = BKJ_meet_JAP
+		complete_tooltip = {
+			navy_experience = 25
+			random_state = {
+				limit = {
+					has_state_flag = CHI_investment_into_shipbuilding_DY
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			navy_experience = 25
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = CHI_investment_into_shipbuilding_DY
+			}
+		}
+	}
+	focus = {
+		id = BKJ_National_Security_Act_enacted
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		prerequisite = { focus = BKJ_restored_council }
+		x = 1
+		y = 1
+		relative_position_id = BKJ_restored_council
+		available = {
+			OR = {
+				has_idea = BKJ_youth_group
+				hidden_trigger = {
+					has_idea = BKJ_youth_group_2
+				}
+			}
+		}
+		bypass = {
+			NOT = {
+				OR = {
+					has_idea = BKJ_youth_group
+					hidden_trigger = {
+						has_idea = BKJ_youth_group_2
+					}
+				}
+			}
+		}
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.5
+			}
+			add_stability = 0.1
+			if = {
+				limit = {
+					has_idea = BKJ_youth_group
+				}
+				remove_ideas = BKJ_youth_group
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_youth_group_2
+				}
+				remove_ideas = BKJ_youth_group_2
+			}
+		}
+	}
+	focus = {
+		id = BKJ_Lighthouse_of_East_Asian_Liberalism
+		icon = GFX_focus_generic_the_giant_wakes
+		prerequisite = { focus = BKJ_National_Security_Act_enacted }
+		x = 1
+		y = 1
+		relative_position_id = BKJ_National_Security_Act_enacted
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = CZE_beacon_of_liberty
+		}
+	}
+	focus = {
+		id = BKJ_constitutional_monarchy
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		prerequisite = { focus = BKJ_Founding_of_the_Liberal_Party }
+		prerequisite = { focus = BKJ_National_Security_Act_enacted }
+		x = 0
+		y = 2
+		relative_position_id = BKJ_restored_council
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 90
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+			add_ideas = BKJ_puppet_king_ideas2
+		}
+	}
+	focus = {
+		id = BKJ_reform_and_opening_up
+		icon = GFX_focus_POL_develop_polish_shipbuilding
+		prerequisite = { focus = BKJ_constitutional_monarchy focus = BKJ_Lighthouse_of_East_Asian_Liberalism }
+		x = 1
+		y = 1
+		relative_position_id = BKJ_constitutional_monarchy
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_idea = free_trade
+					}
+				}
+				add_ideas = free_trade
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = civilian_economy
+					}
+				}
+				add_ideas = civilian_economy
+			}
+			add_ideas = market_Opening_ideas
+		}
+	}
+	focus = {
+		id = BKJ_Techniker_Einladung
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = BKJ_reform_and_opening_up }
+		x = 2
+		y = 1
+		relative_position_id = BKJ_reform_and_opening_up
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = FRA_laissez_faire
+				category = industry
+				uses = 2
+				bonus = 1.5
+			}
+		}
+	}
+	focus = {
+		id = BKJ_central_bank
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		prerequisite = { focus = BKJ_reform_and_opening_up }
+		x = 0
+		y = 1
+		relative_position_id = BKJ_reform_and_opening_up
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 90
+		}
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = BKJ_central_bank_ideas
+			add_ideas = BKJ_inflation
+		}
+	}
+	focus = {
+		id = BKJ_reserve_requirement_system_low
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = BKJ_central_bank }
+		x = 3
+		y = 1
+		relative_position_id = BKJ_central_bank
+		mutually_exclusive = {
+			focus = BKJ_reserve_requirement_system_high
+		}
+		search_filters = { high_inflation }
+		cost = 5
+
+		ai_will_do = {
+			factor = 90
+		}
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					NOT = {
+						has_idea = BKJ_inflation_3
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					has_idea = BKJ_deflation
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation
+					remove_idea = BKJ_deflation
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_1
+					remove_idea = BKJ_inflation
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation_1
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_2
+					remove_idea = BKJ_inflation_1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation_2
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_3
+					remove_idea = BKJ_inflation_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation_3
+				}
+				random_list = {
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = -1
+							add_building_construction = {
+								type = arms_factory
+								level = -1
+								instant_build = yes
+							}
+						}
+					}
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = -1
+							add_building_construction = {
+								type = industrial_complex
+								level = -1
+								instant_build = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = BKJ_reserve_requirement_system_high
+		icon = GFX_focus_usa_voter_registration_act
+		prerequisite = { focus = BKJ_central_bank }
+		x = 5
+		y = 1
+		relative_position_id = BKJ_central_bank
+		mutually_exclusive = {
+			focus = BKJ_reserve_requirement_system_low
+		}
+		cost = 5
+
+		ai_will_do = {
+			factor = 90
+		}
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		search_filters = { high_deflation }
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = BKJ_inflation_3
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_2
+					remove_idea = BKJ_inflation_3
+				}
+			}
+			if = {
+				limit = {
+					has_idea = BKJ_inflation_2
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_1
+					remove_idea = BKJ_inflation_2
+				}
+			}
+			if = {
+				limit = {
+					has_idea = BKJ_inflation_1
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation
+					remove_idea = BKJ_inflation_1
+				}
+			}
+			if = {
+				limit = {
+					has_idea = BKJ_inflation
+				}
+				swap_ideas = {
+					add_idea = BKJ_deflation
+					remove_idea = BKJ_inflation
+				}
+			}
+			if = {
+				limit = {
+					has_idea = BKJ_deflation
+				}
+				random_list = {
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = -1
+							add_building_construction = {
+								type = arms_factory
+								level = -1
+								instant_build = yes
+							}
+						}
+					}
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = -1
+							add_building_construction = {
+								type = industrial_complex
+								level = -1
+								instant_build = yes
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = BKJ_deflation
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = BKJ_low_interest_rate_policy
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		prerequisite = { focus = BKJ_central_bank }
+		x = 0
+		y = 1
+		mutually_exclusive = {
+			focus = BKJ_high_interest_rate_policy
+		}
+		relative_position_id = BKJ_central_bank
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 90
+		}
+
+		search_filters = { high_inflation }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = BKJ_deflation
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation
+					remove_idea = BKJ_deflation
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_1
+					remove_idea = BKJ_inflation
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation_1
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_2
+					remove_idea = BKJ_inflation_1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation_2
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_3
+					remove_idea = BKJ_inflation_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation_3
+				}
+				random_list = {
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = -1
+							add_building_construction = {
+								type = arms_factory
+								level = -1
+								instant_build = yes
+							}
+						}
+					}
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = -1
+							add_building_construction = {
+								type = industrial_complex
+								level = -1
+								instant_build = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = BKJ_corporate_privatization
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = BKJ_high_interest_rate_policy focus = BKJ_low_interest_rate_policy }
+		x = 3
+		y = 1
+		relative_position_id = BKJ_high_interest_rate_policy
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 90
+		}
+
+		search_filters = { high_inflation }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = BKJ_deflation
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation
+					remove_idea = BKJ_deflation
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_1
+					remove_idea = BKJ_inflation
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation_1
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_2
+					remove_idea = BKJ_inflation_1
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation_2
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_3
+					remove_idea = BKJ_inflation_2
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation_3
+				}
+				random_list = {
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = -1
+							add_building_construction = {
+								type = arms_factory
+								level = -1
+								instant_build = yes
+							}
+						}
+					}
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = -1
+							add_building_construction = {
+								type = industrial_complex
+								level = -1
+								instant_build = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = BKJ_Minimum_wage_cut
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		prerequisite = { focus = BKJ_reserve_requirement_system_low focus = BKJ_reserve_requirement_system_high }
+		mutually_exclusive = {
+			focus = BKJ_Minimum_wage_increase
+		}
+		x = 7
+		y = 1
+		relative_position_id = BKJ_high_interest_rate_policy
+		cost = 5
+		
+		ai_will_do = {
+			factor = 90
+		}
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		search_filters = { high_deflation }
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = BKJ_inflation_3
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_2
+					remove_idea = BKJ_inflation_3
+				}
+			}
+			if = {
+				limit = {
+					has_idea = BKJ_inflation_2
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_1
+					remove_idea = BKJ_inflation_2
+				}
+			}
+			if = {
+				limit = {
+					has_idea = BKJ_inflation_1
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation
+					remove_idea = BKJ_inflation_1
+				}
+			}
+			if = {
+				limit = {
+					has_idea = BKJ_inflation
+				}
+				swap_ideas = {
+					add_idea = BKJ_deflation
+					remove_idea = BKJ_inflation
+				}
+			}
+			if = {
+				limit = {
+					has_idea = BKJ_deflation
+				}
+				random_list = {
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = -1
+							add_building_construction = {
+								type = arms_factory
+								level = -1
+								instant_build = yes
+							}
+						}
+					}
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = -1
+							add_building_construction = {
+								type = industrial_complex
+								level = -1
+								instant_build = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = BKJ_Minimum_wage_increase
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = BKJ_reserve_requirement_system_high focus = BKJ_reserve_requirement_system_low }
+		x = 5
+		y = 1
+		relative_position_id = BKJ_high_interest_rate_policy
+		mutually_exclusive = {
+			focus = BKJ_Minimum_wage_cut
+		}
+		cost = 5
+
+		ai_will_do = {
+			factor = 90
+		}
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		search_filters = { high_inflation }
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = BKJ_deflation
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation
+					remove_idea = BKJ_deflation
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_1
+					remove_idea = BKJ_inflation
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation_1
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_2
+					remove_idea = BKJ_inflation_1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation_2
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_3
+					remove_idea = BKJ_inflation_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation_3
+				}
+				random_list = {
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = -1
+							add_building_construction = {
+								type = arms_factory
+								level = -1
+								instant_build = yes
+							}
+						}
+					}
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = -1
+							add_building_construction = {
+								type = industrial_complex
+								level = -1
+								instant_build = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = BKJ_high_interest_rate_policy
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		prerequisite = { focus = BKJ_central_bank }
+		mutually_exclusive = {
+			focus = BKJ_low_interest_rate_policy
+		}
+		x = -2
+		y = 1
+		relative_position_id = BKJ_central_bank
+		cost = 5
+		
+		ai_will_do = {
+			factor = 90
+		}
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		search_filters = { high_deflation }
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = BKJ_inflation_3
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_2
+					remove_idea = BKJ_inflation_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation_2
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_1
+					remove_idea = BKJ_inflation_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation_1
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation
+					remove_idea = BKJ_inflation_1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation
+				}
+				swap_ideas = {
+					add_idea = BKJ_deflation
+					remove_idea = BKJ_inflation
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_deflation
+				}
+				random_list = {
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = -1
+							add_building_construction = {
+								type = arms_factory
+								level = -1
+								instant_build = yes
+							}
+						}
+					}
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = -1
+							add_building_construction = {
+								type = industrial_complex
+								level = -1
+								instant_build = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = BKJ_currency_reform
+		icon = GFX_focus_mex_privatisation
+		prerequisite = { focus = BKJ_high_interest_rate_policy focus = BKJ_low_interest_rate_policy }
+
+		x = -1
+		y = 1
+		relative_position_id = BKJ_high_interest_rate_policy
+		cost = 5
+		
+		ai_will_do = {
+			factor = 90
+		}
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		
+		search_filters = { high_deflation }
+
+		completion_reward = {
+			if = {
+				limit = {
+					OR = {
+						has_idea = BKJ_inflation_3
+						has_idea = BKJ_inflation_2
+					}
+				}
+				add_timed_idea = {
+					idea = BKJ_currency_reform_ideas
+					days = 365
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = BKJ_inflation_1
+						has_idea = BKJ_inflation
+					}
+				}
+				add_timed_idea = {
+					idea = BKJ_currency_reform_ideas2
+					days = 365
+				}
+			}
+			if = {
+				limit = {
+					has_idea = BKJ_inflation_3
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_2
+					remove_idea = BKJ_inflation_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation_2
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_1
+					remove_idea = BKJ_inflation_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation_1
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation
+					remove_idea = BKJ_inflation_1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation
+				}
+				swap_ideas = {
+					add_idea = BKJ_deflation
+					remove_idea = BKJ_inflation
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_deflation
+				}
+				random_list = {
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = -1
+							add_building_construction = {
+								type = arms_factory
+								level = -1
+								instant_build = yes
+							}
+						}
+					}
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = -1
+							add_building_construction = {
+								type = industrial_complex
+								level = -1
+								instant_build = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = BKJ_government_bond_recovery
+		icon = GFX_focus_SOV_merge_plants
+		prerequisite = { focus = BKJ_high_interest_rate_policy focus = BKJ_low_interest_rate_policy }
+		x = 0
+		y = 2
+		relative_position_id = BKJ_high_interest_rate_policy
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 90
+		}
+		mutually_exclusive = {
+			focus = BKJ_Additional_issuance_of_government_bonds
+		}
+
+		search_filters = { high_inflation }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = BKJ_deflation
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation
+					remove_idea = BKJ_deflation
+				}
+				add_timed_idea = {
+					idea = BKJ_government_bond_recovery_ideas
+					days = 365
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_1
+					remove_idea = BKJ_inflation
+				}
+				add_timed_idea = {
+					idea = BKJ_government_bond_recovery_ideas
+					days = 365
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation_1
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_2
+					remove_idea = BKJ_inflation_1
+				}
+				add_timed_idea = {
+					idea = BKJ_government_bond_recovery_ideas
+					days = 365
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation_2
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_3
+					remove_idea = BKJ_inflation_2
+				}
+				add_timed_idea = {
+					idea = BKJ_government_bond_recovery_ideas
+					days = 365
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation_3
+				}
+				random_list = {
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = -1
+							add_building_construction = {
+								type = arms_factory
+								level = -1
+								instant_build = yes
+							}
+						}
+					}
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = -1
+							add_building_construction = {
+								type = industrial_complex
+								level = -1
+								instant_build = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = BKJ_Additional_issuance_of_government_bonds
+		icon = GFX_goal_continuous_non_factory_construct
+		prerequisite = { focus = BKJ_high_interest_rate_policy focus = BKJ_low_interest_rate_policy }
+
+		x = 0
+		y = 2
+		relative_position_id = BKJ_low_interest_rate_policy
+		cost = 5
+		
+		ai_will_do = {
+			factor = 90
+		}
+		mutually_exclusive = {
+			focus = BKJ_government_bond_recovery
+		}
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		
+		search_filters = { high_deflation }
+		complete_tooltip = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 2
+						include_locked = yes
+					}
+					free_building_slots = {
+						building = arms_factory
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					OR = {
+						has_idea = BKJ_inflation_3
+						has_idea = BKJ_inflation_2
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 2
+							include_locked = yes
+						}
+						free_building_slots = {
+							building = arms_factory
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = BKJ_inflation_1
+						has_idea = BKJ_inflation
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 2
+							include_locked = yes
+						}
+						free_building_slots = {
+							building = arms_factory
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 2
+							include_locked = yes
+						}
+						free_building_slots = {
+							building = arms_factory
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_idea = BKJ_inflation_3
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_2
+					remove_idea = BKJ_inflation_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation_2
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation_1
+					remove_idea = BKJ_inflation_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation_1
+				}
+				swap_ideas = {
+					add_idea = BKJ_inflation
+					remove_idea = BKJ_inflation_1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_inflation
+				}
+				swap_ideas = {
+					add_idea = BKJ_deflation
+					remove_idea = BKJ_inflation
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = BKJ_deflation
+				}
+				random_list = {
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = -1
+							add_building_construction = {
+								type = arms_factory
+								level = -1
+								instant_build = yes
+							}
+						}
+					}
+					50 = {
+						random_owned_controlled_state = {
+							add_extra_state_shared_building_slots = -1
+							add_building_construction = {
+								type = industrial_complex
+								level = -1
+								instant_build = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = BKJ_promote_entrepeneurship
+		icon = GFX_goal_generic_propaganda
+		x = -2
+		y = 1
+		offset = {
+			x = 0
+			y = 0
+		}
+		prerequisite = {
+			focus = BKJ_reform_and_opening_up
+		}
+		relative_position_id = BKJ_reform_and_opening_up
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_ideas = { FRA_entrepeneurship }
+		}
+	}
+	focus = {
+		id = BKJ_diplomatic_strategy
+		icon = GFX_focus_generic_diplomatic_treaty
+		prerequisite = {
+			focus = BKJ_military_government
+		}
+
+		x = 5
+		y = 1
+		relative_position_id = BKJ_military_government
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		completion_reward = {
+			add_war_support = 0.05
+			
+		}
+	}
+	focus = {
+		id = BKJ_militarism
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = {
+			focus = BKJ_military_government
+		}
+
+		x = 3
+		y = 1
+		relative_position_id = BKJ_military_government
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_war_support = 0.05
+			set_rule = {
+				can_join_factions = yes
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+					is_core_of = BKJ
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = BKJ_BKJ_youth_group2
+		icon = GFX_goal_generic_small_arms
+		prerequisite = {
+			focus = BKJ_militarism
+		}
+		prerequisite = {
+			focus = BKJ_aggressive_wars
+		}
+
+		x = 2
+		y = 2
+		relative_position_id = BKJ_military_government
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = BKJ_youth_group_2
+				remove_idea = BKJ_youth_group
+			}
+		}
+	}
+	focus = {
+		id = BKJ_Three_Kingdoms_Unification
+		icon = GFX_focus_POL_sanation_right
+		prerequisite = {
+			focus = BKJ_aggressive_wars
+		}
+		prerequisite = {
+			focus = BKJ_puppet_king
+		}
+		x = 0
+		y = 3
+		relative_position_id = BKJ_ideological_fanaticism
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = strong_and_prosperous_country2
 		}
 	}
 	focus = {
@@ -1383,7 +3607,7 @@ focus_tree = {
 		icon = GFX_goal_generic_dangerous_deal
 		prerequisite = { focus = BKJ_join_comintern }
 		mutually_exclusive = { focus = BKJ_attack_Mongolia }
-		x = -8
+		x = -4
 		y = 2
 		relative_position_id = BKJ_Three_Kingdoms_Unification
 		cost = 10
@@ -1469,9 +3693,105 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = BKJ_attack_SOV
+		icon = GFX_focus_attack_soviet
+		prerequisite = { focus = BKJ_attack_Mongolia }
+		x = 0
+		y = 1
+		relative_position_id = BKJ_attack_Mongolia
+		ai_will_do = {
+			factor = 1
+
+		}
+
+		available = {
+			not = {
+				is_in_faction_with = SOV
+			}
+		}
+
+		bypass = {
+			OR = {
+				NOT = { country_exists = SOV }
+					has_war_with = SOV
+				has_wargoal_against = SOV
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_state_claim = 408
+			add_state_claim = 409
+			add_state_claim = 560
+			add_state_claim = 655
+			if = {
+				limit = {
+					408 = { is_owned_and_controlled_by = SOV }
+					409 = { is_owned_and_controlled_by = SOV }
+					560 = { is_owned_and_controlled_by = SOV }
+					655 = { is_owned_and_controlled_by = SOV }
+				}
+				ROOT = {
+					create_wargoal = {
+						type = take_state_focus
+						target = SOV
+						expire = 0
+						generator = { 408 409 560 655 }
+					}
+				}
+			}
+			#else = {
+			#	create_wargoal = {
+			#		type = annex_everything
+			#		target = SOV
+			#		expire = 0
+			#	}
+			#}
+		}
+	}
+	focus = {
+		id = BKJ_attack_USA
+		icon = GFX_focus_generic_strike_at_democracy3
+		prerequisite = { focus = BKJ_china_war_goal }
+		x = 1
+		y = 1
+		relative_position_id = BKJ_china_war_goal
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			country_exists = USA
+		}
+
+		bypass = {
+			NOT = { country_exists = USA }
+			USA = { is_subject_of = ROOT }
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = USA
+			}
+			add_state_claim = 463
+			add_state_claim = 629	
+		}
+	}
+	focus = {
 		id = BKJ_continental_expansion
 		icon = GFX_goal_generic_occupy_states_ongoing_war
 		prerequisite = { focus = BKJ_Three_Kingdoms_Unification }
+		prerequisite = { focus = BKJ_Royal_Navy_Reconstruction }
+		prerequisite = { focus = BKJ_BKJ_youth_group2 }
 		x = 0
 		y = 1
 		relative_position_id = BKJ_Three_Kingdoms_Unification
@@ -1493,6 +3813,62 @@ focus_tree = {
 			add_political_power = 120
 		}
 	}
+	focus = {
+		id = BKJ_continental_expansion
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = BKJ_Three_Kingdoms_Unification }
+		prerequisite = { focus = BKJ_Royal_Navy_Reconstruction }
+		prerequisite = { focus = BKJ_BKJ_youth_group2 }
+		x = 0
+		y = 1
+		relative_position_id = BKJ_Three_Kingdoms_Unification
+		cancel = {
+			
+		}
+		cost = 10
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = BKJ_roma_empire
+		icon = GFX_focus_SOV_panslavic_nationalism
+		prerequisite = { focus = BKJ_continental_expansion }
+		prerequisite = { focus = BKJ_china_war_goal }
+		prerequisite = { focus = BKJ_attack_SOV }
+		x = 0
+		y = 3
+		relative_position_id = BKJ_continental_expansion
+		cancel = {
+			
+		}
+		cost = 10
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		completion_reward = {
+			
+		}
+	}
+
 
 	focus = {
 		id = BKJ_attack_manchuria
@@ -1731,7 +4107,7 @@ focus_tree = {
 		id = BKJ_go_right
 		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
 		prerequisite = { focus = BKJ_political_direction }
-		mutually_exclusive = { focus = BKJ_democratic_bastion focus = BKJ_go_left }
+		mutually_exclusive = { focus = BKJ_go_left }
 		x = 0
 		y = 1
 		relative_position_id = BKJ_political_direction
@@ -1775,6 +4151,12 @@ focus_tree = {
 		available = {
 
 		}
+		select_effect = {
+			country_event = {
+				id = THK.8
+				days = 7
+			}
+		}
 
 		bypass = {
 
@@ -1784,8 +4166,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 		completion_reward = {
-			
-			add_ideas = dissolution_of_parliament_ideas
+			add_political_power = 25
 		}
 	}
 
@@ -1864,7 +4245,7 @@ focus_tree = {
 
 		available_if_capitulated = yes
 		available = {
-			fascism > 0.15
+			#fascism > 0.15
 		}
 
 
@@ -1893,6 +4274,10 @@ focus_tree = {
 			
 		}
 		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -1914,10 +4299,10 @@ focus_tree = {
 	focus = {
 		id = BKJ_aggressive_wars
 		icon = GFX_goal_support_fascism
-		prerequisite = { focus = BKJ_ideological_fanaticism }
-		x = 0
+		prerequisite = { focus = BKJ_military_government }
+		x = 1
 		y = 1
-		relative_position_id = BKJ_ideological_fanaticism
+		relative_position_id = BKJ_military_government
 
 		cost = 10
 
@@ -1946,6 +4331,107 @@ focus_tree = {
 		}
 	}
 
+	focus = {
+		id = BKJ_puppet_king
+		icon = GFX_focus_rom_handle_king
+		prerequisite = { focus = BKJ_military_government }
+		x = -1
+		y = 1
+		relative_position_id = BKJ_military_government
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 90
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = BKJ_puppet_king_ideas
+		}
+	}
+
+	focus = {
+		id = BKJ_Royal_Navy_Reconstruction
+		icon = GFX_focus_generic_navy_battleship2
+		prerequisite = { focus = BKJ_puppet_king }
+		x = -1
+		y = 1
+		relative_position_id = BKJ_puppet_king
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 90
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 2
+						include_locked = yes
+					}
+					is_core_of = BKJ
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = bc_bonus
+				bonus = 1.0
+				uses = 1
+				category = bc_tech
+			}
+			add_tech_bonus = {
+				name = bb_bonus
+				bonus = 1.0
+				uses = 1
+				category = bb_tech
+				category = shbb_tech
+			}
+			navy_experience = 50
+			add_timed_idea = {
+				idea = GER_rebuild_the_high_seas_fleet
+				days = 730
+			}
+		}
+	}
+
 
 	#######################################
 	##### MILITARY RESEARCH INSTITUTE #####	
@@ -1954,7 +4440,7 @@ focus_tree = {
 	focus = {
 		id = BKJ_military_research_institute
 		icon = GFX_focus_CZE_military_research_institute
-		x = 15
+		x = 6
 		y = 0
 		relative_position_id = BKJ_political_direction
 
@@ -2404,16 +4890,17 @@ focus_tree = {
 	focus = {
 		id = BKJ_tianla_attack_2
 		icon = GFX_focus_hol_prepare_the_inundation_lines
-		prerequisite = { focus = BKJ_political_direction }
-		x = -8
-		y = 1
+		prerequisite = { focus = BKJ_go_right focus = BKJ_go_left }
+		
+		x = -4
+		y = 2
 		relative_position_id = BKJ_political_direction
 		rwill_lead_to_war_with = TAM
 
 		cancel = {
 			NOT = { country_exists = TAM }
 		}
-		cost = 10
+		cost = 5
 		historical_ai = {
 			NOT = {
 				any_home_area_neighbor_country = {
@@ -2453,6 +4940,95 @@ focus_tree = {
 			create_wargoal = {
 				type = annex_everything
 				target = TAM
+			}
+			835 = {
+				add_core_of = BKJ
+			}
+		}
+	}
+	focus = {
+		id = BKJ_unification_war
+		icon = GFX_focus_spa_the_war_of_vengeance
+		prerequisite = { focus = BKJ_tianla_attack_2 }
+		
+		x = 0
+		y = 1
+		relative_position_id = BKJ_tianla_attack_2
+		rwill_lead_to_war_with = TAM
+		available = {
+			AND = {
+				has_completed_focus = BKJ_da_joseon_guo
+				OR = {
+					SIR = {
+						exists = yes
+					}
+					GGR = {
+						exists = yes
+					}
+				}
+			}
+		}
+		cost = 5
+
+		bypass = {
+			AND = {
+				SIR = {
+					exists = no
+				}
+				GGR = {
+					exists = no
+				}
+			}
+		}
+		ai_will_do = {
+	
+		}	
+		completion_reward = {
+			if = {
+				limit = {
+					SIR = {
+						exists = no
+					}
+					GGR = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = GGR
+				}
+			}
+			else_if = {
+				limit = {
+					SIR = {
+						exists = yes
+					}
+					GGR = {
+						exists = no
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = SIR
+				}
+			}
+			else_if = {
+				limit = {
+					SIR = {
+						exists = yes
+					}
+					GGR = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = SIR
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = GGR
+				}
 			}
 		}
 	}

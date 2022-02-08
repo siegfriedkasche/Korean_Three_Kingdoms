@@ -24,7 +24,7 @@ china_Policy_decisions_THK = {
 		cost = 0
 		days_remove = 0
 		remove_effect = {
-			SIL = {
+			SIR = {
 				country_event = {
 					id =  THK.2
 					days = 1
@@ -369,7 +369,7 @@ change_capital_decisions_THK  = {
 		fire_only_once = no
 		
 		remove_effect = {
-			set_capital = 525
+			set_capital = {state = 525}
 		}
 	}	
 	busan_change_capital_decisions_THK = {
@@ -395,7 +395,10 @@ change_capital_decisions_THK  = {
 		fire_only_once = no
 		
 		remove_effect = {
-			set_capital = 809
+			set_capital = {
+ 			 state = 809
+ 			 remember_old_capital = no
+			}
 		}
 	}
 	pyeongyang_change_capital_decisions_THK = {
@@ -421,7 +424,10 @@ change_capital_decisions_THK  = {
 		fire_only_once = no
 		
 		remove_effect = {
-			set_capital = 527
+			set_capital = {
+ 			 state = 527
+ 			 remember_old_capital = no
+			}
 		}
 	}
 	guonea_change_capital_decisions_THK = {
@@ -444,10 +450,13 @@ change_capital_decisions_THK  = {
 		ai_will_do = {
 			factor = 100
 		}
-		fire_only_once = yes
+		fire_only_once = no
 		
 		remove_effect = {
-			set_capital = 328
+			set_capital = {
+ 			 state = 328
+ 			 remember_old_capital = no
+			}
 		}
 	}
 }

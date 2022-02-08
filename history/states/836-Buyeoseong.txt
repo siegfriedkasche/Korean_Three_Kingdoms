@@ -20,8 +20,20 @@ state={
 		}
 		
 		victory_points = {
-			7175 15
+			7175 25
 		}	
+		victory_points = {
+			10085 15
+		}	
+		victory_points = {
+			10115 10
+		}	
+		victory_points = {
+			11977 10
+		}	
+		victory_points = {
+			11948 3
+		}
 
 		add_core_of = BKJ
 	}

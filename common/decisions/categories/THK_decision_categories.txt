@@ -5,7 +5,7 @@ china_Policy_decisions_THK = {
 	allowed = {
 			or = {
 				tag = GGR
-				tag = SIL
+				tag = SIR
 				tag = BKJ
 			}
 	}
@@ -16,7 +16,7 @@ change_capital_decisions_THK = {
 	allowed = {
 			or = {
 				tag = GGR
-				tag = SIL
+				tag = SIR
 				tag = BKJ
 			}
 	}
