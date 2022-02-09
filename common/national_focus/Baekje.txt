@@ -1226,7 +1226,7 @@ focus_tree = {
 		id = BKJ_Democratic_movement
 		icon = GFX_goal_support_democracy
 		prerequisite = { focus = BKJ_da_joseon_guo }
-		x = 9
+		x = 10
 		y = 1
 		relative_position_id = BKJ_da_joseon_guo
 		available = {
@@ -1325,7 +1325,7 @@ focus_tree = {
 		id = BKJ_China_aid_bill
 		icon = GFX_focus_chi_cooperation_with_the_nationalists
 		prerequisite = { focus = BKJ_Founding_of_the_Liberal_Party }
-		x = -3
+		x = -4
 		y = 1
 		mutually_exclusive = {
 			focus = BKJ_meet_JAP
@@ -1371,10 +1371,36 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = BKJ_China_meet
+		icon = GFX_focus_generic_china1
+		prerequisite = { focus = BKJ_China_aid_bill }
+		x = 1
+		y = 1
+		relative_position_id = BKJ_China_aid_bill
+		available = {
+			NOT = {
+				has_war_with = CHI
+				has_wargoal_against = CHI
+			}
+		}
+		bypass = {
+			CHI = {
+				exists = no
+			}
+		}
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
 		id = BKJ_cooperation_with_the_US
 		icon = GFX_focus_chi_mission_to_the_us
 		prerequisite = { focus = BKJ_China_aid_bill }
-		x = 0
+		x = -1
 		y = 1
 		relative_position_id = BKJ_China_aid_bill
 
@@ -1425,7 +1451,7 @@ focus_tree = {
 		id = BKJ_cooperation_with_the_british
 		icon = GFX_focus_chi_british_cooperation
 		prerequisite = { focus = BKJ_cooperation_with_the_US }
-		x = -2
+		x = -1
 		y = 1
 		relative_position_id = BKJ_cooperation_with_the_US
 
@@ -1485,6 +1511,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = BKJ_Join_the_axis_Powers
 		}
+		mutually_exclusive = {
+			focus = BKJ_Join_the_chinese_united_front
+		}
 		cost = 10
 
 		available = {
@@ -1510,6 +1539,47 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = BKJ_Join_the_chinese_united_front
+		icon = GFX_focus_chi_proclaim_rival_government
+		prerequisite = { focus = BKJ_China_meet }
+		x = 0
+		y = 2
+		relative_position_id = BKJ_China_meet
+		mutually_exclusive = {
+			focus = BKJ_alone_faction
+		}
+		mutually_exclusive = {
+			focus = BKJ_Join_the_Allied_Powers
+		}
+		mutually_exclusive = {
+			focus = BKJ_Join_the_axis_Powers
+		}
+		cost = 10
+
+		available = {
+			BKJ_congress_medium_support_trigger = yes
+			OR = {
+				has_government = democratic
+				CHI = { has_government = ROOT }
+			}
+			CHI = {
+				is_faction_leader = yes
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			BKJ_congress_small_opposition = yes
+			set_rule = {
+				can_join_factions = yes
+			}
+			CHI = { add_to_faction = ROOT }
+		}
+	}
+	focus = {
 		id = BKJ_Join_the_axis_Powers
 		icon = GFX_goal_generic_dangerous_deal
 		prerequisite = { focus = BKJ_contact_with_the_GER }
@@ -1521,6 +1591,9 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = BKJ_Join_the_Allied_Powers
+		}
+		mutually_exclusive = {
+			focus = BKJ_Join_the_chinese_united_front
 		}
 		cost = 10
 
@@ -1558,6 +1631,9 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = BKJ_Join_the_axis_Powers
+		}
+		mutually_exclusive = {
+			focus = BKJ_Join_the_chinese_united_front
 		}
 		cost = 10
 
@@ -1608,7 +1684,7 @@ focus_tree = {
 	focus = {
 		id = BKJ_Southeast_Asia_protect
 		icon = GFX_focus_jap_strike_south
-		prerequisite = { focus = BKJ_Join_the_Allied_Powers focus = BKJ_alone_faction }
+		prerequisite = { focus = BKJ_Join_the_chinese_united_front focus = BKJ_Join_the_Allied_Powers focus = BKJ_alone_faction }
 		x = 0
 		y = 2
 		relative_position_id = BKJ_cooperation_with_the_british
@@ -1749,7 +1825,7 @@ focus_tree = {
 				BCH = {
 					transfer_state = 326
 				}
-				745 = {
+				326 = {
 					add_core_of = BCH
 				}
 			}
@@ -1793,7 +1869,7 @@ focus_tree = {
 				BCH = {
 					transfer_state = 728
 				}
-				745 = {
+				728 = {
 					add_core_of = BCH
 				}
 			}
@@ -1812,7 +1888,7 @@ focus_tree = {
 						}
 					}
 				}
-				745 = {
+				743 = {
 					add_core_of = BCH
 				}
 				BCH = {
@@ -1826,7 +1902,7 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_3
 		prerequisite = { focus = BKJ_cooperation_with_the_US }
 		prerequisite = { focus = BKJ_reform_and_opening_up }
-		x = 0
+		x = 3
 		y = 1
 		relative_position_id = BKJ_cooperation_with_the_US
 
@@ -1861,7 +1937,7 @@ focus_tree = {
 	focus = {
 		id = BKJ_International_Research_Cooperation_Organization
 		icon = GFX_goal_continuous_research
-		prerequisite = { focus = BKJ_Join_the_Allied_Powers }
+		prerequisite = { focus = BKJ_Join_the_Allied_Powers  focus = BKJ_Join_the_chinese_united_front }
 		x = 1
 		y = 1
 		relative_position_id = BKJ_Join_the_Allied_Powers
@@ -3552,6 +3628,7 @@ focus_tree = {
 		available_if_capitulated = no
 		
 		completion_reward = {
+			
 			add_ideas = { FRA_entrepeneurship }
 		}
 	}
