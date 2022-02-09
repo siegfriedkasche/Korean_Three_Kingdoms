@@ -1177,7 +1177,7 @@ focus_tree = {
 			}
 			set_province_name = {
 				id = 1177
-				name = "제주도"
+				name = "제주"
 			}
 			835 = {
 				set_state_name = "제주도"
