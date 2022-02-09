@@ -44,7 +44,7 @@ BKJ_congress = {
 				has_political_power > 10
 			}
 		}
-		cost = 0
+		cost = 25
 		
 		modifier = {
 			political_power_gain = -0.15
@@ -70,7 +70,7 @@ BKJ_congress = {
 				has_political_power > 35
 			}
 		}
-		cost = 0
+		cost = 25
 		
 		days_remove = 80
 		modifier = {
