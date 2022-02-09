@@ -1,0 +1,15 @@
+BKJ_congress = {
+	icon = usa_congress
+	scripted_gui = bkj_congress_decision_ui
+	#picture = GFX_decision_BKJ_congress
+	allowed = {
+		original_tag = BKJ
+	}
+	visible = {
+		has_completed_focus = BKJ_restored_council
+	}
+
+
+	
+	priority = 300 
+}

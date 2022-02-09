@@ -432,6 +432,66 @@ ideas = {
 	}
 	country = {
 	
+		dissolution_of_parliament_ideas4 = {
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = man_militarism
+
+			
+			modifier = {
+				conscription = 0.03
+				army_core_defence_factor = 0.15
+				army_core_attack_factor = 0.15
+				political_power_gain = 0.05
+				stability_factor = 0.05
+				war_support_factor = 0.05
+			}
+		}
+	}
+	country = {
+	
+		china_cleaning = {
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = jap_intervene_in_china
+
+			
+			modifier = {
+				monthly_population = -0.3
+				conscription = -0.05
+				stability_factor = -0.15
+				autonomy_gain = -2.5
+			}
+		}
+	}
+	country = {
+	
 		BKJ_puppet_king_ideas = {
 			
 			allowed = {

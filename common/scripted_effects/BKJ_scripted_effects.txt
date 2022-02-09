@@ -1,0 +1,246 @@
+BKJ_congress_get_quorum = {
+	set_variable = { var = quorum_low value = senate_total }
+	multiply_variable = { var = quorum_low value = 0.4 }
+	set_variable = { var = quorum_medium value = senate_total }
+	multiply_variable = { var = quorum_medium value = 0.5 }
+	set_variable = { var = quorum_high value = senate_total }
+	multiply_variable = { var = quorum_high value = 0.6 }
+	round_variable = quorum_low 
+	round_variable = quorum_medium 
+	round_variable = quorum_high
+	BKJ_recalc_congress_icon_frames = yes
+}
+BKJ_congress_remove_state = {
+	custom_effect_tooltip = BKJ_congress_remove_state_tt
+	add_to_variable = { senate_total = -10 }
+	add_to_variable = { senate_support = -10 }
+	add_to_variable = { house_total = -30 }
+	add_to_variable = { house_support = -30 }
+	ENG_congress_get_quorum = yes
+	BKJ_recalc_congress_icon_frames = yes
+}
+BKJ_congress_add_state = {
+	custom_effect_tooltip = mtg_BKJ_congress_add_state_tt
+	add_to_variable = { senate_total = 2 }
+	add_to_variable = { senate_support = 2 }
+	ENG_congress_get_quorum = yes
+	BKJ_recalc_congress_icon_frames = yes
+}
+BKJ_congress_small_opposition = {
+	custom_effect_tooltip = mtg_BKJ_congress_small_opposition_tt
+	hidden_effect = {
+		BKJ_senate_small_opposition = yes
+		BKJ_house_small_opposition = yes
+		
+	}
+}
+
+BKJ_senate_small_opposition = {
+	custom_effect_tooltip = mtg_BKJ_senate_small_opposition_tt
+	set_temp_variable = { temp_factor = random } 
+	multiply_temp_variable = { temp_factor = -4 } #-4
+	add_to_variable = { senate_support = temp_factor }
+	round_variable = senate_support
+	clamp_variable = { var = senate_support max = senate_total min = 0 }
+	BKJ_recalc_congress_icon_frames = yes
+}
+
+BKJ_house_small_opposition = {
+	custom_effect_tooltip = mtg_BKJ_house_small_opposition_tt
+	set_temp_variable = { temp_factor = random }
+	multiply_temp_variable = { temp_factor = -20 } #-20
+	add_to_variable = { house_support = temp_factor }
+	round_variable = house_support
+	clamp_variable = { var = house_support max = house_total min = 0 }
+	BKJ_recalc_congress_icon_frames = yes
+}
+BKJ_senate_small_support = {
+	custom_effect_tooltip = mtg_BKJ_senate_small_support_tt
+	set_temp_variable = { temp_factor = random }
+	multiply_temp_variable = { temp_factor = 5 } #5
+	add_to_variable = { senate_support = temp_factor }
+	round_variable = senate_support
+	clamp_variable = { var = senate_support max = senate_total min = 0 }
+	BKJ_recalc_congress_icon_frames = yes
+}
+
+BKJ_house_small_support = {
+	custom_effect_tooltip = mtg_BKJ_house_small_support_tt
+	set_temp_variable = { temp_factor = random }
+	multiply_temp_variable = { temp_factor = 25 }
+	clamp_temp_variable = { var = temp_factor max = 25 min = 10 } #20
+	add_to_variable = { house_support = temp_factor }
+	round_variable = house_support
+	clamp_variable = { var = house_support max = house_total min = 0 }
+	BKJ_recalc_congress_icon_frames = yes
+}
+
+BKJ_senate_medium_opposition = {
+	custom_effect_tooltip = mtg_BKJ_senate_medium_opposition_tt
+	set_temp_variable = { temp_factor = random }
+	multiply_temp_variable = { temp_factor = -8 }
+	clamp_temp_variable = { var = temp_factor max = -3 min = -8 } #-5
+	add_to_variable = { senate_support = temp_factor }
+	round_variable = senate_support
+	clamp_variable = { var = senate_support max = senate_total min = 0 }
+	BKJ_recalc_congress_icon_frames = yes
+}
+
+BKJ_house_medium_opposition = {
+	custom_effect_tooltip = mtg_BKJ_house_medium_opposition_tt
+	set_temp_variable = { temp_factor = random }
+	multiply_temp_variable = { temp_factor = -40 }
+	clamp_temp_variable = { var = temp_factor max = -20 min = -40 }
+	add_to_variable = { house_support = temp_factor }
+	round_variable = house_support
+	clamp_variable = { var = house_support max = house_total min = 0 }
+	BKJ_recalc_congress_icon_frames = yes
+}
+BKJ_senate_medium_support = {
+	custom_effect_tooltip = mtg_BKJ_senate_medium_support_tt
+	set_temp_variable = { temp_factor = random }
+	multiply_temp_variable = { temp_factor = 10 }
+	clamp_temp_variable = { var = temp_factor max = 10 min = 5 }
+	add_to_variable = { senate_support = temp_factor }
+	round_variable = senate_support
+	clamp_variable = { var = senate_support max = senate_total min = 0 }
+	BKJ_recalc_congress_icon_frames = yes
+}
+
+BKJ_house_medium_support = {
+	custom_effect_tooltip = mtg_BKJ_house_medium_support_tt
+	set_temp_variable = { temp_factor = random }
+	multiply_temp_variable = { temp_factor = 50 }
+	clamp_temp_variable = { var = temp_factor max = 50 min = 20 }
+	add_to_variable = { house_support = temp_factor }
+	round_variable = house_support
+	clamp_variable = { var = house_support max = house_total min = 0 }
+	BKJ_recalc_congress_icon_frames = yes
+}
+BKJ_senate_large_opposition = {
+	custom_effect_tooltip = mtg_BKJ_senate_large_opposition_tt
+	set_temp_variable = { temp_factor = random }
+	multiply_temp_variable = { temp_factor = -30 }
+	clamp_temp_variable = { var = temp_factor max = 25 min = -10 }
+	add_to_variable = { senate_support = temp_factor }
+	round_variable = senate_support
+	clamp_variable = { var = senate_support max = senate_total min = 0 }
+	BKJ_recalc_congress_icon_frames = yes
+}
+
+BKJ_house_large_opposition = {
+	custom_effect_tooltip = mtg_BKJ_house_large_opposition_tt
+	set_temp_variable = { temp_factor = random }
+	multiply_temp_variable = { temp_factor = -100 }
+	clamp_temp_variable = { var = temp_factor max = -50 min = -100 }
+	add_to_variable = { house_support = temp_factor }
+	round_variable = house_support
+	clamp_variable = { var = house_support max = house_total min = 0 }
+	BKJ_recalc_congress_icon_frames = yes
+}
+BKJ_senate_large_support = {
+	custom_effect_tooltip = mtg_BKJ_senate_large_support_tt
+	set_temp_variable = { temp_factor = random }
+	multiply_temp_variable = { temp_factor = 30 }
+	clamp_temp_variable = { var = temp_factor max = 30 min = 15 }
+	add_to_variable = { senate_support = temp_factor }
+	round_variable = senate_support
+	clamp_variable = { var = senate_support max = senate_total min = 0 }
+	BKJ_recalc_congress_icon_frames = yes
+}
+
+BKJ_house_large_support = {
+	custom_effect_tooltip = mtg_BKJ_house_large_support_tt
+	set_temp_variable = { temp_factor = random }
+	multiply_temp_variable = { temp_factor = 125 }
+	clamp_temp_variable = { var = temp_factor max = 125 min = 80 }
+	add_to_variable = { house_support = temp_factor }
+	round_variable = house_support
+	clamp_variable = { var = house_support max = house_total min = 0 }
+	BKJ_recalc_congress_icon_frames = yes
+}
+#######
+BKJ_congress_small_opposition = { #
+	custom_effect_tooltip = BKJ_congress_small_opposition_tt
+	hidden_effect = {
+		BKJ_senate_small_opposition = yes
+		BKJ_house_small_opposition = yes
+		
+	}
+}
+BKJ_congress_medium_opposition = { #중규모 좆까 -5
+	custom_effect_tooltip = BKJ_congress_medium_opposition_tt
+	hidden_effect = {
+		BKJ_senate_medium_opposition = yes
+		BKJ_house_medium_opposition = yes
+		
+	}
+}
+
+BKJ_congress_large_opposition = { #대규모 좆까 -20 참의원 -80 진의원
+	custom_effect_tooltip = BKJ_congress_large_opposition_tt
+	hidden_effect = {
+		BKJ_senate_large_opposition = yes
+		BKJ_house_large_opposition = yes
+		
+	}
+}
+BKJ_congress_small_support = { #소규모 야스 5 참의원 20 진의원
+	custom_effect_tooltip = BKJ_congress_small_support_tt
+	hidden_effect = {
+		BKJ_senate_small_support = yes
+		BKJ_house_small_support = yes
+		
+	}
+}
+
+BKJ_congress_medium_support = { #중규모 야스 10 참의원 40 진의원
+	custom_effect_tooltip = BKJ_congress_medium_support_tt
+	hidden_effect = {
+		BKJ_senate_medium_support = yes
+		BKJ_house_medium_support = yes
+		
+	}
+}
+BKJ_congress_large_support = { #대규모 야스 20 참의원 80 진의원
+	custom_effect_tooltip = BKJ_congress_large_support_tt
+	hidden_effect = {
+		BKJ_senate_large_support = yes
+		BKJ_house_large_support = yes
+		
+	}
+}
+#BKJ_recalc_congress_icon_frames = {
+#	
+#	set_temp_variable = { BKJ_senate_temp = senate_support }
+#	divide_temp_variable = { BKJ_senate_temp = senate_total }
+#	multiply_temp_variable = { BKJ_senate_temp = 21 }
+#	if = {
+#		limit = { check_variable = { BKJ_senate_temp > 0 } }
+#		clamp_temp_variable = {
+#			var = BKJ_senate_temp
+#			min = 1
+#			max = 21
+#		}
+#	}
+#	else = {
+#		set_temp_variable = { BKJ_senate_temp = 1 }
+#	}
+#	set_variable = { bkj_current_senate_icon_frame = BKJ_senate_temp }
+#
+#	set_temp_variable = { BKJ_house_temp = house_support }
+#	divide_temp_variable = { BKJ_house_temp = house_total }
+#	multiply_temp_variable = { BKJ_house_temp = 21 }
+#	if = {
+#		limit = { check_variable = { BKJ_house_temp > 0 } }
+#		clamp_temp_variable = {
+#			var = BKJ_house_temp
+#			min = 1
+#			max = 21
+#		}
+#	}
+#	else = {
+#		set_temp_variable = { BKJ_house_temp = 1 }		
+#	}
+#	set_variable = { bkj_current_house_icon_frame = BKJ_house_temp }
+#}

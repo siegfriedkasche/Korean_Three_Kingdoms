@@ -1230,7 +1230,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = BKJ_da_joseon_guo
 		available = {
-			democratic > 0.35
+			democratic > 0.25
 			has_country_flag = no_uprising_army
 		}
 		mutually_exclusive = {
@@ -1252,6 +1252,7 @@ focus_tree = {
 				527 = {
 					add_core_of = BKJ
 				}
+				set_war_support = 0.15
 			}
 			country_event = {
 				id = THK.10
@@ -1287,6 +1288,7 @@ focus_tree = {
 				add_idea = dissolution_of_parliament_ideas2
 				remove_idea = dissolution_of_parliament_ideas
 			}
+			unlock_decision_category_tooltip = BKJ_congress
 		}
 	}
 	focus = {
@@ -1297,6 +1299,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = BKJ_restored_council
 		available = {
+			BKJ_congress_small_support_trigger = yes
 		}
 		bypass = {
 		}
@@ -1305,6 +1308,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
+			BKJ_congress_small_opposition = yes
 			add_political_power = 100
 			add_popularity = {
 				ideology = democratic
@@ -1312,7 +1316,7 @@ focus_tree = {
 			}
 			set_party_name = { 
 				ideology = democratic 
-				long_name = "조선 자유당"
+				long_name = "자유당"
 				name = "자유당" 
 			}
 		}
@@ -1328,6 +1332,7 @@ focus_tree = {
 		}
 		relative_position_id = BKJ_Founding_of_the_Liberal_Party
 		available = {
+			BKJ_congress_medium_support_trigger = yes
 			CHI = {
 				has_war_with = JAP
 			}
@@ -1346,6 +1351,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
+			BKJ_congress_medium_opposition = yes
 			add_ideas = USA_lend_lease_act_dummy 
 			add_ai_strategy = {
 				type = alliance
@@ -1556,7 +1562,7 @@ focus_tree = {
 		cost = 10
 
 		available = {
-			
+			BKJ_congress_high_support_trigger = yes
 		}
 
 		cancel_if_invalid = yes
@@ -1564,6 +1570,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
+			BKJ_congress_medium_opposition = yes
 			hidden_effect = {
 				set_rule = {
 					can_join_factions = yes
@@ -1625,7 +1632,7 @@ focus_tree = {
 		id = BKJ_full_sovereignty_for_the_philippines
 		icon = GFX_goal_generic_defence
 		prerequisite = { focus = BKJ_Southeast_Asia_protect }
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = BKJ_Southeast_Asia_protect
 
@@ -1676,8 +1683,11 @@ focus_tree = {
 
 		available = {
 			745 = {
-				is_owned_by = ROOT
-				compliance > 25
+				OR = {
+					is_subject_of = BKJ
+					is_owned_and_controlled_by = ROOT
+				}
+
 			}
 		}
 
@@ -1875,6 +1885,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
+			BKJ_congress_small_support = yes
 			add_research_slot = 1
 			add_to_tech_sharing_group = BKJ_International_Research
 			every_other_country = {
@@ -2073,6 +2084,7 @@ focus_tree = {
 					has_idea = BKJ_youth_group_2
 				}
 			}
+			BKJ_congress_small_support_trigger = yes
 		}
 		bypass = {
 			NOT = {
@@ -2089,6 +2101,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
+			BKJ_congress_small_opposition = yes
 			add_popularity = {
 				ideology = fascism
 				popularity = -0.5
@@ -2159,13 +2172,51 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = BKJ_royal_tax_relief
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = BKJ_constitutional_monarchy }
+		x = -1
+		y = 1
+		relative_position_id = BKJ_constitutional_monarchy
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 90
+		}
+
+		available = {
+			BKJ_congress_medium_support_trigger = yes
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			BKJ_congress_small_opposition = yes
+			unlock_decision_tooltip = BKJ_royal_tax_relief_descison
+		}
+
+		completion_reward = {
+			BKJ_congress_small_opposition = yes
+			unlock_decision_tooltip = BKJ_royal_tax_relief_descison
+		}
+	}
+	focus = {
 		id = BKJ_reform_and_opening_up
 		icon = GFX_focus_POL_develop_polish_shipbuilding
 		prerequisite = { focus = BKJ_constitutional_monarchy focus = BKJ_Lighthouse_of_East_Asian_Liberalism }
 		x = 1
 		y = 1
 		relative_position_id = BKJ_constitutional_monarchy
-
+		available = {
+			BKJ_congress_high_support_trigger = yes
+		}
 		cost = 10
 
 
@@ -2178,6 +2229,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			BKJ_congress_large_opposition  = yes
 			if = {
 				limit = {
 					NOT = {
@@ -2225,6 +2277,34 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = BKJ_defened_trade
+		icon = GFX_goal_generic_defence
+		prerequisite = { focus = BKJ_reform_and_opening_up }
+		x = 4
+		y = 1
+		relative_position_id = BKJ_reform_and_opening_up
+		available = {
+			BKJ_congress_medium_support_trigger = yes
+		}
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			remove_ideas = market_Opening_ideas
+			BKJ_congress_medium_opposition = yes
+			unlock_decision_tooltip = BKJ_defened_trade_decision2
+		}
+
+		completion_reward = {
+			remove_ideas = market_Opening_ideas
+			BKJ_congress_medium_opposition = yes
+			unlock_decision_tooltip = BKJ_defened_trade_decision2
+		}
+	}
+	focus = {
 		id = BKJ_central_bank
 		icon = GFX_focus_hol_abandon_the_gold_standard
 		prerequisite = { focus = BKJ_reform_and_opening_up }
@@ -2243,11 +2323,8 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
-
 		completion_reward = {
+			BKJ_congress_small_support = yes
 			add_ideas = BKJ_central_bank_ideas
 			add_ideas = BKJ_inflation
 		}
@@ -2273,11 +2350,6 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
-
-		complete_tooltip = {
-
-		}
-
 		completion_reward = {
 			random_owned_controlled_state = {
 				limit = {
@@ -2482,6 +2554,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = BKJ_high_interest_rate_policy
 		}
+		available = {
+			BKJ_congress_medium_support_trigger = yes
+		}
 		relative_position_id = BKJ_central_bank
 
 		cost = 5
@@ -2497,10 +2572,11 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		complete_tooltip = {
-
+			BKJ_congress_small_support = yes
 		}
 
 		completion_reward = {
+			BKJ_congress_small_support = yes
 			if = {
 				limit = {
 					has_idea = BKJ_deflation
@@ -2573,7 +2649,9 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = BKJ_high_interest_rate_policy
-
+		available = {
+			BKJ_congress_medium_support_trigger = yes
+		}
 		cost = 5
 
 		ai_will_do = {
@@ -2605,6 +2683,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			BKJ_congress_small_opposition = yes
 			if = {
 				limit = {
 					has_idea = BKJ_deflation
@@ -2920,6 +2999,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = BKJ_central_bank
 		cost = 5
+		available = {
+			BKJ_congress_small_support_trigger = yes
+		}
 		
 		ai_will_do = {
 			factor = 90
@@ -2931,8 +3013,11 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		search_filters = { high_deflation }
-
+		complete_tooltip = {
+			BKJ_congress_small_opposition = yes
+		}
 		completion_reward = {
+			BKJ_congress_small_opposition = yes
 			if = {
 				limit = {
 					has_idea = BKJ_inflation_3
@@ -3008,7 +3093,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = BKJ_high_interest_rate_policy
 		cost = 5
-		
+		available = {
+			BKJ_congress_medium_support_trigger = yes
+		}
 		ai_will_do = {
 			factor = 90
 		}
@@ -3021,6 +3108,7 @@ focus_tree = {
 		search_filters = { high_deflation }
 
 		completion_reward = {
+			BKJ_congress_small_opposition = yes
 			if = {
 				limit = {
 					OR = {
@@ -3119,7 +3207,9 @@ focus_tree = {
 		relative_position_id = BKJ_high_interest_rate_policy
 
 		cost = 5
-
+		available = {
+			BKJ_congress_medium_support_trigger = yes
+		}
 		ai_will_do = {
 			factor = 90
 		}
@@ -3138,6 +3228,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			BKJ_congress_small_opposition = yes
 			if = {
 				limit = {
 					has_idea = BKJ_deflation
@@ -3223,7 +3314,9 @@ focus_tree = {
 		id = BKJ_Additional_issuance_of_government_bonds
 		icon = GFX_goal_continuous_non_factory_construct
 		prerequisite = { focus = BKJ_high_interest_rate_policy focus = BKJ_low_interest_rate_policy }
-
+		available = {
+			BKJ_congress_medium_support_trigger = yes
+		}
 		x = 0
 		y = 2
 		relative_position_id = BKJ_low_interest_rate_policy
@@ -3243,6 +3336,7 @@ focus_tree = {
 		
 		search_filters = { high_deflation }
 		complete_tooltip = {
+			BKJ_congress_small_opposition = yes
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -3813,33 +3907,7 @@ focus_tree = {
 			add_political_power = 120
 		}
 	}
-	focus = {
-		id = BKJ_continental_expansion
-		icon = GFX_goal_generic_occupy_states_ongoing_war
-		prerequisite = { focus = BKJ_Three_Kingdoms_Unification }
-		prerequisite = { focus = BKJ_Royal_Navy_Reconstruction }
-		prerequisite = { focus = BKJ_BKJ_youth_group2 }
-		x = 0
-		y = 1
-		relative_position_id = BKJ_Three_Kingdoms_Unification
-		cancel = {
-			
-		}
-		cost = 10
-
-		bypass = {
-			
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
+	
 
 	focus = {
 		id = BKJ_roma_empire
@@ -3853,6 +3921,15 @@ focus_tree = {
 		cancel = {
 			
 		}
+		available = {
+			controls_state = 408
+			controls_state = 608
+			controls_state = 610
+			controls_state = 609
+			controls_state = 715
+			controls_state = 614
+			controls_state = 597
+		}
 		cost = 10
 
 		bypass = {
@@ -3865,7 +3942,109 @@ focus_tree = {
 
 
 		completion_reward = {
-			
+			set_cosmetic_tag = FAR_ROMA
+			hidden_effect = {
+				610 = {
+					add_core_of = ROOT
+				}
+				715 = {
+					add_core_of = ROOT
+				}
+				714 = {
+					add_core_of = ROOT
+				}
+				761 = {
+					add_core_of = ROOT
+				}
+				609 = {
+					add_core_of = ROOT
+				}
+				608 = {
+					add_core_of = ROOT
+				}
+				614 = {
+					add_core_of = ROOT
+				}
+				597 = {
+					add_core_of = ROOT
+				}
+				743 = {
+					add_core_of = ROOT
+				}
+				598 = {
+					add_core_of = ROOT
+				}
+				613 = {
+					add_core_of = ROOT
+				}
+				596 = {
+					add_core_of = ROOT
+				}
+				595 = {
+					add_core_of = ROOT
+				}
+				408 = {
+					add_core_of = ROOT
+				}
+				409 = {
+					add_core_of = ROOT
+				}
+				657 = {
+					add_core_of = ROOT
+				}
+				650 = {
+					add_core_of = ROOT
+				}
+				562 = {
+					add_core_of = ROOT
+				}
+				822 = {
+					add_core_of = ROOT
+				}
+				560 = {
+					add_core_of = ROOT
+				}
+				637 = {
+					add_core_of = ROOT
+				}
+				655 = {
+					add_core_of = ROOT
+				}
+				537 = {
+					add_core_of = ROOT
+				}
+				555 = {
+					add_core_of = ROOT
+				}
+				524 = {
+					add_core_of = ROOT
+				}
+				593 = {
+					add_core_of = ROOT
+				}
+				599 = {
+					add_core_of = ROOT
+				}
+				592 = {
+					add_core_of = ROOT
+				}
+				594 = {
+					add_core_of = ROOT
+				}
+				591 = {
+					add_core_of = ROOT
+				}
+				612 = {
+					add_core_of = ROOT
+				}
+				611 = {
+					add_core_of = ROOT
+				}
+			}
+			swap_ideas = {
+				add_idea = dissolution_of_parliament_ideas4
+				remove_idea = dissolution_of_parliament_ideas3
+			}
 		}
 	}
 
@@ -4097,6 +4276,217 @@ focus_tree = {
 					create_wargoal = {
 						type = annex_everything
 						target = PREV
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = BKJ_china_cleaning
+		icon = GFX_focus_spr_crush_the_revolution
+		prerequisite = { focus = BKJ_china_war_goal }
+		x = 0
+		y = 2
+		relative_position_id = BKJ_china_war_goal
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+			
+		}
+
+		available = {
+			OR = {
+				CHI = {
+					is_subject_of = ROOT
+				}
+				PRC = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			if = {
+				limit = {
+					CHI = {
+						is_subject_of = ROOT
+					}
+				}
+				CHI = {
+					add_timed_idea = {
+						idea = china_cleaning
+						days = 365
+					}
+				}
+			}
+			if = {
+				limit = {
+					PRC = {
+						is_subject_of = ROOT
+					}
+				}
+				PRC = {
+					add_timed_idea = {
+						idea = china_cleaning
+						days = 365
+					}
+				}
+			}
+			if = {
+				limit = {
+					GXC = {
+						is_subject_of = ROOT
+					}
+				}
+				GXC = {
+					add_timed_idea = {
+						idea = china_cleaning
+						days = 365
+					}
+				}
+			}
+			if = {
+				limit = {
+					XSM = {
+						is_subject_of = ROOT
+					}
+				}
+				XSM = {
+					add_timed_idea = {
+						idea = china_cleaning
+						days = 365
+					}
+				}
+			}
+			if = {
+				limit = {
+					YUN = {
+						is_subject_of = ROOT
+					}
+				}
+				YUN = {
+					add_timed_idea = {
+						idea = china_cleaning
+						days = 365
+					}
+				}
+			}
+			if = {
+				limit = {
+					MAN = {
+						is_subject_of = ROOT
+					}
+				}
+				MAN = {
+					add_timed_idea = {
+						idea = china_cleaning
+						days = 365
+					}
+				}
+			}
+			if = {
+				limit = {
+					SHX = {
+						is_subject_of = ROOT
+					}
+				}
+				SHX = {
+					add_timed_idea = {
+						idea = china_cleaning
+						days = 365
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			CHI = {
+				add_timed_idea = {
+					idea = china_cleaning
+					days = 365
+				}
+			}
+			if = {
+				limit = {
+					PRC = {
+						is_subject_of = ROOT
+					}
+				}
+				PRC = {
+					add_timed_idea = {
+						idea = china_cleaning
+						days = 365
+					}
+				}
+			}
+			if = {
+				limit = {
+					GXC = {
+						is_subject_of = ROOT
+					}
+				}
+				GXC = {
+					add_timed_idea = {
+						idea = china_cleaning
+						days = 365
+					}
+				}
+			}
+			if = {
+				limit = {
+					XSM = {
+						is_subject_of = ROOT
+					}
+				}
+				XSM = {
+					add_timed_idea = {
+						idea = china_cleaning
+						days = 365
+					}
+				}
+			}
+			if = {
+				limit = {
+					YUN = {
+						is_subject_of = ROOT
+					}
+				}
+				YUN = {
+					add_timed_idea = {
+						idea = china_cleaning
+						days = 365
+					}
+				}
+			}
+			if = {
+				limit = {
+					MAN = {
+						is_subject_of = ROOT
+					}
+				}
+				MAN = {
+					add_timed_idea = {
+						idea = china_cleaning
+						days = 365
+					}
+				}
+			}
+			if = {
+				limit = {
+					SHX = {
+						is_subject_of = ROOT
+					}
+				}
+				SHX = {
+					add_timed_idea = {
+						idea = china_cleaning
+						days = 365
 					}
 				}
 			}

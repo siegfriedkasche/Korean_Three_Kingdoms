@@ -1,0 +1,150 @@
+BKJ_congress = {
+	BKJ_legislators_back = {
+		icon = GFX_decision_revolt
+		allowed = { tag = BKJ }   
+		cost = 0
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		activation = {
+			has_completed_focus = BKJ_restored_council
+		}
+		is_good = no
+        selectable_mission = no
+        days_mission_timeout = 100
+		days_re_enable = 90
+		timeout_effect = { 
+			random_list = {
+				85 = {
+					BKJ_congress_small_opposition = yes
+				}
+				12 = {
+					BKJ_congress_medium_opposition = yes
+				}
+				3 = {
+					BKJ_congress_large_opposition = yes
+				}
+			}
+		}
+	}
+	BKJ_small_lobby_effort = {
+		icon = generic_political_discourse
+		available = {
+			OR = {
+				check_variable = { senate_support < senate_total }
+				check_variable = { house_support < house_total }
+			}
+			not = {
+				has_decision = BKJ_medium_lobby_effort
+			}
+			OR = {
+				political_power_daily > 0.3
+				has_political_power > 10
+			}
+		}
+		cost = 0
+		
+		modifier = {
+			political_power_gain = -0.15
+		}
+		
+		days_remove = 60
+		remove_effect = { 
+			BKJ_congress_small_support = yes
+		}
+	}
+	BKJ_medium_lobby_effort = {
+		icon = generic_political_discourse
+		available = {
+			OR = {
+				check_variable = { senate_support < senate_total }
+				check_variable = { house_support < house_total }
+			}
+			not = {
+				has_decision = BKJ_small_lobby_effort
+			}
+			OR = {
+				political_power_daily > 0.75
+				has_political_power > 35
+			}
+		}
+		cost = 0
+		
+		days_remove = 80
+		modifier = {
+			political_power_gain = -0.4
+		}
+		remove_effect = {
+			BKJ_congress_medium_support = yes
+		}
+	}
+	BKJ_royal_tax_relief_descison = {
+		icon = GFX_decision_eng_trade_unions_support
+		available = {
+			
+		}
+		visible = {
+			has_completed_focus = BKJ_royal_tax_relief
+		}
+		cost = 0
+		
+		days_remove = 180
+		modifier = {
+			consumer_goods_factor = -0.05
+		}
+		fire_only_once = yes
+		remove_effect = {
+			BKJ_congress_medium_support = yes
+			add_stability = -0.05
+		}
+	}
+	BKJ_defened_trade_decision = {
+		icon = GFX_decision_hol_attract_foreign_investors
+		available = {
+			
+		}
+		visible = {
+			has_completed_focus = BKJ_defened_trade
+			NOT = {
+				has_idea = market_Opening_ideas
+			}
+		}
+		cost = 0
+		
+		days_remove = 31
+		modifier = {
+			consumer_goods_factor =  0.02
+		}
+		days_re_enable = 93
+		remove_effect = {
+			BKJ_congress_medium_support = yes
+			add_stability = -0.05
+			add_ideas = market_Opening_ideas
+		}
+	}
+	BKJ_defened_trade_decision2 = {
+		icon = GFX_decision_hol_attract_foreign_investors
+		available = {
+			BKJ_congress_medium_support_trigger = yes
+		}
+		visible = {
+			has_completed_focus = BKJ_defened_trade
+			has_idea = market_Opening_ideas
+		}
+		cost = 0
+		
+		days_remove = 31
+		modifier = {
+			consumer_goods_factor =  -0.02
+		}
+		days_re_enable = 93
+		remove_effect = {
+			BKJ_congress_medium_opposition = yes
+			add_stability = 0.05
+			remove_ideas = market_Opening_ideas
+		}
+	}
+		
+}
