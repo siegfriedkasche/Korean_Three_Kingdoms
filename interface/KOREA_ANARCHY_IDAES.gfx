@@ -10,6 +10,11 @@ spriteTypes = {
 		name = "GFX_idea_NEP_Tribhuvan_of_Nepal_idea"
 		texturefile = "gfx/interface/ideas/NEP_Tribhuvan_of_Nepal.png"
 	}
+	
+	spriteType = {
+		name = "GFX_idea_GGR_nomadism"
+		texturefile = "gfx/interface/ideas/GGR_nomadism.png"
+	}
 
 
 	spriteType = {
@@ -58,6 +63,26 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_Peter_Krasnov_idea"
 		texturefile = "gfx/interface/ideas/Peter_Krasnov_idea.png"
+	}
+	spriteType = {
+		name = "GFX_idea_heugjisangji_ideas"
+		texturefile = "gfx/interface/ideas/heugjisangji.png"
+	}
+	spriteType = {
+		name = "GFX_idea_gyebaek_ideas"
+		texturefile = "gfx/interface/ideas/gyebaek.png"
+	}
+	spriteType = {
+		name = "GFX_idea_Gang_Gam_chan_ideas"
+		texturefile = "gfx/interface/ideas/GGR_Gang_Gam_chan_ideas.png"
+	}
+	spriteType = {
+		name = "GFX_idea_yeongaesomun_ideas"
+		texturefile = "gfx/interface/ideas/yeongaesomun.png"
+	}
+	spriteType = {
+		name = "GFX_idea_Eulji_Mundeok_ideas"
+		texturefile = "gfx/interface/ideas/Eulji_Mundeok.png"
 	}
 	
 }

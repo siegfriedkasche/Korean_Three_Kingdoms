@@ -81,13 +81,13 @@ set_technology = {
 	fleet_in_being = 1
 }
 set_research_slots = 3
-
+add_ideas = no_faction
 set_convoys = 5
 set_popularities = {
-	democratic = 20
+	democratic = 25
 	neutrality = 40
-	fascism = 5
-	communism = 35
+	fascism = 20
+	communism = 15
 }
 set_politics = {
 	ruling_party = neutrality
@@ -106,6 +106,8 @@ create_country_leader = {
 		#
 	}
 }
+recruit_character = BKJ_gyebaek
+recruit_character = BKJ_heugjisangji
 add_command_power = 20
 set_variable = { var = senate_support value = 18 } 
 set_variable = { var = senate_total value = 96 } 
@@ -133,7 +135,6 @@ create_country_leader = {
 		#
 	}
 }
-
 create_country_leader = {
 	name = "근초고왕"
 	desc = ""
@@ -144,29 +145,25 @@ create_country_leader = {
 		#
 	}
 }
-create_corps_commander = {
-	name = "계백"
-		picture = "gfx/leaders/BKJ/계백.png"
-	traits = {
-		trickster trait_engineer brilliant_strategist politically_connected
-	}
-	skill = 5
-	attack_skill = 4
-	defense_skill = 5
-	planning_skill = 3
-	logistics_skill = 4
+set_party_name = { 
+    ideology = neutrality 
+    long_name = "백제 왕가"  
+    name = "백제 왕가"  
 }
-create_corps_commander = {
-	name = "흑지상지"
-		picture = "gfx/leaders/BKJ/흑지상지.png"
-	traits = {
-		trickster trait_engineer brilliant_strategist politically_connected
-	}
-	skill = 5
-	attack_skill = 4
-	defense_skill = 5
-	planning_skill = 3
-	logistics_skill = 4
+set_party_name = { 
+    ideology = fascism
+    long_name = "백제민족청년단"  
+    name = "백제민족청년단" 
+}
+set_party_name = { 
+    ideology = democratic 
+    long_name = "임시제헌의회" 
+    name = "임시제헌의회"  
+}
+set_party_name = { 
+    ideology = communism
+    long_name = "한성 네크웨크" 
+    name = "한성 네크웨크"
 }
 if = {
 	limit = { has_dlc = "Man the Guns"}

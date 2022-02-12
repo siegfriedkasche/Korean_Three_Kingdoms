@@ -1155,36 +1155,23 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			836 = {
-				set_state_name = "호남"
-			}
-			838 = {
-				set_state_name = "강원도"
-			}
+			836 = { set_state_name = "호남" }
+			838 = { set_state_name = "강원도" }
 			set_province_name = {
 				id = 7125
 				name = "한성"
 			}
-			525 = {
-				set_state_name = "한성"
-			}
+			525 = { set_state_name = "한성" }
 			set_province_name = {
 				id = 4056
 				name = "부산포"
 			}
-			837 = {
-				set_state_name = "부산"
-			}
+			837 = { set_state_name = "부산" }
 			set_province_name = {
 				id = 1177
 				name = "제주"
 			}
-			835 = {
-				set_state_name = "제주도"
-			}
-			527 = {
-				set_state_name = "평양"
-			}
+			835 = { set_state_name = "제주도" }
 			set_province_name = {
 				id = 4052
 				name = "평양"
@@ -1193,7 +1180,7 @@ focus_tree = {
 				id = 1003
 				name = "해주"
 			}
-			
+			527 = { set_state_name = "평양" }
 			add_stability = 0.05
 		}
 	}
@@ -2274,6 +2261,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			remove_ideas = no_faction
 			add_stability = 0.05
 			add_ideas = BKJ_puppet_king_ideas2
 		}
@@ -3686,6 +3674,7 @@ focus_tree = {
 
 
 		completion_reward = {
+			remove_ideas = no_faction
 			add_war_support = 0.05
 			
 		}

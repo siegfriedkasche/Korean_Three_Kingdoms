@@ -49,7 +49,42 @@ focus_tree = {
 #
 #		}
 #	}
+	focus = {
+		id = GGR_new_slot_2 #연구위원회
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = GGR_private_enterprise_investment }
+		prerequisite = { focus = GGR_free_market }
+		prerequisite = { focus = GGR_Industrial_Development_Committee }
+		x = 0
+		y = 1
+		relative_position_id = GGR_private_enterprise_investment
 
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			num_of_factories > 69
+			amount_research_slots < 5
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+ 
+
+		completion_reward = {
+			add_research_slot = 1
+			custom_effect_tooltip = GGR_war_college_effect_tt
+		}
+	}
 
 	###################################
 	######## INDUSTRIAL LEGACY ########
@@ -58,8 +93,9 @@ focus_tree = {
 	focus = {
 		id = GGR_industrial_legacy
 		icon = GFX_goal_generic_construct_civ_factory
-		x = 2
-		y = 0
+		x = -2
+		y = 9
+		relative_position_id = GGR_political_direction
 
 		cost = 10
 
@@ -79,9 +115,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_ideas = CZE_industrial_legacy_idea
@@ -119,9 +153,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			328 = {
@@ -170,9 +202,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			328 = {
@@ -221,9 +251,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			716 = {
@@ -276,9 +304,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			328 = {
@@ -332,9 +358,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			328 = {
@@ -388,9 +412,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			328 = {
@@ -446,9 +468,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_research_slot = 1
@@ -486,9 +506,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_ideas = CZE_export_focus1
@@ -525,9 +543,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			swap_ideas = { remove_idea = CZE_export_focus1 add_idea = CZE_export_focus2  }
@@ -564,9 +580,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			swap_ideas = { remove_idea = CZE_export_focus2 add_idea = CZE_export_focus3 }
@@ -657,9 +671,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -699,9 +711,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_ideas = Industrial_Development_Committee_ideas
@@ -733,9 +743,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -787,50 +795,10 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_ideas = market_economy
-		}
-	}
-	focus = {
-		id = GGR_new_slot_2 #연구위원회
-		icon = GFX_goal_generic_scientific_exchange
-		prerequisite = { focus = GGR_private_enterprise_investment }
-		prerequisite = { focus = GGR_free_market }
-		prerequisite = { focus = GGR_Industrial_Development_Committee }
-		x = 0
-		y = 1
-		relative_position_id = GGR_private_enterprise_investment
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		available = {
-			num_of_factories > 69
-			amount_research_slots < 5
-		}
-
-		bypass = {
-			
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			add_research_slot = 1
-			custom_effect_tooltip = GGR_war_college_effect_tt
 		}
 	}
 
@@ -844,7 +812,6 @@ focus_tree = {
 		x = 20
 		y = 0
 		mutually_exclusive = { focus = GGR_strengthening_of_royal_power }
-		relative_position_id = GGR_industrial_legacy
 
 		cost = 10
 
@@ -864,9 +831,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_political_power = 120 
@@ -878,7 +843,7 @@ focus_tree = {
 		icon = GFX_Defendant_Kim_Jong_il
 		prerequisite = { focus = GGR_political_direction }
 		mutually_exclusive = { focus = GGR_go_right focus = GGR_democratic_bastion }
-		x = -11
+		x = -10
 		y = 1
 		relative_position_id = GGR_political_direction
 
@@ -900,9 +865,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_political_power = 120
@@ -948,9 +911,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			country_event = {
@@ -1034,11 +995,10 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
+			remove_ideas = no_faction
 			create_wargoal = {
 				type = annex_everything
 				target = BKJ
@@ -1112,9 +1072,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			remove_country_leader_trait = national_juche
@@ -1146,9 +1104,7 @@ focus_tree = {
 		cancel = {
 		}
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			swap_ideas = {
@@ -1184,9 +1140,7 @@ focus_tree = {
 		cancel = {
 		}
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_war_support = 0.05
@@ -1240,9 +1194,7 @@ focus_tree = {
 		cancel = {
 		}
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_country_leader_trait = dedication_to_the_party 
@@ -1282,9 +1234,7 @@ focus_tree = {
 		cancel = {
 		}
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			swap_ideas = {
@@ -1380,9 +1330,7 @@ focus_tree = {
 			}
 		}
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			PRC = {
@@ -1423,9 +1371,7 @@ focus_tree = {
 		cancel = {
 		}
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			SOV = {
@@ -1496,9 +1442,7 @@ focus_tree = {
 		cancel = {
 		}
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_ideas = GGR_party_and_people_idea
@@ -1545,9 +1489,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			
@@ -1581,9 +1523,7 @@ focus_tree = {
 		}
 
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_timed_idea = {
@@ -1652,9 +1592,7 @@ focus_tree = {
 		}
 
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_manpower = 52456
@@ -1689,9 +1627,7 @@ focus_tree = {
 		}
 
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			GGR = {
@@ -1824,9 +1760,7 @@ focus_tree = {
 		}
 
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_war_support = 0.1
@@ -1997,9 +1931,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_political_power = 100
@@ -2034,9 +1966,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_ideas = CZE_communism_with_a_human_face
@@ -2068,9 +1998,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_ideas = agricultural_collectivization 
@@ -2104,9 +2032,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_ideas = communist_influence
@@ -2138,9 +2064,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_ideas = GGR_JUCHE_ideology_ideas
@@ -2155,7 +2079,7 @@ focus_tree = {
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
 
 		mutually_exclusive = { focus = GGR_political_direction }
-		x = 8
+		x = 10
 		y = 0
 		relative_position_id = GGR_political_direction
 
@@ -2173,9 +2097,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_political_power = 120
@@ -2203,9 +2125,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			set_party_name = { 
@@ -2226,14 +2146,15 @@ focus_tree = {
         id = GGR_Rebound_molecule_detection
         icon = GFX_goal_tfv_saf_anti_colonialist_crusade
         prerequisite = { focus = GGR_iron_fist_rule }
-        x = 1
+        x = -1
         y = 1
+		mutually_exclusive = { focus = GGR_power_struggle }
         relative_position_id = GGR_iron_fist_rule
 
         cost = 10
 
         available = {
-            fascism > 0.5
+            fascism > 0.2
         }
 
         bypass = {
@@ -2249,27 +2170,17 @@ focus_tree = {
         }
 
         completion_reward = {
-            set_party_name = { 
-                ideology = fascism 
-                long_name = "고구려 황실" 
-                name = "고구려 황실" 
-            }
-            add_stability = 0.1
-            set_popularities = {
-                democratic = 0
-                neutrality = 0
-                fascism = 100
-                communism = 0
-            }
 			create_country_leader = {
 				name = "연개소문"
-				picture = "연개소문.png"
+				picture = "gfx/leaders/GGR/연개소문.png"
 				expire = "1965.1.1"
 				ideology = nazism
 				traits = {
 		
 				}
 			}
+			set_cosmetic_tag = GGR_EMP
+			add_stability = 0.1
 			hidden_effect = {
 				set_politics = {
 					ruling_party = fascism
@@ -2277,13 +2188,148 @@ focus_tree = {
         				last_election = "1935.12.17"
         				election_frequency = 48
 				}
+				set_party_name = { 
+					ideology = fascism 
+					long_name = "고구려 황실" 
+					name = "고구려 황실" 
+				}
+				set_popularities = {
+					democratic = 25
+					neutrality = 25
+					fascism = 40
+					communism = 20
+				}
 			}
         }
     }
 	focus = {
+        id = GGR_power_struggle
+        icon = GFX_focus_rom_handle_king
+        prerequisite = { focus = GGR_iron_fist_rule }
+        x = 1
+        y = 1
+		mutually_exclusive = { focus = GGR_Rebound_molecule_detection }
+        relative_position_id = GGR_iron_fist_rule
+
+        cost = 10
+
+        available = {
+        }
+
+        bypass = {
+
+        }
+
+        cancel_if_invalid = yes
+        continue_if_invalid = no
+        available_if_capitulated = yes
+
+        complete_tooltip = {
+
+        }
+
+        completion_reward = {
+			set_cosmetic_tag = halhea_empire
+			create_country_leader = {
+				name = "대조영"
+				picture = "gfx/leaders/GGR/대조영.png"
+				expire = "1965.1.1"
+				ideology = nazism
+				traits = {
+		
+				}
+			}
+			add_stability = -0.05
+			hidden_effect = {
+				set_politics = {
+					ruling_party = fascism
+        				elections_allowed = no
+        				last_election = "1935.12.17"
+        				election_frequency = 48
+				}
+				set_party_name = { 
+					ideology = fascism 
+					long_name = "고구려 황실" 
+					name = "고구려 황실" 
+				}
+				set_popularities = {
+					democratic = 20
+					neutrality = 20
+					fascism = 40
+					communism = 20
+				}
+			}
+        }
+    }
+	focus = {
+        id = GGR_central_army_reform
+        icon = GFX_focus_chi_army_reform
+        prerequisite = { focus = GGR_power_struggle }
+        x = 3
+        y = 1
+        relative_position_id = GGR_power_struggle
+
+        cost = 10
+
+        available = {
+        }
+
+        bypass = {
+
+        }
+
+        cancel_if_invalid = yes
+        continue_if_invalid = no
+        available_if_capitulated = yes
+
+        complete_tooltip = {
+
+        }
+
+        completion_reward = {
+			army_experience = 50
+			division_template = {
+			 	name = "중앙군"
+				priority = 1
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					artillery_brigade = { x = 2 y = 1 }
+					artillery_brigade = { x = 2 y = 2 }
+				}
+				is_locked = no
+				support = {
+					recon = { x = 0 y = 0 }
+				}
+			}
+			328 = {
+				limit = { 
+					is_owned_and_controlled_by = GGR
+				}
+				create_unit = { 
+					division = "name = \"제1 수도방위사단\" division_template = \"중앙군\" start_experience_factor = 1 start_equipment_factor = 1" 
+					owner = GGR count = 1
+				}
+				create_unit = { 
+					division = "name = \"제2 수도방위사단\" division_template = \"중앙군\" start_experience_factor = 1 start_equipment_factor = 1" 
+					owner = GGR count = 1
+				}
+				create_unit = { 
+					division = "name = \"제3 수도방위사단\" division_template = \"중앙군\" start_experience_factor = 1 start_equipment_factor = 1" 
+					owner = GGR count = 1
+				}
+			}
+		}
+    }
+	focus = {
 		id = GGR_east_land_martial_law
 		icon = GFX_focus_rom_royal_dictatorship
-		prerequisite = { focus = GGR_Rebound_molecule_detection }
+		prerequisite = { focus = GGR_Rebound_molecule_detection focus = GGR_power_struggle }
 		x = 1
 		y = 1
 		relative_position_id = GGR_Rebound_molecule_detection
@@ -2302,16 +2348,996 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
-			set_cosmetic_tag = GGR_EMP
+			add_war_support = 0.05
+			add_stability = -0.05
 			news_event = {
 				id = THK_wor.2
 			}
 			remove_ideas = revol_communist
+		}
+	}
+	focus = {
+		id = GGR_focus_research_1
+		icon = GFX_focus_research
+		prerequisite = { focus = GGR_east_land_martial_law }
+		x = 0
+		y = 1
+		relative_position_id = GGR_east_land_martial_law
+
+		cost = 10
+
+		available = {
+			num_of_factories > 34
+			amount_research_slots < 5
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+ 
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = GGR_Northern_Territory_Claims
+		icon = GFX_focus_SOV_reinforce_northern_naval_bases
+		prerequisite = { focus = GGR_power_struggle }
+		x = 3
+		y = 1
+		relative_position_id = GGR_Rebound_molecule_detection
+
+		cost = 10
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+ 
+
+		completion_reward = {
+			408 = {
+				add_core_of = ROOT
+			}
+			409 = {
+				add_core_of = ROOT
+			}
+			657 = {
+				add_core_of = ROOT
+			}
+			hidden_effect = {
+				set_victory_points = {
+					province = 3944
+					value = 20
+				}
+				set_victory_points = {
+					province = 11893
+					value = 20
+				}
+				set_victory_points = {
+					province = 3852
+					value = 20
+				}
+				set_victory_points = {
+					province = 4052
+					value = 17
+				}
+
+				set_victory_points = {
+					province = 927
+					value = 30
+				}
+				set_victory_points = {
+					province = 9803
+					value = 20
+				}
+			}
+		}
+	}
+	
+
+	focus = {
+		id = GGR_Tungus_Subup
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = GGR_Administrative_District_Reorganization }
+		x = 1
+		y = 1
+		relative_position_id = GGR_Administrative_District_Reorganization
+
+		cost = 5
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+ 
+
+		completion_reward = {
+			add_war_support = 0.05
+			transfer_state = 408
+			transfer_state = 409
+			transfer_state = 657
+			set_province_name = {
+    			id = 957
+    			name = "정리부"
+			}
+			408 = {
+				set_state_name = "정리부"
+			}
+			set_province_name = {
+    			id = 12189
+    			name = "안원부"
+			}
+			409 = {
+				set_state_name = "안원부"
+			}
+			657 = {
+				set_state_name = "회원부"
+			}
+		}
+	}
+	focus = {
+		id = GGR_Administrative_District_Reorganization
+		icon = GFX_focus_generic_self_management
+		prerequisite = { focus = GGR_Northern_Territory_Claims }
+		x = 0
+		y = 1
+		relative_position_id = GGR_Northern_Territory_Claims
+
+		cost = 5
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		SELECT
+
+		select_effect = {
+			
+		}
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			add_political_power = 50
+			add_stability = 0.05
+			328 = {
+				set_state_name = "현덕부"
+			}
+			527 = {
+				set_state_name = "남해부"
+			}
+			839 = {
+				set_state_name = "철리부"
+			}
+			717 = {
+				set_state_name = "동평부"
+			}
+			716 = {
+				set_state_name = "장령부"
+			}
+			set_province_name = {
+				id = 11771
+				name = "장령부"
+			}
+			set_province_name = {
+				id = 9803
+				name = "서경"
+			}
+			set_province_name = {
+				id = 11893
+				name = "상경"
+			}
+			set_province_name = {
+				id = 927
+				name = "중경"
+			}
+			set_province_name = {
+				id = 3852
+				name = "남경"
+			}
+			set_province_name = {
+				id = 3944
+				name = "동경"
+			}
+
+		}
+	}
+	focus = {
+		id = GGR_diplomance
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 6
+		y = 0
+		relative_position_id = GGR_Northern_Territory_Claims
+
+		cost = 5
+
+		available = {
+			AND = {
+				has_completed_focus = GGR_power_struggle
+				
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		SELECT
+
+		select_effect = {
+			
+		}
+		completion_reward = {
+			add_political_power = 100
+
+		}
+	}
+	focus = {
+		id = GGR_Mutual_Defense_Treaty
+		icon = GFX_goal_generic_defence
+		x = 0
+		y = 1
+		relative_position_id = GGR_diplomance
+		prerequisite = {
+			focus = GGR_diplomance
+		}
+
+		cost = 3
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		SELECT
+
+		select_effect = {
+			
+		}
+		completion_reward = {
+			SIR = {
+				diplomatic_relation = {
+					country = GGR
+					relation = guarantee
+					active = yes
+				}
+				diplomatic_relation = {
+					country = BKJ
+					relation = guarantee
+					active = yes
+				}
+				diplomatic_relation = {
+					country = GGR
+					relation = non_aggression_pact
+					active = yes
+				}
+				diplomatic_relation = {
+					country = BKJ
+					relation = non_aggression_pact
+					active = yes
+				}
+			}
+			BKJ = {
+				diplomatic_relation = {
+					country = GGR
+					relation = guarantee
+					active = yes
+				}
+				diplomatic_relation = {
+					country = SIR
+					relation = guarantee
+					active = yes
+				}
+				diplomatic_relation = {
+					country = GGR
+					relation = non_aggression_pact
+					active = yes
+				}
+				diplomatic_relation = {
+					country = SIR
+					relation = non_aggression_pact
+					active = yes
+				}
+				
+			}
+			diplomatic_relation = {
+				country = BKJ
+				relation = guarantee
+				active = yes
+			}
+			diplomatic_relation = {
+				country = SIR
+				relation = guarantee
+				active = yes
+			}	
+			diplomatic_relation = {
+				country = BKJ
+				relation = non_aggression_pact
+				active = yes
+			}
+			diplomatic_relation = {
+				country = SIR
+				relation = non_aggression_pact
+				active = yes
+			}	
+		}
+	}
+	focus = {
+		id = GGR_the_peninsula_alliance
+		icon = GFX_three_flags_side_by_side_SIR_GGR_BKJ
+		x = 0
+		y = 2
+		relative_position_id = GGR_Mutual_Defense_Treaty
+		prerequisite = {
+			focus = GGR_joint_military_exercise_BKJ
+		}
+		prerequisite = {
+			focus = GGR_joint_military_exercise
+		}
+		prerequisite = {
+			focus = GGR_meet_SIR2
+		}
+		prerequisite = {
+			focus = GGR_meet_BKJ2
+		}
+
+		cost = 3
+
+		available = {
+			is_subject = no
+			BKJ = {
+				exists = yes
+				OR = {
+					has_government = ROOT
+					has_opinion = {
+						target = GGR
+						value > 74
+					}
+				}
+				is_subject = no
+			}
+			SIR = {
+				exists = yes
+				OR = {
+					has_government = ROOT
+					has_opinion = {
+						target = GGR
+						value > 74
+					}
+				}
+				is_subject = no
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		SELECT
+
+		select_effect = {
+			
+		}
+		completion_reward = {
+			create_faction = "반도동맹"
+			GGR = { 
+				remove_ideas = no_faction
+				add_to_faction = BKJ
+				add_to_faction = SIR
+			}
+			BKJ = {
+				remove_ideas = no_faction
+			}
+			SIR = {
+				remove_ideas = no_faction
+			}
+		}
+	}
+	focus = {
+		id = GGR_meet_SIR
+		icon = GFX_large_flag_SIR
+		prerequisite = { focus = GGR_diplomance }
+		x = -2
+		y = 1
+		relative_position_id = GGR_diplomance
+
+		cost = 5
+
+		available = {
+			NOT = { has_wargoal_against = SIR }
+			NOT = { has_war_with = SIR }
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		completion_reward = {
+			SIR = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = Diplomat_visited 
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = protect
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = support
+					id = ROOT
+					value = 100
+				}
+				add_timed_idea = {
+					idea = fascist_influence
+					days = 31
+				}
+			}
+			GGR = {
+				add_opinion_modifier = {
+					target = SIR
+					modifier = Diplomat_visited 
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = SIR
+					value = 100
+				}
+				add_ai_strategy = {
+					type = protect
+					id = SIR
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = SIR
+					value = 100
+				}
+				add_ai_strategy = {
+					type = support
+					id = SIR
+					value = 100
+				}
+			}
+		}
+	}
+	focus = {
+		id = GGR_meet_TUR
+		icon = GFX_focus_generic_befriend_turkey
+		prerequisite = { focus = GGR_diplomance }
+		x = -4
+		y = 1
+		relative_position_id = GGR_diplomance
+
+		cost = 5
+
+		available = {
+			NOT = { has_wargoal_against = SIR }
+			NOT = { has_war_with = SIR }
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		select_effect = {
+			
+		}
+		completion_reward = {
+			TUR = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = Diplomat_visited 
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = protect
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = support
+					id = ROOT
+					value = 100
+				}
+				add_timed_idea = {
+					idea = fascist_influence
+					days = 31
+				}
+			}
+			GGR = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = Diplomat_visited 
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = TUR
+					value = 100
+				}
+				add_ai_strategy = {
+					type = protect
+					id = TUR
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = TUR
+					value = 100
+				}
+				add_ai_strategy = {
+					type = support
+					id = TUR
+					value = 100
+				}
+			}
+		}
+	}
+	focus = {
+		id = GGR_meet_SIR2
+		icon = GFX_Two_Flags_Vertical_SIR_GGR
+		prerequisite = { focus = GGR_meet_SIR }
+		x = -1
+		y = 1
+		relative_position_id = GGR_meet_SIR
+
+		cost = 5
+
+		available = {
+			SIR = {
+				has_opinion = {
+					target = GGR
+					value > 49
+				}
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GGR_meet_SIR2_ideas
+			SIR = {
+				add_ideas = SIR_meet_GGR_ideas
+			}
+
+		}
+	}
+	focus = {
+		id = GGR_joint_military_exercise
+		icon = GFX_GGR_joint_military_exercise
+		prerequisite = { focus = GGR_meet_SIR }
+		prerequisite = { focus = GGR_Mutual_Defense_Treaty }
+		x = 1
+		y = 1
+		relative_position_id = GGR_meet_SIR
+
+		cost = 5
+
+		available = {
+			SIR = {
+				has_opinion = {
+					target = GGR
+					value > 49
+				}
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			diplomatic_relation = {
+				country = SIR
+				relation = military_access
+				active = YES
+			}
+			add_collaboration = {
+				target = SIR
+				value = 0.3
+			}
+			SIR = {
+				diplomatic_relation = {
+					country = GGR
+					relation = military_access
+					active = YES
+				}
+				add_collaboration = {
+					target = GGR
+					value = 0.3
+				}		
+			}
+		}
+	}
+	focus = {
+		id = GGR_meet_BKJ
+		icon = GFX_large_flag_BKJ
+		prerequisite = { focus = GGR_diplomance }
+		x = 2
+		y = 1
+		relative_position_id = GGR_diplomance
+
+		cost = 5
+
+		available = {
+			NOT = { has_wargoal_against = SIR }
+			NOT = { has_war_with = SIR }
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			BKJ = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = Diplomat_visited 
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = protect
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = support
+					id = ROOT
+					value = 100
+				}
+				add_timed_idea = {
+					idea = fascist_influence
+					days = 31
+				}
+			}
+			GGR = {
+				add_opinion_modifier = {
+					target = BKJ
+					modifier = Diplomat_visited 
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = BKJ
+					value = 100
+				}
+				add_ai_strategy = {
+					type = protect
+					id = BKJ
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = BKJ
+					value = 100
+				}
+				add_ai_strategy = {
+					type = support
+					id = BKJ
+					value = 100
+				}
+			}
+		}
+	}
+	focus = {
+		id = GGR_meet_BKJ2
+		icon = GFX_Two_Flags_Vertical_BKJ_GGR
+		prerequisite = { focus = GGR_meet_BKJ }
+		x = 1
+		y = 1
+		relative_position_id = GGR_meet_BKJ
+
+		cost = 5
+
+		available = {
+			BKJ = {
+				has_opinion = {
+					target = GGR
+					value > 49
+				}
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GGR_meet_BKJ2_ideas
+			BKJ = {
+				add_ideas = SIR_meet_GGR_ideas
+			}
+
+		}
+	}
+	focus = {
+		id = GGR_joint_military_exercise_BKJ
+		icon = GFX_GGR_joint_military_exercise_BKJ
+		prerequisite = { focus = GGR_meet_BKJ }
+		prerequisite = { focus = GGR_Mutual_Defense_Treaty }
+		x = -1
+		y = 1
+		relative_position_id = GGR_meet_BKJ
+
+		cost = 5
+
+		available = {
+			BKJ = {
+				has_opinion = {
+					target = GGR
+					value > 49
+				}
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			diplomatic_relation = {
+				country = BKJ
+				relation = military_access
+				active = YES
+			}
+			add_collaboration = {
+				target = BKJ
+				value = 0.3
+			}
+			BKJ = {
+				diplomatic_relation = {
+					country = GGR
+					relation = military_access
+					active = YES
+				}
+				add_collaboration = {
+					target = GGR
+					value = 0.3
+				}		
+			}
+		}
+	}
+	focus = {
+		id = GGR_Reconstruction_of_the_Fatherland
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = GGR_Administrative_District_Reorganization }
+		x = -3
+		y = 1
+		relative_position_id = GGR_Administrative_District_Reorganization
+
+		cost = 5
+
+		available = { has_war = no }
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = SOV_rebuild_the_nation
+				days = 540
+			}
+		}
+	}
+	focus = {
+		id = GGR_arms_factory
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = GGR_Reconstruction_of_the_Fatherland }
+		x = -3
+		y = 1
+		relative_position_id = GGR_Reconstruction_of_the_Fatherland
+
+		cost = 10
+
+		available = { has_idea = SOV_rebuild_the_nation }
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = GGR
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = GGR
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = GGR
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = GGR_industrial_complex
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = GGR_Reconstruction_of_the_Fatherland }
+		x = -1
+		y = 1
+		relative_position_id = GGR_Reconstruction_of_the_Fatherland
+
+		cost = 10
+
+		available = { has_idea = SOV_rebuild_the_nation }
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = GGR
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = GGR
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = GGR
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = {
@@ -2322,7 +3348,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = GGR_book_jin
 
-		cost = 10
+		cost = 3
 
 		available = {
 			controls_state = 408
@@ -2336,18 +3362,23 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
-			set_province_name = {
-    			id = 957
-    			name = "해삼위"
-			}
-			add_victory_points = {
-				province = 957
-				value = 10
+			if = {
+				limit = {
+					NOT = {
+						has_cosmetic_tag = halhea_empire
+					}
+				}
+				set_province_name = {
+					id = 957
+					name = "해삼위"
+				}
+				add_victory_points = {
+					province = 957
+					value = 10
+				}
 			}
 			408 = {
 				add_core_of = GGR
@@ -2357,9 +3388,8 @@ focus_tree = {
 	focus = {
 		id = GGR_book_jin
 		icon = GFX_focus_jap_spiritual_mobilization
-		prerequisite = { focus = GGR_east_land_martial_law }
 		prerequisite = { focus = GGR_friendship_with_Japan }
-		x = -1
+		x = -3
 		y = 1
 		relative_position_id = GGR_east_land_martial_law
 
@@ -2377,16 +3407,31 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
-			create_wargoal = {
-    			type = puppet_wargoal_focus
-    			target = SOV
+			if = {
+				limit = {
+					has_completed_focus = GGR_diplomance
+				}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = SOV
+				}
+				
 			}
-			complete_national_focus = GGR_aggressive_wars
+			if = {
+				limit = {
+					NOT = {
+						has_completed_focus = GGR_diplomance
+					}
+				}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = SOV
+				}
+				complete_national_focus = GGR_aggressive_wars
+			}
 		}
 	}
 	focus = {
@@ -2394,7 +3439,7 @@ focus_tree = {
 		icon = GFX_focus_generic_home_defense
 		mutually_exclusive  = { focus = GGR_iron_fist_rule }
 		prerequisite = { focus = GGR_strengthening_of_royal_power }
-		x = -1
+		x = -3
 		y = 1
 		relative_position_id = GGR_strengthening_of_royal_power
 
@@ -2412,9 +3457,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_ideas = neutrality_ideas
@@ -2425,14 +3468,14 @@ focus_tree = {
 		icon = GFX_focus_generic_strike_at_democracy2
 		mutually_exclusive = { focus = GGR_strengthening_of_king_power }
 		prerequisite = { focus = GGR_strengthening_of_royal_power }
-		x = 1
+		x = 3
 		y = 1
 		relative_position_id = GGR_strengthening_of_royal_power
 
 		cost = 10
 
 		available = {
-			fascism > 0.3
+			fascism > 0.15
 		}
 
 		bypass = {
@@ -2443,9 +3486,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_ideas = iron_fist_rule
@@ -2458,7 +3499,7 @@ focus_tree = {
 		id = GGR_expulsion_of_communists
 		icon = GFX_goal_generic_war_with_comintern
 		prerequisite = { focus = GGR_iron_fist_rule focus = GGR_strengthening_of_king_power }
-		x = 1
+		x = 2
 		y = 1
 		relative_position_id = GGR_strengthening_of_king_power
 
@@ -2667,6 +3708,203 @@ focus_tree = {
 			}
 		}	
 	}
+
+	focus = {
+		id = GGR_friendship_with_Japan2
+		icon = GFX_focus_jap_showa_restoration
+		prerequisite = { focus = GGR_Administrative_District_Reorganization }
+		x = -1
+		y = 1
+		relative_position_id = GGR_Administrative_District_Reorganization
+		mutually_exclusive = { focus = GGR_man_attack }
+
+		cost = 10
+
+		available = {
+			OR = {
+				JAP = { has_government = ROOT }
+				JAP_will_support = yes
+			}
+			NOT = { has_wargoal_against = JAP }
+			NOT = { has_war_with = JAP }
+			JAP = {
+				is_faction_leader = yes
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			GGR = {
+				puppet = MAN
+			}
+			JAP = { add_to_faction = GGR }
+		}	
+	}
+	focus = {
+		id = GGR_centralization
+		icon = GFX_focus_eng_special_air_service
+		prerequisite = { focus = GGR_Tungus_Subup }
+		prerequisite = { focus = GGR_Reconstruction_of_the_Fatherland }
+		mutually_exclusive = { focus = GGR_Yeojin_Autonomy }
+		x = 1
+		y = 1
+		relative_position_id = GGR_friendship_with_Japan2
+
+		cost = 10
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_country_leader_trait = absolute_monarch
+		}	
+	}
+	focus = {
+		id = GGR_Yeojin_Autonomy
+		icon = GFX_focus_YUG_autonomous_transylvania
+		prerequisite = { focus = GGR_Tungus_Subup }
+		prerequisite = { focus = GGR_Reconstruction_of_the_Fatherland }
+		mutually_exclusive = { focus = GGR_centralization }
+		x = -1
+		y = 1
+		relative_position_id = GGR_friendship_with_Japan2
+
+		cost = 10
+
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = Yeojin_Autonomy
+			add_stability = 0.05
+		}	
+	}
+	focus = {
+		id = GGR_Yeojin_country
+		icon = GFX_goal_demand_sudetenland
+		prerequisite = { focus = GGR_Yeojin_Autonomy }
+		x = -1
+		y = 1
+		relative_position_id = GGR_Yeojin_Autonomy
+
+		cost = 10
+
+
+		available = {
+			MAN = {
+				is_puppet_of = ROOT
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_core_of = MAN
+				}
+				add_core_of = ROOT
+			}
+			annex_country = {
+				target = MAN
+				transfer_troops = yes
+			}
+		}	
+	}
+	focus = {
+		id = GGR_land_reform2
+		icon = GFX_focus_generic_concessions
+		prerequisite = { focus = GGR_centralization }
+		x = 1
+		y = 1
+		relative_position_id = GGR_centralization
+
+		cost = 5
+
+
+		available = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			527 = {
+				limit = {
+					is_core_of = GGR
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			328 = {
+				limit = {
+					is_core_of = GGR
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			716 = {
+				limit = {
+					is_core_of = GGR
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			408 = {
+				limit = {
+					is_core_of = GGR
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}	
+	}
+	focus = {
+		id = GGR_Haedong_Seongguk
+		icon = GFX_focus_focus_fra_national_resistance_council
+		prerequisite = { focus = GGR_urbanization }	
+		prerequisite = { focus = GGR_land_reform2 focus = GGR_Yeojin_country }
+		x = 0
+		y = 1
+		relative_position_id = GGR_urbanization
+
+		cost = 10
+
+
+		available = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = Haedong_Seongguk
+		}	
+	}
 	focus = {
 		id = GGR_proclamation_of_empire
 		icon = GFX_focus_rom_royal_dictatorship
@@ -2689,9 +3927,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			set_cosmetic_tag = GGR_EMP
@@ -2701,6 +3937,68 @@ focus_tree = {
 			add_country_leader_trait = absolute_monarch
 			remove_ideas = revol_communist
 		}
+	}
+	
+	focus = {
+		id = GGR_urbanization
+		icon = GFX_goal_generic_cavalry
+		prerequisite = { focus = GGR_Yeojin_Autonomy focus = GGR_centralization }
+		x = 1
+		y = 1
+		relative_position_id = GGR_Yeojin_Autonomy
+
+		cost = 5
+
+
+		available = {
+			controls_state = 328
+			controls_state = 527
+			controls_state = 716
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = GGR_nomadism2
+				remove_idea = GGR_nomadism
+			}
+			328 = {
+				limit = {
+					is_core_of = GGR
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			527 = {
+				limit = {
+					is_core_of = GGR
+				}
+				add_extra_state_shared_building_slots = -1
+				add_building_construction = {
+					type = industrial_complex
+					level = -1
+					instant_build = yes
+				}
+			}
+			716 = {
+				limit = {
+					is_core_of = GGR
+				}
+				add_extra_state_shared_building_slots = -1
+				add_building_construction = {
+					type = industrial_complex
+					level = -1
+					instant_build = yes
+				}
+			}
+		}	
 	}
 	focus = {
 		id = GGR_Namjin_Proclamation
@@ -2739,9 +4037,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			create_wargoal = {
@@ -2779,9 +4075,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			838 = { add_core_of = ROOT }
@@ -2790,7 +4084,7 @@ focus_tree = {
 			836 = { add_core_of = ROOT }
 			add_stability = 0.1
 			hidden_effect = {
-				remove_ideas = no_faction
+				#remove_ideas = no_faction
 				complete_national_focus = GGR_continental_expansion
 			}
 		}
@@ -2950,9 +4244,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_political_power = 200
@@ -2986,9 +4278,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			swap_ideas = { remove_idea = CZE_democratic_bastion add_idea = CZE_beacon_of_liberty }
@@ -3026,9 +4316,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_ideas = extensive_conscription
@@ -3036,7 +4324,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GGR_three_alliance
-		icon = GFX_focus_usa_union_representation_act
+		icon = GFX_three_flags_side_by_side_SIR_GGR_BKJ
 		prerequisite = { focus = GGR_defensive_preparations focus = GGR_proclamation_of_empire }
 		mutually_exclusive = { focus = GGR_Namjin_Proclamation }
 		x = 0
@@ -3085,9 +4373,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			create_faction = "반도조약"
@@ -3122,7 +4408,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GGR_peaceful_unification_BKJ
-		icon = GFX_goal_molotov_ribbentrop_pact
+		icon = GFX_large_flag_BKJ
 		prerequisite = { focus = GGR_peaceful_unification }
 		x = 1
 		y = 1
@@ -3158,7 +4444,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GGR_peaceful_unification_SIR
-		icon = GFX_goal_molotov_ribbentrop_pact
+		icon = GFX_large_flag_SIR
 		prerequisite = { focus = GGR_peaceful_unification }
 		x = -1
 		y = 1
@@ -3369,9 +4655,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			every_state = {
@@ -3386,6 +4670,7 @@ focus_tree = {
 				}
 				add_core_of = ROOT
 			}
+			remove_ideas = no_faction
 		}
 	}
 	focus = {
@@ -3586,15 +4871,15 @@ focus_tree = {
 	focus = {
 		id = GGR_japan_war_goal
 		icon = GFX_focus_jap_cast_the_die
-		prerequisite = { focus = GGR_attack_manchuria }
+		prerequisite = { focus = GGR_continental_expansion }
 		will_lead_to_war_with = JAP
 
 		cancel = {
 			NOT = { country_exists = JAP }
 		}
-		x = 0
+		x = 3
 		y = 1
-		relative_position_id = GGR_attack_manchuria
+		relative_position_id = GGR_continental_expansion
 		cost = 10
 		historical_ai = {
 			NOT = {
@@ -3638,29 +4923,7 @@ focus_tree = {
 			}
 		}
 	}
-	
-	focus = {
-		id = GGR_attack_manchuria
-		icon = GFX_goal_generic_major_war
-		prerequisite = { focus = GGR_continental_expansion focus = GGR_revolutionary_task }
-		x = 3
-		y = 1
-		relative_position_id = GGR_continental_expansion
 
-		cost = 10
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = yes
-	}
 	focus = {
 		id = GGR_Shandong_attack
 		icon = GFX_goal_generic_more_territorial_claims
@@ -3920,9 +5183,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_ideas = FRA_army_of_aggression_focus
@@ -3937,9 +5198,9 @@ focus_tree = {
 	focus = {
 		id = GGR_military_research_institute
 		icon = GFX_focus_CZE_military_research_institute
-		x = 15
+		x = 7
 		y = 0
-		relative_position_id = GGR_political_direction
+		relative_position_id = GGR_industrial_legacy
 
 		cost = 10
 
@@ -3959,12 +5220,10 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
-			army_experience = 10
+			army_experience = 25
 		}
 	}
 
@@ -3994,9 +5253,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -4035,9 +5292,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -4076,9 +5331,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -4130,9 +5383,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -4172,9 +5423,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -4212,9 +5461,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -4290,9 +5537,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -4330,9 +5575,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -4371,9 +5614,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -4412,9 +5653,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_ideas = CZE_war_college_idea
@@ -4457,12 +5696,10 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
-			air_experience = 10
+			air_experience = 25
 		}
 	}
 
@@ -4492,9 +5729,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -4534,9 +5769,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -4575,9 +5808,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -4615,9 +5846,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_ideas = CZE_air_focus
@@ -4652,9 +5881,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -4692,9 +5919,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -4734,9 +5959,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -4775,9 +5998,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
+ 
 
 		completion_reward = {
 			add_tech_bonus = {

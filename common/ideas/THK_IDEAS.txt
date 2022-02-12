@@ -23,7 +23,7 @@ ideas = {
 			}
 		}
 	}
-	ountry = {
+	country = {
 	
 		no_faction = {
 			
@@ -66,6 +66,30 @@ ideas = {
 			modifier = {
 				stability_factor = 0.15
 				industrial_capacity_factory = 0.1
+			}
+		}
+	}
+	country = {
+	
+		Yeojin_Autonomy = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+
+			}
+			removal_cost = -1
+
+			picture = ROM_king_carol_ii_hedonist
+
+			
+			modifier = {
+				stability_factor = 0.10
+				industrial_capacity_factory = 0.1
+				production_speed_buildings_factor = 0.1
+				army_defence_factor = 0.05
 			}
 		}
 	}
@@ -187,6 +211,55 @@ ideas = {
 				army_defence_factor = 0.05
 				army_attack_factor = 0.05
 				stability_factor = -0.18
+			}
+		}
+	}
+	country = {
+	
+		GGR_nomadism = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = GGR_nomadism
+
+			
+			modifier = {
+				production_speed_buildings_factor = -0.1
+				industrial_capacity_factory = -0.1
+				army_defence_factor = -0.05
+				army_attack_factor = -0.05
+				stability_factor = -0.15
+			}
+		}
+	}
+	country = {
+	
+		GGR_nomadism2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = CZE_planning_bonus
+
+			
+			modifier = {
+				stability_factor = -0.10
+				production_speed_buildings_factor = 0.05
 			}
 		}
 	}
@@ -645,6 +718,128 @@ ideas = {
 			removal_cost = -1
 
 			picture = eng_spirit_of_the_industrial_revolution
+
+			
+			modifier = {
+				research_speed_factor = 0.05
+				consumer_goods_factor = -0.05
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.1
+				stability_factor = 0.1
+				war_support = 0.1
+				production_factory_max_efficiency_factor = 0.1
+				max_surrender_limit_offset = 0.15
+			}
+		}
+	}
+	country = {
+	
+		GGR_meet_SIR2_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				OR = {
+					has_war_with = SIR
+					SIR = {
+						exists = no
+						is_subject = yes
+					}
+				}
+			}
+
+			removal_cost = -1
+
+			picture = can_wartime_prices_and_trade_board
+
+			
+			targeted_modifier = {
+				tag = SIR
+				trade_opinion_factor = 0.5
+				overlord_trade_cost_factor = -0.5
+				extra_trade_to_overlord_factor = 0.5
+			}
+		}
+	}
+	country = {
+	
+		GGR_meet_BKJ2_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				OR = {
+					has_war_with = BKJ
+					BKJ = {
+						exists = no
+						is_subject = yes
+					}
+				}
+			}
+
+			removal_cost = -1
+
+			picture = can_wartime_prices_and_trade_board
+
+			
+			targeted_modifier = {
+				tag = BKJ
+				trade_opinion_factor = 0.5
+				overlord_trade_cost_factor = -0.5
+				extra_trade_to_overlord_factor = 0.5
+			}
+		}
+	}
+	country = {
+	
+		SIR_meet_GGR_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				OR = {
+					has_war_with = GGR
+					GGR = {
+						exists = no
+						is_subject = yes
+					}
+				}
+			}
+
+			removal_cost = -1
+
+			picture = can_wartime_prices_and_trade_board
+
+			
+			targeted_modifier = {
+				tag = GGR
+				trade_opinion_factor = 0.5
+				overlord_trade_cost_factor = -0.5
+				extra_trade_to_overlord_factor = 0.5
+			}
+		}
+	}
+	country = {
+	
+		Haedong_Seongguk = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = FRA_national_resistance_council
 
 			
 			modifier = {

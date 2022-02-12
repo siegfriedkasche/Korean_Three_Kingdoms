@@ -1,0 +1,100 @@
+characters = {
+	BKJ_heugjisangji={ 
+		name = "흑지상지"
+		portraits={
+			army={
+				small="GFX_idea_heugjisangji_ideas"
+				large = "gfx/leaders/BKJ/GFX_leaders_heugjisangji.png"
+			}
+		}
+		corps_commander = {
+			traits = {
+				trickster trait_engineer brilliant_strategist politically_connected
+			}
+			skill = 5
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 3
+			logistics_skill = 4
+		}
+	}
+	BKJ_gyebaek={ 
+		name = "계백"
+		portraits={
+			army={
+				small="GFX_idea_gyebaek_ideas"
+				large = "gfx/leaders/BKJ/GFX_leaders_gyebaek.png"
+			}
+		}
+		corps_commander = {
+			traits = {
+				trickster trait_engineer brilliant_strategist politically_connected
+			}
+			skill = 6
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 4
+			logistics_skill = 5
+		}
+	}
+}
+characters = {
+	GGR_Gang_Gam_chan={ 
+		name = "강감찬"
+		portraits={
+			army={
+				small="GFX_idea_Gang_Gam_chan_ideas"
+				large = "gfx/leaders/GGR/Gang_Gam_chan.png"
+			}
+		}
+		corps_commander = {
+			traits = {
+				trickster trait_engineer brilliant_strategist politically_connected
+			}
+			skill = 5
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 3
+			logistics_skill = 4
+		}
+	}
+	GGR_yeongaesomun={ 
+		name = "연개소문"
+		portraits={
+			army={
+				small="GFX_idea_yeongaesomun_ideas"
+				large = "gfx/leaders/GGR/연개소문.png"
+			}
+		}
+		corps_commander = {
+			traits = {
+				trickster trait_engineer brilliant_strategist politically_connected
+			}
+			skill = 5
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 4
+			logistics_skill = 5
+		}
+	}
+	GGR_Eulji_Mundeok={ 
+		name = "을지문덕"
+		portraits={
+			army={
+				small="GFX_idea_Eulji_Mundeok_ideas"
+				large = "gfx/leaders/GGR/Eulji_Mundeok.png"
+			}
+		}
+		corps_commander = {
+			traits = {
+				trickster trait_engineer brilliant_strategist politically_connected
+			}
+			skill = 5
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 3
+			logistics_skill = 4
+		}
+	}
+}
+	

@@ -12,12 +12,40 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_communist_support.png"
 	}
 	SpriteType = {
+		name = "GFX_large_flag_SIR"
+		texturefile = "gfx/interface/goals/K_asche/GFX_large_flag_SIR.png"
+	}
+	SpriteType = {
+		name = "GFX_GGR_joint_military_exercise"
+		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_joint_military_exercise.png"
+	}
+	SpriteType = {
+		name = "GFX_Two_Flags_Vertical_BKJ_GGR"
+		texturefile = "gfx/interface/goals/K_asche/GFX_Two_Flags_Vertical_BKJ_GGR.png"
+	}
+	SpriteType = {
 		name = "GFX_KOR_MTU_traditional_democratic_trade_unions"
 		texturefile = "gfx/interface/goals/K_asche/GFX_KOR_MTU_traditional_democratic_trade_unions.png"
 	}
 	SpriteType = {
 		name = "GFX_GGR_Long_live_General_Kim_Il_sung"
 		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_Long_live_General_Kim_Il_sung.png"
+	}
+	SpriteType = {
+		name = "GFX_large_flag_BKJ"
+		texturefile = "gfx/interface/goals/K_asche/GFX_large_flag_BKJ.png"
+	}
+	SpriteType = {
+		name = "GFX_GGR_joint_military_exercise_BKJ"
+		texturefile = "gfx/interface/goals/K_asche/GFX_GGR_joint_military_exercise_BKJ.png"
+	}
+	SpriteType = {
+		name = "GFX_three_flags_side_by_side_SIR_GGR_BKJ"
+		texturefile = "gfx/interface/goals/K_asche/GFX_three_flags_side_by_side_SIR_GGR_BKJ.png"
+	}
+	SpriteType = {
+		name = "GFX_Two_Flags_Vertical_SIR_GGR"
+		texturefile = "gfx/interface/goals/K_asche/GFX_Two_Flags_Vertical_SIR_GGR.png"
 	}
 	SpriteType = {
 		name = "GFX_GGR_Long_live_the_working_masses"

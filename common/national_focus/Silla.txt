@@ -1112,6 +1112,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			add_ideas = jin_heungwang
 			swap_ideas = { remove_idea = CZE_democratic_bastion add_idea = CZE_beacon_of_liberty }
 		}
 	}

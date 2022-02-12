@@ -28,9 +28,8 @@ set_technology = {
 	
 }
 set_research_slots = 3
-
 set_convoys = 5
-
+add_ideas = no_faction
 set_politics = {
 	ruling_party = neutrality
 	last_election = "1936.1.1"
@@ -38,12 +37,31 @@ set_politics = {
 	elections_allowed = no
 }
 set_popularities = {
-	democratic = 15
+	democratic = 20
 	neutrality = 40
-	fascism = 20
-	communism = 25
+	fascism = 35
+	communism = 5
 }
-
+set_party_name = { 
+    ideology = neutrality 
+    long_name = "신라 - 왕당파"  
+    name = "신라 - 왕당파"  
+}
+set_party_name = { 
+    ideology = fascism
+    long_name = "신라 - 왕당파"  
+    name = "신라 - 왕당파" 
+}
+set_party_name = { 
+    ideology = democratic 
+    long_name = "신라 - 개혁파" 
+    name = "신라 - 개혁파"  
+}
+set_party_name = { 
+    ideology = communism
+    long_name = "코민테른 신라지부" 
+    name = "코민테른 신라지부"
+}
 create_country_leader = {
 	name = "진흥왕"
 	desc = ""
@@ -67,11 +85,11 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "진흥왕"
+	name = "박헌영"
 	desc = ""
-	picture = "gfx/leaders/SIR/진흥왕.png"
+	picture = "gfx/leaders/SIR/박헌영.png"
 	expire = "1965.1.1"
-	ideology = stalinism
+	ideology = marxism
 	traits = {
 		#
 	}
@@ -89,7 +107,7 @@ create_country_leader = {
 }
 create_corps_commander = {
 	name = "김유신"
-		picture = "gfx/leaders/SIR/김유신.png"
+	picture = "gfx/leaders/SIR/김유신.png"
 	traits = {
 		trickster trait_engineer brilliant_strategist politically_connected
 	}
@@ -99,6 +117,7 @@ create_corps_commander = {
 	planning_skill = 3
 	logistics_skill = 4
 }
+add_command_power = 20
 create_corps_commander = {
 	name = "이사부"
 		picture = "gfx/leaders/SIR/이사부.png"
