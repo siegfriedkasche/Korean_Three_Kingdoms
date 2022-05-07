@@ -7,3 +7,10 @@ music = {
 
 	volume = 0.5
 }
+music = {
+	name = "Anthem_of_China"
+
+	file = "Anthem_of_China.ogg"
+
+	volume = 0.5
+}

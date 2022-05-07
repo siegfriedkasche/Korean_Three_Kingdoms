@@ -14,4 +14,93 @@ on_actions = {
             }
         }
     }
+    on_daily = {
+        effect = {
+            if = {
+                limit = {
+                    BKJ = {
+                        surrender_progress > 0.95
+                        has_war_with = DPR
+                    }
+                }
+                BKJ = {
+                    white_peace = {
+                        tag = DPR
+                    }
+                    annex_country = {
+                        target = DPR
+                        transfer_troops = yes
+                    }
+                    create_country_leader = {
+                        name = "전봉준"
+                        desc = "POLITICS_MOHAMMED_ZAHIR_SHAH_DESC"
+                        picture = "gfx/leaders/DPR/Jeon_Bongjun.png"
+                        expire = "1965.1.1"
+                        ideology = despotism
+                        traits = {
+                            
+                        }
+                    }
+                    add_popularity = {
+                        ideology = neutrality
+                        popularity = 0.4
+                    }
+                    set_politics = {
+                        ruling_party = neutrality
+                        elections_allowed = yes
+                        last_election = "1935.12.17"
+                        election_frequency = 48
+                        long_name = "동학농민회"
+                        name = "동학농민회"
+                    }
+                    change_tag_from = DPR
+                    set_cosmetic_tag = DPR_BKJ
+                }
+                DPR = {
+                    transfer_units_fraction= {
+                        target = BKJ
+                        size = 1
+                        stockpile_ratio = 1
+                        army_ratio = 1
+                        navy_ratio = 1
+                        air_ratio = 1
+                        keep_unit_leaders_trigger = {
+                            
+                        }
+                    }
+                }
+            }
+        }
+        effect = {
+            if = {
+                limit = {
+                    and = {
+                        DPR = {
+                            surrender_progress > 0.95
+                            has_war_with = BKJ
+                        }
+                    }
+                }
+                BKJ = {
+                    annex_country = {
+                        target = DPR
+                        transfer_troops = yes
+                    }
+                }
+                DPR = {
+                    transfer_units_fraction= {
+                        target = BKJ
+                        size = 1
+                        stockpile_ratio = 1
+                        army_ratio = 1
+                        navy_ratio = 1
+                        air_ratio = 1
+                        keep_unit_leaders_trigger = {
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

@@ -1,6 +1,6 @@
 state={
 	id=745
-	name="대련"
+	name="비사성"
 	provinces={
 		1150 6851 
 	}
@@ -20,7 +20,14 @@ state={
 				coastal_bunker = 1
 			}
 		}
-
+		add_core_of = GGR
+		1936.1.2 = {
+			owner = JAP
+			remove_core_of = GGR
+			add_core_of = MAN
+			add_core_of = PRC
+			add_core_of = CHI
+		}
 	
 	}
 	manpower=1000000

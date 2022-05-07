@@ -1,7 +1,7 @@
 state={
 	id=835
 	name="탐라"
-	manpower = 1274200
+	manpower = 201367
 	state_category = town
 	resources={
 		steel= 6
@@ -20,7 +20,11 @@ state={
 			1177 2
 		}	
 
-		add_core_of = TAM
+		1936.1.2 = {
+            		owner = JAP
+            		remove_core_of = TAM
+            		add_core_of = KOR
+        		}
 	}
 
 	provinces={

@@ -3953,6 +3953,8 @@ focus_tree = {
 		available = {
 			controls_state = 328
 			controls_state = 527
+			controls_state = 842
+			controls_state = 841
 			controls_state = 716
 		}
 

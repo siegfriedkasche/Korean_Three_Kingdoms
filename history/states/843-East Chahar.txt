@@ -1,0 +1,42 @@
+
+state={
+	id=843
+	name="동차하르"
+	resources={
+		steel=5.000
+	}
+
+	history={
+		owner = ECA
+		add_core_of = ECA
+		add_core_of = MEN
+		add_core_of = CHI
+		add_core_of = PRC
+		1936.5.12 = {
+			owner = MEN
+			add_core_of = ECA
+			add_core_of = MEN
+			add_core_of = CHI
+			add_core_of = PRC
+
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 1
+
+		}
+		victory_points = {
+			11752 2 
+		}
+
+	}
+
+	provinces={
+		1811 1871 4495 4555 7578 7648 7674 10363 12348 12554 
+	}
+	manpower=227455
+	buildings_max_level_factor=1.500
+	state_category=rural
+	local_supplies=0.000
+}

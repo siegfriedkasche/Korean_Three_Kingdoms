@@ -22,7 +22,7 @@ ideas = {
 				political_power_factor = -0.05
 			}
 		}
-	}
+
 	country = {
 	
 		soviet_Influence_2 = {

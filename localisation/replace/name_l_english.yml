@@ -3,6 +3,10 @@
  YEM_neutrality_DEF:0 "예멘 무타와킬 왕국"
  YEM_neutrality_ADJ:0 "예멘 무타와킬 왕국"
 
+ PRC_communism:0 "중화소비에트민주공화국"
+ PRC_communism_ADJ:0 "중화소비에트민주공화국"
+ PRC_communism_DEF:0 "중화소비에트민주공화국"
+
  PER_neutrality:0 "이란 제국"
  PER_neutrality_DEF:0 "이란 제국"
  PER_neutrality_ADJ:0 "이란 제국"
@@ -31,6 +35,10 @@
  AFG_neutrality_DEF:0 "아프가니스탄 왕국"
  AFG_neutrality_ADJ:0 "아프가니스탄 왕국"
 
+ AUS_neutrality:0 "오스트리아 연방국"
+ AUS_neutrality_ADJ:0 "오스트리아 연방국"
+ AUS_neutrality_DEF:0 "오스트리아 연방국"
+
  TAN_communism:0 "투바 인민 공화국"
  TAN_communism_DEF:0 "투바 인민 공화국"
  TAN_communism_ADJ:0 "투바 인민 공화국"
@@ -43,11 +51,54 @@
  MON_communism_ADJ:0 "몽골 인민 공화국"
  MON_communism_DEF:0 "몽골 인민 공화국"
 
+ Schweizer_Bank:0 "스위스 국립은행"
+ Schweizer_Bank_desc:0 "스위스 국립은행은 스위스의 중앙 은행이다. 금융 정책을 실시하는 것뿐만 아니라, 스위스 프랑 지폐의 발행 및 관리를 한다."
 
+ CHI_war_of_resistance:0 "전면항전"
+ CHI_war_of_resistance_desc:0 "기습적인 침략에 우리는 긴급히 국방회의를 소집했습니다. 총통께서는 끝까지 항전을 주장하면서 전면항전을 결의시켰습니다."
+ 
+ CHI_Industrial_complex_composition:0 "산업단지 구성"
+ winter_ideas:0 "동계 공세"
+ 
  communism:0 "사회주의"
  
 
+ CHI_warlord_leader_neutrality:0 "중화민국"
+ CHI_warlord_leader_neutrality_ADJ:0 "중화민국"
+ CHI_warlord_leader_neutrality_DEF:0 "중화민국"
+
  VICTORY_POINTS_4056:0 "금성"
+ 
+ ECA:0 "찰동특별자치구"
+ ECA_ADJ:0 "찰동특별자치구"
+ ECA_DEF:0 "찰동특별자치구"
+
+ SCA:0 "찰남자치정부"
+ SCA_ADJ:0 "찰남자치정부"
+ SCA_DEF:0 "찰남자치정부"
+ MEN_SCA:0 "찰남자치정부 설립"
+
+ XSM_neutrality:0 "마가군벌"
+ XSM_neutrality_ADJ:0 "마가군벌"
+ XSM_neutrality_DEF:0 "마가군벌"
+
+ MEN_CHI_neutrality_autonomy_integrated_puppet:0 "몽고지방자치정무위원회"
+ MEN_CHI_neutrality_autonomy_integrated_puppet_ADJ:0 "몽고지방자치정무위원회"
+ MEN_CHI_neutrality_autonomy_integrated_puppet_DEF:0 "몽고지방자치정무위원회"
+
+ MAN_JAP_fascism_autonomy_reichsprotectorate_DEF:0 "만주제국"
+ MAN_JAP_fascism_autonomy_colony_DEF:0 "제국령 만주제국"
+ MAN_JAP_fascism_autonomy_dominion_DEF:0 "제국령 만주제국"
+ MAN_JAP_fascism_autonomy_satellite_DEF:0 "제국령 만주제국"
+ MAN_JAP_fascism_autonomy_integrated_puppet_DEF:0 "만주제국"
+ MAN_JAP_fascism_autonomy_reichskommissariat_DEF:0 "만주제국"
+ MAN_JAP_fascism_autonomy_wtt_imperial_protectorate_DEF:0 "만주제국"
+ MAN_JAP_fascism_autonomy_wtt_imperial_subject_DEF:0 "만주제국"
+
+ VICTORY_POINTS_11981:0 "바야르 요새"
+ VICTORY_POINTS_4160:0 "하이커우"
+ VICTORY_POINTS_12068:0 "가오슝"
+ VICTORY_POINTS_4205:0 "웨이하이"
 
 
  VICTORY_POINTS_7221:0 "미추성"
@@ -69,10 +120,11 @@
  VICTORY_POINTS_9790:0 "안주성"
  VICTORY_POINTS_964:0 "건안성"
  VICTORY_POINTS_1003:0 "수영산성"
+ VICTORY_POINTS_11915:0 "한성"
  VICTORY_POINTS_4107:0 "통연성"
  VICTORY_POINTS_10065:0 "황주성"
  VICTORY_POINTS_11828:0 "만포성"
- VICTORY_POINTS_6928:0 "영홍"
+ VICTORY_POINTS_6928:0 "화주"
  VICTORY_POINTS_7070:0 "수곡성"
  VICTORY_POINTS_1150:0 "비사성"
  VICTORY_POINTS_892:0 "안시성"
@@ -81,3 +133,32 @@
 
 
  VICTORY_POINTS_1177:0 "탐라성"
+ VICTORY_POINTS_4495:0 "둬룬"
+ VICTORY_POINTS_11752:0 "장베이"
+ VICTORY_POINTS_10397:0 "칼간"
+ VICTORY_POINTS_9938:0 "산터우"
+ VICTORY_POINTS_1202:0 "후이저우"
+ VICTORY_POINTS_12350:0 "헝양"
+ VICTORY_POINTS_1055:0 "윈저우"
+ VICTORY_POINTS_7580:0 "샹양"
+ VICTORY_POINTS_1004:0 "뤄양"
+ VICTORY_POINTS_7568:0 "난양"
+ VICTORY_POINTS_12059:0 "진화"
+ VICTORY_POINTS_1597:0 "류저우"
+ VICTORY_POINTS_4134:0 "허츠"
+ VICTORY_POINTS_12084:0 "룽옌"
+ VICTORY_POINTS_11986:0 "취안저우"
+ VICTORY_POINTS_1053:0 "간저우"
+ VICTORY_POINTS_7172:0 "지안"
+ VICTORY_POINTS_1628:0 "주장"
+ VICTORY_POINTS_1153:0 "징더전"
+ VICTORY_POINTS_11982:0 "창저우"
+ VICTORY_POINTS_11928:0 "난퉁"
+ VICTORY_POINTS_4001:0 "양저우"
+ VICTORY_POINTS_1029:0 "롄윈강"
+ VICTORY_POINTS_7025:0 "쉬저우"
+ VICTORY_POINTS_1124:0 "린이"
+ VICTORY_POINTS_7055:0 "타이안"
+ VICTORY_POINTS_4256:0 "셴양"
+ VICTORY_POINTS_900:0 "탕산"
+ VICTORY_POINTS_11981:0 "포트 바야르"

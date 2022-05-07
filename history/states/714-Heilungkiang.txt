@@ -8,7 +8,7 @@ state={
 		add_core_of = MAN
 		add_core_of = PRC
 		buildings = {
-			infrastructure = 4
+			infrastructure = 2
 
 		}
 
@@ -22,5 +22,9 @@ state={
 	provinces={
 		1502 1588 1847 4506 4809 4876 7832 7848 7873 7894 10675 12485 12618 
 	}
+	manpower=2919991
 	buildings_max_level_factor=1.000
+	state_category=pastoral
+
+	local_supplies=0.0 
 }

@@ -12,7 +12,7 @@ country_event = {
 	option = {
         name = MEN.0.a
         ai_chance = {
-            factor = 80
+            factor = 100
         }
 		create_country_leader = {
 			name = "몽골군사정부"
@@ -37,7 +37,7 @@ country_event = {
 	option = {
         name = MEN.1.a
         ai_chance = {
-            factor = 80
+            factor = 100
         }
 		add_stability = -0.1
     }
@@ -53,7 +53,7 @@ country_event = {
 	option = {
         name = MEN.2.a
         ai_chance = {
-            factor = 80
+            factor = 100
         }
 		add_ideas = MEN_Establishment_of_the_Mongolian_Army_General_Headquarters_ideas
 		if = {
@@ -75,6 +75,17 @@ country_event = {
 		hidden_effect = {
 			give_military_access = CHI
 			set_cosmetic_tag = MEN_MIL
+			if = {
+				limit = {
+					ECA = {
+						exist = yes
+					}
+				}
+				annex_country = {
+					target = ECA
+					transfer_troops = yes
+				}
+			}
 		}
     }
 }
@@ -89,7 +100,7 @@ country_event = {
 	option = {
         name = MEN.3.a
         ai_chance = {
-            factor = 80
+            factor = 100
         }
 		add_ideas = MEN_kwantung_VS_Chinese_army_ideas
     }
@@ -107,7 +118,7 @@ country_event = {
 	option = {
         name = MEN.4.a
         ai_chance = {
-            factor = 80
+            factor = 100
         }
 		every_state = {
 			limit = {
@@ -130,7 +141,7 @@ country_event = {
 	option = {
         name = MEN.5.a
         ai_chance = {
-            factor = 80
+            factor = 100
         }
 		every_state = {
 			limit = {
@@ -154,7 +165,22 @@ country_event = {
 	option = {
         name = MEN.7.a
         ai_chance = {
-            factor = 80
+            factor = 100
+        }
+    }
+}
+country_event = {
+	id = MEN.8
+	title = MEN.8.t
+	desc = MEN.8.d
+	picture = GFX_report_event_dead_soldiers
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+        name = MEN.8.a
+        ai_chance = {
+            factor = 100
         }
     }
 }

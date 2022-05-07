@@ -3,10 +3,10 @@ focus_tree = {
 	
 	country = {
 		factor = 0
-		
+
 		modifier = {
 			add = 10
-			tag = BKJ
+			tag = BKJ	
 		}
 	}
 	
@@ -1055,6 +1055,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = BKJ_Democratic_movement
 		}
+		mutually_exclusive = {
+			focus = BKJ_DPR_reovl
+		}
 		cost = 10
 
 		available_if_capitulated = yes
@@ -1132,7 +1135,7 @@ focus_tree = {
 	focus = {
 		id = BKJ_new_local_name
 		icon = GFX_goal_generic_forceful_treaty
-		prerequisite = { focus = BKJ_ideological_fanaticism focus = BKJ_Democratic_movement }
+		prerequisite = { focus = BKJ_ideological_fanaticism focus = BKJ_DPR_reovl focus = BKJ_Democratic_movement }
 		x = 0
 		y = 2
 		relative_position_id = BKJ_da_joseon_guo
@@ -1155,7 +1158,9 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			841 = { set_state_name = "황해도" }
 			836 = { set_state_name = "호남" }
+			842 = { set_state_name = "함경도" }
 			838 = { set_state_name = "강원도" }
 			set_province_name = {
 				id = 7125
@@ -1254,6 +1259,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = BKJ_ideological_fanaticism
 		}
+		mutually_exclusive = {
+			focus = BKJ_DPR_reovl
+		}
 		
 		cost = 10
 
@@ -1279,14 +1287,77 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = BKJ_DPR_reovl
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = BKJ_da_joseon_guo }
+		x = 5
+		y = 1
+		relative_position_id = BKJ_da_joseon_guo
+		available = {
+			democratic > 0.25
+			has_country_flag = no_uprising_army
+		}
+		mutually_exclusive = {
+			focus = BKJ_Democratic_movement
+		}
+		mutually_exclusive = {
+			focus = BKJ_ideological_fanaticism
+		}
+		
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			DPR = { 
+				transfer_state = 836
+				set_capital = {
+					state = 525
+					remember_old_capital = no
+				}
+			}
+			836 = {
+				set_demilitarized_zone = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = BKJ
+				}
+				add_core_of = DPR
+			}
+			country_event = {
+				id = THK.11
+				days = 7
+			}
+			transfer_units_fraction= {
+				target = DPR
+				size = 0.5
+				stockpile_ratio = 0.5
+				army_ratio = 0.5
+				navy_ratio = 0.5
+				air_ratio = 0.5
+				keep_unit_leaders_trigger = {
+					has_trait = trait_SPA_nationalist_sympathies
+				}
+			}
+		}
+	}
+	focus = {
 		id = BKJ_restored_council
 		icon = GFX_goal_continuous_boost_freedom
-		prerequisite = { focus = BKJ_Democratic_movement }
+		prerequisite = { focus = BKJ_Democratic_movement focus = BKJ_DPR_reovl }
 		x = 0
 		y = 1
 		relative_position_id = BKJ_Democratic_movement
 		available = {
-			has_idea = dissolution_of_parliament_ideas
+			has_war = NO
+			OR = {
+				has_idea = dissolution_of_parliament_ideas
+				AND = {
+					has_cosmetic_tag = DPR_BKJ
+					has_completed_focus = BKJ_DPR_reovl
+				}
+			}
 		}
 		bypass = {
 			NOT = {
@@ -1302,9 +1373,15 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			swap_ideas = {
-				add_idea = dissolution_of_parliament_ideas2
-				remove_idea = dissolution_of_parliament_ideas
+			IF = {
+				limit = {
+					has_government = democratic
+					has_idea = dissolution_of_parliament_ideas
+				}
+				swap_ideas = {
+					add_idea = dissolution_of_parliament_ideas2
+					remove_idea = dissolution_of_parliament_ideas
+				}
 			}
 			unlock_decision_category_tooltip = BKJ_congress
 		}
@@ -1824,6 +1901,12 @@ focus_tree = {
 			}
 			GER = {
 				give_guarantee = BCH
+			}
+			BCH = {
+				transfer_state = 840 
+			}
+			840 = {
+				add_core_of = BCH
 			}
 			if = {
 				limit = {

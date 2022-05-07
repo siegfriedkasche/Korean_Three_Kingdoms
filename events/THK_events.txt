@@ -334,3 +334,100 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = THK.11
+	title = THK.11.t
+	desc = THK.11.d
+	picture = GFX_report_event_romania_poland_visit
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+        name = THK.11.a
+        ai_chance = {
+            factor = 70
+        }
+		BKJ = {
+			add_civil_war_target = DPR
+			division_template = {
+				name = "민병대"
+				is_locked = no
+				priority = 0
+				template_counter = 0
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+				}
+				support = { 
+				} 
+			}
+		}
+		DPR = { 
+			division_template = {
+				name = "동학농민군"
+				is_locked = no
+				priority = 0
+				template_counter = 0
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+				}
+				support = { 
+				} 
+			}
+			load_focus_tree = { tree = beakje_focus keep_completed = yes }
+			add_civil_war_target = BKJ
+			change_tag_from = ROOT 
+		}
+		836 = {
+			create_unit = {
+				division = "name = \"동학농민군\" division_template = \"동학농민군\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
+				owner = DPR
+				count = 12
+			}
+			set_demilitarized_zone = no
+		}
+		525 = {
+			create_unit = {
+				division = "name = \"민병대\" division_template = \"민병대\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
+				owner = BKJ
+				count = 2
+			}
+			set_demilitarized_zone = no
+		}
+		declare_war_on = {
+			target = DPR
+			type = annex_everything
+		}
+    }
+}
+country_event = {
+	id = THK.12
+	title = THK.10.t
+	desc = THK.10.d
+	picture = GFX_report_event_spr_nationalist_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = THK.10.a
+		ai_chance = {
+			factor = 100
+		}
+		transfer_units_fraction= {
+			target = D05
+			size = 1
+			stockpile_ratio = 1
+			army_ratio = 1
+			navy_ratio = 1
+			air_ratio = 1
+			keep_unit_leaders_trigger = {
+				has_trait = trait_SPA_nationalist_sympathies
+			}
+		}
+	}
+}

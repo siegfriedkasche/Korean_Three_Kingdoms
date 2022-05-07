@@ -6,4 +6,13 @@ opinion_modifiers = {
 	Molotov_Reuter = {
 		value = 25
 	}
+	hwannam_event = {
+		value = -25
+	}
+	united_front = {
+		value = 35
+	}
+	SOV_international_PRC = {
+		value = 55
+	}
 }

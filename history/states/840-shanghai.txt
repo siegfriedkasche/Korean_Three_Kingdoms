@@ -1,0 +1,42 @@
+
+state={
+	id=840
+	name="상하이"
+
+	history={
+		owner = SIS
+		add_core_of = CHI
+		add_core_of = PRC
+		set_demilitarized_zone = yes
+		buildings = {
+			infrastructure = 3
+			air_base = 3
+			dockyard = 1
+			7014 = {
+				naval_base = 6
+				coastal_bunker = 1
+				bunker = 1
+
+			}
+
+		}
+		victory_points = {
+			7014 5 
+		}
+		1937.10.25 = {
+			owner = CHI
+			set_demilitarized_zone = NO
+			controller = JAP
+
+		}
+
+	}
+
+	provinces={
+		7014 10034 12052 12076 
+	}
+	manpower=3000000
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=0.000
+}

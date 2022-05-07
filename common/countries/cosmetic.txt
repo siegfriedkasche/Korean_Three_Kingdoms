@@ -6,6 +6,10 @@ FAR_ROMA = {
 	color = rgb { 128 0 128 }
 	color_ui = rgb { 128 0 128 }
 }
+DPR_BKJ = {
+	color = rgb  { 128 88 35 }
+	color_ui = rgb  { 128 88 35 }
+}
 RAJ_UK = {
 	color = rgb { 170  10  10 }
 	color_ui = rgb { 200  10  10 }
@@ -223,8 +227,8 @@ GER_german_monarchy = {
 }
 
 CHI_warlord_leader = {
-	color = hsv { 0.18 0.6 0.9 } #255 244 190
-	color_ui = hsv { 0.18 0.3 0.9 }
+	color = rgb { 8 99 156 }
+	color_ui = rgb { 8 99 156 }
 }
 MAN_restored = {
 	color = rgb { 237 152 18 }

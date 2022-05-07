@@ -1,0 +1,45 @@
+
+state={
+	id=611
+	name="STATE_611"
+
+	history={
+		owner = CHI
+		add_core_of = MEN
+		add_core_of = CHI
+		add_core_of = PRC
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+
+		}
+		1937.9.1 = {
+			owner = SCA
+			add_core_of = SCA
+			add_core_of = MEN
+			add_core_of = CHI
+			add_core_of = PRC
+
+		}
+		1938.1.1 = {
+			owner = MEN
+			add_core_of = SCA
+			add_core_of = MEN
+			add_core_of = CHI
+			add_core_of = PRC
+
+		}
+		victory_points = {
+			10397 1
+		}
+
+	}
+
+	provinces={
+		828 952 1137 1489 1590 3955 6904 9776 10397 
+	}
+	manpower=1470000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

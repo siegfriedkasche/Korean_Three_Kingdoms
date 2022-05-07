@@ -4,6 +4,7 @@ BKJ_pacific_guardian = {
 	priority = 200
 	allowed = {
 		tag = BKJ	
+		tag = DPR
 	}
 	visible = {
 		has_completed_focus = BKJ_Southeast_Asia_protect

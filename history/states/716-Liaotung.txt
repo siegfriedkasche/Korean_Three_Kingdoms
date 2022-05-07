@@ -36,7 +36,14 @@ state={
 		victory_points = {
 			11808 5
 		}
-      add_core_of = GGR
+     		add_core_of = GGR
+		1936.1.2 = {
+			owner = MAN
+			remove_core_of = GGR
+			add_core_of = MAN
+			add_core_of = PRC
+			add_core_of = CHI
+		}
      
     }
 

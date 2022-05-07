@@ -8,5 +8,17 @@ spriteTypes = {
 		name = "GFX_event_born_kim_jung_il"
 		texturefile = "gfx/event_pictures/GFX_event_born_kim_jung_il.png"
 	}
+	spriteType = {
+		name = "GFX_report_event_PRC_Overcome"
+		texturefile = "gfx/event_pictures/GFX_report_event_PRC_Overcome.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_picture_chiangkai"
+		texturefile = "gfx/event_pictures/report_event_picture_chiangkai.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_picture_shanghai_battle"
+		texturefile = "gfx/event_pictures/report_event_picture_shanghai_battle.png"
+	}
 }
 

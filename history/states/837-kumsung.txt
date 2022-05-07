@@ -1,7 +1,7 @@
 state={
 	id=837
 	name="금성"
-	manpower = 14774200
+	manpower = 4673762
 	state_category = town
 	resources={
 		steel= 20
@@ -23,7 +23,11 @@ state={
 		victory_points = {
 			4056 20
 		}	
-
+		1936.1.2 = {
+            		owner = JAP
+            		remove_core_of = SIR
+            		add_core_of = KOR
+        		}
 		add_core_of = SIR
 	}
 

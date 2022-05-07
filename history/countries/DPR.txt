@@ -1,0 +1,168 @@
+﻿capital = 525
+oob = ""
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	gwtank = 1
+	basic_light_tank = 1
+	early_fighter = 1
+	early_bomber = 1
+	naval_bomber1 = 1
+	early_submarine = 1
+	early_destroyer = 1
+	early_light_cruiser = 1
+	basic_light_cruiser = 1
+	early_heavy_cruiser = 1
+	early_battleship = 1
+	transport = 1
+	trench_warfare = 1
+	fleet_in_being = 1
+	mountaineers_tech = 1
+	
+}
+set_research_slots = 3
+set_convoys = 5
+add_ideas = no_faction
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 0
+	neutrality = 100
+	fascism = 0
+	communism = 0
+}
+set_party_name = { 
+    ideology = neutrality 
+    long_name = "동학농민군"  
+    name = "동학농민군"  
+}
+set_party_name = { 
+    ideology = fascism
+    long_name = "동학농민군"  
+    name = "동학농민군" 
+}
+set_party_name = { 
+    ideology = democratic 
+    long_name = "동학농민군" 
+    name = "동학농민군"  
+}
+set_party_name = { 
+    ideology = communism
+    long_name = "동학농민군" 
+    name = "동학농민군"
+}
+create_country_leader = {
+	name = "전봉준"
+	desc = ""
+	picture = "gfx/leaders/DPR/Jeon_Bongjun.png"
+	expire = "1965.1.1"
+	ideology = conservatism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "전봉준"
+	desc = ""
+	picture = "gfx/leaders/DPR/Jeon_Bongjun.png"
+	expire = "1965.1.1"
+	ideology = despotism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "전봉준"
+	desc = ""
+	picture = "gfx/leaders/DPR/Jeon_Bongjun.png"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "전봉준"
+	desc = ""
+	picture = "gfx/leaders/DPR/Jeon_Bongjun.png"
+	expire = "1965.1.1"
+	ideology = fascism_ideology
+	traits = {
+		#
+	}
+}
+create_corps_commander = {
+	name = "전봉준"
+	picture = "gfx/leaders/DPR/Jeon_Bongjun.png"
+	traits = {
+
+	}
+	skill = 5
+	attack_skill = 4
+	defense_skill = 5
+	planning_skill = 3
+	loigstics_skill = 4
+}
+create_corps_commander = {
+	name = "최시형"
+	picture = "gfx/leaders/DPR/choi_sihyeung.png"
+	traits = {
+
+	}
+	skill = 5
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 3
+	loigstics_skill = 3
+}
+add_command_power = 20
+create_corps_commander = {
+	name = "김개남"
+	picture = "gfx/leaders/DPR/kim_geanam.png"
+	traits = {
+
+	}
+	skill = 4
+	attack_skill = 3
+	defense_skill = 4
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "손화중"
+	picture = "gfx/leaders/DPR/son_hwazhong.png"
+	traits = {
+
+	}
+	skill = 4
+	attack_skill = 3
+	defense_skill = 4
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "손병희"
+	picture = "gfx/leaders/DPR/Son_Byonghi.png"
+	traits = {
+
+	}
+	skill = 4
+	attack_skill = 3
+	defense_skill = 4
+	planning_skill = 2
+	logistics_skill = 2
+}

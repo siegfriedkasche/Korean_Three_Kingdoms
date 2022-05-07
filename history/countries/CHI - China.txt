@@ -9,7 +9,7 @@ if = {
 	}
 }
 
-recruit_character = CHI_chiang_kaishek
+recruit_character = CHI_chiang_kaishek1
 recruit_character = CHI_zhang_guotao
 recruit_character = CHI_wang_jingwei
 recruit_character = CHI_weng_wenhao
@@ -60,6 +60,7 @@ set_technology = {
 	fleet_in_being = 1
 	basic_train = 1
 }
+add_ideas = no_proper_equipment_design
 if = {
 	limit = {
 		has_dlc = "No Step Back"
@@ -105,6 +106,10 @@ if = {
 		target = MEN
 		autonomous_state = autonomy_integrated_puppet
 	}
+	set_autonomy = {
+		target = GUI
+		autonomous_state = autonomy_integrated_puppet
+	}
 }
 if = {
 	limit = { 
@@ -117,6 +122,10 @@ if = {
 		target = MEN
 		autonomous_state = autonomy_puppet
 	}
+	set_autonomy = {
+		target = GUI
+		autonomous_state = autonomy_integrated_puppet
+	}
 }
 if = {
 	limit = { 
@@ -125,6 +134,10 @@ if = {
 	set_autonomy = {
 		target = MEN
 		autonomous_state = autonomy_wtt_imperial_protectorate
+	}
+	set_autonomy = {
+		target = GUI
+		autonomous_state = autonomy_integrated_puppet
 	}
 }
 if = {
@@ -194,6 +207,8 @@ set_convoys = 40
 			complete_national_focus = industrial_effort
 			complete_national_focus = construction_effort
 			complete_national_focus = production_effort
+			complete_national_focus = CHI_warlord_annex
+			complete_national_focus = CHI_war_of_resistance
 		}
 	}
 
@@ -209,6 +224,7 @@ set_convoys = 40
 		CHI_chen_shaokuan
 		jiangnan_shipyard_group
 		camco
+		CHI_war_of_resistance
 
 	}
 	if = {
@@ -229,6 +245,7 @@ set_convoys = 40
 	}
 	
 	set_global_flag = fall_of_nanjing
+	set_global_flag = beijing
 	create_faction = chinese_united_front
 	add_to_faction = PRC
 	remove_opinion_modifier = { target = PRC modifier = hostile_status }

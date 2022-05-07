@@ -1,7 +1,7 @@
 state={
 	id=838
 	name="영원산성"
-	manpower = 10774200
+	manpower = 2223484
 	state_category = town
 	resources={
 		aluminium = 10
@@ -20,7 +20,11 @@ state={
 		victory_points = {
 			11958 10
 		}	
-
+		1936.1.2 = {
+            		owner = JAP
+            		remove_core_of = SIR
+            		add_core_of = KOR
+        		}
 		add_core_of = SIR
 	}
 

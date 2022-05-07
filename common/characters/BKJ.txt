@@ -96,5 +96,110 @@ characters = {
 			logistics_skill = 4
 		}
 	}
+	CHI_chiang_kaishek1={
+		name=CHI_chiang_kaishek
+		portraits={
+			civilian={
+				large=GFX_portrait_CHI_chiang_kaishek
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits={ }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+
+	PRC_Wang_Jiaxiang={
+		name=PRC_Wang_Jiaxiang
+		portraits={
+			army={
+				small=GFX_PRC_Wang_Jiaxiang
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = PRC_Wang_Jiaxiang
+			allowed = {
+				PRC_mao_zedong = {
+					is_country_leader = yes
+				}
+			}
+			traits = {
+				political_commissar
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	PRC_Wang_ming={
+		name= PRC_Wang_ming
+		portraits={
+			army={
+				large=GFX_portrait_prc_wang_ming
+				small=GFX_PRC_Wang_ming_ideas
+			}
+			civilian = {
+				large=GFX_portrait_prc_wang_ming
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = PRC_Wang_ming
+			allowed = {
+
+			}
+			traits = {
+				marxist_fundementalist 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	PRC_Zhu_Rui={
+		name= PRC_Zhu_Rui
+		portraits={
+			army={
+				small=GFX_PRC_Zhu_Rui_ideas
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = PRC_Zhu_Rui
+			allowed = {
+
+			}
+			traits = {
+				army_artillery_2 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	PRC_qin_bangxin={
+		name= PRC_qin_bangxin
+		portraits={
+			army={
+				small=GFX_PRC_qin_bangxin_ideas
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = PRC_qin_bangxin
+			allowed = {
+
+			}
+			traits = {
+				marxist_academic 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
 }
 	

@@ -7,3 +7,7 @@ music = {
 	song = "Tage_in_Peking"
 	
 }
+music = {
+	song = "Anthem_of_China"
+	
+}

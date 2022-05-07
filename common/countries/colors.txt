@@ -2,11 +2,43 @@
 
 SIR = {
 	color = rgb { 0  38  286 }
-	color = rgb { 0  38  286 }
+	color_ui = rgb { 0  38  286 }
+}
+GUI = {
+	color = rgb  { 176 82 40 }
+	color_ui = rgb  { 176 82 40 }
+}
+DPR = {
+	color = rgb  { 238 165 70 }
+	color_ui = rgb  { 238 165 70 }
+}
+SCA = {
+	color = rgb  { 232 229 212 }
+	color_ui = rgb  { 232 229 212 }
+}
+ECA = {
+	color = rgb  { 104  132  91 }
+	color_ui = rgb  { 104  132  91 }
+}
+SIS = {
+	color = rgb { 9 99 156 }
+	color_ui = rgb { 9 99 156 }
+}
+GND = {
+	color = rgb { 97 92 46 }
+	color_ui = rgb { 97 92 46 }
+}
+SZC = {
+	color = rgb { 122 50 80 }
+	color_ui = rgb { 122 50 80 }
+}
+LIU = {
+	color = rgb { 175 175 126 }
+	color_ui = rgb { 175 175 126 }
 }
 GGR = {
 	color = rgb { 250  1  1 }
-	color = rgb { 250  1  1 }
+	color_ui = rgb { 250  1  1 }
 }
 TAM = {
 	color = rgb { 200  125  0 }
@@ -14,11 +46,11 @@ TAM = {
 }
 BCH = {
 	color = rgb { 127  127  127 }
-	color = rgb { 127  127  127 }
+	color_ui = rgb { 127  127  127 }
 }
 BKJ = {
-	rgb { 250  250  0 }
-	rgb { 250  250  0 }
+	color = rgb { 250  250  0 }
+	color_ui = rgb { 250  250  0 }
 }
 GER = {
 	color = HSV { 0.1 0.15 0.4 }
@@ -162,8 +194,8 @@ CAN = {
 	color_ui = rgb { 155 62 51 }
 }
 CHI = {
-	color = hsv { 0.18 0.6 0.9 } #255 244 190
-	color_ui = hsv { 0.18 0.3 0.9 }
+	color = rgb { 8 99 156 } #hsv { 0.18 0.6 0.9 } 255 244 190
+	color_ui = rgb { 8 99 156 } #hsv { 0.18 0.3 0.9 }
 }
 CHL = {
 	color = rgb { 155 101 107 }

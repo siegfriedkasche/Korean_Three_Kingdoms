@@ -15,13 +15,13 @@ focus_tree = {
 		id = MEN_new_politic
 		icon = GFX_focus_spr_crush_the_revolution
 		cost = 15.00
-		x = 20
+		x = 21
 		y = 2
 		prerequisite = {
 			focus = MEN_Establishment_of_the_Mongolian_Army_General_Headquarters
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		completion_reward = {
 			add_political_power = 10
@@ -37,6 +37,28 @@ focus_tree = {
 				days = 10
 			}
 		}
+	}
+	focus = {
+		id = MEN_sudong_incident
+		icon = GFX_goal_generic_major_war
+		cost = 3.00
+		x = 19
+		y = 2
+		prerequisite = {
+			focus = MEN_Establishment_of_the_Mongolian_Army_General_Headquarters
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				has_completed_focus = MEN_new_politic
+				date > 1936.08.01
+				factor = 200
+			}
+		}
+		completion_reward = {
+			add_war_support = -0.05
+		}
+
 	}
 	focus = {
 		id = MEN_Establishment_of_the_Mongolian_Army_General_Headquarters
@@ -67,6 +89,9 @@ focus_tree = {
 		prerequisite = {
 			focus = MEN_new_politic
 		}
+		prerequisite = {
+			focus = MEN_sudong_incident
+		}
 		ai_will_do = {
 			factor = 100
 		}
@@ -79,6 +104,7 @@ focus_tree = {
 					autonomous_state = autonomy_wtt_imperial_protectorate
 				}
 			}
+			
 			hidden_effect = {
 				MEN = {
 					set_politics = {
@@ -92,7 +118,9 @@ focus_tree = {
 					id = MEN.3
 					days = 10
 				}
+				
 			}
+
 		}
 	}
 	focus = {
@@ -157,6 +185,12 @@ focus_tree = {
 		cost = 5.00
 		x = 20
 		y = 5
+		available = {
+			date > 1938.10.27
+			SCA = {
+				exist = yes
+			}
+		}	
 		prerequisite = {
 			focus = MEN_Unwang_release
 		}
@@ -177,9 +211,70 @@ focus_tree = {
 				ideology = fascism
 				popularity = 0.25
 			}
+			annex_country = {
+				target = SCA
+				transfer_troops = yes
+			}
 			swap_ideas = {
 				add_idea = Mengjiang_United_ideas
 				remove_idea = MEN_Establishment_of_the_Mongolian_Army_General_Headquarters_ideas
+			}
+		}
+	}
+	focus = {
+		id = MEN_SCA
+		icon = GFX_focus_jap_manchurian_project
+		cost = 3.00
+		x = 23
+		y = 4
+		available = {
+			is_subject_of = JAP
+			OR = {
+				JAP = {
+					controls_state = 611
+				}
+				MEN = {
+					controls_state = 611
+				}
+				CHI = {
+					AND = {
+						is_subject_of = JAP
+						controls_state = 611
+					}
+				}
+				SHX = {
+					AND = {
+						is_subject_of = JAP
+						controls_state = 611
+					}
+				}
+				MAN = {
+					AND = {
+						is_subject_of = JAP
+						controls_state = 611
+					}
+				}
+			}
+			date > 1937.7.1
+		}	
+		prerequisite = {
+			focus = MEN_Cooperation_with_the_Kwantung_Army
+		}
+		ai_will_do = {
+			factor = 300
+		}
+		completion_reward = {
+			JAP = {
+				set_autonomy = {
+					target = SCA
+					autonomy_state = autonomy_wtt_imperial_subject
+				}
+			}
+			SCA = {
+				transfer_state = 611
+			}
+			611 = {
+				add_core_of = SCA
 			}
 		}
 	}
@@ -969,1136 +1064,4 @@ focus_tree = {
 	#######################################
 	##### MILITARY RESEARCH INSTITUTE #####	
 	#######################################
-
-	focus = {
-		id = MEN_military_research_institute
-		icon = GFX_focus_CZE_military_research_institute
-		x = -6
-		y = 12
-		relative_position_id = MEN_Establishment_of_the_Mongolian_Army_General_Headquarters
-
-		cost = 10
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			army_experience = 10
-		}
-	}
-
-	focus = {
-		id = MEN_mountain_bonus
-		icon = GFX_goal_generic_special_forces
-		prerequisite = { focus = MEN_military_research_institute }
-		x = -3
-		y = 1
-		relative_position_id = MEN_military_research_institute
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = cze_mountain_bonus
-				bonus = 0.5
-				ahead_reduction = 1
-				uses = 1
-				category = mountaineers_tech
-			}
-		}
-	}
-
-	focus = {
-		id = MEN_inf_and_artillery_advancement
-		icon = GFX_goal_rhineland
-		prerequisite = { focus = MEN_military_research_institute }
-		x = -1
-		y = 1
-		relative_position_id = MEN_military_research_institute
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = MEN_inf_and_artillery_advancement
-				bonus = 0.5
-				ahead_reduction = 1
-				uses = 1
-				category = infantry_weapons
-			}
-		}
-	}
-
-	focus = {
-		id = MEN_support_bonus
-		icon = GFX_goal_generic_army_artillery
-		prerequisite = { focus = MEN_mountain_bonus }
-		x = -3
-		y = 2
-		relative_position_id = MEN_military_research_institute
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = MEN_support_bonus #@#
-				bonus = 0.5
-				uses = 2
-				#category = hospital_tech
-				#category = logistics_tech
-				#category = signal_company_tech
-				#category = maintenance_company_tech
-				#category = engineers_tech
-				#category = recon_tech
-				#category = military_police_tech
-				category = support_tech	
-			}
-		add_tech_bonus = {
-			name = MEN_support_bonus #@#
-			bonus = 0.5
-			uses = 1
-			technology = support_weapons2
-			technology = support_weapons3
-			}
-		}
-	}
-
-	focus = {
-		id = MEN_inf_and_artillery_advancement_2
-		icon = GFX_goal_generic_army_artillery2
-		prerequisite = { focus = MEN_inf_and_artillery_advancement }
-		x = -1
-		y = 2
-		relative_position_id = MEN_military_research_institute
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = MEN_inf_and_artillery_advancement_2 #@#
-				bonus = 0.5
-				ahead_reduction = 1
-				uses = 1
-				category = artillery
-			}
-		}
-	}
-
-	focus = {
-		id = MEN_doctrine_bonus
-		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = MEN_support_bonus }
-		prerequisite = { focus = MEN_inf_and_artillery_advancement_2 }
-		x = -2
-		y = 3
-		relative_position_id = MEN_military_research_institute
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = yes
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 0.5
-				uses = 1
-				category = land_doctrine
-			}
-		}
-	}
-
-	focus = {
-		id = MEN_motorization_scheme
-		icon = GFX_goal_generic_army_motorized
-		prerequisite = { focus = MEN_military_research_institute }
-		x = 1
-		y = 1
-		relative_position_id = MEN_military_research_institute
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = motorized_bonus
-				bonus = 0.75
-				technology = motorised_infantry
-			}
-		}
-	}
-
-	focus = {
-		id = MEN_armour_bonus_1
-		icon = GFX_goal_generic_army_tanks
-		prerequisite = { focus = MEN_military_research_institute }
-		x = 3
-		y = 1
-		relative_position_id = MEN_military_research_institute
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 70
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = armor_bonus
-				bonus = 0.5
-				uses = 1
-				category = armor
-			}
-		}
-	}
-
-	focus = {
-		id = MEN_mechanization
-		icon = GFX_goal_generic_production2
-		prerequisite = { focus = MEN_motorization_scheme }
-		x = 1
-		y = 2
-		relative_position_id = MEN_military_research_institute
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = MEN_mechanization #@#
-				bonus = 0.5
-				uses = 1
-				category = cat_mechanized_equipment
-			}
-		}
-	}
-
-	focus = {
-		id = MEN_armour_bonus_ii
-		icon = GFX_goal_generic_army_tanks
-		prerequisite = { focus = MEN_armour_bonus_1 }
-		x = 3
-		y = 2
-		relative_position_id = MEN_military_research_institute
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = armor_bonus
-				bonus = 0.5
-				uses = 1
-				category = armor
-			}
-		}
-	}
-
-	focus = {
-		id = MEN_doctrine_bonus_2
-		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = MEN_mechanization }
-		prerequisite = { focus = MEN_armour_bonus_ii }
-		x = 2
-		y = 3
-		relative_position_id = MEN_military_research_institute
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = yes
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 0.5
-				uses = 1
-				category = land_doctrine
-			}
-		}
-	}
-
-	focus = {
-		id = MEN_war_college
-		icon = GFX_goal_generic_build_tank
-		prerequisite = { focus = MEN_doctrine_bonus }
-		prerequisite = { focus = MEN_doctrine_bonus_2 }
-		x = 0
-		y = 4
-		relative_position_id = MEN_military_research_institute
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 90
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			add_ideas = CZE_war_college_idea
-			if = {
-				limit = {
-					NOT = { amount_research_slots > 4 }
-				}
-				add_research_slot = 1
-				custom_effect_tooltip = MEN_war_college_effect_tt
-			}
-		}
-	}
-
-	#######################################
-	####### AERONAUTICAL INSTITUTE ########	
-	#######################################
-
-	focus = {
-		id = MEN_military_aeronautical_institute
-		icon = GFX_focus_CZE_military_aeronautical_institute
-		x = 8
-		y = 0
-		relative_position_id = MEN_military_research_institute
-
-		cost = 10
-
-
-		available = {
-
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			air_experience = 10
-		}
-	}
-
-	focus = {
-		id = MEN_import_foreign_fighters
-		icon = GFX_goal_generic_air_fighter
-		prerequisite = { focus = MEN_military_aeronautical_institute }
-		x = -2
-		y = 1
-		relative_position_id = MEN_military_aeronautical_institute
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 70
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = MEN_import_foreign_fighters #@#
-				bonus = 0.5
-				uses = 1
-				category = light_fighter
-				category = cat_heavy_fighter
-			}
-		}
-	}
-
-	focus = {
-		id = MEN_light_fighter_focus
-		icon = GFX_goal_generic_air_fighter2
-		prerequisite = { focus = MEN_import_foreign_fighters }
-		mutually_exclusive = { focus = MEN_heavy_fighter_focus }
-		x = -1
-		y = 1
-		relative_position_id = MEN_import_foreign_fighters
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 70
-		}
-
-		available = {
-			
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = MEN_light_fighter_focus #@#
-				bonus = 0.5
-				uses = 1
-				category = light_fighter
-			}
-		}
-	}
-
-	focus = {
-		id = MEN_heavy_fighter_focus
-		icon = GFX_goal_generic_air_fighter
-		prerequisite = { focus = MEN_import_foreign_fighters }
-		mutually_exclusive = { focus = MEN_light_fighter_focus }
-		x = 1
-		y = 1
-		relative_position_id = MEN_import_foreign_fighters
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 50
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = MEN_heavy_fighter_focus #@#
-				bonus = 0.5
-				uses = 1
-				category = cat_heavy_fighter
-			}
-		}
-	}
-
-	focus = {
-		id = MEN_air_is_our_sea
-		icon = GFX_goal_generic_build_airforce
-		prerequisite = { focus = MEN_military_aeronautical_institute }
-		x = 0
-		y = 1
-		relative_position_id = MEN_military_aeronautical_institute
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 80
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			add_ideas = CZE_air_focus
-		}
-	}
-
-	focus = {
-		id = MEN_rule_the_air
-		icon = GFX_goal_generic_air_doctrine
-		prerequisite = { focus = MEN_air_is_our_sea }
-		prerequisite = { focus = MEN_light_fighter_focus focus = MEN_heavy_fighter_focus }
-		prerequisite = { focus = MEN_tac_focus focus = MEN_cas_focus }
-		x = 0
-		y = 3
-		relative_position_id = MEN_military_aeronautical_institute
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 80
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = yes
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = air_doc_bonus
-				bonus = 0.5
-				uses = 3
-				category = air_doctrine
-			}
-		}
-	}
-
-	focus = {
-		id = MEN_import_foreign_bombers
-		icon = GFX_goal_generic_air_bomber
-		prerequisite = { focus = MEN_military_aeronautical_institute }
-		x = 2
-		y = 1
-		relative_position_id = MEN_military_aeronautical_institute
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 70
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = MEN_import_foreign_bombers #@#
-				bonus = 0.5
-				uses = 1
-				category = cas_bomber
-				category = tactical_bomber
-			}
-		}
-	}
-
-	focus = {
-		id = MEN_cas_focus
-		icon = GFX_goal_generic_CAS
-		prerequisite = { focus = MEN_import_foreign_bombers }
-		mutually_exclusive = { focus = MEN_tac_focus }
-		x = -1
-		y = 1
-		relative_position_id = MEN_import_foreign_bombers
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 70
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = MEN_cas_focus #@#
-				bonus = 0.5
-				uses = 1
-				category = cas_bomber
-			}
-		}
-	}
-
-	focus = {
-		id = MEN_tac_focus
-		icon = GFX_goal_generic_air_bomber
-		prerequisite = { focus = MEN_import_foreign_bombers }
-		mutually_exclusive = { focus = MEN_cas_focus }
-		x = 1
-		y = 1
-		relative_position_id = MEN_import_foreign_bombers
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 30
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = MEN_tac_focus #@#
-				bonus = 0.5
-				uses = 1
-				category = tactical_bomber
-			}
-		}
-	}
-	############################
-	####### NAVY SECTION #######
-	############################
-
-
-	focus = {
-		id = MEN_develop_polish_ship_building
-		icon = GFX_goal_generic_construct_naval_dockyard
-		
-		x = 7
-		y = 0
-		cost = 10
-		relative_position_id = MEN_military_aeronautical_institute
-
-		available = {
-			any_owned_state = {
-				is_coastal = yes
-			}
-		}
-
-		available_if_capitulated = yes
-		
-		complete_tooltip = {
-			random_state = {
-				limit = { has_state_flag = MEN_develop_polish_ship_building_1 }
-				add_building_construction = {
-					type = dockyard
-					level = 3
-					instant_build = yes
-				}
-			}
-		}
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				prioritize = { 85 }
-				limit = {
-					free_building_slots = {
-						building = dockyard
-						size > 2
-						include_locked = yes
-					}
-				}
-				add_building_construction = {
-					type = dockyard
-					level = 3
-					instant_build = yes
-				}
-				set_state_flag = MEN_develop_polish_ship_building_1
-			}
-			#Add 3 Dockyards at Gdansk			
-		}
-	}
-
-	focus = {
-		id = MEN_study_foreign_built_ships
-		icon = GFX_goal_generic_production
-		prerequisite = { focus = MEN_develop_polish_ship_building }
-		
-		x = 1
-		y = 1
-		relative_position_id = MEN_develop_polish_ship_building
-		cost = 10
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = MEN_study_foreign_built_ships
-				bonus = 0.5
-				uses = 1
-				category = dd_tech
-			}
-			#1x 50% research bonus for Destroyers
-		}
-	}
-
-	focus = {
-		id = MEN_a_cruiser_navy
-		icon = GFX_goal_generic_navy_anti_submarine
-		prerequisite = { focus = MEN_study_foreign_built_ships }
-		
-		x = 1
-		y = 1
-		relative_position_id = MEN_study_foreign_built_ships
-		cost = 10
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = MEN_a_cruiser_navy
-				bonus = 0.5
-				uses = 1
-				category = cl_tech
-			}
-			#1x50% research bonus to Light Cruisers
-		}
-	}
-
-	focus = {
-		id = MEN_import_submarine_technology
-		icon = GFX_goal_generic_production2
-		prerequisite = { focus = MEN_develop_polish_ship_building }
-		
-		x = -1
-		y = 1
-		relative_position_id = MEN_develop_polish_ship_building
-		cost = 10
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = MEN_import_submarine_technology
-				bonus = 0.5
-				uses = 1
-				category = ss_tech
-			}
-			#1 x50% research bonus for Submarines
-		}
-	}
-
-	focus = {
-		id = MEN_commerce_attack
-		icon = GFX_goal_generic_navy_submarine
-		prerequisite = { focus = MEN_import_submarine_technology }
-		x = -1
-		y = 1
-		relative_position_id = MEN_import_submarine_technology
-		cost = 10
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = MEN_commerce_attack
-				bonus = 0.5
-				uses = 1
-				category = submarine_doctrine
-			}
-			#1x50% research bonus to Submarine Doctrine
-		}
-	}
-
-	focus = {
-		id = MEN_the_twin_threats
-		icon = GFX_goal_generic_navy_doctrines_tactics
-		prerequisite = { focus = MEN_import_submarine_technology focus = MEN_study_foreign_built_ships }
-		
-		x = 1
-		y = 1
-		relative_position_id = MEN_import_submarine_technology
-		cost = 10
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = MEN_the_twin_threats
-				bonus = 0.5
-				uses = 1
-				category = naval_doctrine
-			}
-			#1x50% bonus to Naval Doctrine Research
-		}
-	}
-
-	focus = {
-		id = MEN_coastal_defense
-		icon = GFX_goal_generic_navy_cruiser
-		prerequisite = { focus = MEN_the_twin_threats }
-		mutually_exclusive = { focus = MEN_strike_force }
-		x = 1
-		y = 1
-		relative_position_id = MEN_the_twin_threats
-		cost = 10
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = MEN_coastal_defense
-				bonus = 0.5
-				uses = 1
-				category = ss_tech
-			}
-			add_tech_bonus = {
-				name = MEN_coastal_defense
-				bonus = 0.5
-				uses = 1
-				category = dd_tech
-			}
-			#1x50% research bonus to destroyers & 1 x50% bonus to Submarines
-		}
-	}
-	
-	focus = {
-		id = MEN_strike_force
-		icon = GFX_goal_generic_occupy_states_coastal
-		prerequisite = { focus = MEN_the_twin_threats }
-		mutually_exclusive = { focus = MEN_coastal_defense }
-		x = -1
-		y = 1
-		relative_position_id = MEN_the_twin_threats
-		cost = 10
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = MEN_strike_force
-				bonus = 0.5
-				uses = 1
-				category = cl_tech
-			}
-			add_tech_bonus = {
-				name = MEN_strike_force
-				bonus = 0.5
-				uses = 1
-				category = ca_tech
-			}
-			#1x50% research bonus to Light Cruisers & 1x50% bonus to Heavy Cruisers
-		}
-	}
-
-	focus = {
-		id = MEN_baltic_navy
-		icon = GFX_goal_generic_navy_battleship
-		prerequisite = { focus = MEN_strike_force focus = MEN_coastal_defense }
-		
-		x = 1
-		y = 1
-		relative_position_id = MEN_strike_force
-		cost = 10
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = MEN_baltic_navy
-				bonus = 0.5
-				uses = 1
-				category = naval_doctrine
-			}
-			#1x50% bonus to Naval Doctrine research
-		}
-	}
 }

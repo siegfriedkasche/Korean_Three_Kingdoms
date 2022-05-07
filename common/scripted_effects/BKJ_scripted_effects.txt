@@ -244,3 +244,150 @@ BKJ_congress_large_support = { #대규모 야스 20 참의원 80 진의원
 #	}
 #	set_variable = { bkj_current_house_icon_frame = BKJ_house_temp }
 #}
+PRC_high_illiteracy_clear = {
+	if = {
+		limit = {
+			has_idea = PRC_high_illiteracy
+		}
+		swap_ideas = {
+			add_idea = PRC_high_illiteracy2
+			remove_idea = PRC_high_illiteracy
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = PRC_high_illiteracy2
+		}
+		swap_ideas = {
+			add_idea = PRC_high_illiteracy3
+			remove_idea = PRC_high_illiteracy2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = PRC_high_illiteracy3
+		}
+		remove_ideas = PRC_high_illiteracy3
+	}
+}
+PRC_anti_revolutionary_faction_UP = {
+	if = {
+		limit = {
+			NOT = {
+				has_idea = PRC_anti_revolutionary_faction_down
+				has_idea = PRC_anti_revolutionary_faction
+				has_idea = PRC_anti_revolutionary_faction_up
+			}
+		}
+		add_ideas = PRC_anti_revolutionary_faction_down
+	}
+	else_if = {
+		limit = {
+			has_idea = PRC_anti_revolutionary_faction_down
+		}
+		swap_ideas = {
+			add_idea = PRC_anti_revolutionary_faction
+			remove_idea = PRC_anti_revolutionary_faction_down
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = PRC_anti_revolutionary_faction
+		}
+		swap_ideas = {
+			add_idea = PRC_anti_revolutionary_faction_up
+			remove_idea = PRC_anti_revolutionary_faction
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = PRC_anti_revolutionary_faction_up
+		}
+		add_stability = -0.05
+	}
+}
+PRC_anti_revolutionary_faction_down = {
+	if = {
+		limit = {
+			has_idea = PRC_anti_revolutionary_faction_down
+		}
+		remove_ideas = PRC_anti_revolutionary_faction_down
+	}
+	else_if = {
+		limit = {
+			has_idea = PRC_anti_revolutionary_faction
+		}
+		swap_ideas = {
+			add_idea = PRC_anti_revolutionary_faction_down
+			remove_idea = PRC_anti_revolutionary_faction
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = PRC_anti_revolutionary_faction_up
+		}
+		swap_ideas = {
+			add_idea = PRC_anti_revolutionary_faction
+			remove_idea = PRC_anti_revolutionary_faction_up
+		}
+	}
+
+}
+PRC_sacrifice_exercise_ideas_down = {
+	if = {
+		limit = {
+			has_idea = PRC_sacrifice_exercise_ideas2
+		}
+		swap_ideas = {
+			add_idea = PRC_sacrifice_exercise_ideas_down1
+			remove_idea = PRC_sacrifice_exercise_ideas2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = PRC_sacrifice_exercise_ideas_down1
+		}
+		swap_ideas = {
+			add_idea = PRC_sacrifice_exercise_ideas_down2
+			remove_idea = PRC_sacrifice_exercise_ideas_down1
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = PRC_sacrifice_exercise_ideas_down2
+		}
+		swap_ideas = {
+			add_idea = PRC_sacrifice_exercise_ideas_down3
+			remove_idea = PRC_sacrifice_exercise_ideas_down2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = PRC_sacrifice_exercise_ideas_down3
+		}
+		swap_ideas = {
+			add_idea = PRC_sacrifice_exercise_ideas_down4
+			remove_idea = PRC_sacrifice_exercise_ideas_down3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = PRC_sacrifice_exercise_ideas_down4
+		}
+		remove_ideas = PRC_sacrifice_exercise_ideas_down4
+	}
+	else_if = {
+		limit = {
+			NOT = {
+				AND = {
+					has_idea = PRC_sacrifice_exercise_ideas_down4
+					has_idea = PRC_sacrifice_exercise_ideas_down3
+					has_idea = PRC_sacrifice_exercise_ideas_down2
+					has_idea = PRC_sacrifice_exercise_ideas_down1
+					has_idea = PRC_sacrifice_exercise_ideas2
+				}
+			}
+		}
+		add_stability = 0.05
+	}
+}

@@ -25,6 +25,40 @@ spriteTypes = {
 		name = "GFX_idea_GGR_chunrima_ideas"
 		texturefile = "gfx/interface/ideas/GFX_GGR_chunrima.png"
 	}
+	spriteType = {
+		name = "GFX_idea_CHI_legal_reform_ideas2"
+		texturefile = "gfx/interface/ideas/CHI_legal_reform_ideas2.png"
+	}
+	spriteType = {
+		name = "GFX_idea_siver"
+		texturefile = "gfx/interface/ideas/siver.png"
+	}
+	spriteType = {
+		name = "GFX_idea_no_proper_equipment_design_ideas"
+		texturefile = "gfx/interface/ideas/no_proper_equipment_design_ideas.png"
+	}
+	spriteType = {
+		name = "GFX_idea_sanmin_zuyi_ideas"
+		texturefile = "gfx/interface/ideas/sanmin_zuyi_ideas.png"
+	}
+
+	spriteType = {
+		name = "GFX_PRC_Wang_Jiaxiang"
+		texturefile = "gfx/interface/ideas/PRC_Wang_Jiaxiang.png"
+	}
+	spriteType = {
+		name = "GFX_PRC_Wang_ming_ideas"
+		texturefile = "gfx/interface/ideas/PRC_Wang_ming.png"
+	}
+	spriteType = {
+		name = "GFX_PRC_Zhu_Rui_ideas"
+		texturefile = "gfx/interface/ideas/PRC_Zhu_Rui.png"
+	}
+	spriteType = {
+		name = "GFX_PRC_qin_bangxin_ideas"
+		texturefile = "gfx/interface/ideas/GFX_PRC_qin_bangxin_ideas.png"
+	}
+
 
 
 
@@ -83,6 +117,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_Eulji_Mundeok_ideas"
 		texturefile = "gfx/interface/ideas/Eulji_Mundeok.png"
+	}
+	spriteType = {
+		name = "GFX_idea_PRC_high_illiteracy"
+		texturefile = "gfx/interface/ideas/PRC_high_illiteracy.png"
 	}
 	
 }

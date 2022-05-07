@@ -1,0 +1,644 @@
+add_namespace = SJW
+
+country_event = {
+	id = SJW.0
+	title = SJW.0.t
+	desc = SJW.0.d
+	picture = GFX_report_event_chinese_officers
+	is_triggered_only = yes
+
+	
+	option = {
+        name = SJW.0.a
+        ai_chance = {
+            factor = 5
+        }
+        add_stability = -0.05
+        add_manpower = -7000
+        leave_faction = yes
+        CHI = {
+            dismantle_faction = yes
+        }
+        hidden_effect = {
+            every_country = {
+                news_event = {
+	                id = THK_wor.10
+                    hours = 3
+                }
+            }
+            add_ai_strategy = {
+				type = alliance
+				id = CHI
+				value = -100
+			}
+            add_ai_strategy = {
+				type = support
+				id = CHI
+				value = -100
+			}
+        }
+    }
+    option = {
+        name = SJW.0.b
+        ai_chance = {
+            factor = 95
+        }
+        add_stability = -0.05
+        add_war_support = -0.05
+        add_manpower = -7000
+    }
+}
+country_event = {
+	id = SJW.1
+	title = SJW.1.t
+	desc = SJW.1.d
+	picture = GFX_report_event_chinese_officers
+	is_triggered_only = yes
+
+	
+	option = {
+        name = SJW.1.a
+        ai_chance = {
+            factor = 5
+        }
+        
+    }
+
+}
+country_event = {
+	id = SJW.2
+	title = SJW.2.t
+	desc = SJW.2.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	is_triggered_only = yes
+
+	
+	option = {
+        name = SJW.2.a
+        ai_chance = {
+            factor = 100
+        }
+        add_popularity = { ideology = fascism popularity = 0.35 }
+        set_politics = {
+            ruling_party = fascism
+            elections_allowed = no
+            last_election = "1935.12.17"
+            election_frequency = 48
+        }
+        hidden_effect = {
+            add_country_leader_role = { Character = CHI_wang_jingwei Promote_leader = yes Country_leader = { ideology = nazism traits = { } } }
+        }
+    }
+
+}
+country_event = {
+	id = SJW.3
+	title = SJW.3.t
+	desc = SJW.3.d
+	picture = GFX_report_event_chinese_soldiers
+	is_triggered_only = yes
+
+	
+	option = {
+        name = SJW.3.a
+        ai_chance = {
+            factor = 100
+        }
+    }
+}
+country_event = {
+	id = SJW.4
+	title = SJW.4.t
+	desc = SJW.4.d
+	picture = GFX_report_event_PRC_Overcome
+	is_triggered_only = yes
+    
+	
+	option = {
+        name = SJW.4.a
+        ai_chance = {
+            factor = 100
+        }
+    }
+}
+country_event = {
+	id = SJW.5
+	title = SJW.5.t
+	desc = SJW.5.d
+	picture = GFX_report_event_chinese_soldiers
+	is_triggered_only = yes
+
+	
+	option = {
+        name = SJW.5.a
+        ai_chance = {
+            factor = 100
+        }
+        add_ideas = PRC_Eight_Points_for_Attention_ideas
+    }
+}
+country_event = {
+	id = SJW.6
+	title = SJW.6.t
+	desc = SJW.6.d
+	picture = GFX_report_event_chinese_soldiers
+	is_triggered_only = yes
+
+	
+	option = {
+        name = SJW.6.a
+        ai_chance = {
+            factor = 100
+        }
+    }
+}
+country_event = {
+	id = SJW.7
+	title = SJW.7.t
+	desc = SJW.7.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+
+	
+	option = {
+        name = SJW.7.a
+        ai_chance = {
+            factor = 100
+        }
+        
+    }
+}
+country_event = {
+	id = SJW.8
+	title = SJW.8.t
+	desc = SJW.8.d
+	picture = GFX_report_event_ANZAC_day
+	is_triggered_only = yes
+
+	
+	option = {
+        name = SJW.8.a
+        ai_chance = {
+            factor = 100
+        }
+        hidden_effect = {
+            country_event = {
+                id = SJW.9
+                days = 3
+            }
+            country_event = {
+                id = SJW.10
+                days = 4
+            }
+        }
+    }
+}
+country_event = {
+	id = SJW.9
+	title = SJW.9.t
+	desc = SJW.9.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	is_triggered_only = yes
+
+	
+	option = {
+        name = SJW.9.a
+        ai_chance = {
+            factor = 100
+        }
+        add_stability = -0.05
+    }
+}
+country_event = {
+	id = SJW.10
+	title = SJW.10.t
+	desc = SJW.10.d
+	picture = GFX_report_event_japanese_chinese_surrender
+	is_triggered_only = yes
+
+	
+	option = {
+        name = SJW.10.a
+        ai_chance = {
+            factor = 100
+        }
+        add_stability = 0.03
+        add_political_power = 25
+        hidden_effect = {
+            country_event = {
+                id = SJW.11
+                days = 1
+            }
+        }
+    }
+}
+country_event = {
+	id = SJW.11
+	title = SJW.11.t
+	desc = SJW.11.d
+	picture = GFX_report_event_hol_cabinet_de_geer
+	is_triggered_only = yes
+
+	
+	option = {
+        name = SJW.11.a
+        ai_chance = {
+            factor = 100
+        }
+        add_ideas = PRC_divide_party
+        hidden_effect = {
+            country_event = {
+                id = SJW.12
+                days = 21
+            }
+        }
+        
+    }
+}
+country_event = {
+	id = SJW.12
+	title = SJW.12.t
+	desc = SJW.12.d
+	picture = GFX_report_event_japanese_soldiers_02
+	is_triggered_only = yes
+
+	
+	#option = {
+    #    name = SJW.12.a
+    #    ai_chance = {
+    #        factor = 100
+    #    }  
+    #    remove_ideas = PRC_divide_party
+    #    create_country_leader = {
+	#		name = " 류사오치 "
+	#		desc = ""
+	#		picture = "gfx/leaders/ANA/Liu_Shaoqi.png"
+	#		expire = "1965.1.1"
+	#		ideology = marxism
+	#		traits = {
+	#				
+	#		}
+	#	}
+    #    set_country_flag = PRC_Liu_Shaoqi_flag
+    #}
+    option = {
+        name = SJW.12.b
+        ai_chance = {
+            factor = 100
+        }  
+        remove_ideas = PRC_divide_party
+        create_country_leader = {
+			name = " 덩샤오핑 "
+			desc = ""
+			picture = "gfx/leaders/ANA/dengxiaoping.png"
+			expire = "1965.1.1"
+			ideology = marxism
+			traits = {
+					
+			}
+		}
+        set_country_flag = PRC_PRC_dengxiaoping_flag
+    }
+}
+country_event = {
+	id = SJW.13
+	title = SJW.13.t
+	desc = SJW.13.d
+	picture = GFX_report_event_japanese_soldiers_02
+	is_triggered_only = yes
+
+	
+	option = {
+        name = SJW.13.a
+        ai_chance = {
+            factor = 100
+        }  
+        PRC_anti_revolutionary_faction_up = yes
+        hidden_effect = {
+            country_event = {
+                id = SJW.14
+                days = 3
+            }
+        }
+    }
+}
+country_event = {
+	id = SJW.14
+	title = SJW.14.t
+	desc = SJW.14.d
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+
+	
+	option = {
+        name = SJW.14.a
+        ai_chance = {
+            factor = 100
+        }  
+        add_ideas = tiananmen_ideas
+        hidden_effect = {
+            country_event = {
+                id = SJW.16
+                days = 7
+            }
+        }
+    }
+}
+country_event = {
+	id = SJW.16
+	title = SJW.16.t
+	desc = SJW.16.d
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+
+	
+	option = {
+        name = SJW.14.a
+        ai_chance = {
+            factor = 100
+        }  
+        
+    }
+}
+country_event = {
+	id = SJW.15
+	title = SJW.15.t
+	desc = SJW.15.d
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+
+	
+	option = {
+        name = SJW.15.a
+        ai_chance = {
+            factor = 100
+        }  
+        remove_ideas = tiananmen_ideas
+		add_stability = -0.05
+    }
+}
+country_event = {
+	id = SJW.17
+	title = SJW.17.t
+	desc = SJW.17.d
+	picture = GFX_report_event_german_politician_speech
+	is_triggered_only = yes
+
+	
+	option = {
+        name = SJW.17.a
+        ai_chance = {
+            factor = 100
+        }  
+		
+    }
+}
+country_event = {
+	id = SJW.18
+	title = SJW.18.t
+	desc = SJW.18.d
+	picture = GFX_report_event_chinese_soldiers_01
+	is_triggered_only = yes
+
+	
+	option = {
+        name = SJW.18.a
+        ai_chance = {
+            factor = 100
+        }  
+    }
+}
+country_event = {
+	id = SJW.19
+	title = SJW.19.t
+	desc = SJW.19.d
+	picture = GFX_report_event_chinese_soldiers_01
+	is_triggered_only = yes
+
+	
+	option = {
+        name = SJW.19.a
+        ai_chance = {
+            factor = 100
+        }  
+		CHI = {
+            country_event = {
+                id = SJW.20
+                hours = 12
+            }
+        }
+    }
+}
+country_event = {
+	id = SJW.20
+	title = SJW.20.t
+	desc = SJW.20.d
+	picture = GFX_report_event_chinese_soldiers_01
+	is_triggered_only = yes
+
+	
+	option = {
+        name = SJW.20.a
+        ai_chance = {
+            factor = 100
+        }  
+        hidden_effect = {
+            JAP = {
+                country_event = {
+                    id = SJW.21
+                    hours = 5
+                }
+            }
+            country_event = {
+                id = SJW.22
+                hours = 6
+            }
+        }
+    }
+}
+country_event = {
+	id = SJW.21
+	title = SJW.21.t
+	desc = SJW.21.d
+	picture = GFX_report_event_picture_shanghai_battle
+	is_triggered_only = yes
+
+	
+	option = {
+        name = SJW.21.a
+        ai_chance = {
+            factor = 100
+        }  
+        if = {
+            #limit = {
+            #    840 = {
+            #        is_controlled_by = CHI
+            #    }
+            #}
+            JAP = {
+                set_state_controller = 840
+                division_template = {
+                    name = "해군특전대(상하이 사변)"
+                    is_locked = yes
+                    priority = 1
+
+                    regiments = {
+                        infantry = { x = 0 y = 0 }
+                        infantry = { x = 0 y = 1 }
+                        infantry = { x = 0 y = 2 }
+                        infantry = { x = 1 y = 0 }
+                        infantry = { x = 1 y = 1 }
+                        infantry = { x = 1 y = 2 }
+                        infantry = { x = 2 y = 0 }
+                        infantry = { x = 2 y = 1 }
+                        infantry = { x = 2 y = 2 }
+                        infantry = { x = 3 y = 0 }
+                        infantry = { x = 3 y = 1 }
+                        infantry = { x = 3 y = 2 }
+                    }
+                    support = { 
+                        military_police = { x = 0 y = 0 }
+                        recon = { x = 0 y = 1 }
+                    } 
+                }
+                840 = {
+                    create_unit = {
+                        division = "name = \"해군특전대(상하이 사변)\" division_template = \"해군특전대(상하이 사변)\" start_experience_factor = 0.5 start_equipment_factor = 1"
+                        owner = JAP
+                        prioritize_location = 7014
+                    }
+                    create_unit = {
+                        division = "name = \"해군특전대(상하이 사변)\" division_template = \"해군특전대(상하이 사변)\" start_experience_factor = 0.5 start_equipment_factor = 1"
+                        owner = JAP
+                        prioritize_location = 7014
+                    }
+                    create_unit = {
+                        division = "name = \"해군특전대(상하이 사변)\" division_template = \"해군특전대(상하이 사변)\" start_experience_factor = 0.5 start_equipment_factor = 1"
+                        owner = JAP
+                        prioritize_location = 7014
+                    }
+                }
+            }
+        }
+    }
+}
+country_event = {
+	id = SJW.22
+	title = SJW.22.t
+	desc = SJW.22.d
+	picture = GFX_report_event_picture_shanghai_battle
+	is_triggered_only = yes
+
+	
+	option = {
+        name = SJW.22.a
+        ai_chance = {
+            factor = 100
+        }  
+        if = {
+            #limit = {
+            #    840 = {
+            #        is_controlled_by = CHI
+            #    }
+            #}
+            CHI = {
+                division_template = {
+                    name = "Bùbīng"
+                    is_locked = yes
+                    priority = 1
+
+                    regiments = {
+                        infantry = { x = 0 y = 0 }
+                        infantry = { x = 0 y = 1 }
+                        infantry = { x = 0 y = 2 }
+                        infantry = { x = 1 y = 0 }
+                        infantry = { x = 1 y = 1 }
+                        infantry = { x = 1 y = 2 }
+                    }
+                    support = { 
+                    } 
+                }
+                813 = {
+                    create_unit = {
+                        division = "name = \"Bùbīng\" division_template = \"Bùbīng\" start_experience_factor = 0.1 start_equipment_factor = 1"
+                        owner = CHI
+                        prioritize_location = 12052
+                    }
+                    create_unit = {
+                        division = "name = \"Bùbīng\" division_template = \"Bùbīng\" start_experience_factor = 0.1 start_equipment_factor = 1"
+                        owner = CHI
+                        prioritize_location = 12052
+                    }
+                    create_unit = {
+                        division = "name = \"Bùbīng\" division_template = \"Bùbīng\" start_experience_factor = 0.1 start_equipment_factor = 1"
+                        owner = CHI
+                        prioritize_location = 10034
+                    }
+                    create_unit = {
+                        division = "name = \"Bùbīng\" division_template = \"Bùbīng\" start_experience_factor = 0.1 start_equipment_factor = 1"
+                        owner = CHI
+                        prioritize_location = 10034
+                    }
+                }
+                596 = {
+                    create_unit = {
+                        division = "name = \"Bùbīng\" division_template = \"Bùbīng\" start_experience_factor = 0.1 start_equipment_factor = 1"
+                        owner = CHI
+                        prioritize_location = 4042
+                    }
+                    create_unit = {
+                        division = "name = \"Bùbīng\" division_template = \"Bùbīng\" start_experience_factor = 0.1 start_equipment_factor = 1"
+                        owner = CHI
+                        prioritize_location = 4042
+                    }
+                }
+            }
+        }
+    }
+}
+country_event = {
+	id = SJW.23
+	title = SJW.23.t
+	desc = SJW.23.d
+	picture = GFX_report_event_picture_chiangkai
+	is_triggered_only = yes
+
+	
+	option = {
+        name = SJW.23.a
+        ai_chance = {
+            factor = 100
+        }  
+        add_ideas = partial_economic_mobilisation 
+    }
+}
+country_event = {
+	id = SJW.24
+	title = SJW.24.t
+	desc = SJW.24.d
+	picture = GFX_report_event_airplane_crash
+	fire_only_once = yes
+    trigger = {
+        tag = CHI
+        613 = { is_controlled_by = JAP }
+        613 = { is_owned_by = CHI }
+        620 = { is_controlled_by = JAP }
+        620 = { is_owned_by = CHI }
+		JAP = { has_war_with = CHI }
+		NOT = { has_global_flag = run_wang_jing_wei }
+	}
+    mean_time_to_happen = {
+		days = 4
+	}
+	immediate = {
+		set_global_flag = run_wang_jing_wei
+	}
+	
+	option = {
+        name = SJW.24.a
+        ai_chance = {
+            factor = 100
+        }  
+        add_stability = -0.05
+    }
+}

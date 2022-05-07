@@ -1,0 +1,149 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_GGR_basic_train_medium"
+		texturefile = "gfx/interface/technologies/ENG_train_equipment_1.dds"
+	}
+	spriteType = {
+		name = "GFX_SIR_basic_train_medium"
+		texturefile = "gfx/interface/technologies/ENG_train_equipment_1.dds"
+	}
+	spriteType = {
+		name = "GFX_BKJ_basic_train_medium"
+		texturefile = "gfx/interface/technologies/ENG_train_equipment_1.dds"
+	}
+
+	#한양 - 기초
+	spriteType = {
+		name = "GFX_GGR_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/chi_infantry_equipment_0.png"
+	}
+	spriteType = {
+		name = "GFX_SIR_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/chi_infantry_equipment_0.png"
+	}
+	spriteType = {
+		name = "GFX_BKJ_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/chi_infantry_equipment_0.png"
+	}
+	spriteType = {
+		name = "GFX_CHI_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/chi_infantry_equipment_0.png"
+	}
+	
+	#톰슨 - 2
+	spriteType = {
+		name = "GFX_SIR_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/USA_infantry_equipment_2_alt.png"
+	}
+	spriteType = {
+		name = "GFX_BKJ_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/USA_infantry_equipment_2_alt.png"
+	}
+	spriteType = {
+		name = "GFX_GGR_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/USA_infantry_equipment_2_alt.png"
+	}
+
+	#창작총 -1
+	spriteType = {
+		name = "GFX_SIR_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/THK_equipment_1.png"
+	}
+	spriteType = {
+		name = "GFX_BKJ_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/THK_equipment_1.png"
+	}
+	spriteType = {
+		name = "GFX_GGR_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/THK_equipment_1.png"
+	}
+
+	#m2 - 2
+	spriteType = {
+		name = "GFX_SIR_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/usa_advanced_infantry_weapons.dds"
+	}
+	spriteType = {
+		name = "GFX_BKJ_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/usa_advanced_infantry_weapons.dds"
+	}
+	spriteType = {
+		name = "GFX_GGR_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/usa_advanced_infantry_weapons.dds"
+	}
+
+	#창작 24식 - 1
+	spriteType = { 
+		name = "GFX_CHI_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/chi_infantry_equipment_1.png"
+	}
+
+
+	#창작 mp18
+	spriteType = { 
+		name = "GFX_CHI_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/chi_infantry_equipment_2.png"
+	}
+	#창작 - zb vz26
+	spriteType = {
+		name = "GFX_CHI_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/chi_infantry_equipment_3.png"
+	}
+	#창작 - 트럭
+	spriteType = { 
+		name = "GFX_CHI_motorized_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/CHI_motorized_equipment_1.png"
+	}
+	spriteType = { 
+		name = "GFX_CHI_motorized_equipment_medium"
+		texturefile = "gfx/interface/technologies/CHI_motorized_equipment_1.png"
+	}
+	#창작 - ㅂㅈ
+	spriteType = { 
+		name = "GFX_BKJ_motorized_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/CHI_motorized_equipment_1.png"
+	}
+	spriteType = { 
+		name = "GFX_BKJ_motorized_equipment_medium"
+		texturefile = "gfx/interface/technologies/CHI_motorized_equipment_1.png"
+	}
+	#창작 - ㅅㄹ
+	spriteType = { 
+		name = "GFX_SIR_motorized_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/CHI_motorized_equipment_1.png"
+	}
+	spriteType = { 
+		name = "GFX_SIR_motorized_equipment_medium"
+		texturefile = "gfx/interface/technologies/CHI_motorized_equipment_1.png"
+	}
+	#창작 - ㄱㄱㄹ
+	spriteType = { 
+		name = "GFX_GGR_motorized_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/CHI_motorized_equipment_1.png"
+	}
+	spriteType = { 
+		name = "GFX_GGR_motorized_equipment_medium"
+		texturefile = "gfx/interface/technologies/CHI_motorized_equipment_1.png"
+	}
+
+	#창작 - 트럭 로켓 ㅈㄱ
+	spriteType = { 
+		name = "GFX_CHI_motorized_rocket_unit_medium"
+		texturefile = "gfx/interface/technologies/CHI_motorized_rocket_equipment_1.png"
+	}
+	#창작 - 트럭 로켓 ㅂㅈ
+	spriteType = { 
+		name = "GFX_BKJ_motorized_rocket_unit_medium"
+		texturefile = "gfx/interface/technologies/CHI_motorized_rocket_equipment_1.png"
+	}
+	#창작 - 트럭 로켓 ㅅㄹ
+	spriteType = { 
+		name = "GFX_SIR_motorized_rocket_unit_medium"
+		texturefile = "gfx/interface/technologies/CHI_motorized_rocket_equipment_1.png"
+	}
+	#창작 - 트럭 로켓 ㄱㄱㄹ
+	spriteType = { 
+		name = "GFX_GGR_motorized_rocket_unit_medium"
+		texturefile = "gfx/interface/technologies/CHI_motorized_rocket_equipment_1.png"
+	}
+}

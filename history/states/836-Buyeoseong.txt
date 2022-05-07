@@ -1,7 +1,7 @@
 state={
 	id=836
-	name="부여성"
-	manpower = 24774200
+	name="남부여성"
+	manpower = 4138329
 	state_category = town
 	resources={
 		steel= 28
@@ -34,7 +34,11 @@ state={
 		victory_points = {
 			11948 3
 		}
-
+		1936.1.2 = {
+            		owner = JAP
+            		remove_core_of = BKJ
+            		add_core_of = KOR
+        		}
 		add_core_of = BKJ
 	}
 

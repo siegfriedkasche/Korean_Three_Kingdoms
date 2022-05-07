@@ -22,8 +22,571 @@ ideas = {
 				stability_factor = 0.05
 			}
 		}
-	}
-	country = {
+
+	
+		CHI_legal_reform_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+
+			removal_cost = -1
+
+			picture = CHI_legal_reform_ideas2
+
+			
+			modifier = {
+				consumer_goods_factor = -0.02
+				industrial_capacity_factory = -0.1
+				production_factory_efficiency_gain_factor = -0.05
+			}
+		}
+		PRC_high_illiteracy = {
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = PRC_high_illiteracy
+
+			
+			modifier = {
+				research_speed_factor = -0.3
+			}
+		}
+		PRC_high_illiteracy2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = PRC_high_illiteracy
+
+			
+			modifier = {
+				research_speed_factor = -0.2
+			}
+		}
+		PRC_high_illiteracy3 = {
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = PRC_high_illiteracy
+
+			
+			modifier = {
+				research_speed_factor = -0.1
+			}
+		}
+		PRC_anti_revolutionary_faction = {
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = anti_soviet_pact
+
+			
+			modifier = {
+				communism_drift = -0.01
+				stability_factor = -0.15
+				political_power_gain = -0.05
+			}
+		}
+		PRC_anti_revolutionary_faction_up = {
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = anti_soviet_pact
+
+			
+			modifier = {
+				communism_drift = -0.03
+				stability_factor = -0.2
+				political_power_gain = -0.1
+			}
+		}
+		PRC_anti_revolutionary_faction_down = {
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = anti_soviet_pact
+
+			
+			modifier = {
+				stability_factor = -0.1
+			}
+		}
+		PRC_democratic = {
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_democratic_drift_bonus
+
+			
+			modifier = {
+				democratic_drift = 0.01
+			}
+		}
+		PRC_Tobeopgoro_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = FRA_factory_strikes
+
+			
+			modifier = {
+				production_lack_of_resource_penalty_factor = 0.25
+				local_resources_factor = -0.1
+			}
+		}
+		PRC_sacrifice_exercise_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = raj_risk_of_famine
+
+			
+			modifier = {
+				production_factory_max_efficiency_factor = -0.12
+				consumer_goods_factor = 0.2
+				industrial_capacity_factory = -0.1
+				monthly_population = -0.25
+			}
+		}
+		PRC_sacrifice_exercise_ideas2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = raj_risk_of_famine
+
+			
+			modifier = {
+				production_factory_max_efficiency_factor = -0.25
+				industrial_capacity_factory = -0.3
+				consumer_goods_factor = 0.3
+				monthly_population = -0.5
+			}
+		}
+		
+		PRC_sacrifice_exercise_ideas_down1 = {
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = raj_risk_of_famine
+
+			
+			modifier = {
+				production_factory_max_efficiency_factor = -0.15
+				industrial_capacity_factory = -0.2
+				consumer_goods_factor = 0.25
+				monthly_population = -0.4
+			}
+		}
+		PRC_sacrifice_exercise_ideas_down2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = raj_risk_of_famine
+
+			
+			modifier = {
+				production_factory_max_efficiency_factor = -0.1
+				industrial_capacity_factory = -0.15
+				consumer_goods_factor = 0.2
+				monthly_population = -0.3
+			}
+		}
+		PRC_sacrifice_exercise_ideas_down3 = {
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = raj_risk_of_famine
+
+			
+			modifier = {
+				production_factory_max_efficiency_factor = -0.05
+				industrial_capacity_factory = -0.1
+				consumer_goods_factor = 0.15
+				monthly_population = -0.2
+			}
+		}
+		PRC_sacrifice_exercise_ideas_down4 = {
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = raj_risk_of_famine
+
+			
+			modifier = {
+				industrial_capacity_factory = -0.05
+				consumer_goods_factor = 0.1
+				monthly_population = -0.1
+			}
+		}
+
+		PRC_ration_system_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			cancel = {
+				NOT = {
+					AND = {
+						has_idea = PRC_sacrifice_exercise_ideas_down4
+						has_idea = PRC_sacrifice_exercise_ideas_down3
+						has_idea = PRC_sacrifice_exercise_ideas_down2
+						has_idea = PRC_sacrifice_exercise_ideas_down1
+						has_idea = PRC_sacrifice_exercise_ideas2
+					}
+				}
+			}
+
+			picture = ger_mefo_bills
+
+			
+			modifier = {
+				stability_factor = 0.05
+				industrial_capacity_factory = -0.05
+				consumer_goods_factor = 0.03
+				monthly_population = 0.1
+			}
+		}
+		
+		Constitution_of_the_Chinese_Communist_Party = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			cancel = {
+				NOT = {
+					has_government = communism
+				}
+			}
+			removal_cost = -1
+
+			picture = generic_constitutional_guarantees
+
+			
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.05
+				communism_drift = 0.03
+			}
+		}
+		PRC_farmer_propaganda_idea = {
+			
+			allowed = {
+				always = no
+			}
+
+			
+			cancel = {
+				has_government = communism
+			}
+			removal_cost = -1
+
+			picture = POL_looming_peasants_strike
+
+			
+			modifier = {
+				stability_factor = -0.05
+				communism_drift = 0.02
+				industrial_capacity_factory = -0.05
+			}
+		}
+		
+		PRC_divide_party = {
+			
+			allowed = {
+				always = no
+			}
+
+			
+			cancel = {
+				NOT = {
+					has_government = communism
+				}
+			}
+			removal_cost = -1
+
+			picture = generic_disjointed_gov
+
+			
+			modifier = {
+				stability_factor = -0.15
+				political_power_gain = -0.05
+			}
+		}
+		
+	
+		CHI_legal_reform_ideas2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+
+			removal_cost = -1
+
+			picture = CHI_legal_reform_ideas2
+
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+				industrial_capacity_factory = -0.15
+				production_factory_efficiency_gain_factor = -0.1
+				production_factory_max_efficiency_factor = -0.1
+			}
+		}
+	
+		CHI_legal_reform_ideas3 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+
+			removal_cost = -1
+
+			picture = siver
+
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+	
+		CHI_zhongzhou_boom_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				
+			}
+
+			removal_cost = -1
+
+			picture = prc_the_long_march2
+
+			
+			modifier = {
+				army_speed_factor = -0.1
+				war_support_factor = -0.05
+			}
+		}
+	
+		winter_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				
+			}
+
+			removal_cost = -1
+
+			picture = generic_war_preparation
+
+			
+			targeted_modifier = {
+				tag = JAP
+				army_attack_factor =0.25
+			}
+		}
+
+		PRC_red_army_weakened2 = {
+
+			picture = chi_army_corruption
+
+			allowed = { original_tag = PRC }
+
+			removal_cost = -1
+
+			modifier = {
+				army_org_regain = -0.05
+				training_time_factor = 0.1
+			}
+		}	
+		war_reparations_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				has_war_with = JAP
+				has_war_with = MEN
+				has_war_with = MAN
+			}
+
+			removal_cost = -1
+
+			picture = chi_wargaming_division
+
+			modifier = {
+				consumer_goods_factor = 0.05
+				industrial_capacity_factory = -0.1
+				production_speed_buildings_factor = -0.1
+			}
+			targeted_modifier = {
+				tag = JAP
+				cic_to_target_factor = 0.2
+				mic_to_target_factor = 0.2
+			}
+		}
+	
+		PRC_Eight_Points_for_Attention_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			cancel = {
+				NOT = {
+					has_government = communism
+				}
+			}
+			removal_cost = -1
+
+			picture = generic_intel_bonus
+
+			
+			modifier = {
+				stability_factor = 0.05
+				conscription = 0.02
+				experience_loss_factor = -0.3
+			}
+		}
+	
+		war_reparations2_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				has_war_with = CHI
+			}
+
+			removal_cost = -1
+
+			picture = can_wartime_prices_and_trade_board
+
+			modifier = {
+				min_export = 0.5
+			}
+			targeted_modifier = {
+				tag = JAP
+				extra_trade_to_target_factor = 0.5
+				trade_cost_for_target_factor = -0.5
+				trade_opinion_factor = 0.5
+			}
+		}
+
+	
+		china_USA_silver_trade_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+
+			removal_cost = -1
+
+			picture = siver
+
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+				industrial_capacity_factory = 0.1
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+
 	
 		no_faction = {
 			
@@ -46,8 +609,7 @@ ideas = {
 			modifier = {
 			}
 		}
-	}
-	country = {
+
 	
 		jin_heungwang = {
 			
@@ -68,8 +630,7 @@ ideas = {
 				industrial_capacity_factory = 0.1
 			}
 		}
-	}
-	country = {
+
 	
 		Yeojin_Autonomy = {
 			
@@ -92,8 +653,7 @@ ideas = {
 				army_defence_factor = 0.05
 			}
 		}
-	}
-	country = {
+
 	
 		revol_communist = {
 			
@@ -116,8 +676,7 @@ ideas = {
 				war_support_factor = -0.15
 			}
 		}
-	}
-	country = {
+
 	
 		iron_fist_rule = {
 			
@@ -141,8 +700,7 @@ ideas = {
 				war_support_factor = 0.05
 			}
 		}
-	}
-	country = {
+
 	
 		market_economy = {
 			
@@ -150,8 +708,7 @@ ideas = {
 				always = no
 			}
 
-			allowed_civil_war = {
-			}
+			
 
 			removal_cost = -1
 
@@ -163,8 +720,241 @@ ideas = {
 				industrial_capacity_factory = 0.1
 			}
 		}
-	}
-	country = {
+		market_economy_prc = {
+			
+			allowed = {
+				always = no
+			}
+
+			
+
+			removal_cost = -1
+
+			picture = generic_flexible_foreign_policy2
+
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.15
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		market_economy_prc1 = {
+			
+			allowed = {
+				always = no
+			}
+
+			
+
+			removal_cost = -1
+
+			picture = generic_flexible_foreign_policy2
+
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.2
+				production_factory_efficiency_gain_factor = 0.05
+				trade_opinion_factor = 0.15
+				license_purchase_cost_factor = -0.25
+				research_speed_factor = 0.05
+			}
+		}
+		
+		PRC_market_Opening_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = can_wartime_prices_and_trade_board
+
+			
+			modifier = {
+				min_export = 0.15
+				trade_opinion_factor = 0.15
+				global_building_slots = 0.05
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		PRC_Nam_Soon_Ganghwa_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = SPR_relocate_the_gold_reserves
+
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		PRC_deregulation_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = SPR_relocate_the_gold_reserves
+
+			
+			modifier = {
+				global_building_slots_factor = 0.05
+				production_speed_buildings_factor = 0.15
+				industrial_capacity_factory = 0.15
+				stability_factor = -0.1
+			}
+		}
+		Schweizer_Bank = {
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				OR = {
+					NOT = {
+						has_government = democratic 
+					}
+					#has_war_with = FRA
+				}
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = tur_balkan_central_bank_wealthy_greece
+
+			
+			modifier = {
+				consumer_goods_factor = -0.1
+			}
+		}
+		PRC_gjzy = {
+				
+			picture = MEX_revolutionary_army
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				justify_war_goal_time = -0.5
+				subversive_activites_upkeep = -0.3
+				offensive_war_stability_factor = 0.2
+			}
+		}
+		PRC_xdhjd = {
+				
+			picure = generic_acquire_tanks
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				experience_gain_army = 0.1
+				experience_gain_navy = 0.1
+				experience_gain_air = 0.1
+				max_planning = 0.1
+				army_speed_factor = 0.1
+				supply_consumption_factor = -0.1
+			}
+		}
+		no_proper_equipment_design = {
+            removal_cost = -1
+            picture = no_proper_equipment_design_ideas
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            research_bonus = {
+                armor = -0.33
+                air_equipment = -0.33
+                naval_equipment = -0.33
+            }
+			equipment_bonus = {
+				air_equipment = {
+					instant = yes
+					build_cost_ic = 0.5
+				}
+				armor = {
+					instant = yes
+					build_cost_ic = 0.5
+				}
+				naval_equipment = {
+					instant = yes
+					build_cost_ic = 0.5
+				}
+			}
+        }
+		sanmin_zuyi_ideas = {
+            removal_cost = -1
+            picture = sanmin_zuyi_ideas
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.02
+			}
+        }
+		tiananmen_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = chi_war_of_resistance3
+
+			
+			modifier = {
+				political_power_cost = 0.05
+				stability_weekly = -0.1
+			}
+		}
+
 	
 		Industrial_Development_Committee_ideas = {
 			
@@ -172,8 +962,7 @@ ideas = {
 				always = no
 			}
 
-			allowed_civil_war = {
-			}
+			
 
 			removal_cost = -1
 
@@ -185,8 +974,7 @@ ideas = {
 				industrial_capacity_factory = 0.1
 			}
 		}
-	}
-	country = {
+
 	
 		GGR_JUCHE_ideology_ideas = {
 			
@@ -213,8 +1001,7 @@ ideas = {
 				stability_factor = -0.18
 			}
 		}
-	}
-	country = {
+
 	
 		GGR_nomadism = {
 			
@@ -239,8 +1026,7 @@ ideas = {
 				stability_factor = -0.15
 			}
 		}
-	}
-	country = {
+
 	
 		GGR_nomadism2 = {
 			
@@ -262,8 +1048,7 @@ ideas = {
 				production_speed_buildings_factor = 0.05
 			}
 		}
-	}
-	country = {
+
 	
 		GGR_JUCHE_ideology_ideas_3 = {
 			
@@ -287,8 +1072,7 @@ ideas = {
 				political_power_gain = -0.05
 			}
 		}
-	}
-	country = {
+
 	
 		GGR_JUCHE_ideology_ideas_4 = {
 			
@@ -313,8 +1097,7 @@ ideas = {
 				political_power_gain = 0.05
 			}
 		}
-	}
-	country = {
+
 	
 		GGR_culture_revolution_ideas = {
 			
@@ -339,8 +1122,7 @@ ideas = {
 				consumer_goods_factor = -0.02
 			}
 		}
-	}
-	country = {
+
 	
 		GGR_party_and_people_idea = {
 			
@@ -364,8 +1146,7 @@ ideas = {
 				consumer_goods_factor = -0.03
 			}
 		}
-	}
-	country = {
+
 	
 		BKJ_youth_group = {
 			
@@ -389,8 +1170,7 @@ ideas = {
 				fascism_drift = 0.05
 			}
 		}
-	}
-	country = {
+
 	
 		BKJ_youth_group_2 = {
 			
@@ -416,8 +1196,7 @@ ideas = {
 				fascism_drift = 0.05
 			}
 		}
-	}
-	country = {
+
 	
 		dissolution_of_parliament_ideas = {
 			
@@ -442,8 +1221,7 @@ ideas = {
 				democratic_drift = 0.02
 			}
 		}
-	}
-	country = {
+
 	
 		dissolution_of_parliament_ideas2 = {
 			
@@ -472,8 +1250,7 @@ ideas = {
 				democratic_drift = 0.05
 			}
 		}
-	}
-	country = {
+
 	
 		dissolution_of_parliament_ideas3 = {
 			
@@ -502,8 +1279,7 @@ ideas = {
 				war_support_factor = 0.1
 			}
 		}
-	}
-	country = {
+
 	
 		dissolution_of_parliament_ideas4 = {
 			
@@ -533,8 +1309,7 @@ ideas = {
 				war_support_factor = 0.05
 			}
 		}
-	}
-	country = {
+
 	
 		china_cleaning = {
 			
@@ -562,8 +1337,7 @@ ideas = {
 				autonomy_gain = -2.5
 			}
 		}
-	}
-	country = {
+
 	
 		BKJ_puppet_king_ideas = {
 			
@@ -589,8 +1363,7 @@ ideas = {
 				political_power_gain = 0.05
 			}
 		}
-	}
-	country = {
+
 	
 		market_Opening_ideas = {
 			
@@ -622,8 +1395,8 @@ ideas = {
 				economy_cost_factor = 1
 			}
 		}
-	}
-	country = {
+		
+
 	
 		BKJ_puppet_king_ideas2 = {
 			
@@ -651,8 +1424,7 @@ ideas = {
 				political_power_gain = 0.05
 			}
 		}
-	}
-	country = {
+
 	
 		GGR_JUCHE_ideology_ideas_2 = {
 			
@@ -680,8 +1452,7 @@ ideas = {
 				drift_defence_factor = 0.50
 			}
 		}
-	}
-	country = {
+
 	
 		GGR_technological_revolution_ideas = {
 			
@@ -702,8 +1473,7 @@ ideas = {
 				research_speed_factor = 0.15
 			}
 		}
-	}
-	country = {
+
 	
 		strong_and_prosperous_country = {
 			
@@ -731,8 +1501,7 @@ ideas = {
 				max_surrender_limit_offset = 0.15
 			}
 		}
-	}
-	country = {
+
 	
 		GGR_meet_SIR2_ideas = {
 			
@@ -762,8 +1531,7 @@ ideas = {
 				extra_trade_to_overlord_factor = 0.5
 			}
 		}
-	}
-	country = {
+
 	
 		GGR_meet_BKJ2_ideas = {
 			
@@ -793,8 +1561,7 @@ ideas = {
 				extra_trade_to_overlord_factor = 0.5
 			}
 		}
-	}
-	country = {
+
 	
 		SIR_meet_GGR_ideas = {
 			
@@ -824,8 +1591,7 @@ ideas = {
 				extra_trade_to_overlord_factor = 0.5
 			}
 		}
-	}
-	country = {
+
 	
 		Haedong_Seongguk = {
 			
@@ -853,8 +1619,7 @@ ideas = {
 				max_surrender_limit_offset = 0.15
 			}
 		}
-	}
-	country = {
+
 	
 		strong_and_prosperous_country2 = {
 			
@@ -882,8 +1647,7 @@ ideas = {
 				max_surrender_limit_offset = 0.15
 			}
 		}
-	}
-	country = {
+
 
 		chunrima = { #천리마운동
 
@@ -906,8 +1670,7 @@ ideas = {
 				production_speed_buildings_factor = 0.15
 			}
 		}
-	}
-	country = {
+
 	
 		BKJ_currency_reform_ideas = {
 			
@@ -932,8 +1695,7 @@ ideas = {
 				industrial_capacity_factory = 0.1
 			}
 		}
-	}
-	country = {
+
 	
 		BKJ_currency_reform_ideas2 = {
 			
@@ -958,8 +1720,7 @@ ideas = {
 				industrial_capacity_factory = 0.05
 			}
 		}
-	}
-	country = {
+
 	
 		BKJ_government_bond_recovery_ideas = {
 			
@@ -986,8 +1747,7 @@ ideas = {
 				global_building_slots_factor = 0.15
 			}
 		}
-	}
-	country = {
+
 	
 		BKJ_corps_of_volunteers_ideas = {
 			
@@ -1012,18 +1772,7 @@ ideas = {
 				send_volunteers_tension = -1
 			}
 		}
-	}
-
-
-
-
-
-
-
-
-
-
-	country = {
+	
 	
 		BKJ_central_bank_ideas = {
 			
@@ -1050,9 +1799,7 @@ ideas = {
 				consumer_goods_factor = -0.05
 			}
 		}
-	}
-
-	country = {
+	
 	
 		BKJ_inflation = {
 			
@@ -1080,8 +1827,7 @@ ideas = {
 				production_factory_efficiency_gain_factor = 0.05
 			}
 		}
-	}
-	country = {
+
 	
 		BKJ_inflation_1 = { #불안함
 			
@@ -1109,8 +1855,7 @@ ideas = {
 				production_factory_efficiency_gain_factor = 0.1
 			}
 		}
-	}
-	country = {
+
 	
 		BKJ_inflation_2 = { #위험함
 			
@@ -1138,8 +1883,7 @@ ideas = {
 				production_factory_efficiency_gain_factor = 0.05
 			}
 		}
-	}
-	country = {
+
 	
 		BKJ_inflation_3 = { #절정
 			
@@ -1167,8 +1911,7 @@ ideas = {
 				production_factory_efficiency_gain_factor = -0.05
 			}
 		}
-	}
-	country = {
+
 	
 		BKJ_deflation = { #디플
 			
