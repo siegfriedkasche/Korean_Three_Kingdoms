@@ -12,8 +12,20 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/ICC.png"
 	}
 	spriteType = {
+		name = "GFX_idea_Berlin_Olympiad"
+		texturefile = "gfx/interface/ideas/Berlin_Olympiad.png"
+	}
+	spriteType = {
+		name = "GFX_idea_usa_irs"
+		texturefile = "gfx/interface/ideas/usa_irs.png"
+	}
+	spriteType = {
 		name = "GFX_idea_advisor_Konrad_Hoffmann"
 		texturefile = "gfx/interface/ideas/Konrad_Hoffmann.png"
+	}
+	spriteType = {
+		name = "GFX_idea_Enabling_Act"
+		texturefile = "gfx/interface/ideas/Enabling_Act.png"
 	}
 	spriteType = {
 		name = "GFX_idea_advisor_Wladimir_Propp"
@@ -43,4 +55,15 @@ spriteTypes = {
 		name = "GFX_idea_Peter_Krasnov_idea"
 		texturefile = "gfx/interface/ideas/Peter_Krasnov_idea.png"
 	}
+	spriteType = {
+		name = "GFX_idea_saudi_house"
+		texturefile = "gfx/interface/ideas/saudi_house.png"
+	}
+
+
+	spriteType = {
+		name = "GFX_ideology_GER_nazism"
+		texturefile = "gfx/interface/ideologies/GER/nazi.tga"
+	}
+
 }

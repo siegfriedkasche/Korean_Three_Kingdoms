@@ -2258,6 +2258,7 @@ focus_tree = {
 					fascism = 40
 					communism = 20
 				}
+				add_ideas = fucking_army1
 			}
         }
     }
@@ -2522,8 +2523,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
-		SELECT
-
+		
 		select_effect = {
 			
 		}
@@ -2579,10 +2579,357 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = GGR_NEW_ARMY_GGR
+		icon = GFX_NEW_ARMY_GGR
+		x = 10
+		y = 0
+		relative_position_id = GGR_strengthening_of_royal_power
+
+		cost = 5
+
+		available = {
+			AND = {
+				has_idea = fucking_army1
+				has_completed_focus = GGR_power_struggle
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		
+		select_effect = {
+			
+		}
+		completion_reward = {
+			air_experience = 25
+			army_experience = 25
+			navy_experience = 25
+			swap_ideas = {
+				remove_idea = fucking_army1
+				add_idea = fucking_army2
+			}
+		}
+	}
+	focus = {
+		id = GGR_Reorganization_of_the_military_conscription_system
+		icon = GFX_focus_generic_commonwealth_build_infantry
+		x = 0
+		y = 1
+		relative_position_id = GGR_NEW_ARMY_GGR
+		prerequisite = { focus = GGR_NEW_ARMY_GGR }
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		
+		available = {
+			has_idea = fucking_army2
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = fucking_army2
+				add_idea = fucking_army3
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = volunteer_only
+					}
+				}
+				add_ideas = volunteer_only
+			}
+		}
+	}
+	focus = {
+		id = GGR_navy_com_reform
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		x = 3
+		y = 1
+		relative_position_id = GGR_NEW_ARMY_GGR
+		prerequisite = { focus = GGR_NEW_ARMY_GGR }
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		
+		available = {
+			hidden_trigger = {
+				OR = {
+					has_idea = fucking_army8
+					has_idea = fucking_army9
+				}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = fucking_army8
+				}
+				add_war_support = 0.05
+				swap_ideas = {
+					add_idea = fucking_army8_navy
+					remove_idea = fucking_army8
+				}
+			}
+			if = {
+				limit = {
+					has_idea = fucking_army9
+				}
+				add_war_support = 0.05
+				swap_ideas = {
+					add_idea = fucking_army9_navy
+					remove_idea = fucking_army9
+				}
+			}
+		}
+	}
+	focus = {
+		id = GGR_navy_diesel
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 0
+		y = 1
+		relative_position_id = GGR_navy_com_reform
+		prerequisite = { focus = GGR_navy_com_reform }
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		
+		available = {
+			hidden_trigger = {
+				OR = {
+					has_idea = fucking_army8_navy
+					has_idea = fucking_army9_navy
+				}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = fucking_army8_navy
+				}
+				swap_ideas = {
+					add_idea = fucking_army8_navy_2
+					remove_idea = fucking_army8_navy
+				}
+			}
+			if = {
+				limit = {
+					has_idea = fucking_army9_navy
+				}
+				swap_ideas = {
+					add_idea = fucking_army9_navy_2
+					remove_idea = fucking_army9_navy
+				}
+			}
+		}
+	}
+	focus = {
+		id = GGR_torpedo_improvement
+		icon = GFX_goal_generic_air_naval_bomber
+		x = 0
+		y = 1
+		relative_position_id = GGR_navy_diesel
+		prerequisite = { focus = GGR_navy_diesel }
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		
+		available = {
+			hidden_trigger = {
+				OR = {
+					has_idea = fucking_army8_navy_2
+					has_idea = fucking_army9_navy_2
+				}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = fucking_army8_navy_2
+				}
+				swap_ideas = {
+					add_idea = fucking_army8_navy_3
+					remove_idea = fucking_army8_navy_2
+				}
+			}
+			if = {
+				limit = {
+					has_idea = fucking_army9_navy_2
+				}
+				swap_ideas = {
+					add_idea = fucking_army9_navy_3
+					remove_idea = fucking_army9_navy_2
+				}
+			}
+		}
+	}
+	focus = {
+		id = GGR_tank_army_reform
+		icon = GFX_focus_generic_tank_production
+		x = 1
+		y = 1
+		relative_position_id = GGR_Reorganization_of_the_military_conscription_system
+		prerequisite = { focus = GGR_Reorganization_of_the_military_conscription_system }
+		mutually_exclusive = {
+			focus = GGR_artillery_army_reform
+		}
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		
+		available = {
+			has_tech = improved_light_tank 
+			has_tech = improved_medium_tank 
+			has_tech = improved_heavy_tank 
+			
+			has_idea = fucking_army3
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = fucking_army3
+				add_idea = fucking_army4
+			}
+		}
+	}
+	focus = {
+		id = GGR_tank_doc_reform
+		icon = GFX_focus_SOV_the_glory_of_the_red_army_alternative
+		x = 0
+		y = 1
+		relative_position_id = GGR_tank_army_reform
+		prerequisite = { focus = GGR_tank_army_reform }
+
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		
+		available = {
+			has_idea = fucking_army4
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = fucking_army4
+				add_idea = fucking_army7
+			}
+		}
+	}
+	focus = {
+		id = GGR_Crew_training
+		icon = GFX_goal_continuous_reduce_training_time
+		x = 0
+		y = 1
+		relative_position_id = GGR_tank_doc_reform
+		prerequisite = { focus = GGR_tank_doc_reform }
+
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		
+		available = {
+			has_idea = fucking_army7
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = fucking_army7
+				add_idea = fucking_army9
+			}
+		}
+	}
+	focus = {
+		id = GGR_artillery_reform
+		icon = GFX_goal_generic_army_artillery2
+		x = -1
+		y = 1
+		relative_position_id = GGR_Reorganization_of_the_military_conscription_system
+		mutually_exclusive = {
+			focus = GGR_tank_army_reform
+		}
+		prerequisite = { focus = GGR_Reorganization_of_the_military_conscription_system }
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		
+		available = {
+			has_idea = fucking_army3
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = fucking_army3
+				add_idea = fucking_army5
+			}
+		}
+	}
+	focus = {
+		id = GGR_shell_improvement
+		icon = GFX_goal_generic_army_artillery
+		x = 0
+		y = 1
+		relative_position_id = GGR_artillery_reform
+		prerequisite = { focus = GGR_artillery_reform }
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		
+		available = {
+			has_idea = fucking_army5
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = fucking_army5
+				add_idea = fucking_army6
+			}
+		}
+	}
+	focus = {
+		id = GGR_Organizational_reorganization
+		icon = GFX_focus_chi_army_reform
+		x = 0
+		y = 1
+		relative_position_id = GGR_shell_improvement
+		prerequisite = { focus = GGR_shell_improvement }
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		
+		available = {
+			has_idea = fucking_army6
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = fucking_army6
+				add_idea = fucking_army8
+			}
+		}
+	}
+	
+	focus = {
 		id = GGR_diplomance
 		icon = GFX_focus_hol_the_foundations_of_defense
 		x = 6
-		y = 0
+		y = 2
 		relative_position_id = GGR_Northern_Territory_Claims
 
 		cost = 5
@@ -2601,8 +2948,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
-		SELECT
-
+		
 		select_effect = {
 			
 		}
@@ -2634,8 +2980,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
-		SELECT
-
+		
 		select_effect = {
 			
 		}
@@ -2761,8 +3106,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
-		SELECT
-
+		
 		select_effect = {
 			
 		}

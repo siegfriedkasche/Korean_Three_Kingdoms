@@ -22,6 +22,69 @@ ideas = {
 				stability_factor = 0.05
 			}
 		}
+		usa_irs_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+
+			picture = usa_irs
+
+			
+			modifier = {
+				consumer_goods_factor = -0.01
+				stability_factor = 0.02
+			}
+		}
+		Enabling_Act_ideas = {
+			
+			allowed = {
+				always = no
+				OR = {
+					NOT = {
+						has_government = neutrality
+						has_government = communism
+						has_government = democratic
+					}
+				}
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+
+			removal_cost = -1
+
+			picture = Enabling_Act
+
+			modifier = {
+				stability_factor = -0.05
+				communism_drift = -0.01
+				democratic_drift = -0.01
+			}
+		}
+		THK_Berlin_Olympiad_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = Berlin_Olympiad 	
+			
+			modifier = {
+				stability_factor = 0.10
+				political_power_gain = 0.03
+				consumer_goods_factor = 0.02
+			}
+		}
 
 	
 		CHI_legal_reform_ideas = {
@@ -43,6 +106,545 @@ ideas = {
 				consumer_goods_factor = -0.02
 				industrial_capacity_factory = -0.1
 				production_factory_efficiency_gain_factor = -0.05
+			}
+		}
+		SAU_saudi_house_ideas = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+			cancel = {
+				OR = {
+					has_government = neutrality
+					has_government = communism 
+					has_government = fascism
+				}
+			}
+			removal_cost = -1
+
+			picture = saudi_house
+
+			
+			modifier = {
+				industrial_capacity_factory = 0.05
+				stability_factor = 0.05
+			}
+		}
+
+		fucking_army1 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+
+			removal_cost = -1
+
+			picture = chi_army_corruption3
+
+			
+			modifier = {
+				war_support_factor = -0.15
+				army_attack_factor = -0.2
+				army_speed_factor = -0.2
+				planning_speed = -0.1
+				navy_fuel_consumption_factor = 0.15
+				air_superiority_bonus_in_combat = -0.25
+				repair_speed_factor = -0.15
+				training_time_factor = 0.3
+				army_org_factor = -0.2
+				army_defence_factor = -0.2
+			}
+		}
+		fucking_army2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+
+			removal_cost = -1
+
+			picture = chi_army_corruption3
+
+			
+			modifier = {
+				war_support_factor = -0.1
+				army_attack_factor = -0.15
+				army_speed_factor = -0.15
+				planning_speed = -0.1
+				navy_fuel_consumption_factor = 0.1
+				air_superiority_bonus_in_combat = -0.2
+				repair_speed_factor = -0.1
+				training_time_factor = 0.2
+				army_org_factor = -0.15
+				army_defence_factor = -0.15
+			}
+		}
+		fucking_army3 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+
+			removal_cost = -1
+
+			picture = chi_army_corruption3
+
+			
+			modifier = {
+				conscription = 0.02
+				war_support_factor = -0.05
+				army_attack_factor = -0.1
+				army_speed_factor = -0.1
+				planning_speed = -0.1
+				navy_fuel_consumption_factor = 0.1
+				air_superiority_bonus_in_combat = -0.2
+				repair_speed_factor = -0.1
+				training_time_factor = 0.15
+				army_org_factor = -0.10
+				army_defence_factor = -0.10
+			}
+		}
+		fucking_army4 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+
+			removal_cost = -1
+
+			picture = chi_army_corruption3
+
+			equipment_bonus = {
+				heavy_tank_equipment  = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+				medium_tank_equipment  = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+				light_tank_equipment  = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+			}
+			modifier = {
+				conscription = 0.02
+				war_support_factor = -0.1
+				army_attack_factor = -0.05
+				army_speed_factor = -0.05
+				planning_speed = -0.05
+				navy_fuel_consumption_factor = 0.1
+				air_superiority_bonus_in_combat = -0.2
+				repair_speed_factor = -0.1
+				training_time_factor = 0.2
+				army_org_factor = -0.15
+				army_defence_factor = -0.10
+			}
+		}
+		fucking_army5 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+
+			removal_cost = -1
+
+			picture = chi_army_corruption3
+
+			equipment_bonus = {
+				artillery_equipment  = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+			}
+			modifier = {
+				conscription = 0.02
+				war_support_factor = -0.1
+				army_attack_factor = -0.05
+				army_speed_factor = -0.12
+				planning_speed = -0.12
+				navy_fuel_consumption_factor = 0.1
+				air_superiority_bonus_in_combat = -0.2
+				repair_speed_factor = -0.1
+				training_time_factor = 0.15
+				army_org_factor = -0.05
+				army_defence_factor = -0.10
+			}
+		}
+		fucking_army6 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+
+			removal_cost = -1
+
+			picture = chi_army_corruption3
+
+			equipment_bonus = {
+				artillery_equipment  = {
+					instant = yes
+					build_cost_ic = -0.07
+				}
+			}
+			modifier = {
+				conscription = 0.02
+				war_support_factor = -0.05
+				army_speed_factor = -0.12
+				planning_speed = -0.12
+				navy_fuel_consumption_factor = 0.1
+				air_superiority_bonus_in_combat = -0.2
+				repair_speed_factor = -0.1
+				training_time_factor = 0.1
+				army_org_factor = -0.05
+				army_defence_factor = -0.05
+			}
+		}
+		fucking_army7 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+
+			removal_cost = -1
+
+			picture = chi_army_corruption3
+
+			equipment_bonus = {
+				heavy_tank_equipment  = {
+					instant = yes
+					build_cost_ic = -0.07
+				}
+				medium_tank_equipment  = {
+					instant = yes
+					build_cost_ic = -0.07
+				}
+				light_tank_equipment  = {
+					instant = yes
+					build_cost_ic = -0.07
+				}
+			}
+			modifier = {
+				conscription = 0.02
+				war_support_factor = -0.1
+				army_speed_factor = 0.05
+				planning_speed = -0.05
+				navy_fuel_consumption_factor = 0.1
+				air_superiority_bonus_in_combat = -0.2
+				repair_speed_factor = -0.1
+				training_time_factor = 0.15
+				army_org_factor = -0.10
+				army_defence_factor = -0.06
+			}
+		}
+		fucking_army8 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+
+			removal_cost = -1
+
+			picture = chi_army_corruption3
+
+			equipment_bonus = {
+				artillery_equipment  = {
+					instant = yes
+					build_cost_ic = -0.07
+				}
+			}
+			modifier = {
+				conscription = 0.02
+				war_support_factor = 0.05
+				army_speed_factor = -0.06
+				planning_speed = -0.06
+				navy_fuel_consumption_factor = 0.1
+				air_superiority_bonus_in_combat = -0.2
+				repair_speed_factor = -0.1
+				training_time_factor = 0.05
+				army_attack_factor = 0.05
+			}
+		}
+		fucking_army9 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+
+			removal_cost = -1
+
+			picture = chi_army_corruption3
+
+			equipment_bonus = {
+				heavy_tank_equipment  = {
+					instant = yes
+					build_cost_ic = -0.07
+				}
+				medium_tank_equipment  = {
+					instant = yes
+					build_cost_ic = -0.07
+				}
+				light_tank_equipment  = {
+					instant = yes
+					build_cost_ic = -0.07
+				}
+			}
+			modifier = {
+				conscription = 0.03
+				war_support_factor = 0.05
+				army_speed_factor = 0.07
+				navy_fuel_consumption_factor = 0.1
+				air_superiority_bonus_in_combat = -0.2
+				repair_speed_factor = -0.1
+				training_time_factor = 0.05
+				army_org_factor = -0.05
+				army_attack_factor = 0.05
+			}
+		}
+		fucking_army8_navy = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+
+			removal_cost = -1
+
+			picture = chi_army_corruption3
+
+			equipment_bonus = {
+				artillery_equipment  = {
+					instant = yes
+					build_cost_ic = -0.07
+				}
+			}
+			modifier = {
+				conscription = 0.02
+				war_support_factor = 0.1
+				army_speed_factor = -0.06
+				planning_speed = -0.06
+				navy_fuel_consumption_factor = 0.05
+				air_superiority_bonus_in_combat = -0.2
+				training_time_factor = 0.05
+				army_attack_factor = 0.05
+			}
+		}
+		fucking_army9_navy = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+
+			removal_cost = -1
+
+			picture = chi_army_corruption3
+
+			equipment_bonus = {
+				heavy_tank_equipment  = {
+					instant = yes
+					build_cost_ic = -0.07
+				}
+				medium_tank_equipment  = {
+					instant = yes
+					build_cost_ic = -0.07
+				}
+				light_tank_equipment  = {
+					instant = yes
+					build_cost_ic = -0.07
+				}
+			}
+			modifier = {
+				conscription = 0.03
+				war_support_factor = 0.05
+				army_speed_factor = 0.07
+				navy_fuel_consumption_factor = 0.05
+				air_superiority_bonus_in_combat = -0.2
+				army_org_factor = -0.05
+				army_attack_factor = 0.05
+			}
+		}
+
+		fucking_army9_navy_2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+
+			removal_cost = -1
+
+			picture = chi_army_corruption3
+
+			equipment_bonus = {
+				heavy_tank_equipment  = {
+					instant = yes
+					build_cost_ic = -0.07
+				}
+				medium_tank_equipment  = {
+					instant = yes
+					build_cost_ic = -0.07
+				}
+				light_tank_equipment  = {
+					instant = yes
+					build_cost_ic = -0.07
+				}
+			}
+			modifier = {
+				conscription = 0.03
+				war_support_factor = 0.05
+				army_speed_factor = 0.07
+				air_superiority_bonus_in_combat = -0.2
+				army_org_factor = -0.05
+				army_attack_factor = 0.05
+
+				convoy_retreat_speed = 0.05
+				naval_speed_factor = 0.1
+			}
+		}
+		fucking_army8_navy_2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+
+			removal_cost = -1
+
+			picture = chi_army_corruption3
+
+			equipment_bonus = {
+				artillery_equipment  = {
+					instant = yes
+					build_cost_ic = -0.07
+				}
+			}
+			modifier = {
+				conscription = 0.02
+				war_support_factor = 0.1
+				army_speed_factor = -0.06
+				planning_speed = -0.06
+				air_superiority_bonus_in_combat = -0.2
+				training_time_factor = 0.05
+				army_attack_factor = 0.05
+
+				convoy_retreat_speed = 0.05
+				naval_speed_factor = 0.1
+			}
+		}
+		fucking_army9_navy_3 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+
+			removal_cost = -1
+
+			picture = chi_army_corruption3
+
+			equipment_bonus = {
+				heavy_tank_equipment  = {
+					instant = yes
+					build_cost_ic = -0.07
+				}
+				medium_tank_equipment  = {
+					instant = yes
+					build_cost_ic = -0.07
+				}
+				light_tank_equipment  = {
+					instant = yes
+					build_cost_ic = -0.07
+				}
+			}
+			modifier = {
+				conscription = 0.03
+				war_support_factor = 0.05
+				army_speed_factor = 0.07
+				air_superiority_bonus_in_combat = -0.2
+				army_org_factor = -0.05
+				army_attack_factor = 0.05
+
+				convoy_retreat_speed = 0.05
+				naval_speed_factor = 0.1
+				navy_submarine_defence_factor = 0.15
+				navy_submarine_attack_factor = 0.15
+			}
+		}
+		fucking_army8_navy_3 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+
+			removal_cost = -1
+
+			picture = chi_army_corruption3
+
+			equipment_bonus = {
+				artillery_equipment  = {
+					instant = yes
+					build_cost_ic = -0.07
+				}
+			}
+			modifier = {
+				conscription = 0.02
+				war_support_factor = 0.1
+				army_speed_factor = -0.06
+				planning_speed = -0.06
+				air_superiority_bonus_in_combat = -0.2
+				training_time_factor = 0.05
+				army_attack_factor = 0.05
+
+				convoy_retreat_speed = 0.05
+				naval_speed_factor = 0.1
+				navy_submarine_defence_factor = 0.15
+				navy_submarine_attack_factor = 0.15
 			}
 		}
 		PRC_high_illiteracy = {

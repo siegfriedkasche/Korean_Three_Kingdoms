@@ -431,3 +431,51 @@ country_event = {
 		}
 	}
 }
+# Games of the XI Olympiad
+country_event = {
+	id = THK.13
+	title = news.66.t
+	desc = {
+		text = news.66.d
+		trigger = {
+			NOT = { has_global_flag = GER_civil_war_end }
+		}
+	}
+	desc = {
+		text = news.66.d.b
+		trigger = {
+			has_global_flag = GER_civil_war_end
+		}
+	}
+	picture = GFX_report_event_french_liberation
+	
+	major = yes
+	
+	trigger = {
+		date > 1936.8.1
+		NOT = { has_global_flag = olympics_1936 }
+		NOT = { has_global_flag = civil_war_olympics }
+		country_exists = GER
+		country_exists = USA
+		GER = { has_war = no }
+		GER = { has_civil_war = no }
+		FRA = { has_war = no }
+		ENG = { has_war = no }
+		USA = { has_war = no }
+		original_tag = GER
+	}
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = news.66.b
+		trigger = { TAG = GER }
+		add_timed_idea = {
+			idea = THK_Berlin_Olympiad_ideas
+			days = 15
+		}
+	}
+}

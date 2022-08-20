@@ -920,7 +920,6 @@ country_event = {
 			ideology = fascism
 			size = 0.5
 		}
-		
 	}
 }
 
@@ -1286,7 +1285,6 @@ country_event = {
 	option = {
 		name = wtt_japan.126.a
 		effect_tooltip = {
-			
 			if = {
 				limit = {
 					524 = {
@@ -1461,7 +1459,6 @@ country_event = {
 	# They have accepted.
 	option = {
 		name = wtt_japan.127.a
-		
 		if = {
 			limit = {
 				524 = { #Taiwan
@@ -1601,7 +1598,6 @@ country_event = {
 			factor = 1
 		}
 		effect_tooltip = {
-			
 			if = {
 				limit = {
 					524 = {
@@ -1665,6 +1661,14 @@ country_event = {
 	# They have accepted.
 	option = {
 		name = wtt_japan.127.a
+		if = {
+			limit = {
+				524 = {
+					is_controlled_by = JAP
+				}
+			}
+			MAN = { transfer_state = 524 }
+		}
 		MAN = {
 			every_controlled_state = {
 				limit = {

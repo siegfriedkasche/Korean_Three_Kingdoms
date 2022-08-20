@@ -263,6 +263,38 @@ spriteTypes = {
 	}
 
 	SpriteType = {
+		name = "GFX_NEW_ARMY_GGR_shine"
+		texturefile = "gfx/interface/goals/K_asche/NEW_ARMY_GGR.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/K_asche/NEW_ARMY_GGR.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/K_asche/NEW_ARMY_GGR.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+
+	SpriteType = {
 		name = "made_in_kasche_shine"
 		texturefile = "gfx/interface/goals/K_asche/made_in_kasche.png"
 		effectFile = "gfx/FX/buttonstate.lua"

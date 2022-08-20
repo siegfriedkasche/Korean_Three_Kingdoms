@@ -32,6 +32,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/K_asche/PRC_black_cat_white_cat.png"
 	}
 	SpriteType = {
+		name = "GFX_NEW_ARMY_GGR"
+		texturefile = "gfx/interface/goals/K_asche/NEW_ARMY_GGR.png"
+	}
+	SpriteType = {
 		name = "made_in_kasche"
 		texturefile = "gfx/interface/goals/K_asche/made_in_kasche.png"
 	}
