@@ -1,7 +1,7 @@
 
 state={
-	id=843
-	name="동차하르"
+	id=917
+	name="STATE_917"
 	resources={
 		steel=5.000
 	}

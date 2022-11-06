@@ -1,6 +1,6 @@
 state={
-	id=837
-	name="금성"
+	id=911
+	name="STATE_911"
 	manpower = 4673762
 	state_category = town
 	resources={

@@ -930,7 +930,7 @@ focus_tree = {
 					only_own_territory = no
 					capital = 328
 					states = { 
-						717 839 328
+						717 913 328
 					}
 					keep_unit_leaders = {
 						
@@ -1643,7 +1643,7 @@ focus_tree = {
 					}
 				}
 			}
-			836 = {
+			910 = {
 				if = {
 					limit = { is_controlled_by = ROOT }
 					add_building_construction = {
@@ -1653,7 +1653,7 @@ focus_tree = {
 					}
 				}
 			}
-			837 = {
+			911 = {
 				if = {
 					limit = { is_controlled_by = ROOT }
 					add_building_construction = {
@@ -1663,7 +1663,7 @@ focus_tree = {
 					}
 				}
 			}
-			838 = {
+			912 = {
 				if = {
 					limit = { is_controlled_by = ROOT }
 					add_building_construction = {
@@ -2542,7 +2542,7 @@ focus_tree = {
 			527 = {
 				set_state_name = "남해부"
 			}
-			839 = {
+			913 = {
 				set_state_name = "철리부"
 			}
 			717 = {
@@ -4297,8 +4297,8 @@ focus_tree = {
 		available = {
 			controls_state = 328
 			controls_state = 527
-			controls_state = 842
-			controls_state = 841
+			controls_state = 916
+			controls_state = 915
 			controls_state = 716
 		}
 
@@ -4407,10 +4407,10 @@ focus_tree = {
 		cost = 10
 
 		available = {
-			controls_state = 838
-			controls_state = 837
+			controls_state = 912
+			controls_state = 911
 			controls_state = 525
-			controls_state = 836
+			controls_state = 910
 		}
 
 		bypass = {
@@ -4424,10 +4424,10 @@ focus_tree = {
  
 
 		completion_reward = {
-			838 = { add_core_of = ROOT }
-			837 = { add_core_of = ROOT }
+			912 = { add_core_of = ROOT }
+			911 = { add_core_of = ROOT }
 			525 = { add_core_of = ROOT }
-			836 = { add_core_of = ROOT }
+			910 = { add_core_of = ROOT }
 			add_stability = 0.1
 			hidden_effect = {
 				#remove_ideas = no_faction

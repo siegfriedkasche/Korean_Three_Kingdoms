@@ -1,7 +1,7 @@
 
 state={
-	id=839
-	name="부여성"
+	id=913
+	name="STATE_913"
 	resources={
 		steel=14.000
 		tungsten=28.000

@@ -1,6 +1,6 @@
 state={
-	id=838
-	name="영원산성"
+	id=912
+	name="STATE_912"
 	manpower = 2223484
 	state_category = town
 	resources={

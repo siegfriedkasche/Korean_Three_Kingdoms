@@ -1,6 +1,6 @@
 state={
-	id=841
-	name="한성"
+	id=915
+	name="STATE_915"
 	provinces={
 		1003 4107 7070 7155 10065 11915 
 	}

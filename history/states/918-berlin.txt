@@ -1,6 +1,6 @@
 state={
-	id=844
-	name="베를린"
+	id=918
+	name="STATE_918"
 	provinces={
 		6521 
 	}

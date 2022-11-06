@@ -33,24 +33,24 @@ country_event = {
 		hidden_effect = {
 			If = {
 				limit = {
-					840 = {
+					914 = {
 						is_controlled_by = SIS
 					}
 					SIS = {
 						exists = yes
 					}
 				}
-				transfer_state = 840
+				transfer_state = 914
 				ROOT = { country_event = { id = SJW.18 days = 61 } country_event = { id = SJW.23 days = 10 } }
 				JAP = { country_event = { id = SJW.19 days = 61 } }
 			}
 			If = {
 				limit = {
-					840 = {
+					914 = {
 						is_demilitarized_zone = yes
 					}
 				}
-				840 = { set_demilitarized_zone = NO }
+				914 = { set_demilitarized_zone = NO }
 			}
 			JAP = { country_event = { id = japan.1 } }
 		}

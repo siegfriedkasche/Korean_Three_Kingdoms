@@ -163,7 +163,7 @@ focus_tree = {
 			set_capital = { state = 608 }
 			608 = {
 				set_province_name = {
-					id = 9843
+					id = 9917
 					name = "북경( 北京 )"
 				}
 				set_state_name = "북경"
@@ -1842,12 +1842,12 @@ focus_tree = {
 			JAP = { white_peace = { tag = ROOT message = mediation_of_Troutmann } }
 			every_country = { limit = { is_in_faction_with = ROOT is_independent_china_or_warlord = yes } add_ideas = war_reparations2_ideas }
 			608 = { set_demilitarized_zone = yes }
-			840 = { set_demilitarized_zone = yes }
+			914 = { set_demilitarized_zone = yes }
 			MEN = { limit = { is_puppet_of = JAP } transfer_state = 621 transfer_state = 746 }
-			if = { limit = {  AND = { controls_state = 840 controls_state = 608 controls_state = 613} } 
+			if = { limit = {  AND = { controls_state = 914 controls_state = 608 controls_state = 613} } 
 				add_popularity = { ideology = fascism popularity = 0.15 }
 			}
-			if = { limit = { JAP = { OR = { controls_state = 840 controls_state = 608 controls_state = 613} } }
+			if = { limit = { JAP = { OR = { controls_state = 914 controls_state = 608 controls_state = 613} } }
 				every_country = { limit = { is_in_faction_with = ROOT is_independent_china_or_warlord = yes } add_timed_idea = { idea = war_reparations_ideas days = 365 } }
 				add_popularity = { ideology = fascism popularity = 0.25 }
 				614 = { set_demilitarized_zone = yes }
@@ -2037,7 +2037,7 @@ focus_tree = {
 		available = {
 			OR = {
 				NOT = {
-					controls_province = 9843
+					controls_province = 9917
 					controls_province = 10068
 				}
 			}	
@@ -2118,7 +2118,7 @@ focus_tree = {
 		available = {
 			OR = {
 				NOT = {
-					controls_province = 9843
+					controls_province = 9917
 					controls_province = 10068
 				}
 			}	
@@ -2992,7 +2992,7 @@ focus_tree = {
 			OR = {
 				NOT = {
 					any_enemy_country = {
-						has_full_control_of_state = 840
+						has_full_control_of_state = 914
 						has_full_control_of_state = 613
 					}
 				}
@@ -3013,8 +3013,8 @@ focus_tree = {
 
 		completion_reward = {
 			if = {
-				limit = { has_full_control_of_state = 840 }
-				840 = { # Shanghai
+				limit = { has_full_control_of_state = 914 }
+				914 = { # Shanghai
 					set_building_level = {
 						type = bunker
 						province = {
@@ -3092,7 +3092,7 @@ focus_tree = {
 							instant_build = yes
 						}
 					}
-					840 = {
+					914 = {
 						add_building_construction = {
 							type = bunker
 							province = {

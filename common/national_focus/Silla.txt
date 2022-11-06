@@ -111,8 +111,8 @@ focus_tree = {
 		}
 
 		available = {
-			SIR = { controls_state = 838 }
-			SIR = { controls_state = 837 }
+			SIR = { controls_state = 912 }
+			SIR = { controls_state = 911 }
 		}
 
 		bypass = {
@@ -128,7 +128,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			838 = {
+			912 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
@@ -136,7 +136,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			837 = {
+			911 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
@@ -162,8 +162,8 @@ focus_tree = {
 		}
 
 		available = {
-			SIR = { controls_state = 838 }
-			SIR = { controls_state = 837 }
+			SIR = { controls_state = 912 }
+			SIR = { controls_state = 911 }
 		}
 
 		bypass = {
@@ -179,7 +179,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			838 = {
+			912 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
@@ -187,7 +187,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			837 = {
+			911 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
@@ -213,8 +213,8 @@ focus_tree = {
 		}
 
 		available = {
-			SIR = { controls_state = 838 }
-			SIR = { controls_state = 837 }
+			SIR = { controls_state = 912 }
+			SIR = { controls_state = 911 }
 		}
 
 		bypass = {
@@ -230,7 +230,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			838 = {
+			912 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
@@ -238,7 +238,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			837 = {
+			911 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
@@ -268,8 +268,8 @@ focus_tree = {
 		}
 
 		available = {
-			SIR = { controls_state = 838 }
-			SIR = { controls_state = 837 }
+			SIR = { controls_state = 912 }
+			SIR = { controls_state = 911 }
 		}
 
 		bypass = {
@@ -285,7 +285,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			838 = {
+			912 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -293,7 +293,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			837 = {
+			911 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -324,8 +324,8 @@ focus_tree = {
 		}
 
 		available = {
-			SIR = { controls_state = 838 }
-			SIR = { controls_state = 837 }
+			SIR = { controls_state = 912 }
+			SIR = { controls_state = 911 }
 		}
 
 		bypass = {
@@ -341,7 +341,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			838 = {
+			912 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -349,7 +349,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			837 = {
+			911 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -380,8 +380,8 @@ focus_tree = {
 		}
 
 		available = {
-			SIR = { controls_state = 838 }
-			SIR = { controls_state = 837 }
+			SIR = { controls_state = 912 }
+			SIR = { controls_state = 911 }
 		}
 
 		bypass = {
@@ -397,7 +397,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			837 = {
+			911 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -405,7 +405,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			838 = {
+			912 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -1678,7 +1678,7 @@ focus_tree = {
 		}
 
 		available = {
-			controls_state = 838
+			controls_state = 912
 		}
 
 		cancel_if_invalid = yes
@@ -1695,7 +1695,7 @@ focus_tree = {
 						has_completed_focus = SIR_contact_with_the_US
 					}
 				}
-				838 = {
+				912 = {
 					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = arms_factory
@@ -1712,7 +1712,7 @@ focus_tree = {
 						has_completed_focus = SIR_contact_with_the_GER
 					}
 				}
-				838 = {
+				912 = {
 					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = arms_factory
@@ -1733,7 +1733,7 @@ focus_tree = {
 						has_completed_focus = SIR_contact_with_the_US
 					}
 				}
-				838 = {
+				912 = {
 					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = arms_factory
@@ -1754,7 +1754,7 @@ focus_tree = {
 						has_completed_focus = SIR_contact_with_the_GER
 					}
 				}
-				838 = {
+				912 = {
 					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = arms_factory
@@ -1774,7 +1774,7 @@ focus_tree = {
 						has_completed_focus = SIR_contact_with_the_UK
 					}
 				}
-				838 = {
+				912 = {
 					add_extra_state_shared_building_slots = 3
 					add_building_construction = {
 						type = arms_factory
@@ -1998,12 +1998,12 @@ focus_tree = {
 
 		available = {
 			controls_state = 527  
-			controls_state = 842
-			controls_state = 841
+			controls_state = 916
+			controls_state = 915
 			controls_state = 716 
 			controls_state = 745  
 			controls_state = 328  
-			controls_state = 839 
+			controls_state = 913 
 			controls_state = 717  
 		}
 		modifier = {
