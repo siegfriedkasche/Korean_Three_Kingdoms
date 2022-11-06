@@ -471,12 +471,12 @@ country_event = {
         }  
         if = {
             #limit = {
-            #    914 = {
+            #    840 = {
             #        is_controlled_by = CHI
             #    }
             #}
             JAP = {
-                set_state_controller = 914
+                set_state_controller = 840
                 division_template = {
                     name = "해군특전대(상하이 사변)"
                     is_locked = yes
@@ -501,7 +501,7 @@ country_event = {
                         recon = { x = 0 y = 1 }
                     } 
                 }
-                914 = {
+                840 = {
                     create_unit = {
                         division = "name = \"해군특전대(상하이 사변)\" division_template = \"해군특전대(상하이 사변)\" start_experience_factor = 0.5 start_equipment_factor = 1"
                         owner = JAP
@@ -537,7 +537,7 @@ country_event = {
         }  
         if = {
             #limit = {
-            #    914 = {
+            #    840 = {
             #        is_controlled_by = CHI
             #    }
             #}
